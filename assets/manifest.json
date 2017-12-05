@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "vendor": [
+        "assets/scripts/headroom.js"
+      ],
+      "main": true,
+      "exclude": {
+        "bower": [
+          "outlayer",
+          "doc-ready",
+          "fizzy-ui-utils",
+          "get-style-property",
+          "get-size",
+          "matches-selector",
+          "eventEmitter",
+          "eventie"
+        ]
+      }
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://localhost:8888/getkunst/"
+  }
+}
