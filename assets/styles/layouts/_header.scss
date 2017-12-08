@@ -637,7 +637,7 @@ div#festi-cart-pop-up-content div.festi-cart-pop-up-body {
     padding: 0px!important;
     max-width: 650px;
     border: 1px solid rgba(0,0,0,.2)!important;
-    border-radius: 6px!important;
+    border-radius: 0px!important;
     box-shadow: 0 5px 10px rgba(0,0,0,.2)!important;    
 }
 div.festi-cart-pop-up-body div.festi-cart-pop-up-header {
@@ -662,7 +662,7 @@ body div.festi-cart-products{
 	padding-top: 0px!important;
 }
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-img a.festi-cart-img img{
-    max-width: 135px!important;
+    max-width: 100px!important;
     width: 100%!important;
     height: auto!important;	
 }
@@ -679,18 +679,20 @@ body div.festi-cart-products-content {
     box-shadow: 0 5px 10px rgba(0,0,0,.2)!important;   
     font-family: Poppins,sans-serif!important; 
 }
-
+body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-title{
+	text-align: left;
+}
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-title a.festi-cart-title{
-    margin-bottom: 15px!important;
+    margin-bottom: 5px!important;
     float: none!important;
     color: #0f0f0f!important;
-    font-size: 1.2em!important;
+    font-size: 1.15em!important;
     display: block!important;
     font-weight: 500!important;
 }
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-title span.festi-cart-product-variation-attribut {
     font-size: 0.93em!important;
-    margin-bottom: 10px!important;
+    margin-bottom: 5px!important;
     margin-top: 0px!important;
     display: block!important;
 }
@@ -700,16 +702,14 @@ body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > 
     font-weight: 700!important;
 }
 
-div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-img{
-	 vertical-align: middle!important;
-}
+div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-img{}
 
 body div.festi-cart-products-content > p.festi-cart-buttons a.festi-cart-checkout,
 div.festi-cart-products-content p.festi-cart-buttons a.festi-cart-view-cart{
     border: 0 solid!important;
     border-color: #e0e0e0!important;
     display: inline-block!important;
-    margin: 10px 10px 0px 10px!important;
+    margin: 10px 15px 10px 0px!important;
     padding: 7px!important;
     border-radius: 0!important;
     font-size: 1.2em!important;
@@ -719,28 +719,37 @@ div.festi-cart-products-content p.festi-cart-buttons a.festi-cart-view-cart{
 }
 div.festi-cart-products-content p.festi-cart-buttons a.festi-cart-view-cart{
 	background-color: #6caff7!important;
-    float: none!important;	
+    float: none!important;
+    margin: 10px 0px 0px 15px!important;
 }
 .festi-cart-inner-wrap {
-    font-weight: 700!important;
-    margin-top: 50px!important;
-    margin-bottom: 7px!important;
+    font-weight: 600!important;
+    margin-top: 2px!important;
+    text-align: left!important;
+    margin-bottom: 2px!important;
+}
+.festi-cart-inner-wrap > p{
+	margin: 0px;
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item.festi-cart-next, 
 div.festi-cart-widget-products-content table.festi-cart-list tr.festi-cart-item.festi-cart-next {
     border-bottom: none!important;
 }
-body div.festi-cart-products-content  table.festi-cart-list tr td{
-	border: none!important;
+body div.festi-cart-products-content table.festi-cart-list tr:hover td{
+	border-bottom: 1px solid #0f0f0f;
 }
+body div.festi-cart-products-content table.festi-cart-list tr td{}
+body div.festi-cart-products-content table.festi-cart-list tr:last-child{border-bottom: 1px solid #fff!important;}
+body div.festi-cart-products-content table.festi-cart-list tr:last-child:hover{border-bottom: 1px solid #0f0f0f!important;}
+ 
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td{
-	padding: 0px 0px 0px 10px!important;
+	padding: 10px 0px!important;
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item.festi-cart-next td{
 	padding: 10px 0!important;
 }
 body div.festi-cart-products-content div#festi-cart-products-list-body{
-	padding: 10px!important;
+	padding: 5px!important;
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-empty, 
 div.festi-cart-widget-products-content table.festi-cart-list tr.festi-cart-empty, 
