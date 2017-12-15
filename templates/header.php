@@ -46,7 +46,11 @@
       <span class="menu-text">Menu</span>
     </button>
     <div class="icon-menu-gk left hidden-md hidden-sm hidden-lg">
-          <a class="account" href="<?php if (is_user_logged_in()) : ?>/my-account<?php else : ?>/my-account<?php endif;?>"><span>Account</span></a>
+          <?php if (is_user_logged_in()) : ?>
+            <a class="account" href="/my-account"><span>Account</span></a>
+          <?php else : ?>
+            <a class="account" data-toggle="modal" data-target="#loginmodal" href="#"><span>Account</span></a>
+          <?php endif;?>
     </div>
 </div>
 
@@ -141,21 +145,40 @@
 </div><!-- end id menu -->
 
 
-<!-- login modal -->
 
 <!-- login modal -->
 <div class="modal fade loginmodal" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
-            <div class="modal-body">
-              <div class="social-login-container"><?php echo do_shortcode('[auth0]'); ?></div>
-                  <div class="secure-connection">Secure connection</div>
-              </div>
-            </form>
-          </div>
-        </div>
+  <div class="modal-dialog" role="document">
+    <!--<div class="profile-image"><?php echo get_avatar( $id_or_email, $size, $default, $alt, $args ); ?></div>-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Welcome</h2>
       </div>
+      <div class="modal-body">
+        <form id="login" action="login" method="post">
+            <p class="status"></p>
+            <div class="input-1">
+              <label class="username" for="username"><i class="fa fa-lock" aria-hidden="true"></i></label>
+              <input id="username" type="text" name="username" placeholder="Username or Email">
+            </div>
+            <div class="input-2">
+              <label class="password" for="password"><i class="fa fa-user" aria-hidden="true"></i></label>
+              <input id="password" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="input-3">
+              <div class="lost-reg">
+                <a class="lost" href="/my-account/lost-password">Lost your password?</a><br />
+                <span>Are you a new customer?</span> <a class="lost" href="<?php echo home_url(); ?>/register">Register Now</a>
+              </div>
+              <input class="submit_button" type="submit" value="Login" name="submit">
+              <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+              <div class="seperate"><span class="hr-social">or</span></div>
+              <div class="social-login-container"><?php echo do_shortcode('[woo_social_login]'); ?></div>
+              <!--<div class="secure-connection">Secure connection</div>-->
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

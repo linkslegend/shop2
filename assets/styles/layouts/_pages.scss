@@ -422,7 +422,7 @@ span.wpcf7-list-item {
     font-size: 12px;
     background: #fff;
     margin-bottom: 7px;
-    border: 1px solid #b5b5b5;
+    border: 1px solid #0f0f0f;
     display: inline-block;
     padding: 0 15px;
     width: 100%;
@@ -466,23 +466,23 @@ input[type=radio] {
 .woocommerce .blockUI.blockOverlay:before,
 .woocommerce .loader:before {
 	content: '';
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     margin: -15px auto auto -15px;
     position: absolute;
     top: 50%;
     left: 50%;
     border-radius: 100%;
-    border-width: 7px;
+    border-width: 5px;
     border-style: solid;
     background: transparent!important;
-    border-color: #2180c0 #f2f2f2 #f2f2f2;}
+    border-color: #0f0f0f #f2f2f2 #f2f2f2;}
 .woocommerce .blockUI.blockOverlay:after,
 .woocommerce .loader:after{
 	content: 'Loading... Please wait';
     top: 57%;
     color: #fff;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: 700;
     position: fixed;
     left: 43%;}
@@ -768,6 +768,7 @@ p.cart-empty:before{
     color: #0f0f0f;
     letter-spacing: 0.06em;
     font-size: 1.15em;
+    margin-top: 20px;
     border: 2px solid #0f0f0f;
     padding: 10px 60px;
     display: block;
@@ -788,7 +789,7 @@ p.cart-empty:before{
     border-radius: 0;
     box-shadow: none;
     font-size: 1.12em;
-    font-weight: 400;
+    font-weight: 500;
     padding: 12px 40px;
     width: 100%;
         -webkit-transition: all .25s ease-in-out;
@@ -810,7 +811,7 @@ p.cart-empty:before{
     border-radius: 0;
     box-shadow: none;
     font-size: 1.12em;
-    font-weight: 400;
+    font-weight: 500;
     padding: 12px 40px;
     width: 100%;
 	box-shadow: 2px 2px 7px 1px rgba(200,200,200, 0.6);
@@ -904,7 +905,9 @@ input#coupon_code.input-text{
     background: #ef4343;
     float: left;
 }
-.woocommerce input.button.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover {
+.woocommerce input.button.disabled:hover, 
+.woocommerce input.button:disabled:hover, 
+.woocommerce input.button:disabled[disabled]:hover {
     padding: 13px 40px;
     color: #fff;
     background: #ef4343;
@@ -995,12 +998,17 @@ input#coupon_code.input-text{
 .my-account .page-header {display: none;}
 .my-account h2{
 	font-size: 1.3em;
-    font-weight: 800;}
-h1.my-account{
-	text-align: center;
-	font-size: 1.8em;
     font-weight: 800;
-}
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;}
+h1.my-account{
+	font-size: 1.8em;
+    text-align: center;
+    padding: 15px;
+    margin: 5px 0px 5px;
+    background: transparent;
+    border-bottom: 1px solid #0f0f0f;
+    font-weight: 800;}
 .order-tracking h1.my-account{
 	display: none;
 }
@@ -1032,7 +1040,7 @@ h1.my-account{
     border: 1px solid #d2d2d2;
     width: 100%;
     margin-bottom: 20px;
-    padding: 0px;}
+    padding: 20px;}
 .woocommerce-account .addresses .title h3 {
 	float: left;
     font-size: 1.05em;
@@ -1050,21 +1058,22 @@ h1.my-account{
     background: #fff;
     text-decoration: none;
     color: #0f0f0f;
-    padding: 8px 17px;
-    margin: -11px 6px 6px -49px;
+    padding: 8px 35px;
+    margin: 4px 6px 6px -97px;
     transition: all .25s ease 0s;
-	-webkit-transition: all .25s ease 0s;
+    -webkit-transition: all .25s ease 0s;
 }
 .woocommerce-account .addresses .title .edit:hover,
 .woocommerce-account ul.digital-downloads li .count:hover {
+    background: #0f0f0f;
+    color: #fff;
     float: right;
     position: absolute;
     border: 2px solid #0f0f0f;
-    background: #0f0f0f;
     text-decoration: none;
-    color: #fff;
-    padding: 8px 17px;
-    margin: -11px 6px 6px -49px;}
+    padding: 8px 35px;
+    margin: 4px 6px 6px -97px;
+    }
 
 .woocommerce-account .woocommerce-MyAccount-content {
     float: right;
@@ -1229,8 +1238,8 @@ h1.my-account{
     margin-top: 20px;
     border: 1px solid #d4d4d4;
     margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .my-account .modal fieldset.woo-slg-social-container{
     padding: 0;
@@ -1267,14 +1276,14 @@ input[type=tel],
 select,
 textarea {
     width: 100%;
-    border: 1px solid #d3d3d3;
+    border: 1px solid #0f0f0f;
     font-size: 1em;
     line-height: 18px;
     padding: 9px 15px;
     transition: border-color .5s;}
 label {
     display: block;
-    font-size: 0.93em;
+    font-size: 1em;
     color: #0f0f0f;
     font-weight: 400;
     margin-bottom: 0px;
@@ -1294,8 +1303,11 @@ label {
 }    
 .woocommerce form.woocommerce-form-login .form-row{
 	padding: 0px;
+	margin-bottom: 10px;
 }
-
+.woocommerce form .form-row label {
+    margin-top: 10px;
+}
 .woocommerce-page table.shop_table_responsive tr.shipping td::before{
 	height: 40px;
 }
@@ -1507,21 +1519,20 @@ a.wc-gateway-ppec-cancel:hover{
 .woocommerce table.my_account_orders .button:hover{
 	background: #0f0f0f;
 	color: #fff;}
-.my-account .woocommerce-error:before,
-.my-account .woocommerce-info:before,
-.my-account .woocommerce-message:before {
+.woocommerce-error:before,
+.woocommerce-info:before,
+.woocommerce-message:before {
     font-family: FontAwesome;
     content: "\f12a";
     display: inline-block;
-    color: #0f0f0f;
+    color: #fff;
     position: absolute;
-    top: .31em;
-    left: 0.6em;
-    font-size: 1.6em;}
-.woocommerce-error:before{
-	color: #ef4343;
+    top: 5px;
+    left: 15px;
+    font-size: 1.8em;}
+.woocommerce-info:before{
+	color: #0f0f0f;
 }
-
 .my-account .woocommerce-MyAccount-content .woocommerce-error:before,
 .my-account .woocommerce-MyAccount-content .woocommerce-info:before,
 .my-account .woocommerce-MyAccount-content .woocommerce-message:before {top: 16px;}
@@ -1532,20 +1543,10 @@ a.wc-gateway-ppec-cancel:hover{
     overflow: visible;
     color: #0f0f0f;
 }
-.woocommerce-error:before, .woocommerce-info:before, .woocommerce-message:before {
-    font-family: FontAwesome;
-    content: "\f12a";
-    display: inline-block;
-    color: #0f0f0f;
-    position: absolute;
-    top: 0.31em;
-    left: 0.94em;
-    font-size: 1.8em;
-}
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
-    padding: 1em 2em 1em 3.5em!important;
+    padding: 1em 2em 1em 2.5em!important;
     margin: 15px 0px 15px!important;
     position: relative;
     background-color: #f2f2f2;
@@ -1563,18 +1564,18 @@ a.wc-gateway-ppec-cancel:hover{
 .woocommerce-message{
 	border-top: 2px solid #00aa5b;
 }    
-.woocommerce-account .woocommerce-error a{
+.woocommerce-error a{
 	color: #f14883;
     padding: 4px 6px;
     border-radius: 4px;
     text-decoration: none;
     background: #fff;
     margin: 0 5px;}
-.woocommerce-account .woocommerce-error {
-    background-color: #f2f2f2;
-    border-top: 2px solid #ef4343;
-    color: #0f0f0f;}
-.woocommerce-account .woocommerce-error:before{padding-top: 0px;color: #ef4343;}
+.woocommerce-error {
+    background-color: #ef4343;
+    border-top: 0px solid #ef4343;
+    color: #fff;
+    font-size: 1.1em;}
 
 .logged-in.woocommerce-account .bg-white .woocommerce-message{
     padding: 17px 30px!important;
@@ -1717,8 +1718,8 @@ login .button, .lost_reset_password .button, .register .button {
 .my-account .woocommerce form.register{
 	background: #fff;}
 .woocommerce form .form-row {
-    padding: 0 5px;
-    margin: 0 0 0px;}
+    padding: 0;
+    margin: 0;}
 .woocommerce-account form.checkout_coupon,
 .woocommerce-account form.login,
 .woocommerce-account form.register {
@@ -1972,7 +1973,8 @@ login .button, .lost_reset_password .button, .register .button {
     color: #fff;
     padding: 9px 25px;
     border: 2px solid #fff;
-    font-size: 1.12em;
+    font-size: 1.1em;
+    font-weight: 500;
     background: transparent;
     border-radius: 0;
     	transition: all .25s ease 0s;
@@ -1984,7 +1986,7 @@ login .button, .lost_reset_password .button, .register .button {
     color: #0f0f0f;
     padding: 9px 25px;
     border: 2px solid #fff;
-    font-size: 1.12em;
+    font-size: 1.1em;
 }
 .newsletter span {
 	font-size: 1.45em;
@@ -2034,7 +2036,7 @@ login .button, .lost_reset_password .button, .register .button {
     position: relative;
     top: 15px;
     display: block;
-    font-size: 1.07em;
+    font-size: 1.1em;
     font-weight: 500;
     width: auto;
     margin: 15px;}
@@ -2049,12 +2051,12 @@ login .button, .lost_reset_password .button, .register .button {
     margin: 15px;}
 #mc_embed_signup input.mce_inline_error {border-color: rgb(255, 67, 67)!important; }
 #mc_embed_signup div.mce_inline_error {
-	margin: 10px 0px 0em 0!important;
-    padding: 10px 10px!important;
-    background-color: rgb(255, 67, 67)!important;
-    font-weight: normal!important;
+    margin: 10px 0 0!important;
+    padding: 10px!important;
+    background-color: #ff4343!important;
+    font-weight: 500!important;
     color: #fff!important;
-    font-size: 90%!important;
+    font-size: 1.1em;
     z-index: 1!important;}
 /* @end */
 
@@ -2176,6 +2178,7 @@ footer .bgimage{background: #2b2b2b url(https://d1zczzapudl1mr.cloudfront.net/pa
     font-weight: 400;
     line-height: 1.853em;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 .content-partners .container {
     padding-top: 35px;
@@ -2274,59 +2277,117 @@ ul.secure-payment-box li{
 
 .woo-slg-social-container legend,
 legend {
-    line-height: 2em;
-    padding: 0 0 0 10px;
-    margin: 0px;
-    text-align: right;
-    font-size: 1.2em;
-    border-bottom: 0px solid #e2e2e2;
-    color: #313131;
-    display: block;
-    font-weight: 500;
-}
-.my-account .content .woo-slg-social-container legend,
-.my-account .content legend {
-    line-height: 2em;
-    padding: 0;
-    margin: 0 0 5px;
+	line-height: 2em;
+    padding: 0px 0px 2px 0px;
+    margin: 0;
     text-align: left;
-    font-weight: 600;
-    font-size: 1.2em;
-    width: 100%;
+    width: auto;
+    font-size: 1em;
     border-bottom: 0 solid #e2e2e2;
     color: #0f0f0f;
     display: block;
+    font-weight: 400;
 }
+
 .logged-in.woocommerce-edit-account.my-account .content legend{
-    padding: 0 15px;
+	line-height: 2em;
+    padding: 0px;
+    margin: 0;
     text-align: left;
     width: auto;
+    font-size: 1em;
+    border-bottom: 0 solid #ddd;
+    color: #0f0f0f;
+    display: block;
+    font-weight: 400;
 }
 
 .my-account .content .woo-slg-social-container{
-	margin: 25px 0 0;
-}
+    margin: 15px 0 0;
+    padding: 10px 0px 0px 0px;
+    display: inline-block;
+    width: 100%;
+    position: relative;}
 
 .my-account .content .woo-slg-social-wrap {
     margin: 0 auto;
     margin-top: 0;
     text-align: left;
-    padding-top: 0px;
-    border-top: 0px solid #d4d4d4;
+    padding-top: 0;
+    border-top: 0 solid #d4d4d4;
+}
+
+
+.modal .profile-image img {
+    -webkit-animation: fadeInDown 0.75s both;
+    animation: fadeInDown 0.75s both;
+}
+.modal .profile-image img{
+    height: 80px;
+    width: 80px;
+    display: block;
+    border-radius: 100px;
+    margin: -16px auto 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    -webkit-animation: fadeIn 0.75s both;
+    animation: fadeIn 0.75s both;
 }
 
 .woo-slg-login-wrapper {
-    /* float: left; */
     display: inline-block;
-    margin-right: 0px;
-    margin-bottom: 5px;
+    margin-right: 0;
+    float: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 15px;}
+.woo-slg-login-wrapper:first-of-type{padding-left: 0px;}
+
+.woo-slg-social-container .woo-slg-social-btn,
+.woo-slg-social-container .woo-slg-social-btn:hover, 
+.woo-slg-social-container .woo-slg-social-btn:active, 
+.woo-slg-social-container .woo-slg-social-btn:visited{
+	display: inline-block;
+    padding: 12px 30px;
+    color: #FFF;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+    min-width: 188px;
+    min-height: 35px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 3px;
+    border: 0px solid rgba(0,0,0,0.2);
+    text-align: center;
+    word-wrap: break-word;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-sizing: border-box;
+    line-height: 22px;
+    font-weight: bold;
+    position: relative;}
+.woo-slg-social-container .woo-slg-social-btn:hover, 
+.woo-slg-social-container .woo-slg-social-btn:active, 
+.woo-slg-social-container .woo-slg-social-btn:visited{
+    background-color: rgba(0,0,0,0.2);
 }
-.woo-slg-social-wrap{
-	margin: 0 auto;
-    margin-top: 5px;
-    text-align: right;
-    padding-top: 0px;
-    border-top: 0px solid #d4d4d4;}
+.woo-slg-icon {
+    display: inline-block;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    left: 0;
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    border-right: 0px solid rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .login .navbar-default{}
 .login .page-header {
     padding-bottom: 9px;
@@ -2335,8 +2396,6 @@ legend {
 }
 .woocommerce form .form-row.create-account{
 	padding: 5px 0 5px 10px;
-    color: #fff;
-    background: #868585;
     margin: 10px 0px 5px 0px;}
 .woocommerce form .woocommerce-account-fields .form-row.create-account{
 	padding: 5px 5px 0px 5px;
@@ -2349,9 +2408,9 @@ legend {
 .woocommerce form .form-row.create-account .mc4wp-checkbox-woocommerce input {
     margin: -3px 11px 0 0;}
 .woocommerce form .form-row.create-account label{
-	color: #fff;
+	color: #0f0f0f;
     padding: 0;
-    font-weight: 600;}
+    font-weight: 400;}
 
 .woo-social-login-linked-profiles {
     min-width: 550px;
@@ -3213,7 +3272,7 @@ ul.insta li{
     font-size: 350px;
     line-height: 1;
     z-index: -1;
-    color: #f8f8f8;
+    color: #e8e8e8;
 }
 .alert.alert-warning a.button.wc-backward{
     font-size: 70%;
@@ -3248,7 +3307,7 @@ form.lost_reset_password{
 }
 .woocommerce-lost-password .main p,
 form.lost_reset_password p{
-	font-size: 1.35em;
+	font-size: 1.2em;
     line-height: 1.5em;
     font-weight: 400;
     margin: 0px 10px 20px 10px;}
@@ -3265,32 +3324,33 @@ form.lost_reset_password .form-row label{
 	font-size: .93em;
 }
 .woocommerce-lost-password .woocommerce input.button {
-    font-size: 0.8em;
+    font-size: 1em;
     border: solid;
     color: #fff;
     box-shadow: none;
     border-radius: 0;
-    font-weight: 400;
+    font-weight: 500;
+    margin-top: 5px;
     border: 2px solid #0f0f0f;
     background: #0f0f0f;
-    padding: 10px 40px;
+    padding: 12px 40px;
     transition: all .25s ease 0s;
     -webkit-transition: all .25s ease 0s;
-    width: auto;
+    width: 100%;
 }
 .woocommerce-lost-password .woocommerce input.button:hover {
-    font-size: 0.8em;
+    font-size: 1em;
     border: solid;
     color: #0f0f0f;
     box-shadow: none;
     border-radius: 0;
-    font-weight: 400;
+    font-weight: 500;
     border: 2px solid #0f0f0f;
     background: transparent;
-    padding: 10px 40px;
+    padding: 12px 40px;
     transition: all .25s ease 0s;
     -webkit-transition: all .25s ease 0s;
-    width: auto;
+    width: 100%;
 }
 
 /* @end */
@@ -3609,7 +3669,7 @@ ul.products li.product .woocommerce-loop-product__title{
 }
 
 .woocommerce form .form-row label.inline {
-	float: left;
+	float: right;
     margin-top: 10px;}
 label[for=rememberme]{
     padding: 3px 15px 0px 0px;
@@ -3627,46 +3687,42 @@ label[for=rememberme] input[type=radio]{
 }
 
 /* @group register */
-.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+.woocommerce .col2-set .col-1, 
+.woocommerce-page .col2-set .col-1 {
     float: left;
     width: 50%;
-    padding-right: 20px;}
+    padding-right: 25px;
+    padding-left: 20px;}
 .woocommerce .col2-set .col-2,
 .woocommerce-page .col2-set .col-2 {
     float: right;
     border-left: 1px solid #d3d3d3;
     margin-left: 0;
     width: 50%;
-    padding-left: 20px;}
+    padding-left: 25px;
+    padding-right: 20px;}
 
 .login #customer_login .register,
-.register #customer_login .login{
-	display: none;
-}
+.register #customer_login .login{}
 .register .page-header,
-.login .page-header{
-	display: none;
-}
+.login .page-header{display: none;}
+
 .login.woocommerce-page .col2-set .col-1,
-.register.woocommerce-page .col2-set .col-2{
-	width: 100%;
-	background: #fff;
-	padding: 0px;
-	border: none;
-}
+.register.woocommerce-page .col2-set .col-2{}
 .register .woocommerce input.button,
-.login .woocommerce input.button {
-    width: auto;}
+.login .woocommerce input.button {}
+
 .register h2,
 .login h2{
     display: block;
     font-weight: 600;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    font-size: 1.2em;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+    margin-top: 0px;
+    font-size: 1.4em;
     line-height: 2em;
     padding-left: 0;
-    border-bottom: 0px solid #e2e2e2;
+    border-bottom: 1px solid #ddd;
     color: #0f0f0f;
     width: auto;
 }
@@ -4528,9 +4584,11 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
 .modal.loginmodal .modal-dialog{
 	width: 380px;}
 .modal.loginmodal .modal-header{
-    padding: 6px 5px 0px 0px;
+    padding: 0px;
     position: relative;
-    border-bottom: 0 solid #e5e5e5;}
+    background: transparent;
+    border-bottom: 0px;}
+
 .modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input{
 	float: none;}
 .modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-cred-pane{
@@ -4562,20 +4620,35 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
 .modal-body {
     position: relative;
     padding: 0px 0px 30px;}
+.loginmodal .modal-body {
+	padding: 0px 25px 25px 25px;}    
 .modal-dialog .close {
+	-webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
     float: right;
     font-size: 30px;
     font-weight: 400;
-    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    z-index: 9999;
+    position: absolute;
+    right: 0px;
+    margin-top: -3px;
+    margin-right: 0px;
     line-height: 1;
-    color: #000;
-    text-shadow: 0 0px 0 #fff;
-    opacity: 1;}
+    color: #0f0f0f;
+    text-shadow: 0 0 0 #fff;
+    opacity: .6;}
+.modal-dialog .close:hover{
+	opacity: 1;
+}
 .modal-header {
     padding: 10px;
     border-bottom: 0px solid #e5e5e5;}
 .modal-content {
-	border-radius: 0px;
+	border-radius: 3px;
+	border: none;
 	background: #fff url(https://d1zczzapudl1mr.cloudfront.net/geometric-abstraction2.png) repeat;}
 .modal-body .woo-slg-social-container legend, legend {
 	padding: 0;
@@ -4587,47 +4660,96 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
     display: block;
     width: 100%;
     font-weight: 400;}
+.modal-body .woo-slg-social-container legend{
+	display: none;
+}
+.modal-header h2{
+    position: relative;
+    margin: 25px 0 0 0;
+    border-bottom: 0px;
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+}
 .modal-content label{
-    display: block;
+	display: block;
     float: left;
-    width: 35%;
-    text-align: right;
-    padding: 10px 10px 10px 0;}
+    border: 1px solid #d2d2d2;
+    border-right: 0;
+    border-radius: 3px;
+    position: absolute;
+    font-size: 1.3em;
+    color: #0f0f0f;
+    height: 40px;
+    background: #f1f1f1;
+    width: 40px;
+    text-align: center;
+    z-index: 11;
+    padding: 10px;}
 .modal-content input[type=text],
 .modal-content input[type=password]{
-    width: 65%;
+	width: 100%;
+    padding-left: 50px;
+    display: block;
+    border: 1px solid #d2d2d2;
     height: 40px;
-    float: left;
-    padding: 15px;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 0px;
+    z-index: 10;
 }
+.modal-content .seperate{
+	position: relative;
+    margin: 15px 0;
+}
+.modal-content .seperate:before{
+    height: 1px;
+    background-color: #e3e5e7;
+    margin: 12px 0;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;	
+}
+.modal-content span.hr-social{
+    background-color: #fff;
+    margin-top: -25px;
+    display: table;
+    margin: 0 auto;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;	
+}
+
+
+
 .modal-content input[type=submit]{
     -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
     background: #0f0f0f;
-    display: block;
-    float: right;
+    float: none;
+    width: 100%;
+    border-radius: 3px;
     margin: 0 auto;
     color: #fff;
-    font-size: 1.12em;
-    font-weight: 600;
-    min-width: 220px;
-    border: 2px solid #0f0f0f;
-    padding: 7px;
+    font-size: 1.3em;
+    font-weight: 800;
+    border: 0px solid #0f0f0f;
+    padding: 12px 30px;
 }
 .modal-content input[type=submit]:hover{
-    background: #fff;
-    color: #0f0f0f;
-    min-width: 220px;
-    border: 2px solid #0f0f0f;
-    border-color: #0f0f0f;
-    padding: 7px;
+    background-color: 0f0f0f;
+    opacity: 0.9;
 }
 .modal-content .input-1,
 .modal-content .input-2{
-	display: block;
-	float: right;
+    display: inline-block;
+    float: none;
     height: 40px;
-    margin: 15px 0;
+    margin: 10px 0;
+    padding: 0;
     width: 100%;}
 .modal-content .input-3 {
     width: 100%;
@@ -4636,15 +4758,23 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
 .modal-content .input-3 .lost-reg{
 	float: right;
     width: 100%;
-    margin: 5px 0px 15px 0px;
+    margin: 0;
+    padding: 15px;
     text-align: right;
     display: inline-block;
 }
+.modal-content .input-3 .lost-reg a{
+	border-bottom: 2px solid #0f0f0f;
+    padding: 1px 2px;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    }
+.modal-content .input-3 .lost-reg a:hover{
+	border-bottom: 2px solid #000;
+	text-decoration: none;}
 .modal-content .social-login-container{
-    width: 100%;
-    margin: 15px 0px 5px 0px;
-    text-align: right;
-    display: inline-block;
+	margin: 0;
+    display: block;
 }
 .modal-content .secure-connection{
 	display: block;
@@ -4665,11 +4795,13 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
     font-weight: 400;
     text-decoration: inherit;}
 .modal-body p.status{
-	float: right;
-    width: 65%;
+    float: none;
+    width: 100%;
     text-align: center;
-    font-size: 1.04em;
-    padding: 7px 10px;
+    font-weight: 500;
+    line-height: 40px;
+    margin: 10px 0px 10px 0px;
+    font-size: 1.1em;
 }
 .modal-body p.status.error{
 	color: #fff;
@@ -4877,8 +5009,8 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
 #hover:hover {}
 #popup {
 	opacity: 0;
-    -webkit-transform: translateX(-77%);
-    transform: translateX(-77%);
+    -webkit-transform: translateX(-62%);
+    transform: translateX(-62%);
     width: 350px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     background: #fff;
@@ -5242,18 +5374,21 @@ button.button.tm-woowishlist-button.added.in_wishlist{
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button{
-    font-size: 100%;
+    font-size: 1.1em;
     border: solid;
     color: #fff;
     box-shadow: none;
     border-radius: 0;
-    font-weight: 400;
+    font-weight: 500;
     border: 2px solid #0f0f0f;
     background: #020202;
-    padding: 10px 40px;
+    padding: 10px 60px;
     transition: all .25s ease 0s;
 	-webkit-transition: all .25s ease 0s;
     width: auto;}
+.order-tracking .woocommerce input.button{
+	margin-top: 15px;
+}
 .woocommerce nav.prdctfltr-pagination.prdctfltr-pagination-load-more{
     clear: both;
     width: 75%;
@@ -5301,26 +5436,34 @@ button.button.tm-woowishlist-button.added.in_wishlist{
 .woocommerce .products a.button{
 	width: 100%;}
 .lost_password{
-    padding: 0px;
-    height: 0px;
-    margin-top: -15px;}
+	padding: 5px 5px 10px 20px;
+    display: block;
+    float: none;
+    position: relative;
+    height: auto;
+    right: 0;
+    width: auto;
+    top: 0px;}
 .login .lost_password>a {
-	box-shadow: none;
-    padding: 0px;
+    box-shadow: none;
+    padding: 0;
     width: auto;
     margin: 0;
-    float: right;
-    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    font-weight: 500;
     line-height: 1;
     cursor: pointer;
     position: relative;
     text-decoration: none;
     overflow: visible;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
     border-radius: 0;
-    background-color: transparent;
-    display: inline-block;}
+    background-color: transparent;}
 .login .lost_password>a:hover{
-    border-bottom: 1px solid #0f0f0f;
+    border-bottom: 2px solid #0f0f0f;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .woocommerce input.button.disabled:hover,
@@ -5328,19 +5471,19 @@ button.button.tm-woowishlist-button.added.in_wishlist{
 .woocommerce input.button:disabled:hover,
 .woocommerce input.button:disabled[disabled],
 .woocommerce input.button:disabled[disabled]:hover{
-    background: #0f0f0f;
-    color: #fff;
+	background: #f2f2f2;
+    color: #0f0f0f;
     border: 2px solid #0f0f0f;
     border-radius: 0;
     display: inline-block;
     float: none;
     position: relative;
+    opacity: 0.4;
     box-shadow: none;
-    font-weight: 400;
+    font-weight: 500;
     padding: 12px 40px;
     -webkit-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-}
+    transition: all .25s ease-in-out;}
 
 .woocommerce button.button.compare-size{
 	background: #e1e1e1;
@@ -6337,8 +6480,7 @@ footer .main-footer{padding: 30px 15px;margin: 0;width: 100%;}
 .woocommerce-account .woocommerce-MyAccount-content{
     float: left;
 	width: 75%;}
-.my-account .bb-social {
-	display: none;}
+.my-account .bb-social {}
 .woocommerce-MyAccount-content .tm-woowishlist-item .tm-woocomerce-list__product-title {
     margin: 0 0 10px;
     float: none;
@@ -6476,6 +6618,19 @@ ul.products li.product .woocommerce-loop-product__title{}
     font-size: 1.5em;
     margin: 0px 0px 10px 0;}    
 .gk-banner .gk-banner-inner{width: 90%;}
+.woocommerce .col2-set .col-1, 
+.woocommerce-page .col2-set .col-1 {
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 10px;}
+.woocommerce .col2-set .col-2, 
+.woocommerce-page .col2-set .col-2 {
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 10px;}
+h1.my-account{margin: 10px 10px 15px;padding: 20px;}
 }
 
 /*IPAD mini Size */
@@ -6792,7 +6947,7 @@ font-size: 1em;}
     float: left;
     padding: 10px;
     background: #fff;
-    clear: none;
+    clear: both;
     position: relative;
     margin: 10px 0px 0 0;
     width: 50%;}
@@ -6850,8 +7005,8 @@ div.upsells.products > ul > section > div > div > li{margin: 10px 2px!important;
     padding: 0;
     margin-bottom: 0;}
 .woo-slg-social-container {
-    padding: 10px 0;
-    margin: 10px 0 0px;}
+    padding: 15px 0;
+    margin: 15px 0 0px;}
 .login .page-header,
 .register .page-header {display: none;}
 .woocommerce-checkout .woocommerce-billing-fields,
@@ -7105,16 +7260,20 @@ table.shop_table tfoot th {
 .content-partners ul.secure-payment-box{
 	border-bottom: none;
 }
-.woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-1 {
+.woocommerce-page .col2-set .col-1, 
+.woocommerce .col2-set .col-1 {
     float: left;
     width: 100%;
-    padding-right: 0px;}
-.woocommerce-page .col2-set .col-2, .woocommerce .col2-set .col-2 {
+    padding-right: 10px;
+    padding-left: 10px;}
+.woocommerce-page .col2-set .col-2, 
+.woocommerce .col2-set .col-2 {
     float: right;
     border-left: 0px solid #d3d3d3;
     margin-left: 0;
     width: 100%;
-    padding-left: 0px;}
+    padding-left: 10px;
+    padding-right: 10px;}
 .col-md-3.classictextwidget-4.classic-textwidget,
 .col-md-3.text-3.widget_text {
     width: 100%;}
@@ -7192,12 +7351,13 @@ body div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-
 }
 #slider-header a {font-size: 0.9em;}
 h1.my-account {
-    text-align: center;
-    font-size: 1.25em;
-    padding: 0px 0px 7px 0;
+	text-align: center;
+    font-size: 1.5em;
+    padding: 0 0 15px;
     margin-bottom: 0;
+    margin: 25px 0px 0px 0px;
     background: transparent;
-    border: 0px solid #e4e4e4;
+    border-bottom: 1px solid #0f0f0f;
     font-weight: 800;}
 .woocommerce button.button.tm-woowishlist-button:before{
 	padding: 15px 0 0 1px;
@@ -7241,8 +7401,8 @@ a.yith-wcqv-button.button{display: none!important;}
 .tile-content {
     color: #fff;
     position: absolute;
-    bottom: 15px;
-    padding-left: 15px;
+    bottom: 20px;
+    padding-left: 10px;
     max-width: 230px;}
 .tile{
     margin-bottom: 10px;
@@ -7285,6 +7445,7 @@ a.yith-wcqv-button.button{display: none!important;}
     position: absolute;
     width: 200px;}
 .tile-title{
+	display: none;
 	font-size: 22px;}
 .faqs h1{font-size: 17px;    padding-bottom: 0px;}
 .faqs h2.top-title{
@@ -7358,13 +7519,21 @@ div#festi-cart-pop-up-content span.festi-cart-closed.b-close {
     max-width: 350px;}
 .woocommerce #payment #place_order, 
 .woocommerce-page #payment #place_order {
-    margin-bottom: 0em;}
+    margin-bottom: 15em;}
 .woocommerce .blockUI.blockOverlay:after, 
 .woocommerce .loader:after{
 	left: 32%;
-	font-size: 1.2em;
-}
-    
+	font-size: 1.2em;}
+.woo-slg-login-wrapper {}
+.modal.loginmodal .modal-dialog {width: auto;}
+.woocommerce-account .addresses .title .edit,
+.woocommerce-account ul.digital-downloads li .count {
+	margin: -11px 3px 6px -86px;}
+.woocommerce-account .addresses .title .edit:hover,
+.woocommerce-account ul.digital-downloads li .count:hover {
+	margin: -11px 3px 6px -86px;}
+
+
 }
 
 

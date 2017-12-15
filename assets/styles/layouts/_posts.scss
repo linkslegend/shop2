@@ -942,9 +942,9 @@ div.ywar_show_more a{}
 }
 .variations label {
     display: block;
-    margin-top: -13px;
+    margin-top: -10px;
     float: left;
-    font-weight: 200;}
+    font-weight: 400!important;}
 
 
 .woocommerce div.product form.cart .variations td, 
@@ -1952,6 +1952,21 @@ ul.inspirationNav li a.active{font-weight: bold;}
     border-bottom: 2px solid #fff;
     line-height: 130%;
     font-weight: 500;}
+.onp-sl-social-buttons .onp-sl-control {
+    min-width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    background-color: transparent;
+}
+.onp-sl-social-buttons .onp-sl-control-inner-wrap {
+    height: 20px;
+    margin: 10px 0px 0px 0px;
+    min-width: 100px;
+}
+
 /* @end */
 
 
@@ -2490,7 +2505,7 @@ ul.inspirationNav li a.active{font-weight: bold;}
 .buyer-protection ul {padding: 0 0 0 100px;}
 .woocommerce div.product .product_title{
 	margin: 0px 0px 15px 0px;
-	font-size: 1.6em;
+	font-size: 1.45em;
     font-weight: 500;}
 .ssl-secure {}
 #message-purchased.bottom_right {
@@ -2738,6 +2753,7 @@ article div.col-sm-6.image-side{
 .woocommerce-page div.product div.summary{
 	float: left;
     width: 48%;
+    margin-bottom: 25px;
     margin-left: 10px;
     padding-right: 0px;}
 }
