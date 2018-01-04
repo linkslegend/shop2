@@ -1073,23 +1073,3 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
      remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
    }
  }
-
-function pw_load_scripts() {
- 	wp_localize_script('pw-script', 'pw_script_vars', array(
- 			'title' => __('Share or like to unlock', 'intermac'),
- 			'title' => __('Choose Any Social Social Network from below to share our content and Download it.', 'intermac')
- 		)
- 	);
- }
-add_action('wp_enqueue_scripts', 'pw_load_scripts');
-
-
-wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
-$js_data = array(
- 	'title' => 'Share or like to unlock',
- 	'text' => 'Choose Any Social Social Network from below to share our content and Download it.',
-  'facebookappid' => '676027382527018',
-  'facebookpageId' => 'https://www.facebook.com/MyCodingTricks',
-  'twittervia' => 'mycodingtricks'
- );
-wp_localize_script( 'roots_js', 'futurewave', $js_data );

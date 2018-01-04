@@ -11,6 +11,12 @@ body{
 	background: #fff;
 	letter-spacing: .03rem;
 	color: #0f0f0f;}
+#header-placeholder{
+	position: relative;
+    height: 110px;
+    float: left;
+    width: 100%;
+    clear: both;}
 #menu-mobile{display:none;}
 a {
 	color: #0f0f0f;
@@ -42,44 +48,63 @@ h1{font-size: 26px;}
     margin-top: 0;}
 .navbar-nav {
     float: left;
-    position: relative;
+    position: absolute;
     font-size: 1.25em;
-    top: 5px;
-    margin-left: 20px;
+    top: 45px;
+    margin-left: 150px;
     font-weight: 600;}
 /**
  * Note: I have omitted any vendor-prefixes for clarity.
  * Adding them is left as an exercise for the reader.
  */
+#menu{display:block;margin-top: 30px;}
+
 .headroom {
 	transition: transform 200ms linear;
-	width: 100%;
-	z-index: 297!important;
-}
+	width: 100%;}
 .headroom--top{
-	position: relative!important;
-}
-.headroom--pinned {
-	transform: translateY(0%);
 	position: fixed;
 }
-
-.headroom--unpinned {
-	transform: translateY(-100%);
+.headroom--not-top{
 	position: fixed;
+	margin-top: -30px;
+}
+.slide {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.slide--up {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    position: fixed;
+}
+.slide--reset {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+.header--fixed {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0;
 }
 .desktop-search.headroom--unpinned {
 	transform: translateY(-200%);
-	position: fixed;
 	margin-top: -60px;
 }  
 .desktop-search.headroom--pinned{
 	transform: translateY(-100%);
-	position: fixed;
 }
+
+
 .about-us .navbar-default,
 .home .navbar-default {margin-bottom: 0px;padding-bottom: 0px;}
-.navbar-default {background-color: #fff;border: none;margin-bottom: 25px;padding-bottom: 0px;top:0;}
+.navbar-default {width: 100%;background-color: #fff;border: none;margin-bottom: 25px;padding-bottom: 0px;top:0;height: 110px;}
 .cart .navbar-default,
 .checkout .navbar-default{margin-bottom: 15px;}
 .archive .navbar-default,
@@ -107,6 +132,10 @@ h1{font-size: 26px;}
 }
 .navbar-default .navbar-nav> a:hover{color: #e2e2e2;background-color: #f14883;}
 .topRow {padding: 0;
+	height: 30px;
+	top: 0;
+	position: absolute;
+	width: 100%;
     line-height: 12px;
     z-index: 7;
     background: #f1ffeb;}
@@ -204,8 +233,8 @@ h1{font-size: 26px;}
     float: left;
     text-decoration: inherit;
     padding-right: 8px;}    
-#logo {position: relative;float: left;margin: 0 15px 0px 0px;}
-#logo img {width: 140px;}
+#logo {position: relative;float: none;margin: 0 15px 0px 0px;display: block;}
+#logo img {width: auto;height: auto;position: absolute;display: block;}
 
 
 a.myaccount::before,
@@ -283,6 +312,7 @@ a.logout::before {content: "\f08b";}
 .top-menu{    
 	background: #fff;
     padding-top: 15px;
+    height: 110px;
     padding-bottom: 15px;}
 
 /* @group Fontpage Header */
@@ -291,6 +321,7 @@ a.logout::before {content: "\f08b";}
     margin: 0px 0px 15px 0px;
     background: #f0f0f0;
     width: 100%;
+    float: left;
     position: relative;
     top: 0px;
     left: 0;
@@ -381,12 +412,12 @@ p.para{
 #slider-header-front .btn {background: #f2f2f2;}
 #slider-header-front .btn {
     min-width: inherit;
-    font-weight: 700;
+    font-weight: 500!important;
     color: #545454;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-transform: capitalize;
     padding: 17px 15.4px;
-    font-size: 14px;
+    font-size: 1.25em;
     line-height: 14px;
     border-radius: 2px;}
 #slider-header-front .btn {
@@ -943,17 +974,17 @@ body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-empty t
 }
 
 body a#festi-cart.festi-cart.festi-cart-customize {
-    background-color: transparent!important;
+	background-color: transparent!important;
     border: 0 solid!important;
     border-color: #6f6f6f!important;
     padding: 0!important;
     text-align: right!important;
     z-index: 9999999!important;
-    top: -30px!important;
+    top: 13px!important;
     overflow: hidden!important;
-    position: relative!important;
-    right: 24px!important;
-    text-indent: -21px;
+    position: absolute!important;
+    text-indent: -15px!important;
+    right: 9px!important;
     height: 58px!important;
     width: 61px!important;
 }
@@ -987,12 +1018,13 @@ body div.festi-cart-arrow:after{
 
 /* @group icon menu */
 .Cart-right {   
- 	position: relative;
-    width: 35px;
+	position: absolute;
+    width: 41px;
+    top: 45px;
     height: 40px;
-    right: 20px;
-    padding: 0px;
-    float: right;
+    margin-left: 145px;
+    padding: 0;
+    float: none;
     background: none;}
 .Cart-right span.text{
     display: block;
@@ -1042,7 +1074,7 @@ body .topnav a#festi-cart.festi-cart.festi-cart-customize.festi-cart-quantity:ho
     width: 197px;
 }
 .icon-menu-gk .account{
-    top: 15px;
+    top: 45px;
     position: absolute;
     display: block;
     width: 59px;
@@ -1051,7 +1083,7 @@ body .topnav a#festi-cart.festi-cart.festi-cart-customize.festi-cart-quantity:ho
     height: 66px;
     float: left;}
 .icon-menu-gk .wishlist{
-    top: 15px;
+    top: 45px;
     position: absolute;
     display: block;
     margin-left: 67px;
@@ -1195,7 +1227,7 @@ li {list-style: none;}
 /* @end */
 
 @media (min-width: 1200px) {
-#menu{display:block;}
+#menu{display:block;margin-top: 30px;}
 #menu-mobile{display:none;}
 .nav > li > a{padding: 10px 15px;}
 .yith-ajaxsearchform-container input[type=search]{width: 200px;}
@@ -1203,7 +1235,7 @@ li {list-style: none;}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-#menu{display:block;}
+#menu{display:block;margin-top: 30px;}
 #menu-mobile{display:none;}
 #logo {}
 #logo img {width: 140px;}
@@ -1214,15 +1246,15 @@ li {list-style: none;}
     margin: 9px 1px;}
 .navbar-nav {font-size: 1.22em;margin-left: 0;top: 0;}
 .Cart-right{position: absolute;
-    right: 26px;
-    top: 15px;
+    right: 15px;
+    top: 45px;
     float: right;
     background: none;}
 .menu-item.current-menu-parent:before,
 .menu-item.current-menu-item:before{bottom: -20px;}
 .navbar-default .navbar-nav>li>a{padding-top: 5px;}
 .icon-menu-gk {width: 180px;margin-top: -4px;}
-.icon-menu-gk .wishlist {margin-left:64px;}
+.icon-menu-gk .wishlist {margin-left:75px;top: 45px;}
 .icon-menu-gk .account span, 
 .icon-menu-gk .wishlist span.text,
 .Cart-right span.text{font-size: 0.75em;}
@@ -1233,8 +1265,8 @@ li {list-style: none;}
     width: 100%;
     float: left;}
 .icon-menu-gk .account{	
-	top: 15px;
-	margin-left: 5px;
+	top: 45px;
+	margin-left: 15px;
 	font-size: 100%;
 }
 .icon-menu-gk .wishlist span.text{margin-left: -2px;}
@@ -1748,7 +1780,7 @@ body a#festi-cart.festi-cart.festi-cart-customize:before {
     background-color: #4a4a4a;
     margin-top: 0px;
     bottom: 10px;}
-.navbar{z-index: initial;min-height: 50px;height: 60px;}
+.navbar{min-height: 50px;height: 60px;z-index: 217;}
 .padding-left-right {padding-left: 15px;padding-right: 15px;}   
 
 .coll-bck-a3 {height: 230px;} 
@@ -1974,6 +2006,7 @@ span.menu-text{
 	    padding: 10px 15px;
 	letter-spacing: 0.09em;
 	font-size: 13px;}
+.headroom--not-top{margin-top: 0px;}
 
 }
 

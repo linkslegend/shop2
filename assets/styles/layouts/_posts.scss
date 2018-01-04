@@ -1385,24 +1385,29 @@ woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to
 	font-size: .9em;
 	border: 1px solid #e2e2e2;}
 .calculate-cm label{display: none;}
+.calculate-cm input.inputcm2,
 .calculate-cm input.inputcm{
-	padding: 5px 10px;
-    display: block;}
-.calculate-cm input.inputcm2{
-	padding: 5px 10px;
-    display: block;}
-.calculate-cm #outputInches{padding: 2px;font-size: 1.1em;}
-.calculate-cm #outputInches2{padding: 3px;font-size: 1.1em;}
+    padding: 5px 10px;
+    display: block;
+    margin-bottom: 5px;}
+.calculate-cm input[type=number]{
+    width: 100%;
+    border: 1px solid #909090;
+    font-size: 1.1em;
+    line-height: 18px;
+    padding: 5px 10px;}
+.calculate-cm #outputInches{padding: 0px;font-size: 1.1em;}
+.calculate-cm #outputInches2{padding: 0px;font-size: 1.1em;}
+.calculate-cm .small{font-weight: 400;}
 .calculate-cm .convert{
     display: block;
     float: none;
-    font-size: 1.2em;
-    height: 30px;
-    border-top: 0px;
-    border-right: 1px solid #d3d3d3;
-    border-left: 1px solid #d3d3d3;
-    border-bottom: 1px solid #d3d3d3;
-    background: #f2f2f2;
+    font-size: 1.1em;
+    font-weight: 500;
+    height: auto;
+    border-top: 0;
+    border: 1px solid #909090;
+    background: #f3f3f3;
     padding: 5px 10px;}
 .calculate-cm h3{
 	position: absolute;
@@ -1958,13 +1963,15 @@ ul.inspirationNav li a.active{font-weight: bold;}
     vertical-align: middle;
     text-align: center;
     position: relative;
-    margin: 0;
-    background-color: transparent;
+    margin: 0!important;
+    background-color: transparent!important;
 }
 .onp-sl-social-buttons .onp-sl-control-inner-wrap {
-    height: 20px;
-    margin: 10px 0px 0px 0px;
-    min-width: 100px;
+    height: 20px!important;
+    padding: 0px!important;
+    margin: 10px 0px 0px 0px!important;
+    min-width: 100px!important;
+    text-align: center;
 }
 
 /* @end */

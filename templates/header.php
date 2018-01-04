@@ -13,6 +13,8 @@
 
 <div id="wrapper">
 
+<div id="header-placeholder"></div>
+<header id="header" class="banner navbar navbar-default navbar-static-top" role="banner">
 
   <!-- shop 1.top menu -->
   <div class="topRow">
@@ -34,9 +36,6 @@
       </ul>
     </div><!--.container-->
   </div><!--.topRow-->
-
-
-<header id="header" class="headroom banner navbar navbar-default navbar-static-top" role="banner">
 
 <div class="navbar-header">
     <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse">
@@ -72,7 +71,7 @@
             'menu_class' => 'nav navbar-nav yamm']);
           endif;
           ?>
-          <div id="desktop-search" class="desktop-search"><?php echo do_shortcode('[yith_woocommerce_ajax_search]');?><i class="fa fa-search" aria-hidden="true"></i></div>
+          <!--<div id="desktop-search" class="desktop-search"><?php echo do_shortcode('[yith_woocommerce_ajax_search]');?><i class="fa fa-search" aria-hidden="true"></i></div>-->
           <div class="icon-menu-gk">
                 <a id="pop" class="account btn" tabindex="-1" data-popover="true"
                     data-content="<?php if (is_user_logged_in()) : ?>

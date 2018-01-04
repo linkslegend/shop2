@@ -20,14 +20,19 @@
       init: function() {
 
 
-var header = new Headroom(document.querySelector("#header"), {
-        tolerance: {
-        	up: 0,
-        	down: 0
-        },
-        offset : 0
-    });
-    header.init();
+(function() {
+            new Headroom(document.querySelector("#header"), {
+                tolerance: 0,
+                offset : 150,
+                classes: {
+                  initial: "slide",
+                  pinned: "slide--reset",
+                  unpinned: "slide--up"
+                }
+            }).init();
+
+}());
+
 },
       finalize: function() {
         // JavaScript to be fired on all pages
@@ -65,6 +70,13 @@ jQuery(document).ready(function() {
         });
     });
 */
+
+/* when a user clicks, toggle the 'is-animating' class */
+$(".tm-woowishlist-button").on('click touchstart', function(){
+  $(this).toggleClass('is_animating');
+});
+
+
 
 const canHover = !(matchMedia('(hover: none)').matches);
 if(canHover) {
