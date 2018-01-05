@@ -50,14 +50,14 @@ h1{font-size: 26px;}
     float: left;
     position: absolute;
     font-size: 1.25em;
-    top: 45px;
+    top: 50px;
     margin-left: 150px;
     font-weight: 600;}
 /**
  * Note: I have omitted any vendor-prefixes for clarity.
  * Adding them is left as an exercise for the reader.
  */
-#menu{display:block;margin-top: 30px;}
+#menu{display:block;}
 
 .headroom {
 	transition: transform 200ms linear;
@@ -233,7 +233,7 @@ h1{font-size: 26px;}
     float: left;
     text-decoration: inherit;
     padding-right: 8px;}    
-#logo {position: relative;float: none;margin: 0 15px 0px 0px;display: block;}
+#logo {position: relative;float: none;margin: 28px 15px 0px 5px;display: block;}
 #logo img {width: auto;height: auto;position: absolute;display: block;}
 
 
@@ -318,7 +318,7 @@ a.logout::before {content: "\f08b";}
 /* @group Fontpage Header */
 #slider-header.product-page{
     overflow: hidden;
-    margin: 0px 0px 15px 0px;
+    margin: 110px 0 15px;
     background: #f0f0f0;
     width: 100%;
     float: left;
@@ -793,14 +793,21 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
 /* @end */
 
 /* @group ajax search */
+#desktop-search{
+	position: absolute;
+	margin-left: 575px;
+	display: block;
+	margin-top: 3px;
+	float: left;
+}
 .desktop-search i{    
 	position: absolute;
-    margin-left: -32px;
+    margin-left: -33px;
     font-size: 1.23em;
     z-index: 0;
     overflow: visible;
     font-weight: 100;
-    margin-top: 14px;}
+    margin-top: 15px;}
 .yith-ajaxsearchform-container{
     position: relative;
     float: left;
@@ -817,17 +824,17 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
     border: 1px solid #000;
     color: #0f0f0f;
     font-size: 0.92em;
-    height: 28px;
+    height: 30px;
     margin: 8px;
     display: block;
 }
 .yith-ajaxsearchform-container input[type=submit]{
     position: relative;
-    margin-left: -40px;
+    margin-left: -41px;
     color: #fff;
-    top: 6px;
+    top: 8px;
     z-index: 10;
-    height: 27px;
+    height: 29px;
     text-indent: 999px;
     width: 34px;
     border: none;
@@ -1027,15 +1034,15 @@ body div.festi-cart-arrow:after{
     float: none;
     background: none;}
 .Cart-right span.text{
-    display: block;
+	display: block;
     position: absolute;
     line-height: 21px;
     margin: 0;
-    top: 34px;
+    top: 35px;
     text-align: center;
-    margin-left: -25px;
+    margin-left: -24px;
     width: 74px;
-    font-size: .9em;}
+    font-size: .8em;}
 body .topnav a#festi-cart.festi-cart.festi-cart-customize.festi-cart-quantity:hover:before{color: #fff!important;}
 
 .icon-menu-gk .search i{
@@ -1074,13 +1081,13 @@ body .topnav a#festi-cart.festi-cart.festi-cart-customize.festi-cart-quantity:ho
     width: 197px;
 }
 .icon-menu-gk .account{
-    top: 45px;
+    top: 47px;
     position: absolute;
     display: block;
-    width: 59px;
-    padding: 0;
+    width: 60px;
+    padding: 0 11px;
     z-index: 21;
-    height: 66px;
+    height: 63px;
     float: left;}
 .icon-menu-gk .wishlist{
     top: 45px;
@@ -1107,13 +1114,17 @@ body .topnav a#festi-cart.festi-cart.festi-cart-customize.festi-cart-quantity:ho
     background-position: -151px 0;
     content: "";}  
 .icon-menu-gk .wishlist span.text,
-.icon-menu-gk .account span{color: #0f0f0f;font-size: 0.9em;}
 .icon-menu-gk .account span{
-    margin-left: 8px;
-    font-size: 0.79em;
-    margin-top: 0px;
+	color: #0f0f0f;
+	font-size: .8em;
+	margin-left: -2px;
+	margin-top: 3px;}
+.icon-menu-gk .account span{
+    margin-left: -1px;
+    font-size: .85em;
+    margin-top: 2px;
     float: left;}
-.icon-menu-gk .wishlist span.text{margin-left: -3px;}    
+.icon-menu-gk .wishlist span.text{margin-left: -4px;}    
 .icon-menu-gk .wishlist:active:before,
 .icon-menu-gk .wishlist:focus:before,
 .icon-menu-gk .wishlist:hover:before{background-position: -187px 0;	}
@@ -1227,48 +1238,56 @@ li {list-style: none;}
 /* @end */
 
 @media (min-width: 1200px) {
-#menu{display:block;margin-top: 30px;}
+#menu{display:block;}
 #menu-mobile{display:none;}
 .nav > li > a{padding: 10px 15px;}
 .yith-ajaxsearchform-container input[type=search]{width: 200px;}
-
+#desktop-search{margin-left: 650px;float: left;margin-top: 3px;}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-#menu{display:block;margin-top: 30px;}
+#header-placeholder,
+.top-menu,
+.navbar-default{height: 100px;}
+#menu{display:block;}
 #menu-mobile{display:none;}
-#logo {}
-#logo img {width: 140px;}
+#logo {margin: 25px 15px 0px 5px;}
+#logo img {width: 130px;}
 .topRow ul{	padding-left: 0;}
 #menu-menu-1 li.current-menu-parent.current-menu-parent > a{padding-bottom: 5px;}
 .navbar-nav>li>a {
 	padding: 7px 8px;
     margin: 9px 1px;}
-.navbar-nav {font-size: 1.22em;margin-left: 0;top: 0;}
+.navbar-nav {font-size: 1.22em;margin-left: 155px;top: 40px;}
 .Cart-right{position: absolute;
-    right: 15px;
-    top: 45px;
+    right: 10px;
+    top: 40px;
     float: right;
     background: none;}
 .menu-item.current-menu-parent:before,
 .menu-item.current-menu-item:before{bottom: -20px;}
 .navbar-default .navbar-nav>li>a{padding-top: 5px;}
 .icon-menu-gk {width: 180px;margin-top: -4px;}
-.icon-menu-gk .wishlist {margin-left:75px;top: 45px;}
+.icon-menu-gk .wishlist {margin-left:75px;top: 40px;}
 .icon-menu-gk .account span, 
 .icon-menu-gk .wishlist span.text,
 .Cart-right span.text{font-size: 0.75em;}
-.Cart-right span.text {margin-left: -25px;top: 32px;}
+.Cart-right span.text {margin-left: -25px;top: 36px;}
 .icon-menu-gk .wishlist span.text,
 .icon-menu-gk .account span{
-    margin-left: 2px;
+    margin-left: 1px;
+    margin-top: 3px;
     width: 100%;
     float: left;}
+.icon-menu-gk .account span.text{
+	margin-top: 4px;
+}
 .icon-menu-gk .account{	
-	top: 45px;
-	margin-left: 15px;
+	top: 40px;
+	margin-left: 20px;
 	font-size: 100%;
 }
+.popover.bottom {margin-top: -4px;}
 .icon-menu-gk .wishlist span.text{margin-left: -2px;}
 .keyword-list a {
     display: block;
@@ -1329,7 +1348,7 @@ li {list-style: none;}
     border: none;
     background: transparent;}
 #desktop-search{display: none;}
-
+#slider-header.product-page{margin-top: 100px;}
 }
 
 @media (max-width: 767px) {
@@ -1341,8 +1360,8 @@ div#festi-cart-pop-up-content div.festi-cart-pop-up-body{width: 310px!important;
 #slider-header {padding: 5px 0px 0px 0px;margin: 0px 0;border-bottom: none;}
 .tax-product_cat #slider-header {padding: 0px;margin: 5px 0px;border-bottom: 1px solid #d5d5d5;}
 #menu-mobile{display:block;}
-#logo img {width: 140px;}
-#logo {margin-top: -10px;margin-left: 3px;}
+#logo {margin: 5px 15px 0px 5px;}
+#logo img {width: 130px;}
 #wrapper {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -1697,7 +1716,7 @@ body a#festi-cart.festi-cart.festi-cart-customize {
 .tax-product_cat .Cart-right{}
 .Cart-right {
     position: relative;
-    right: 15px;
+    right: 10px;
     float: right;
     background: none;}
 
@@ -1731,15 +1750,18 @@ div.festi-cart-pop-up-body div.festi-cart-pop-up-header span.festi-cart-added-to
 .bg-gray2 h2 {margin-bottom: 5px;font-size: 20px;font-weight: 700;line-height: 24.000008px;}
 .div-image {width: 100%;background-size: cover;height: 240px;margin-top: 10px;}
 #logo {
-    position: absolute;
+	position: absolute;
     text-align: center;
     display: block;
-    margin-top: 5px;
-    margin-left: 0;
-    margin-right: 0;
+    top: 0;
+    margin-top: 10px;
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
     right: 0;
     left: 0;} 
-#logo img {width: 110px;}
+#logo img {width: 110px;display: inline-block;position: relative;}
+#menu{margin-top: 0;}
 body a#festi-cart.festi-cart.festi-cart-customize {
 	background: #fff!important;
     box-shadow: none;
@@ -1780,6 +1802,8 @@ body a#festi-cart.festi-cart.festi-cart-customize:before {
     background-color: #4a4a4a;
     margin-top: 0px;
     bottom: 10px;}
+.navbar-default,
+#header-placeholder,
 .navbar{min-height: 50px;height: 60px;z-index: 217;}
 .padding-left-right {padding-left: 15px;padding-right: 15px;}   
 
@@ -1831,9 +1855,9 @@ div#festi-cart-pop-up-content div.festi-cart-pop-up-body {
 .cart .navbar-default,
 .checkout .navbar-default{margin-bottom: 5px;}
 .top-menu{    
-	background: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;}
+    background: #fff;
+    padding: 0;
+    height: 0px;}
 .category-banner .col-sm-3, .pageimage-content {
     padding: 0px;display: none;}
 #slider-header.product-page ul li {
@@ -1895,10 +1919,12 @@ div#festi-cart-pop-up-content div.festi-cart-pop-up-body {
 .icon-menu-gk {
     display: block;
     float: right;
-    right: 0;
-    margin-top: 2px;
+    position: absolute;
+    right: 7px;
+    top: 0px;
+    margin-top: 7px;
     height: 40px;
-    width: initial;
+    width: auto;
 }
 .icon-menu-gk.left {
     display: block;

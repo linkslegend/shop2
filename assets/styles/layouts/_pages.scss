@@ -2144,7 +2144,7 @@ footer .bgimage{background: #2b2b2b url(https://d1zczzapudl1mr.cloudfront.net/pa
     color: #fff;
     width: 100%;
     margin-left: 0px;
-    padding: 10px;
+    padding: 5px;
     background: transparent;
     border: 2px solid #fff;
     -webkit-transition: all .25s ease-in-out;
@@ -6613,7 +6613,7 @@ footer .main-footer{padding: 30px 15px;margin: 0;width: 100%;}
 .gk-banner {padding: 120px 25px;}
 .gk-banner h2.gk-title {font-size: 2.6em;}
 .gk-banner .gk-banner_text {font-size: 1.35em;font-weight: 400;}
-#popup{margin-top: 28px;}
+#popup{margin-top: 23px;width: 315px;}
 ul.products li.product .woocommerce-loop-product__title{}
 .woocommerce #payment .terms,
 .woocommerce #payment .wc-terms-and-conditions,
@@ -6939,7 +6939,8 @@ a.wc-gateway-ppec-cancel{
 
 /*iPhone Size */
 @media (max-width: 480px) {
-.wrap{margin-top: 65px;}
+#main{margin-top: 60px;}
+.wrap{margin-top: 5px;}
 .wrap.container-fluid.checkout {
     padding-left: 15px;
     padding-right: 15px;}
@@ -7642,6 +7643,7 @@ div#festi-cart-pop-up-content span.festi-cart-closed.b-close {
 	font-size: 1.2em;}
 .woo-slg-login-wrapper {}
 .modal.loginmodal .modal-dialog {width: auto;}
+.modal-open .modal{padding-right: 0px!important;}
 .woocommerce-account .addresses .title .edit,
 .woocommerce-account ul.digital-downloads li .count {
 	margin: -11px 3px 6px -86px;}
