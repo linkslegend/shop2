@@ -77,13 +77,19 @@ $(".tm-woowishlist-button").on('click touchstart', function(){
 });
 
 
+$('#menu-menu-2 .dropdown-menu').on({
+	"click":function(e){
+      e.stopPropagation();
+    }
+});
+
 
 const canHover = !(matchMedia('(hover: none)').matches);
 if(canHover) {
   document.body.classList.add('can-hover');
 }
 
-$('.navbar .dropdown').hover(function() {
+$('.yamm .dropdown').hover(function() {
       $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
     }, function() {
       $(this).find('.dropdown-menu').first().stop(true, true).slideUp(105);

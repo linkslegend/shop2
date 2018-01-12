@@ -32,13 +32,13 @@ use Roots\Sage\Wrapper;
 <section id="slider-header" class="pageimage-header pageimage product-page" >
       <div class="pageimage-overlay"></div>
       <div class="pageimage-content container-fluid" itemprop="name">
-        <section class="category-banner" style="display:block">
-          <?php
-          wp_nav_menu( array(
-            'theme_location' => 'primary_navigation',
-            'sub_menu'       => true
-          ) );?>
-        </section>
+          <section class="category-banner" style="display:block">
+            <?php
+            wp_nav_menu( array(
+              'theme_location' => 'primary_navigation',
+              'sub_menu'       => true
+            ) );?>
+          </section>
       </div>
 </section>
 
