@@ -2110,8 +2110,9 @@ span.menu-text{
 .mobile-search .autocomplete-suggestions {
     padding: 10px!important;
     font-size: 1em!important;
-    width: 300px!important;
+    width: 100%!important;
     background-color: #fff!important;
+    right: 0!important;
     border: 1px solid rgba(0,0,0,.2)!important;
     border-radius: 3px!important;
     box-shadow: 0 5px 10px rgba(0,0,0,.2)!important;
