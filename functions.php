@@ -1073,3 +1073,9 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
      remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
    }
  }
+
+/* Checkoutpage Paypal image*/
+function paypal_checkout_icon() {
+return 'https://s3.us-east-2.amazonaws.com/getkunst/icono-paypal-tarjetas.png'; // write your own image URL here
+ }
+add_filter( 'woocommerce_paypal_icon', 'paypal_checkout_icon' );

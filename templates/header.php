@@ -71,7 +71,9 @@
             'menu_class' => 'nav navbar-nav yamm']);
           endif;
           ?>
-          <div id="desktop-search" class="desktop-search"><?php echo do_shortcode('[yith_woocommerce_ajax_search]');?><i class="fa fa-search" aria-hidden="true"></i></div>
+          <div id="desktop-search" class="desktop-search">
+            <?php echo do_shortcode('[wcas-search-form]');?>
+          </div>
           <div class="icon-menu-gk">
                 <a id="pop" class="account" tabindex="-1" data-popover="true"
                     data-content="<?php if (is_user_logged_in()) : ?>
@@ -158,8 +160,7 @@
                 <?php endif;?>
         </div>
             <div class="mobile-search">
-                <?php echo do_shortcode('[yith_woocommerce_ajax_search]');?>
-                <i class="fa fa-search" aria-hidden="true"></i>
+              <?php echo do_shortcode('[wcas-search-form]');?>
             </div>
         </div>
         <?php
