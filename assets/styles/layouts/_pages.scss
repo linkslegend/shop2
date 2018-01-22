@@ -660,10 +660,6 @@ li.wc_payment_method payment_method_paypal{
 
 
 /* @group Cart page */
-.woocommerce-cart .woocommerce,
-.woocommerce-checkout .woocommerce {
-    margin-top: 15px;
-}
 .woocommerce .return-to-shop {
     width: auto;
     margin: 0 auto;
@@ -7204,7 +7200,7 @@ div.upsells.products > ul > section > div > div > li{margin: 10px 2px!important;
 .woocommerce-checkout .woocommerce-info{background: #f2f2f2;border-radius: 0px;}
 .featured .product-slide {padding: 0;}
 .featured .slick-next {right: -17px;}
-.featured .slick-prev {left: -17px;}
+.featured .slick-prev {left: -11px;}
 .featured{margin:10px 0;}
 .woocommerce-page .slick-next:before,
 .woocommerce-page .slick-next:before {

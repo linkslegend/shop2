@@ -149,7 +149,7 @@
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Home</span>
                   </a>
-                  <a class="mobile-login" title="Login" href="/login">
+                  <a data-toggle="modal" data-target="#loginmodal" href="#" class="mobile-login" title="Login">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <span>Login</span>
                   </a>
