@@ -275,7 +275,7 @@
     font-size: 1.05em;
     border: 0px solid rgba(0,0,0,.1);
     border-bottom-width: 0px;
-    min-height: 110px;
+    min-height: 145px;
     border-right-width: 0px;
     text-align: left;
     width: 100%;
@@ -2004,7 +2004,7 @@ login .button, .lost_reset_password .button, .register .button {
 
 .woocommerce-order-received.checkout .woocommerce {
     background: #fff;
-    padding: 15px 0;
+    padding: 0;
 }
 
 /* @end */
@@ -6489,9 +6489,9 @@ body div.festi-cart-pop-up-products-content  table.festi-cart-list  tr.festi-car
 div.related.products > ul > section > div > div > li{margin: 10px 5px!important;}
 div.upsells.products > ul > section > div > div > li{margin: 10px 5px!important;}
 .woocommerce-page .slick-next,
-.woocommerce-page .slick-next {right: -5px;}
+.woocommerce-page .slick-next {right: 5px;}
 .woocommerce-page .slick-prev,
-.woocommerce-page .slick-prev  {left: -25px;}
+.woocommerce-page .slick-prev  {left: -15px;}
 a.wc-gateway-ppec-cancel {
     text-align: center;
     width: 100%;
@@ -6659,7 +6659,7 @@ footer .main-footer{padding: 30px 15px;margin: 0;width: 100%;}
 .gk-banner {padding: 120px 25px;}
 .gk-banner h2.gk-title {font-size: 2.6em;}
 .gk-banner .gk-banner_text {font-size: 1.35em;font-weight: 400;}
-#popup{margin-top: 23px;width: 315px;}
+#popup{margin-top: -5px;width: 320px;transform: translateX(-67%);webkit-transform: translateX(-67%);}
 ul.products li.product .woocommerce-loop-product__title{}
 .woocommerce #payment .terms,
 .woocommerce #payment .wc-terms-and-conditions,
@@ -6739,8 +6739,7 @@ ul.products li.product .woocommerce-loop-product__title{}
 .tile img{
 	height: 100%;
     width: auto;}
-.tile.tile-med img{
-	min-width: 362px;}
+.tile.tile-med img{min-width: 485px;height: auto;}
 .faqs .col-sm-3 {
 	padding-right: 15px;
     padding-left: 0;}
@@ -6790,6 +6789,7 @@ h1.my-account{margin: 10px 10px 15px;padding: 20px;}
     width: 100%;
     margin: 0 0 45px;}
 .wrap.checkout .woo-slg-login-wrapper {width: 50%;margin-bottom: 10px;}
+#breadcrumb ul li h2{font-size: 1.2em;}
 }
 
 /*IPAD mini Size */
@@ -7725,9 +7725,6 @@ div#festi-cart-pop-up-content span.festi-cart-closed.b-close {
 .woocommerce .woocommerce-ordering,
 .woocommerce .woocommerce-result-count {display: none;}
 .woocommerce nav.prdctfltr-pagination.prdctfltr-pagination-load-more{width: 100%;padding: 5px;}
-
-
-
 }
 
 
