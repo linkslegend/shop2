@@ -19,7 +19,6 @@
     'common': {
       init: function() {
 
-
 (function() {
             new Headroom(document.querySelector("#header"), {
                 tolerance: 0,
@@ -32,11 +31,17 @@
             }).init();
 
 }());
+// Initialize library to lazy load images
+const observer = lozad('.lozad', {
+    rootMargin: '10px 0px', // syntax similar to that of CSS Margin
+    threshold: 0.1 // ratio of element convergence
+});
+observer.observe();
+
 
 },
       finalize: function() {
         // JavaScript to be fired on all pages
-
 
 var originalLeave = $.fn.popover.Constructor.prototype.leave;
 $.fn.popover.Constructor.prototype.leave = function(obj){
@@ -60,7 +65,7 @@ $.fn.popover.Constructor.prototype.leave = function(obj){
   }
 };
 
-jQuery(document).ready(function() {
+jQuery(window).on('load', function() {
   $(".variations label:contains('Size (Inch)')").html("Size");
 });
 /*    $(function () {
@@ -166,7 +171,7 @@ jQuery('#content_hover').hover(function() {
       });
 //
 
-jQuery(document).ready(function() {
+jQuery(window).on('load', function() {
   jQuery('.image-link').magnificPopup({type:'image'});
   jQuery('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
           disableOn: 700,
@@ -377,8 +382,8 @@ $('[data-toggle="offcanvas"]').click(function () {
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-jQuery(document).ready(function() {
-var feed = new Instafeed({
+jQuery(window).on('load', function() {
+  var feed = new Instafeed({
         get: 'user',
         userId: '5929691076',
         clientId: '7d864c84ddae4b12943ec5f8b2588b1f',
@@ -420,8 +425,8 @@ feed.run();
     'about_us': {
       init: function() {
         // JavaScript to be fired on the about us page
-        jQuery(document).ready(function() {
-var feed = new Instafeed({
+jQuery(window).on('load', function() {
+  var feed = new Instafeed({
         get: 'user',
         userId: '5929691076',
         clientId: '7d864c84ddae4b12943ec5f8b2588b1f',
