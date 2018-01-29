@@ -174,7 +174,7 @@ use Roots\Sage\Wrapper;
                       <?php tm_woowishlist_add_button_single(); ?>
                       <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?>
                       <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img width="300" height="300" class="lozad attachment-shop_catalog size-shop_catalog wp-post-image" data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
+                        <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
                       </a>
                           <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <h2 class="product__title"><?php the_title(); ?></h2>
@@ -214,7 +214,7 @@ use Roots\Sage\Wrapper;
                       <?php tm_woowishlist_add_button_single(); ?>
                       <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?>
                       <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img width="300" height="300" class="lozad attachment-shop_catalog size-shop_catalog wp-post-image" data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
+                        <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
                       </a>
                           <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <h2 class="product__title"><?php the_title(); ?></h2>
@@ -238,36 +238,32 @@ use Roots\Sage\Wrapper;
   </div>
 </div> <!--end featured -->
 
-
-
 <section class="newsletter">
   <div class="container">
-<!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
-<form action="https://intermac.us4.list-manage.com/subscribe/post?u=dc33750d705aedfe96f08bddd&amp;id=48c09b72db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-      <div class="col-sm-12">
-        <span>Sign me up for the newsletter and get <strong>$5 off</strong></span>
+    <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+            <form action="//getkunst.us4.list-manage.com/subscribe/post?u=dc33750d705aedfe96f08bddd&amp;id=48c09b72db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+              <div class="col-sm-12">
+                <span>Sign me up for the newsletter and get <strong>$5 off</strong></span>
+              </div>
+              <div class="col-sm-4">
+            		<!--<label for="mce-FNAME">First Name</label>-->
+            		<input type="text" name="FNAME" placeholder="Name required" id="mce-FNAME" required>
+            	</div>
+            	<div class="col-sm-4">
+            		<!--<label for="mce-EMAIL">Email Address</label>-->
+            		<input type="email" name="EMAIL" placeholder="Email required" id="mce-EMAIL" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
+            	</div>
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f2d244c0df42a0431bd08ddea_aeaa9dd034" tabindex="-1" value=""></div>
+                <div class="col-sm-4">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                  <div class="mc-status"></div>
+                </div>
+            </form>
       </div>
-<div class="mc-field-group col-sm-4">
-	<input type="email" value="" name="EMAIL" placeholder="Email required" class="required email" id="mce-EMAIL">
-</div>
-<div class="mc-field-group col-sm-4">
-	<input type="text" value="" name="FNAME" placeholder="Name required" class="required" id="mce-FNAME">
-</div>
-<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_dc33750d705aedfe96f08bddd_3966642d8d" tabindex="-1" value=""></div>
-<div class="col-sm-4"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    </div>
-</form>
-</div>
-<!--End mc_embed_signup-->
-</div>
+    <!--End mc_embed_signup-->
+  </div>
 </section>
-
 
 <div class="magazine">
   <div class="container-fluid">
@@ -283,7 +279,7 @@ use Roots\Sage\Wrapper;
                     <figure class="effect-layla">
                       <a href="<?php the_permalink() ?>">
                       <!--  Display the Post Featured Image -->
-                      <img width="300" height="300" class="lozad attachment-shop_catalog size-shop_catalog wp-post-image" data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
+                      <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
                       <figcaption><p><strong>read more</strong></p></figcaption>
                       </a>
                     </figure>

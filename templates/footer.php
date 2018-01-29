@@ -4,10 +4,37 @@
   <?php dynamic_sidebar('sidebar-footer'); ?>
 </div>
   <?php dynamic_sidebar('after-footer'); ?>
+        <script>
+              window.fbMessengerPlugins = window.fbMessengerPlugins || {
+                init: function () {
+                  FB.init({
+                    appId            : '1990178164583495',
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    cookie           : true,
+                    version          : 'v2.11'
+                  });
+                }, callable: []
+              };
+              window.fbAsyncInit = window.fbAsyncInit || function () {
+                window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
+                window.fbMessengerPlugins.init();
+              };
+              setTimeout(function () {
+                (function (d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) { return; }
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = "https://connect.facebook.net/en_US/sdk.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              }, 0);
+              </script>
+              <div class="fb-customerchat" page_id="1642171926091151" minimized="true" ref=""></div>
+              <script async type='text/javascript' src='https://getkunst.com/wp-content/uploads/mailchimp-validate-01.min.js'></script>
 </footer>
-<script type='text/javascript' src='https://d1zczzapudl1mr.cloudfront.net/mc-validate.js'></script>
-<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
-</script>
+
 <div class="modal fade" id="comparisons" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -19,7 +46,7 @@
 
             <div class="size-box">
 
-            <div class="objects"><img src="https://www.getkunst.com/wp-content/uploads/canvas-mockup-compare.jpg"></div>
+            <div class="objects"><img src="https://d1zczzapudl1mr.cloudfront.net/canvas-mockup-compare.jpg"></div>
             </div>
             <div class="size-box-description">
                       <p>

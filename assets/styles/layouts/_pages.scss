@@ -2094,26 +2094,28 @@ login .button, .lost_reset_password .button, .register .button {
 	margin-right: 10px;}
 
 #mc_embed_signup{background:transparent; clear:left;}
-#mc_embed_signup #mce-success-response{
+#mc_embed_signup .success-message{
     background: #00aa5b;
     color: #fff!important;
-    padding: 15px;
+    padding: 10px 15px;
     position: relative;
-    top: 15px;
-    display: block;
     font-size: 1.1em;
     font-weight: 500;
-    width: auto;
-    margin: 15px;}
-#mc_embed_signup #mce-error-response{
-    background: rgb(255, 67, 67)!important;
-    color: #fff!important;
-    padding: 15px;
-    position: relative;
-    top: 15px;
+    top: 0px;
     display: block;
     width: auto;
-    margin: 15px;}
+    margin: 10px 1px;}
+#mc_embed_signup .error-message{
+    background: rgb(255, 67, 67)!important;
+    color: #fff!important;
+    padding: 10px 15px;
+    position: relative;
+    font-size: 1.1em;
+    font-weight: 500;
+    top: 0px;
+    display: block;
+    width: auto;
+    margin: 10px 1px;}
 #mc_embed_signup input.mce_inline_error {border-color: rgb(255, 67, 67)!important; }
 #mc_embed_signup div.mce_inline_error {
     margin: 10px 0 0!important;
@@ -2825,7 +2827,12 @@ label.prdctfltr_active .prdctfltr_customize_block {
 .woocommerce nav.woocommerce-pagination ul li a.prev{
 	font-size: 1.5em;
     margin-top: -3px;}
-
+.woocommerce .woocommerce-ordering{
+	margin: 0 0 10px;
+    padding: 0 15px 0px 0px;}
+.woocommerce .woocommerce-result-count{
+	margin: 0 0 10px;
+    padding: 0 15px 0px;}
 
 /* @end */
 
@@ -6200,7 +6207,7 @@ div#popup-nav-wrapper span.festi-cart-continue-shopping {
     clear: none;
     position: relative;
     margin: 0px 0px 0 0;
-    width: 24%;}
+    width: 33.3333%;}
 
 .slider-products-inner:hover .yith-wcqv-button,
 .singlefeatured  li.slider-products:hover .yith-wcqv-button,
@@ -6289,7 +6296,7 @@ div#popup-nav-wrapper span.festi-cart-continue-shopping {
     clear: none;
     position: relative;
     margin: 0px 0px 0px 0px;
-    width: 25%;}
+    width: 33.3333%;}
 .woocommerce .cross-sells ul.products li.product,
 .woocommerce-page .cross-sells ul.products li.product{
     margin: 10px 13px 0 0;
