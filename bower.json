@@ -13,7 +13,7 @@
     "magnific-popup": "^1.1.0",
     "instafeed.js": "^1.4.1",
     "masonry": "^4.2.0",
-    "lozad": "^1.2.0"
+    "lozad": "^1.3.0"
   },
   "overrides": {
     "masonry": {

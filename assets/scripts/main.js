@@ -19,29 +19,37 @@
     'common': {
       init: function() {
 
-(function() {
-            new Headroom(document.querySelector("#header"), {
-                tolerance: 0,
-                offset : 150,
-                classes: {
-                  initial: "slide",
-                  pinned: "slide--reset",
-                  unpinned: "slide--up"
-                }
-            }).init();
-
-}());
-// Initialize library to lazy load images
-const observer = lozad('.lozad', {
-    rootMargin: '10px 0px', // syntax similar to that of CSS Margin
-    threshold: 0.1 // ratio of element convergence
-});
-observer.observe();
-
-
 },
       finalize: function() {
         // JavaScript to be fired on all pages
+
+
+        (function() {
+                    new Headroom(document.querySelector("#header"), {
+                        tolerance: 0,
+                        offset : 150,
+                        classes: {
+                          initial: "slide",
+                          pinned: "slide--reset",
+                          unpinned: "slide--up"
+                        }
+                    }).init();
+
+        }());
+
+$(document).ready(function () {
+        // Initialize library to lazy load images
+        const observer = lozad('.lozad', {
+            rootMargin: '0px', // syntax similar to that of CSS Margin
+            threshold: 0.1, // ratio of element convergence
+            loaded: function(el) {
+                // Custom implementation on a loaded element
+                el.classList.add('loaded');
+            }
+        });
+        observer.observe();
+});
+
 
 var originalLeave = $.fn.popover.Constructor.prototype.leave;
 $.fn.popover.Constructor.prototype.leave = function(obj){

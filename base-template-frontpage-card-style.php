@@ -18,7 +18,7 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-<div class="wrap" role="document">
+<div role="document" id="main">
 <!-- Frontpage Slider -->
 <section id="slider-header-front" class="collection wrapper margin-top-xs-1 margin-bottom-xs-1">
 <div class="container-fluid">
@@ -29,8 +29,10 @@ use Roots\Sage\Wrapper;
       alt="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-text'].''); ?>.jpg"
       data-srcset="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-small.jpg 480w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-medium.jpg 660w,
-              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-large.jpg 800w"
-      data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg"
+              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-large.jpg 800w,
+              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg 1200w"
+              data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg"
+              src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-lqip-blur.jpg"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -46,8 +48,10 @@ use Roots\Sage\Wrapper;
       alt="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2-text'].''); ?>.jpg"
       data-srcset="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-small.jpg 480w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-medium.jpg 660w,
-              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-large.jpg 800w"
-      data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg"
+              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-large.jpg 800w,
+              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg 1200w"
+             src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-lqip-blur.jpg"
+        data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -62,9 +66,11 @@ use Roots\Sage\Wrapper;
       <img class="lozad" sizes="(max-width: 2500px) 40vw, 800px"
       alt="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3-text'].''); ?>.jpg"
       data-srcset="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-small.jpg 480w,
-              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 660w,
-              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-large.jpg 800w"
-      data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>.jpg"
+      <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 660w,
+      <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 800w,
+              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-large.jpg 1200w"
+                   src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-lqip-blur.jpg"
+              data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>.jpg"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -79,9 +85,11 @@ use Roots\Sage\Wrapper;
       <img class="lozad" sizes="(max-width: 2500px) 40vw, 800px"
       alt="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4-text'].''); ?>.jpg"
       data-srcset="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-small.jpg 480w,
-              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 660w,
-              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-large.jpg 800w"
-      data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>.jpg"
+      <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 660w,
+      <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 800w,
+              <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-large.jpg 1200w"
+                   src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-lqip-blur.jpg"
+              data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>.jpg"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -98,9 +106,11 @@ use Roots\Sage\Wrapper;
     <img class="lozad" sizes="(max-width: 2500px) 40vw, 800px"
     alt="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5-text'].''); ?>.jpg"
     data-srcset="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-small.jpg 480w,
-            <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 660w,
-            <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-large.jpg 800w"
-    data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>.jpg"
+    <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 660w,
+    <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 800w,
+            <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-large.jpg 1200w"
+                 src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-lqip-blur.jpg"
+            data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>.jpg"
     >
       <div class="tile-content">
         <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -115,9 +125,11 @@ use Roots\Sage\Wrapper;
     <img class="lozad" sizes="(max-width: 2500px) 40vw, 800px"
     alt="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6-text'].''); ?>.jpg"
     data-srcset="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-small.jpg 480w,
-            <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 660w,
-            <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-large.jpg 800w"
-    data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>.jpg"
+    <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 660w,
+    <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 800w,
+            <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-large.jpg 1200w"
+                 src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-lqip-blur.jpg"
+            data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>.jpg"
     >
       <div class="tile-content">
         <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -155,7 +167,6 @@ use Roots\Sage\Wrapper;
       </aside><!-- /.sidebar -->
     <?php endif; ?>
   </div><!-- /.content -->
-</div><!-- /.wrap -->
 
 
 <div class="featured">
@@ -174,7 +185,10 @@ use Roots\Sage\Wrapper;
                       <?php tm_woowishlist_add_button_single(); ?>
                       <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?>
                       <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
+                        <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                        src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
+                        data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
+                        >
                       </a>
                           <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <h2 class="product__title"><?php the_title(); ?></h2>
@@ -214,7 +228,10 @@ use Roots\Sage\Wrapper;
                       <?php tm_woowishlist_add_button_single(); ?>
                       <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?>
                       <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
+                        <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                        src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
+                        data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
+                        >
                       </a>
                           <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <h2 class="product__title"><?php the_title(); ?></h2>
@@ -279,7 +296,9 @@ use Roots\Sage\Wrapper;
                     <figure class="effect-layla">
                       <a href="<?php the_permalink() ?>">
                       <!--  Display the Post Featured Image -->
-                      <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
+                      <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                      src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
+                      data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
                       <figcaption><p><strong>read more</strong></p></figcaption>
                       </a>
                     </figure>
@@ -302,6 +321,7 @@ use Roots\Sage\Wrapper;
         <ul id="instafeed" class="insta-slide"></ul>
       </div>
 </div>
+</div><!-- /.wrap -->
 
 <?php
   do_action('get_footer');

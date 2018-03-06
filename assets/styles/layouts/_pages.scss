@@ -32,6 +32,24 @@
     display: block;
 }
 
+/* @group Lozad.js Lazyload styles */
+
+#slider-header-front img.lozad{
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  transition: all .15s linear;
+}
+#slider-header-front img.lozad.loaded {
+  opacity: 1;
+  filter: blur(0px);
+  transition: all .15s linear;
+}
+
+/* @end */
+
+
+
+
 /* @group Tile Frontpage */
 .tile-left{padding-left: 0;padding-right: 7px;}
 .tile-right{padding-right: 0;padding-left: 8px;}
@@ -6374,6 +6392,7 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
     background: rgba(255, 255, 255, 1);
     clear: none;
     position: relative;
+    min-height: 356px;
     margin: 0px 0px 0px 0px;
     width: 33.3333%;}
 .woocommerce .cross-sells ul.products li.product,
@@ -8364,7 +8383,7 @@ a.yith-wcqv-button.button{display: none!important;}
 .tile-1 {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 5;
-    order: 5;
+    order: 1;
     height: 200px;
     width: 100%;}
 .tile-2 {

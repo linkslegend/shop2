@@ -491,6 +491,42 @@ function internet_allow_email_login( $user, $username, $password ) {
 }
 
 
+/*Ajax login*/
+function ajax_login_init(){
+    wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery') );
+    wp_enqueue_script('ajax-login-script');
+    wp_localize_script( 'ajax-login-script', 'ajax_login_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'redirecturl' => get_permalink(''),
+        'loadingmessage' => __('Sending user info, please wait...')
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+}
+// Execute the action only if the user isn't logged in
+if (!is_user_logged_in()) {
+    add_action('init', 'ajax_login_init');
+}
+function ajax_login(){
+    // First check the nonce, if it fails the function will break
+    check_ajax_referer( 'ajax-login-nonce', 'security' );
+
+    // Nonce is checked, get the POST data and sign user on
+    $info = array();
+    $info['user_login'] = $_POST['username'];
+    $info['user_password'] = $_POST['password'];
+    $info['remember'] = true;
+
+    $user_signon = wp_signon( $info, false );
+    if ( is_wp_error($user_signon) ){
+        echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
+    } else {
+        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...')));
+    }
+
+    die();
+}
+
 /**
  * Modify the "must_log_in" string of the comment form.
  *
@@ -536,7 +572,7 @@ add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_
      }
 
 /* Compare size lightbox */
-add_action( 'woocommerce_after_add_to_cart_form', 'add_comparisons_after_addtocart_button_func' );
+     add_action( 'woocommerce_after_add_to_cart_form', 'add_comparisons_after_addtocart_button_func' );
        /*
         * Content below "Add to cart" Button.
         */
@@ -551,20 +587,21 @@ add_action( 'woocommerce_after_add_to_cart_form', 'add_comparisons_after_addtoca
             }
           }
 
-
 /* Inser coupon code into single product */
 add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_unlock' );
 /*
 * Content below "Add to cart" Button.
 */
-function add_content_after_addtocart_button_unlock() {
-$options = get_option('futurewave_theme_options'); echo do_shortcode('
-                    [sociallocker]
-                    <div class="outer-couponcode"><div class="inner-couponcode">
-                    <h4>Thank you! Here is your Couponcode!</h4>
-                    <div class="couponcode">'.$options['couponcode'].'</div></div></div>
-                    [/sociallocker]');
+          function add_content_after_addtocart_button_unlock() {
+          $options = get_option('futurewave_theme_options'); echo do_shortcode('
+          [sociallocker]
+          <div class="outer-couponcode"><div class="inner-couponcode">
+          <h4>Thank you! Here is your Couponcode!</h4>
+          <div class="couponcode">'.$options['couponcode'].'</div></div></div>
+          [/sociallocker]');
 }
+
+
 
 /**
 * Filter the except length to 20 words.
@@ -573,15 +610,15 @@ $options = get_option('futurewave_theme_options'); echo do_shortcode('
 * @return int (Maybe) modified excerpt length.
 */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
+    return 35;
      }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
-
-/* custom load more   */
 function misha_my_load_more_scripts() {
+
 	global $wp_query;
+
 	// In most cases it is already included on the page and this line can be removed
 	wp_enqueue_script('jquery');
 
@@ -1056,7 +1093,7 @@ function theme_options_do_page() {
 function theme_options_validate( $input ) {
 
      // Say our text option must be safe text with no HTML tags
-     $input['couponcode'] = ( $input['couponcode'] );
+     $input['headercontact'] = ( $input['headercontact'] );
      $input['sometext'] = wp_filter_post_kses( $input['sometext'] );
 
      // Say our textarea option must be safe text with the allowed tags for posts
@@ -1074,8 +1111,114 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
    }
  }
 
-/* Checkoutpage Paypal image*/
-function paypal_checkout_icon() {
-return 'https://s3.us-east-2.amazonaws.com/getkunst/icono-paypal-tarjetas.png'; // write your own image URL here
+
+ // Custom Code -> featured image thumbnails in WordPress RSS Feeds
+ function wcs_post_thumbnails_in_feeds( $content ) {
+     global $post;
+     if( has_post_thumbnail( $post->ID ) ) {
+         $content = '<p>' . get_the_post_thumbnail( $post->ID ) . '</p>' . $content;
+     }
+     return $content;
  }
-add_filter( 'woocommerce_paypal_icon', 'paypal_checkout_icon' );
+ add_filter( 'the_excerpt_rss', 'wcs_post_thumbnails_in_feeds' );
+ add_filter( 'the_content_feed', 'wcs_post_thumbnails_in_feeds' );
+
+
+add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
+ function order_received_empty_cart_action( $order_id ){
+     WC()->cart->empty_cart();
+ }
+ $url = home_url( '/', 'https' );
+
+ add_filter( 'auth0_verify_email_page', 'render_verify_email_page', 1, 3 );
+ function render_verify_email_page($html, $userinfo, $id_token) {
+     return "<div style='font-size: 1.1em;line-height: 1.4em;width: 80%;text-align: center;margin: 0 auto;'>
+     You have signed up successfully. <br />
+     Once you have verified your
+     email address you will be able to log in.
+     <a style='padding: 10px 15px;margin: 10px;width: 200px;display: block;margin: 25px auto;text-decoration: none;background: #0f0f0f;color: #fff;' href='.$url.'>Go back</a></div>
+     ";
+ }
+
+ /* Checkoutpage Paypal image*/
+ function paypal_checkout_icon() {
+ return 'https://d1zczzapudl1mr.cloudfront.net/icono-paypal-tarjetas.png'; // write your own image URL here
+  }
+ add_filter( 'woocommerce_paypal_icon', 'paypal_checkout_icon' );
+
+
+ if ( ! is_admin() ) {
+     // Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
+     // Lazyload Converter
+     function add_lazyload($content) {
+         $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+         $dom = new DOMDocument();
+         @$dom->loadHTML($content);
+         // Convert Images
+         $images = [];
+         foreach ($dom->getElementsByTagName('img') as $node) {
+             $images[] = $node;
+         }
+         foreach ($images as $node) {
+             $fallback = $node->cloneNode(true);
+
+             $oldsrc = $node->getAttribute('src');
+             $node->setAttribute('data-src', $oldsrc );
+             $newsrc = 'https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif';
+             $node->setAttribute('src', $newsrc);
+
+             $oldsrcset = $node->getAttribute('srcset');
+             $node->setAttribute('data-srcset', $oldsrcset );
+             $newsrcset = '';
+             $node->setAttribute('srcset', $newsrcset);
+
+             $classes = $node->getAttribute('class');
+             $newclasses = $classes . ' lozad';
+             $node->setAttribute('class', $newclasses);
+
+             $noscript = $dom->createElement('noscript', '');
+             $node->parentNode->insertBefore($noscript, $node);
+             $noscript->appendChild($fallback);
+         }
+         // Convert Videos
+         $videos = [];
+         foreach ($dom->getElementsByTagName('iframe') as $node) {
+             $videos[] = $node;
+         }
+
+         foreach ($videos as $node) {
+             $fallback = $node->cloneNode(true);
+             $oldsrc = $node->getAttribute('src');
+             $node->setAttribute('data-src', $oldsrc );
+             $newsrc = '';
+             $node->setAttribute('src', $newsrc);
+             $classes = $node->getAttribute('class');
+             $newclasses = $classes . ' lozad';
+             $node->setAttribute('class', $newclasses);
+             $noscript = $dom->createElement('noscript', '');
+             $node->parentNode->insertBefore($noscript, $node);
+             $noscript->appendChild($fallback);
+         }
+
+         $newHtml = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''),
+         $dom->saveHTML()));
+         return $newHtml;
+     }
+     add_filter('the_content', 'add_lazyload', 999);
+     add_filter('post_thumbnail_html', 'add_lazyload', 999);
+
+ } else {
+     // Runs only if this code is in a file that displays inside the admin panels, like a plugin file.
+ }
+
+
+
+
+//test
+ add_action( 'wp_enqueue_scripts', 'ajax_test_enqueue_scripts' );
+ function ajax_test_enqueue_scripts() {
+ 	wp_enqueue_script( 'lazyload', get_template_directory_uri() . ( '/lazyload.js' ), array('jquery'), '1.0', true );
+  wp_localize_script( 'lazyload', 'lazytest', array(
+ 		'ajax_url' => admin_url( 'admin-ajax.php' )
+ 	));
+ }

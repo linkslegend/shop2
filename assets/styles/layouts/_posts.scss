@@ -1956,25 +1956,25 @@ ul.inspirationNav li a.active{font-weight: bold;}
 	margin: 0;
 }
 .outer-couponcode{
-    float: right;
-    color: rgba(255, 255, 255, 1)f;
+	float: right;
+    color: #fff;
     width: 100%;
     text-align: center;
     margin: 15px auto;
-    padding: 7px;
-    border: 0;
+    padding: 10px;
+    border: 3px dashed #fff;
     background: #f7942d;}
 .inner-couponcode{
-	border: 2px dashed rgba(255, 255, 255, 1)fff;
+	border: none;
     padding: 15px 10px;}
 .couponcode{
-    font-size: 1.7em;
+    font-size: 2em;
     padding: 0;
     font-weight: 700;
     text-align: center;}
 .inner-couponcode h4{
     font-size: 1.5em;
-    padding-bottom: 7px;
+    padding-bottom: 10px;
     margin: 0px auto 7px auto;
     width: 90%;
     border-bottom: 2px solid rgba(255, 255, 255, 1);
