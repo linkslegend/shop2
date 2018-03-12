@@ -3766,6 +3766,41 @@ form.lost_reset_password .form-row label{
 }
 /* @end */
 
+/* @group WooCommerce Notification Settings */
+
+#message-purchased {
+    left: 10px;
+    padding: 0px;
+    max-width: 350px;
+    bottom: 10px;
+}
+#message-purchased p {
+    float: left;
+    font-size: .9em;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px;
+    width: auto;
+}
+#message-purchased p a {
+    color: #0f0f0f;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    margin: 0;
+}
+#message-purchased p small {
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: 0px;
+}
+#message-purchased #notify-close{
+	right: -5px;
+    top: -5px;	
+}
+/* @end */
+
 
 
 
@@ -8505,6 +8540,14 @@ div#festi-cart-pop-up-content span.festi-cart-closed.b-close {
 .woocommerce .woocommerce-ordering,
 .woocommerce .woocommerce-result-count {display: none;}
 .woocommerce nav.prdctfltr-pagination.prdctfltr-pagination-load-more{width: 100%;padding: 5px;}
+#message-purchased {
+    left: auto!important;
+    padding: 0px;
+    margin: 0 auto;
+    position: sticky;
+    max-width: 95%;
+    bottom: 10px!important;}
+
 }
 
 
