@@ -846,9 +846,6 @@ div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item.festi-c
 div.festi-cart-widget-products-content table.festi-cart-list tr.festi-cart-item.festi-cart-next {
     border-bottom: none!important;
 }
-body div.festi-cart-products-content table.festi-cart-list tr:hover td{
-	border-bottom: 0px solid rgba(15, 15, 15, 1);
-}
 body div.festi-cart-products-content table.festi-cart-list tr td{}
 body div.festi-cart-products-content table.festi-cart-list tr:last-child{border-bottom: 0px solid rgba(255, 255, 255, 1)!important;}
  
@@ -1911,6 +1908,7 @@ div#festi-cart-pop-up-content div.festi-cart-pop-up-body{width: 310px!important;
 .hamburger.is-open .hamb-middle,
 .hamburger.is-open .hamb-bottom{
 	width: 25px;
+	height: 3px;
 }
 .hamburger.is-closed .hamb-top {
     background-color: #4a4a4a;
@@ -2013,6 +2011,7 @@ div#festi-cart-pop-up-content div.festi-cart-pop-up-body{width: 310px!important;
 .mobile-home,
 .mobile-login,
 .mobile-register,
+.mobile-logout,
 .mobile-myaccount{
     font-size: 1.1em;
     width: 33%;
@@ -2326,6 +2325,8 @@ span.menu-text{
     background: transparent;
     margin: 0;
     display: inline-block;}
+.mobile-search .dgwt-wcas-search-wrapp{
+	position: relative;}
 .mobile-search{
     display: block;
     position: relative;
@@ -2647,6 +2648,8 @@ span.menu-text{
     background: transparent;
     margin: 0;
     display: inline-block;}
+.mobile-search .dgwt-wcas-search-wrapp{
+	position: relative;}
 .mobile-search{
     display: block;
     position: relative;
@@ -2680,6 +2683,9 @@ span.menu-text{
     margin-top: -1px;
     margin-left: 24px;}
 a:focus{outline: none;}
+.front-products-slider2 .slick-next, 
+.front-products-slider2 .slick-prev {top: 31%;}
+
 }
 
 

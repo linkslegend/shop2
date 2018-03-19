@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.3.2
+ * @version     3.2.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -85,8 +85,8 @@ if ( ! comments_open() ) {
 					);
 
 					if ( $account_page_url = wc_get_page_permalink( 'myaccount' ) ) {
-						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( __( 'You must <a href="/my-account/">Register</a> or <a data-toggle="modal" data-target="#loginmodal" href="#">Login</a> to post a comment.', 'woocommerce' ), esc_url( $account_page_url ) ) . '</p>';
-						}
+						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'woocommerce' ), esc_url( $account_page_url ) ) . '</p>';
+					}
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'woocommerce' ) . '</label><select name="rating" id="rating" aria-required="true" required>

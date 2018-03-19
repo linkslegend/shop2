@@ -2223,7 +2223,8 @@ footer .main-footer{padding: 50px 30px;}
 footer .bgimage{background: #2b2b2b url(https://d1zczzapudl1mr.cloudfront.net/pattern1-gk-white.png) 50% repeat;color: rgba(255, 255, 255, 1);}
 
 .col-md-3.classictextwidget-4.classic-textwidget,
-.col-md-3.text-3.widget_text{
+.col-md-3.text-3.widget_text,
+.col-md-3.custom_html-5{
 	width: 50%;
 }
 .newsletter-footer{
@@ -6377,6 +6378,7 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
 .woocommerce .related ul.products li.product,
 .woocommerce-page .upsells ul.products li.product,
 .woocommerce .upsells ul.products li.product{
+	min-height: auto;
 	box-shadow: none;}
 .woocommerce-page .cross-sells ul.products li.product:last-child,
 .woocommerce .cross-sells ul.products li.product:last-child{
@@ -6773,6 +6775,8 @@ footer .main-footer{padding: 30px 15px;margin: 0;width: 100%;}
     max-width: 519px;}
 .gk-hero h2 {font-size: 2.2em;}
 .hero-content p {font-size: 1.4em;}
+.col-md-3.custom_html-3,
+.col-md-3.custom_html-4,
 .col-md-3.text-5,
 .col-md-3.text-4{width: 50%;float: left;}
 .col-md-3.classictextwidget-4.classic-textwidget,
@@ -8385,10 +8389,13 @@ h1.my-account {
     bottom: 17px!important;}
 a.yith-wcqv-button.qvicon,
 a.yith-wcqv-button.button{display: none!important;}
+.col-md-3.custom_html-3,
+.col-md-3.custom_html-4,
 .col-md-3.text-5,
 .col-md-3.text-4{width: 50%;float: left;margin-bottom: 15px;}
 .col-md-3.classictextwidget-4.classic-textwidget,
 .col-md-3.text-3.widget_text,
+.col-md-3.custom_html-5,
 .col-md-3.text-3{width: 100%;float: left;}
 .wishlist .content .tm-woowishlist .col-lg-12{width: 50%; min-height: 257px;margin-bottom: 20px;float: left;}
 .slider-products-inner h2{
