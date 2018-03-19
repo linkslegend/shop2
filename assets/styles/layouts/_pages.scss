@@ -3264,10 +3264,11 @@ ul.insta li{
     float: left;
     overflow: hidden;
     margin: 10px 1%;
+    padding: 10px;
     min-width: auto;
     max-height: 3000px;
     width: 100%;
-    background: rgba(15, 15, 15, 1);
+    background: rgb(255, 255, 255);
     text-align: center;
     cursor: pointer;
 }
@@ -4548,8 +4549,9 @@ h2.recently-Viewed-inner.getkunst-title {padding: .5em 0;
     display: block;
 	margin: 5px 0 0;
     width: 100%;
+    min-height: 40px;
     float: left;
-    padding: 10px;
+    padding: 11px 10px 10px;
     border: 1px solid #e2e2e2;
     font-size: .75em;}
  .yith-quick-view-content.woocommerce div.summary .product_meta > span.tagged_as{
@@ -5515,7 +5517,7 @@ button.button.tm-woowishlist-button:focus{
     width: 49%!important;
     display: block!important;
     text-align: center!important;
-    height: 36px!important;
+    height: 40px!important;
     right: 0!important;
     float: left!important;
     -webkit-transition: all .25s ease-in-out!important;
@@ -5764,7 +5766,7 @@ button.button.tm-woowishlist-button.added.in_wishlist{
 	color: rgba(15, 15, 15, 1);
 	border: 1px solid rgba(208, 208, 208, 1);
 	padding: 0px;
-	height: 36px;
+	height: 40px;
     -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;}
 .woocommerce button.button.compare-size:hover{
@@ -5864,6 +5866,7 @@ video {
     padding: 5px 0 25px 0;
 }
 
+
 .woocommerce div.product.product_cat-art-prints .woocommerce-tabs .left{width: 40%;padding: 0 25px 0 0;}
 .woocommerce div.product.product_cat-art-prints .woocommerce-tabs .right{width: 60%;}
 .woocommerce div.product.product_cat-art-prints .woocommerce-tabs .right img{padding:0 0px 0px 25px;}
@@ -5893,9 +5896,20 @@ video {
     margin-top: 0px;
     float: left;
     text-decoration: inherit;
-    padding-right: 0px;
-}
+    padding-right: 0px;}
 
+
+.woocommerce div.product.product_cat-living .woocommerce-tabs .gk_left-side,
+.woocommerce div.product.product_cat-living .woocommerce-tabs .gk_right-side{width: 50%;float: left;}
+.woocommerce div.product.product_cat-living .woocommerce-tabs .left{width: 50%;padding: 0 25px 0 0;}
+.woocommerce div.product.product_cat-living .woocommerce-tabs .right{width: 50%;}
+.woocommerce div.product.product_cat-living .woocommerce-tabs .right img{padding:0 0px 0px 25px;}
+.woocommerce div.product.product_cat-living .woocommerce-tabs .details-top {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    position: relative;
+}
 
 /* @end */
 
@@ -6514,6 +6528,8 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
     bottom: 0;
     position: absolute;}
 .prdctfltr_woocommerce.pf_default .prdctfltr_woocommerce_ordering{display: block;}
+.loginmodal .modal-body {padding: 0 40px 25px;}    
+.modal.loginmodal .modal-dialog {width: 400px;}
 }
 
 /*IPAD Size */

@@ -725,11 +725,12 @@ div.ywar_show_more a{}
 .woocommerce button.single_add_to_cart_button.button.disabled:hover:before{
 	color: rgba(255, 255, 255, 1);}
 .woocommerce button.single_add_to_cart_button.button{
-	width: 85%;
+	width: 100%;
     padding: 8px;
     border: 2px solid #00aa5b;
     font-size: 1.42em;
     font-weight: 500;
+    height: 40px;
     background: #00aa5b;	
     -webkit-transition: all .35s ease 0s;
     transition: all .35s ease 0s;}
@@ -769,6 +770,7 @@ div.ywar_show_more a{}
 }   
 .woocommerce div.product form.cart div.quantity {
     float: left;
+    display: none!important;
     margin: 0;
     padding: 0;
     width: 15%;}
@@ -786,6 +788,7 @@ div.ywar_show_more a{}
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    min-height: 35px;
     letter-spacing: .1em;}
 .variations label {display: none;}
 
@@ -806,7 +809,7 @@ div.ywar_show_more a{}
 .single .summary .woocommerce-Price-amount{
     display: block;
     bottom: 0;
-    font-size: 1.14em;
+    font-size: 1.4em;
     padding-left: 0;
     font-weight: 600;
     margin-bottom: 0px;
