@@ -54,14 +54,14 @@ use Roots\Sage\Wrapper;
                           array('taxonomy' => 'product_cat','terms' => 89,'operator' => 'IN')),);
                         $featured_query = new WP_Query( $args ); while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
                         <li class="slider-products">
-                          <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                          <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                             <div class="slider-products-inner">
-                              <?php tm_woowishlist_add_button_single(); ?>
+                              <?php tm_woowishlist_add_button_single( $featured_query->post->ID ); ?>
                               <!-- <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="button" label=""]'); ?> -->
-                              <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                              <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                                 <img width="300" height="300" class="lazy attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
                               </a>
-                                  <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                  <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                                     <h2 class="product__title"><?php the_title(); ?></h2>
                                   </a>
                                   <?php echo $product->get_price_html(); ?>

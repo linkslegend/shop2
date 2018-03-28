@@ -178,7 +178,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	?>
 </div>
 <div class="ssl-secure white">
-		<a target="_blank" href="https://www.mcafeesecure.com/verify?host=lushdeal.com"><img class="comodo" src="https://d3ad0b7yylujrq.cloudfront.net/images/checkout-secure.png"></a>
+		<a target="_blank" href="https://www.mcafeesecure.com/verify?host=getkunst.com"><img class="comodo" src="https://d3ad0b7yylujrq.cloudfront.net/images/checkout-secure.png"></a>
 </div>
 </div>
 

@@ -175,30 +175,31 @@ use Roots\Sage\Wrapper;
     <ul class="front-products-slider2">
 
         <section class="multiple-items single-featured3">
-            <?php
-                $args = array('post_type' => 'product','stock' => 1,'posts_per_page' => 6,'meta_value' => 'yes','tax_query' => array(
-                  array('taxonomy' => 'product_cat','terms' => 89,'operator' => 'IN')),);
-                $featured_query = new WP_Query( $args ); while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
+          <?php
+          $args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'product_cat' => 'art-prints', 'meta_value' => 'yes', 'orderby' => 'rand' );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
                 <li class="slider-products">
-                  <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                  <a id="id-<?php the_id( $loop->post->ID ); ?>" href="<?php the_permalink( $loop->post->ID ); ?>" title="<?php the_title( $loop->post->ID ); ?>">
                     <div class="slider-products-inner">
-                      <?php tm_woowishlist_add_button_single(); ?>
-                      <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?>
-                      <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                      <?php tm_woowishlist_add_button_single( $loop->post->ID ); ?>
+                      <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?>
+                      <a id="id-<?php the_id( $loop->post->ID ); ?>" href="<?php the_permalink( $loop->post->ID ); ?>" title="<?php the_title( $loop->post->ID ); ?>">
                         <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
                         src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
-                        data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
+                        data-src="<?php if (has_post_thumbnail( $loop->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
                         >
                       </a>
-                          <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                            <h2 class="product__title"><?php the_title(); ?></h2>
+                          <a id="id-<?php the_id( $loop->post->ID ); ?>" href="<?php the_permalink( $loop->post->ID ); ?>" title="<?php the_title( $loop->post->ID ); ?>">
+                            <h2 class="product__title"><?php the_title( $loop->post->ID ); ?></h2>
                           </a>
-                          <span class="price"><?php echo $product->get_price_html(); ?></span>
+                          <span class="price"><?php echo $product->get_price_html( $loop->post->ID ); ?></span>
                           <!-- <?php woocommerce_template_loop_add_to_cart( $featured_query->post, $product ); ?> -->
                 </div></a></li>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
           </section>
+
    </ul>
   </div>
 </div> <!--end featured -->
@@ -210,31 +211,22 @@ use Roots\Sage\Wrapper;
     <ul class="front-products-slider2">
         <section class="multiple-items single-featured3">
             <?php
-                $args = array(
-                  'post_type' => 'product',
-                  'post_status' => 'publish',
-                  'ignore_sticky_posts' => 1,
-                  'posts_per_page' => '10',
-                  'columns' => '4',
-                  'fields' => 'ids',
-                  'meta_key' => 'total_sales',
-                  'orderby' => 'meta_value_num',
-                  'meta_query' => WC()->query->get_meta_query()
-                );
-                $featured_query = new WP_Query( $args ); while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
+                $args = array('post_type' => 'product', 'post_status' => 'publish', 'ignore_sticky_posts' => 1, 'posts_per_page' => '10', 'fields' => 'ids', 'meta_key' => 'total_sales', 'orderby' => 'meta_value_num','meta_query' => WC()->query->get_meta_query() );
+                $featured_query = new WP_Query( $args );
+                while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
                 <li class="slider-products">
-                  <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                  <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                     <div class="slider-products-inner">
-                      <?php tm_woowishlist_add_button_single(); ?>
-                      <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?>
-                      <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                      <?php tm_woowishlist_add_button_single( $featured_query->post->ID ); ?>
+                      <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $featured_query->post->ID ).'" type="icon" label=""]'); ?>
+                      <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                         <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
                         src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
                         data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
                         >
                       </a>
-                          <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                            <h2 class="product__title"><?php the_title(); ?></h2>
+                          <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
+                            <h2 class="product__title"><?php the_title( $featured_query->post->ID ); ?></h2>
                           </a>
                           <span class="price"><?php echo $product->get_price_html(); ?></span>
                           <!-- <?php woocommerce_template_loop_add_to_cart( $featured_query->post, $product ); ?> -->

@@ -34,6 +34,17 @@ unset($file, $filepath);
 
 
 
+add_action( 'send_headers', 'tgm_io_strict_transport_security' );
+/**
+ * Enables the HTTP Strict Transport Security (HSTS) header.
+ *
+ * @since 1.0.0
+ */
+function tgm_io_strict_transport_security() {
+    header( 'Strict-Transport-Security: max-age=10886400; includeSubDomains; preload' );
+}
+
+
 
 /**
  * @snippet       Disable Variable Product Price Range
@@ -269,7 +280,7 @@ add_filter('woocommerce_create_account_default_checked' , function ($checked){
 // Change 'add to cart' text on single product page
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_add_to_cart_text' );
 function woo_add_to_cart_text() {
-       return __( 'Buy Now', 'woocommerce' );
+       return __( 'Add to Cart', 'woocommerce' );
 }
 
 
@@ -1112,6 +1123,14 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
  }
 
 
+
+ /*add_action( 'woocommerce_thankyou' , 'sf_change_header_position' , 10 );
+ function sf_change_header_position() {
+    remove_action( 'woo_slg_checkout_social_login' );
+ }*/
+
+
+
  // Custom Code -> featured image thumbnails in WordPress RSS Feeds
  function wcs_post_thumbnails_in_feeds( $content ) {
      global $post;
@@ -1147,7 +1166,14 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
  add_filter( 'woocommerce_paypal_icon', 'paypal_checkout_icon' );
 
 
- if ( ! is_admin() ) {
+
+
+
+
+ add_action( 'woocommerce_before_shop_loop', 'addlayzload' );
+ add_action( 'woocommerce_before_single_product', 'addlayzload' );
+
+ function addlayzload() {
      // Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
      // Lazyload Converter
      function add_lazyload($content) {
@@ -1206,19 +1232,71 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
      }
      add_filter('the_content', 'add_lazyload', 999);
      add_filter('post_thumbnail_html', 'add_lazyload', 999);
-
- } else {
-     // Runs only if this code is in a file that displays inside the admin panels, like a plugin file.
  }
 
 
+/*add_action( 'loop_start', 'addlayzload2' );
+   function addlayzload2() {
+     if ( is_singular() ) {
+       // Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
+       // Lazyload Converter
+       function add_lazyload2($content) {
+           $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+           $dom = new DOMDocument();
+           @$dom->loadHTML($content);
+           // Convert Images
+           $images = [];
+           foreach ($dom->getElementsByTagName('img') as $node) {
+               $images[] = $node;
+           }
+           foreach ($images as $node) {
+               $fallback = $node->cloneNode(true);
+
+               $oldsrc = $node->getAttribute('src');
+               $node->setAttribute('data-src', $oldsrc );
+               $newsrc = 'https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif';
+               $node->setAttribute('src', $newsrc);
+
+               $oldsrcset = $node->getAttribute('srcset');
+               $node->setAttribute('data-srcset', $oldsrcset );
+               $newsrcset = '';
+               $node->setAttribute('srcset', $newsrcset);
+
+               $classes = $node->getAttribute('class');
+               $newclasses = $classes . ' lozad';
+               $node->setAttribute('class', $newclasses);
+
+               $noscript = $dom->createElement('noscript', '');
+               $node->parentNode->insertBefore($noscript, $node);
+               $noscript->appendChild($fallback);
+           }
+           // Convert Videos
+           $videos = [];
+           foreach ($dom->getElementsByTagName('iframe') as $node) {
+               $videos[] = $node;
+           }
+
+           foreach ($videos as $node) {
+               $fallback = $node->cloneNode(true);
+               $oldsrc = $node->getAttribute('src');
+               $node->setAttribute('data-src', $oldsrc );
+               $newsrc = '';
+               $node->setAttribute('src', $newsrc);
+               $classes = $node->getAttribute('class');
+               $newclasses = $classes . ' lozad';
+               $node->setAttribute('class', $newclasses);
+               $noscript = $dom->createElement('noscript', '');
+               $node->parentNode->insertBefore($noscript, $node);
+               $noscript->appendChild($fallback);
+           }
+
+           $newHtml = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''),
+           $dom->saveHTML()));
+           return $newHtml;
+       }
+       add_filter('the_content', 'add_lazyload2' );
+       add_filter('post_thumbnail_html', 'add_lazyload2' );
+   }
 
 
-//test
- add_action( 'wp_enqueue_scripts', 'ajax_test_enqueue_scripts' );
- function ajax_test_enqueue_scripts() {
- 	wp_enqueue_script( 'lazyload', get_template_directory_uri() . ( '/lazyload.js' ), array('jquery'), '1.0', true );
-  wp_localize_script( 'lazyload', 'lazytest', array(
- 		'ajax_url' => admin_url( 'admin-ajax.php' )
- 	));
- }
+}*/
