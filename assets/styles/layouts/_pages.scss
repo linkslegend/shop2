@@ -1204,15 +1204,21 @@ input#coupon_code.input-text {
   padding-bottom: 15px;
   border-bottom: 1px solid #ddd;
 }
-h1.my-account {
+h1.my-account{
+  display: none;
+}
+body.logged-in h1.my-account {
   font-size: 1.8em;
   text-align: center;
+  display: block;
   padding: 15px;
   margin: 5px 0px 5px;
   background: transparent;
-  border-bottom: 1px solid rgba(15, 15, 15, 1);
+  border-bottom: 0px solid rgba(15, 15, 15, 1);
   font-weight: 800;
 }
+
+
 .order-tracking h1.my-account {
   display: none;
 }
@@ -1536,25 +1542,21 @@ h1.my-account {
 
 
 /* Effect Boris */
-button.button.tm-woowishlist-button:after {
-	background: rgba(111,148,182,0.1);
-}
-
 button.button.tm-woowishlist-button.loading:after {
-	animation: anim-effect-boris 0.3s forwards;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url(http://imagizer.imageshack.com/img923/4545/XdJDuY.png) no-repeat;  
+  cursor: pointer;
+  animation: 0;
+  -webkit-animation: 0;
 }
-
-@keyframes anim-effect-boris {
-	0% {
-		transform: scale3d(0.3, 0.3, 1);
-	}
-	25%, 50% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-		transform: scale3d(1.2, 1.2, 1);
-	}
+button.button.tm-woowishlist-button.loading.is_animating:after {
+  background-position: -2800px 0;
+  transition: background 1s steps(28);
 }
 
 /* @end */
@@ -1598,7 +1600,10 @@ label {
 }
 .woocommerce form.woocommerce-form-login .form-row {
   padding: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+}
+input#password.woocommerce-Input.woocommerce-Input--text.input-text{
+  margin-bottom: 15px;
 }
 .woocommerce form .form-row label {
   margin-top: 10px;
@@ -3034,7 +3039,7 @@ legend {
 }
 .woocommerce form .form-row.create-account {
   padding: 0px;
-  margin: 0px;
+  margin: 0 0px 15px 0;
 }
 .woocommerce form .woocommerce-account-fields .form-row.create-account {
   padding: 0;
@@ -5882,14 +5887,17 @@ legend {
   display: inline-block;
 }
 .modal-content .input-3 .lost-reg a {
-  border-bottom: 2px solid rgba(15, 15, 15, 1);
-  padding: 1px 2px;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+	border-bottom: 1px dashed #0f0f0f;
+	padding: 0px 0px;
+	-webkit-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
+	margin: 2px 0px;
+ 	display: inline-block;
 }
 .modal-content .input-3 .lost-reg a:hover {
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
   text-decoration: none;
+  display: inline-block;
 }
 .modal-content .social-login-container {
   margin: 0;
@@ -6548,8 +6556,7 @@ span.tm_woowishlist_product_actions_tip,
 .woocommerce
   button.button.tm-woowishlist-button
   .tm_woowishlist_product_actions_tip,
-.woocommerce button.button.tm-woowishlist-button .text,
-.woocommerce button.button.tm-woowishlist-button:after {
+.woocommerce button.button.tm-woowishlist-button .text {
   display: none;
 }
 
@@ -6775,6 +6782,7 @@ button.button.tm-woowishlist-button.added.in_wishlist {
 .woocommerce button.button.compare-size:hover {
   background: rgba(255, 255, 255, 1);
   border: 2px solid rgba(15, 15, 15, 0.55);
+  width: 48%;
 }
 
 .woocommerce button.button.compare-size span.text {
@@ -9950,6 +9958,38 @@ div.festi-cart-pop-up-products-content
     width: 100%;
     float: left;
   }
+  .tabcontent
+  {
+  	display: none;
+  }
+  .tabcontent.active{
+  	display: block;
+  }
+a.tabcontent-button{
+	background: #f0f0f0;
+	display: block;
+	width: 50%;
+	float: left;
+	letter-spacing: 2px;
+	padding: 15px;
+	text-align: center;
+	color: #0f0f0f;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 1em;
+	border-left: 1px solid #d4d4d4;
+	border-bottom: 1px solid #d4d4d4;
+	border-top: 1px solid #ececec;	
+}
+a.tabcontent-button.active{
+	background: #fff;
+	border-bottom: none;
+	font-weight: 600;
+	color: #000;
+	border-top: 1px solid #d4d4d4;	
+}
+
+
 }
 
 @media (max-width: 640px) {
@@ -11132,6 +11172,7 @@ div.festi-cart-pop-up-products-content
   }
   .modal.loginmodal .modal-dialog {
     width: auto;
+    margin: 15px;
   }
   .modal-open .modal {
     padding-right: 0px !important;

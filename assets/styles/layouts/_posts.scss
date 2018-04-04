@@ -2028,7 +2028,7 @@ woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to
   margin: 0 auto;
 }
 .single-post .hero-image {
-  opacity: 0.45;
+  opacity: 0.35;
 }
 .single-post .hero-content p {
   font-weight: 400;
@@ -2615,6 +2615,10 @@ ul.inspirationNav li a.active {
   .hero-content p {
     width: 90%;
   }
+  .single-post .hero-image {
+  	opacity: 0.3;
+  }
+
 }
 
 @media (max-width: 767px) {

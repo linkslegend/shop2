@@ -30,11 +30,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="u-columns col2-set" id="customer_login">
 
-	<div class="u-column1 col-1">
+	<a href="#" class="visible-xs-block	tabcontent-button active" data-tab="1">Customer Login</a>
+	<a href="#" class="visible-xs-block	tabcontent-button" data-tab="2">Create Account</a>
+
+
+	<div class="u-column1 col-1 loginform tabcontent active" data-content="1" id="loginform">
 
 <?php endif; ?>
 
-		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
+		<h2 class="hidden-xs"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
@@ -42,11 +46,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" required name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 			</p>
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="password"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
+				<input class="woocommerce-Input woocommerce-Input--text input-text" required type="password" name="password" id="password" />
 			</p>
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
@@ -70,9 +74,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
-	<div class="u-column2 col-2">
+	<div class="u-column2 col-2 tabcontent registerform" data-content="2" id="registerform">
 
-		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
+		<h2 class="hidden-xs"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
 		<form method="post" class="register">
 
@@ -82,21 +86,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+					<input type="text" required class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 				</p>
 
 			<?php endif; ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+				<input type="email" required class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 			</p>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
+					<input type="password" required class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
 				</p>
 
 			<?php endif; ?>
