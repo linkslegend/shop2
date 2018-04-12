@@ -13,7 +13,6 @@ $sage_includes = [
   'lib/assets.php',    // Scripts and stylesheets
   'lib/extras.php',    // Custom functions
   'lib/wp_bootstrap_navwalker.php',
-  'lib/yamm-nav-walker.php',
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
@@ -877,6 +876,11 @@ function theme_options_do_page() {
   <td>
     <input id="futurewave_theme_options[image1-text-color]" class="regular-text" type="text" name="futurewave_theme_options[image1-text-color]" value="<?php esc_attr_e( $options['image1-text-color'] ); ?>" />
     <label class="description" for="futurewave_theme_options[image1-text-color]"></label>
+  </td>
+  <th scope="row"><?php _e( 'shoppable button code', 'futurewavetheme' ); ?></th>
+  <td>
+    <input id="futurewave_theme_options[shoppable-button]" class="regular-text" type="text" name="futurewave_theme_options[shoppable-button]" value="<?php esc_attr_e( $options['shoppable-button'] ); ?>" />
+    <label class="description" for="futurewave_theme_options[shoppable-button]"></label>
   </td>
 </tr>
 

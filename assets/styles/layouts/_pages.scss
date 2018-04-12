@@ -76,7 +76,7 @@
   flex-direction: column;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: center;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -121,26 +121,18 @@
   text-decoration: none;
 }
 .tile img {
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: cover;
-  min-width: 100%;
-  min-height: 300px;
-  width: auto;
-  bottom: 0;
-  position: absolute;
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    max-width: none;
+    object-fit: cover;
+    vertical-align: middle;
+    flex: none;
+    -webkit-box-flex: unset;
 }
 .tile-3 .tile img,
-.tile-4 .tile img {
-  width: 470px !important;
-  min-height: auto;
-}
-
-.tile.tile-large img {
-  min-height: 500px;
-  height: 550px;
-  width: auto;
-}
+.tile-4 .tile img {}
+.tile.tile-large img {}
 
 .tile a:hover {
   text-decoration: none;
@@ -225,6 +217,64 @@
 }
 
 /* @end Tile Frontpage */
+
+/* @group Shoppable Button */
+
+
+
+.shoppable-button {
+    display: block;
+    width: 22px;
+    z-index: 999;
+    height: 22px;
+    cursor: pointer!important;
+    position: absolute;
+}
+.pulse {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0,0,0, 0.6);
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0,0,0, 0.4);
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+  background-color: #0f0f0f;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(0,0,0, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(0,0,0, 0.4);
+    box-shadow: 0 0 0 0 rgba(0,0,0, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(0,0,0, 0);
+      box-shadow: 0 0 0 10px rgba(0,0,0, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+      box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+  }
+}
+
+/* @end */
+
+
+
 
 /* @group woocommerce-order-received */
 .woocommerce-order-received .woocommerce-order {
@@ -5386,16 +5436,16 @@ h2.recently-Viewed-inner.getkunst-title {
 }
 
 .yith-wcqv-button {
-  display: inline-block !important;
-  position: absolute !important;
-  outline: none !important;
-  line-height: 0 !important;
-  left: 18px !important;
+  display: inline-block;
+  position: absolute;
+  outline: none;
+  line-height: 0;
+  left: 18px;
   z-index: 10;
-  border: none !important;
-  padding: 0 !important;
-  top: 33px !important;
-  cursor: pointer !important;
+  border: none;
+  padding: 0;
+  top: 33px;
+  cursor: pointer!important;
 }
 .yith-quick-view-content.woocommerce
   div.summary
@@ -7952,16 +8002,22 @@ div.festi-cart-pop-up-products-content
   .content-partners .container {
     width: auto;
   }
-  .woocommerce ul.products li.product,
-  .woocommerce-page ul.products li.product {
+  
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
     float: left !important;
     padding: 15px;
-    width: 33.33333%!important;
     background: rgba(255, 255, 255, 1);
     clear: none!important;
     position: relative;
     margin: 10px 0px 0 0;
   }
+  
+.woocommerce ul.products[class*=columns-] li.product, 
+.woocommerce-page ul.products[class*=columns-] li.product{
+	width: 33.3333%;
+}
+  
 .woocommerce .woocommerce-result-count,
 .woocommerce .woocommerce-ordering {
 	display: none;

@@ -58,17 +58,15 @@
         <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard">
           <img src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
         </a>
-        <nav class="collapse navbar-collapse" role="navigation">
+        <nav class="collapse navbar-collapse mega-menu" role="navigation">
           <?php
           if (has_nav_menu('primary_navigation')) :
             wp_nav_menu(['theme_location' => 'primary_navigation',
-            'walker' => new Yamm_Fw_Nav_Walker(),
-            'depth'             => 3,
-            'fallback_cb'       => 'Yamm_Nav_Walker_menu_fallback',
+            'walker'         => new wp_bootstrap_navwalker(),
             'container'         => 'div',
             'container_class' => 'collapse navbar-collapse',
             'container_id' => 'bootstrap-navbar-collapse-1',
-            'menu_class' => 'nav navbar-nav yamm']);
+            'menu_class' => 'nav navbar-nav']);
           endif;
           ?>
           <div id="desktop-search" class="desktop-search">

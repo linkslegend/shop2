@@ -44,7 +44,7 @@ use Roots\Sage\Wrapper;
                                                                               <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                                                                                 <div class="slider-products-inner">
                                                                                   <?php tm_woowishlist_add_button_single( $featured_query->post->ID ); ?>
-                                                                                  <?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $featured_query->post->ID ).'" type="icon" label=""]'); ?>
+                                                                                  <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?></div>
                                                                                   <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                                                                                     <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
                                                                                   </a>

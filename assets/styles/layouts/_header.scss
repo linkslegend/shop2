@@ -75,7 +75,7 @@ h1 {
   position: absolute;
   font-size: 1.25em;
   top: 50px;
-  margin-left: 160px;
+  padding-left: 160px;
   font-weight: 600;
 }
 /**
@@ -315,6 +315,7 @@ h1 {
   margin: 0px 15px 0px 5px;
   display: block;
   width: 100%;
+  z-index: 9;
 }
 #logo img {
   width: auto;
@@ -845,6 +846,72 @@ p.para {
   border-bottom: 1px solid rgba(15, 15, 15, 1);
   text-decoration: none;
 }
+
+.megamenu-column{
+	width: 275px;
+	display: block;
+	float: left;
+  		&:not(:first-child):after{
+		    position: absolute;
+		    display: block;
+		    content: '';
+		    width: 1px;
+		    background-color: #eee;
+		    top: 15px;
+		    height: auto;
+		    bottom: 15px;
+  }
+}
+
+.megamenu-column ul{
+  padding: 0;
+  margin: 0;}
+.megamenu-column ul li a{
+  padding: 0px 5px 5px 15px;
+  font-size: 0.95em;
+  display: inline-block;
+  font-weight: 400;}
+.megamenu-column ul li.strong a{
+	font-weight: 700;
+}
+
+.megamenu-column .featured-image a{
+    padding: 0 15px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 500;}
+  
+.megamenu-column .featured-image img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    flex: none;
+}
+#menu-image {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 200px;
+    height: 260px;
+}
+
+
+li.megamenu.dropdown:hover > ul.dropdown-menu{
+	max-width: 1400px;
+	width: 100vw;
+    display: flex;
+	padding: 25px 35px 15px 0;
+	box-shadow: none;
+	border: none;
+}
+.navbar-nav > li.megamenu{
+	display: inline-block;
+	float: left;
+	position: static;
+}
+
+
+
 /* @end */
 
 /* @group popup arrow top style */
@@ -1761,12 +1828,16 @@ li {
     width: 200px;
   }
   #desktop-search {
-    margin-left: 650px;
+    margin-left: 695px;
     float: left;
   }
   .dgwt-wcas-search-wrapp {
     min-width: 235px !important;
   }
+#menu-image {
+    width: 240px;
+    height: 300px;}
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1800,7 +1871,6 @@ li {
   }
   .navbar-nav {
     font-size: 1.22em;
-    margin-left: 155px;
     top: 40px;
   }
   .Cart-right {
@@ -1859,6 +1929,12 @@ li {
   .icon-menu-gk .wishlist span.text {
     margin-left: -2px;
   }
+  li.megamenu.dropdown:hover > ul.dropdown-menu{
+	padding: 25px 25px 15px 0px;}
+	#menu-image {
+    width: 150px;
+    height: 226px;
+	}	
   .keyword-list a {
     display: block;
     font-size: 1.2em;
@@ -2037,7 +2113,6 @@ li {
     position: initial;
     font-size: 1.25em;
     top: 50px;
-    margin-left: 160px;
     font-weight: 600;
   }
   .sidebar-nav li.dropdown {
@@ -2117,6 +2192,9 @@ li {
     top: 13px;
     font-style: normal;
     float: left;
+    position: relative;
+    margin: 0;
+    border: none;
     font-weight: 600;
     text-decoration: inherit;
     padding-right: 9px;
@@ -2194,11 +2272,25 @@ li {
   .sidebar-nav li:hover:before {
     -webkit-transition: width 0.2s ease-in;
     transition: width 0.2s ease-in;
-    width: 100%;
   }
   .menu-item.sidebar-nav li.current-menu-parent a {
     border: none;
   }
+li.megamenu.dropdown:hover>ul.dropdown-menu {
+    max-width: none;
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+}
+.sidebar-nav li .megamenu-column{
+	border-bottom: none;
+}
+.megamenu-column ul li a{
+	padding: 7px 20px;
+}
+.sidebar-nav li.featured-image{
+	display: none;
+}
 
   .navbar-nav ul.dropdown-menu {
     margin-top: 0;
@@ -2213,7 +2305,8 @@ li {
     ul.dropdown-menu
     li.menu-item.menu-item-type-custom.menu-item-object-custom {
     width: 100%;
-    display: table-cell;
+    display: block;
+    border-bottom: 1px solid #ddd;
   }
   .dropdown-menu {
     position: absolute;

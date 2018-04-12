@@ -33,11 +33,33 @@ use Roots\Sage\Wrapper;
       <div class="pageimage-overlay"></div>
       <div class="pageimage-content container-fluid" itemprop="name">
           <section class="category-banner" style="display:block">
-            <?php
-            wp_nav_menu( array(
-              'theme_location' => 'primary_navigation',
-              'sub_menu'       => true
-            ) );?>
+
+<?php
+  $parentid = get_queried_object_id();
+  $args = array(
+      'parent' => $parentid
+  );
+  $prod_categories = get_terms(
+    'product_cat', $args
+  );
+  if ( $prod_categories ) {
+      echo '<ul class="product-categories">';
+          foreach ( $prod_categories as $prod_category ) {
+              echo '<li class="category">';
+                  //woocommerce_subcategory_thumbnail( $prod_category );
+                  echo '<strong>';
+                      echo '<a href="' .  esc_url( get_term_link( $prod_category ) ) . '" class="' . $prod_category->slug . '">';
+                          echo $prod_category->name;
+                      echo '</a>';
+                  echo '</strong>';
+              echo '</li>';
+      }
+      echo '</ul>';
+  }
+?>
+<br />
+
+
           </section>
       </div>
 </section>
