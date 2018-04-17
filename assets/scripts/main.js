@@ -241,6 +241,16 @@
         $(".single-featured").slick().slick('slickFilter', '.product-slide');
 
 
+        $('.sub-menu').slick({
+          dots: true,
+          infinite: true,
+          autoplay: false,
+          speed: 300,
+          autoplaySpeed: 12000,
+          lazyLoad: 'ondemand',
+          variableWidth: true
+        });
+
         $(".featured2").slick({
           // normal options...
           lazyLoad: 'ondemand',

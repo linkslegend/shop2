@@ -12,12 +12,102 @@
 $sage_includes = [
   'lib/assets.php',    // Scripts and stylesheets
   'lib/extras.php',    // Custom functions
-  'lib/wp_bootstrap_navwalker.php',
+  'lib/wp_bootstrap_navwalker.php', //mega menu
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php' // Theme customizer
 ];
+/* turns off widget/plugin css from being registered and printed in the head of the header.php */
+function remove_assets() {
+  wp_dequeue_style( 'festi-cart-cart-customize-style' );
+  wp_dequeue_style( 'festi-cart-dropdown-list-customize-style' );
+  wp_dequeue_style( 'festi-cart-widget-customize-style' );
+  wp_dequeue_style( 'festi-cart-popup-customize-style' );
+  wp_dequeue_style( 'festi-cart-styles' );
+  wp_dequeue_style( 'festi-jquery-ui-spinner' );
+  wp_deregister_style( 'festi-cart-cart-customize-style' );
+  wp_deregister_style( 'festi-cart-dropdown-list-customize-style' );
+  wp_deregister_style( 'festi-cart-widget-customize-style' );
+  wp_deregister_style( 'festi-cart-popup-customize-style' );
+  wp_deregister_style( 'festi-cart-styles' );
+  wp_deregister_style( 'festi-jquery-ui-spinner' );
+
+/*  wp_dequeue_style( 'yith-quick-view' );
+  wp_deregister_style( 'yith-quick-view' );
+*/
+  wp_dequeue_style( 'tm-woowishlist' );
+  wp_deregister_style( 'tm-woowishlist' );
+
+  wp_dequeue_style( 'woo-slg-public-style' );
+  wp_deregister_style( 'woo-slg-public-style' );
+
+  wp_dequeue_style( 'bootstrap-grid' );
+  wp_deregister_style( 'bootstrap-grid' );
+
+  wp_dequeue_style( 'wpeae-ali-variation-css' );
+  wp_deregister_style( 'wpeae-ali-variation-css' );
+
+  wp_dequeue_style( 'dgwt-wcas-style ' );
+  wp_deregister_style( 'dgwt-wcas-style ' );
+}
+add_action( 'wp_enqueue_scripts', 'remove_assets', 9999 );
+
+
+/*
+function crunchify_print_scripts_styles() {
+    // Print all loaded Styles (CSS)
+    global $wp_styles;
+    foreach( $wp_styles->queue as $style ) :
+        echo $style . '  ||  ';
+    endforeach;
+}
+add_action( 'wp_print_scripts', 'crunchify_print_scripts_styles' );
+*/
+
+
+
+// Before a query is run, modify the sort order
+function jh_popularity_sort_query($query) {
+if ( ! $query->is_main_query() )
+           $sort = $_GET['sort'];
+       if ($sort == "title") {
+                $query->query_vars['orderby'] = 'title';
+                $query->query_vars['order'] = 'ASC';
+} else if ($sort == "date") {
+                $query->query_vars['orderby'] = 'date';
+} else if ($sort == "views") {
+                $query->query_vars['meta_key'] = 'jh_page_views';
+                $query->query_vars['orderby'] = 'meta_value';
+                $query->query_vars['order'] = 'DESC';
+} else if ($sort == "likes") {
+                $query->query_vars['meta_key'] = 'jh_page_likes';
+                $query->query_vars['orderby'] = 'meta_value';
+                $query->query_vars['order'] = 'DESC';
+}
+  return $query;
+} add_action('pre_get_posts', 'jh_popularity_sort_query');
+
+
+/*
+ Function to defer all scripts which are not excluded
+
+function crave_js_defer_attr($tag) {
+	if (is_admin()) {
+		return $tag;
+	}
+	// Do not add defer attribute to these scripts
+	$scripts_to_exclude = array('jquery.js'); // add a string of js file e.g. script.js
+	foreach($scripts_to_exclude as $exclude_script) {
+		if (true == strpos($tag, $exclude_script ) )
+			return $tag;
+	}
+	// Defer all remaining scripts not excluded above
+	return str_replace( ' src', ' defer src', $tag );
+}
+add_filter( 'script_loader_tag', 'crave_js_defer_attr', 10);
+*/
+
 
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
@@ -262,15 +352,16 @@ function wooc_extra_register_fields() {?>
        }
  }
  add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
-
-// Remove each style one by one
+// Remove WooCommerce core style one by one
  add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
  function jk_dequeue_styles( $enqueue_styles ) {
  	//unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
  	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
- 	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+ 	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
  	return $enqueue_styles;
  }
+
+
 // auto check create account
 add_filter('woocommerce_create_account_default_checked' , function ($checked){
     return true;
@@ -503,7 +594,7 @@ function internet_allow_email_login( $user, $username, $password ) {
 
 /*Ajax login*/
 function ajax_login_init(){
-    wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery') );
+    wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery'), false, true );
     wp_enqueue_script('ajax-login-script');
     wp_localize_script( 'ajax-login-script', 'ajax_login_object', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -879,8 +970,12 @@ function theme_options_do_page() {
   </td>
   <th scope="row"><?php _e( 'shoppable button code', 'futurewavetheme' ); ?></th>
   <td>
-    <input id="futurewave_theme_options[shoppable-button]" class="regular-text" type="text" name="futurewave_theme_options[shoppable-button]" value="<?php esc_attr_e( $options['shoppable-button'] ); ?>" />
-    <label class="description" for="futurewave_theme_options[shoppable-button]"></label>
+    <input id="futurewave_theme_options[shoppable-button-image-1-button-1]" class="regular-text" type="text" name="futurewave_theme_options[shoppable-button-image-1-button-1]" value="<?php esc_attr_e( $options['shoppable-button-image-1-button-1'] ); ?>" />
+    <label class="description" for="futurewave_theme_options[shoppable-button-image-1-button-1]"></label>
+  </td>
+  <td>
+    <input id="futurewave_theme_options[shoppable-button-image-1-button-2]" class="regular-text" type="text" name="futurewave_theme_options[shoppable-button-image-1-button-2]" value="<?php esc_attr_e( $options['shoppable-button-image-1-button-2'] ); ?>" />
+    <label class="description" for="futurewave_theme_options[shoppable-button-image-1-button-2]"></label>
   </td>
 </tr>
 
@@ -909,6 +1004,11 @@ function theme_options_do_page() {
   <td>
     <input id="futurewave_theme_options[image2-text-color]" class="regular-text" type="text" name="futurewave_theme_options[image2-text-color]" value="<?php esc_attr_e( $options['image2-text-color'] ); ?>" />
     <label class="description" for="futurewave_theme_options[image2-text-color]"></label>
+  </td>
+  <th scope="row"><?php _e( 'shoppable button code', 'futurewavetheme' ); ?></th>
+  <td>
+    <input id="futurewave_theme_options[shoppable-button-image-2-button-1]" class="regular-text" type="text" name="futurewave_theme_options[shoppable-button-image-2-button-1]" value="<?php esc_attr_e( $options['shoppable-button-image-2-button-1'] ); ?>" />
+    <label class="description" for="futurewave_theme_options[shoppable-button-image-2-button-1]"></label>
   </td>
 </tr>
 
@@ -1086,13 +1186,36 @@ function theme_options_do_page() {
 * A futurewave textarea option
 */
 ?>
-<tr valign="top"><th scope="row"><?php _e( 'A textbox', 'futurewavetheme' ); ?></th>
+<tr valign="top"><th scope="row"><?php _e( 'Socialmedia Code', 'futurewavetheme' ); ?></th>
         <td>
           <textarea id="futurewave_theme_options[socialbox]" class="large-text" cols="50" rows="10" name="futurewave_theme_options[socialbox]">
           <?php echo esc_html( $options['socialbox'] ); ?></textarea>
-          <label class="description" for="futurewave_theme_options[socialbox]"><?php _e( 'futurewave text box', 'futurewavetheme' ); ?></label>
+          <label class="description" for="futurewave_theme_options[socialbox]"><?php _e( 'Code box', 'futurewavetheme' ); ?></label>
         </td>
 </tr>
+<tr valign="top"><th scope="row"><?php _e( 'Javascript Code', 'futurewavetheme' ); ?></th>
+        <td>
+          <textarea id="futurewave_theme_options[jsbox]" class="large-text" cols="50" rows="10" name="futurewave_theme_options[jsbox]">
+          <?php echo esc_html( $options['jsbox'] ); ?></textarea>
+          <label class="description" for="futurewave_theme_options[jsbox]"><?php _e( 'Code box', 'futurewavetheme' ); ?></label>
+        </td>
+</tr>
+<tr valign="top"><th scope="row"><?php _e( 'Modal Code', 'futurewavetheme' ); ?></th>
+        <td>
+          <textarea id="futurewave_theme_options[modalbox]" class="large-text" cols="50" rows="10" name="futurewave_theme_options[modalbox]">
+          <?php echo esc_html( $options['modalbox'] ); ?></textarea>
+          <label class="description" for="futurewave_theme_options[modalbox]"><?php _e( 'Code box', 'futurewavetheme' ); ?></label>
+        </td>
+</tr>
+<tr valign="top"><th scope="row"><?php _e( 'font-awesome Code', 'futurewavetheme' ); ?></th>
+        <td>
+          <textarea id="futurewave_theme_options[fontawesome]" class="large-text" cols="50" rows="10" name="futurewave_theme_options[fontawesome]">
+          <?php echo esc_html( $options['fontawesome'] ); ?></textarea>
+          <label class="description" for="futurewave_theme_options[fontawesome]"><?php _e( 'Code box', 'futurewavetheme' ); ?></label>
+        </td>
+</tr>
+
+
 </table>
     <p class="submit">
     <input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'futurewavetheme' ); ?>" />
@@ -1168,9 +1291,6 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
  return 'https://d1zczzapudl1mr.cloudfront.net/icono-paypal-tarjetas.png'; // write your own image URL here
   }
  add_filter( 'woocommerce_paypal_icon', 'paypal_checkout_icon' );
-
-
-
 
 
 
@@ -1304,3 +1424,9 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
 
 
 }*/
+
+function before_bodyclose() {
+     $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['jsbox'].'');
+     $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['modalbox'].'');
+}
+add_action('wp_footer', 'before_bodyclose');

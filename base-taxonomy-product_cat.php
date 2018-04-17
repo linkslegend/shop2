@@ -5,15 +5,6 @@ use Roots\Sage\Wrapper;
 
 ?>
 
-<?php
-    $image_gk = get_post_meta($post->ID, 'banner', true);
-    if ($image_gk == '' ){
-        $image_gk = 'http://localhost:8888/shop/wp-content/uploads/banner/' . rand(1,3) . '.jpg';
-    }else{
-        $image_gk = get_post_meta($post->ID, 'banner', true);
-    }
-?>
-
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
@@ -29,38 +20,18 @@ use Roots\Sage\Wrapper;
     ?>
     <div id="main" class="animation-enabled">
 
+<!-- style="background-image: url(<?php echo $image_gk ?>);" -->
 <section id="slider-header" class="pageimage-header pageimage product-page" >
       <div class="pageimage-overlay"></div>
       <div class="pageimage-content container-fluid" itemprop="name">
-          <section class="category-banner" style="display:block">
-
-<?php
-  $parentid = get_queried_object_id();
-  $args = array(
-      'parent' => $parentid
-  );
-  $prod_categories = get_terms(
-    'product_cat', $args
-  );
-  if ( $prod_categories ) {
-      echo '<ul class="product-categories">';
-          foreach ( $prod_categories as $prod_category ) {
-              echo '<li class="category">';
-                  //woocommerce_subcategory_thumbnail( $prod_category );
-                  echo '<strong>';
-                      echo '<a href="' .  esc_url( get_term_link( $prod_category ) ) . '" class="' . $prod_category->slug . '">';
-                          echo $prod_category->name;
-                      echo '</a>';
-                  echo '</strong>';
-              echo '</li>';
-      }
-      echo '</ul>';
-  }
-?>
-<br />
-
-
-          </section>
+        <section class="category-banner" style="display:block">
+          <?php
+          $old_query = $wp_query;
+          $wp_query = new WP_Query( array('post_type' => 'product') );
+              wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'menu_class' => 'sub-menu', 'sub_menu' => true ));
+          $wp_query = $old_query;
+          ?>
+        </section>
       </div>
 </section>
 
