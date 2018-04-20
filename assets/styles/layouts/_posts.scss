@@ -40,7 +40,10 @@
   font-size: 0.95em;
   letter-spacing: 0.9px;
 }
-
+.woocommerce img, .woocommerce-page img{
+	height: auto;
+	width: 100%;
+}
 /* @group About us Page */
 
 .about-us {
@@ -206,17 +209,21 @@
 .woocommerce div.product div.images .flex-control-thumbs li {
 	overflow: hidden;
     zoom: 1;
-    width: 100%;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
+    width: auto;
+    display: block;
+    padding: 5px 10px;
+    float: left;
+    text-align: left;
+    margin: 0;
 }
 .woocommerce div.product div.images .flex-control-thumbs li img{
-	display: block;
-	border: 2px solid #fff;
-	opacity: 0.9;}
+    display: block;
+    border: 2px solid #fff;
+    cursor: pointer;
+    width: auto;
+    max-height: 60px;
+    height: 100%;
+    opacity: .8;}
 .woocommerce div.product div.images .flex-control-thumbs li img.flex-active{
 	border: 2px solid #0f0f0f;
 	opacity: 1;
@@ -235,13 +242,13 @@
 }
 
 .woocommerce div.product div.images .flex-control-thumbs {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  zoom: 1;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
+	overflow: hidden;
+    display: flex;
+    zoom: 1;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
 }
 .woocommerce div.product div.images {
   margin-bottom: 5em;
@@ -262,8 +269,14 @@
     box-shadow: none;}
 */
 .woocommerce-product-gallery {
-  text-align: center;
+  text-align: center;}
+a.woocommerce-product-gallery__trigger{
+	display: none;}
+.woocommerce-product-gallery .flex-viewport{
+	cursor: url(/wp-content/uploads/search-plus.svg),auto;
 }
+
+
 .woocommerce div.product div.images img {
 }
 .woocommerce-product-gallery--with-images img {
@@ -1377,11 +1390,12 @@ woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to
 .related.products,
 .upsells.products {
   width: 100%;
-  padding: 10px;
+  padding: 0;
 }
 .related.products .products,
 .upsells.products .products {
   width: 100%;
+  padding: 0;
 }
 .related.products .woocommerce ul.products li.product .button,
 .upsells.products .woocommerce ul.products li.product .button {
@@ -3681,9 +3695,9 @@ ul.inspirationNav li a.active {
     padding: 0;
   }
   .woocommerce div.product div.images .flex-control-thumbs li {
-    width: 10%;
+    width: auto;
     padding: 0;
-    margin: 10px 10px 10px 0px;
+    margin: 10px;
     float: left;
     list-style: none;
   }

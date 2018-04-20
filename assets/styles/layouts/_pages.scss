@@ -3121,7 +3121,7 @@ legend {
 .woo-slg-social-container .woo-slg-social-btn:active,
 .woo-slg-social-container .woo-slg-social-btn:visited {
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-  transform: scale(1.005, 1.005);
+  text-decoration: none;
 }
 .woo-slg-icon {
   display: inline-block;
@@ -3135,6 +3135,132 @@ legend {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.woo-slg-login-error,
+.woo-slg-login-loader{
+	display:none;
+}
+
+.woo-slg-social-container img,
+.social-login-container img{
+	display: block;
+    margin: 0 auto;
+    height: 30px!important;
+    width: auto!important;}
+
+.woo-slg-login-error{
+	clear: both;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #F1ACAC;
+	border: 1px solid #EE4B4B;
+	margin-bottom: 1.650em;
+	box-shadow: 0px 2px 2px 2px #ccc;
+	padding: 8px 5px 8px 8px;
+}
+/* Facebook */
+.woo-slg-social-btn.woo-slg-social-login-facebook {
+	background-color: #3b5998;
+}
+.woo-slg-fb-icon:before {
+    color: #fff;
+    content: "\f09a";
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    font-style: normal;
+    margin: 13px;
+    left: 0;
+    position: absolute;
+    margin-left: 20px;}
+/* Twitter */
+.woo-slg-social-btn.woo-slg-social-login-twitter {
+	background-color: #55acee;
+}
+.woo-slg-tw-icon:before {
+    color: #fff;
+    content: "\f099";
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    font-style: normal;
+    margin: 13px;
+    left: 0;
+    position: absolute;
+    margin-left: 17px;}
+/* Google+ */
+.woo-slg-social-btn.woo-slg-social-login-googleplus {
+	background-color: #dd4b39;
+}
+.woo-slg-gp-icon:before {
+	color: #fff;
+    content: "\f0d5";
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    font-style: normal;
+    margin: 13px;
+    position: absolute;
+    margin-left: 13px;
+    left: 0;}
+/* LinkedIn */
+.woo-slg-social-btn.woo-slg-social-login-linkedin {
+	background-color: #007bb6;
+}
+.woo-slg-li-icon {
+	background-image: url("../images/linkedin-icon.png");
+}
+/* Yahoo */
+.woo-slg-social-btn.woo-slg-social-login-yahoo {
+	background-color: #720e9e;
+}
+.woo-slg-yh-icon {
+	background-image: url("../images/yahoo-icon.png");
+}
+/* Foursquare */
+.woo-slg-social-btn.woo-slg-social-login-foursquare {
+	background-color: #f94877;
+}
+.woo-slg-fs-icon {
+	background-image: url("../images/foursquare-icon.png");
+}
+/* Windows Live */
+.woo-slg-social-btn.woo-slg-social-login-windowslive {
+	background-color: #1283AD;
+}
+.woo-slg-wl-icon {
+	background-image: url("../images/windowslive-icon.png");
+}
+/* VK */
+.woo-slg-social-btn.woo-slg-social-login-vk {
+	background-color: #587ea3;
+}
+.woo-slg-vk-icon {
+	background-image: url("../images/vk-icon.png");
+}
+/* Instagram */
+.woo-slg-social-btn.woo-slg-social-login-instagram {
+	background-color: #3f729b;
+}
+.woo-slg-inst-icon {
+	background-image: url("../images/instagram-icon.png");
+}
+/* Amazon */
+.woo-slg-social-btn.woo-slg-social-login-amazon {
+	background-color: #FEBC0F;
+}
+.woo-slg-amz-icon {
+	background-image: url("../images/amazon-icon.png");
+}
+/* Paypal */
+.woo-slg-social-btn.woo-slg-social-login-paypal {
+	background-color: #36638E;
+}
+.woo-slg-paypal-icon {
+	background-image: url("../images/paypal-icon.png");
+}
+.woo-slg-social-btn {
+    color: #fff !important;
+}
+
+
 
 .login .navbar-default {
 }
@@ -5933,20 +6059,22 @@ legend {
   text-align: center;
 }
 .modal-content label {
-  display: block;
-  float: left;
-  border: 1px solid #d2d2d2;
-  border-right: 0;
-  border-radius: 3px;
-  position: absolute;
-  font-size: 1.3em;
-  color: rgba(15, 15, 15, 1);
-  height: 40px;
-  background: #f1f1f1;
-  width: 40px;
-  text-align: center;
-  z-index: 11;
-  padding: 10px;
+    display: block;
+    float: left;
+    border: 0px solid #d2d2d2;
+    border-right: 0;
+    border-radius: 3px;
+    margin-left: 1px;
+    margin-top: 1px;
+    position: absolute;
+    font-size: 1.3em;
+    color: #0f0f0f;
+    height: 38px;
+    background: #f1f1f1;
+    width: 40px;
+    text-align: center;
+    z-index: 11;
+    padding: 8px;
 }
 .modal-content input[type="text"],
 .modal-content input[type="password"] {
@@ -6001,7 +6129,6 @@ legend {
 }
 .modal-content input[type="submit"]:hover {
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-  transform: scale(1.005, 1.005);
 }
 .modal-content .input-1,
 .modal-content .input-2 {
@@ -6893,9 +7020,10 @@ button.button.tm-woowishlist-button.added.in_wishlist {
   transition: all 0.25s ease-in-out;
   border-radius: 0;
   background-color: transparent;
+  border-bottom: 1px dashed rgba(15, 15, 15, 1);
 }
 .login .lost_password > a:hover {
-  border-bottom: 2px solid rgba(15, 15, 15, 1);
+  border-bottom: 1px solid rgba(15, 15, 15, 1);
   padding-left: 0px;
   padding-right: 0px;
 }
