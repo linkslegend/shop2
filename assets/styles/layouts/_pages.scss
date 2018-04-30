@@ -734,6 +734,7 @@ input[type="radio"] {
 }
 #payment .terms label{
 	padding: 0;
+	margin: 0;
 }
 
 .payment_method_stripe label i {
@@ -1917,7 +1918,7 @@ table tr th {
   background: transparent;
   border-radius: 0;
   padding-left: 10px;
-  margin-top: 15px;
+  margin-top: 0px;
   padding-right: 10px;
 }
 .woocommerce-checkout #payment {
@@ -2054,11 +2055,14 @@ a.wc-gateway-ppec-cancel:hover {
   top: 16px;
 }
 .woocommerce-checkout .woocommerce-info {
-  margin-bottom: 25px;
-  border: none;
-  padding: 0;
-  overflow: visible;
-  color: rgba(15, 15, 15, 1);
+    margin-bottom: 15px;
+    border: none;
+    display: block;
+    height: 40px;
+	width: 100%;
+    padding: 12px 30px;
+    overflow: visible;
+    color: #0f0f0f;
 }
 .woocommerce-error,
 .woocommerce-info,
@@ -2525,7 +2529,7 @@ login .button,
   text-decoration: none;
 }
 .woocommerce-checkout #payment ul.payment_methods {
-  padding: 1em 0;
+  padding: 15px 0 5px 0;
   border-bottom: 0px solid #d3ced2;
 }
 .woocommerce-checkout #payment ul.payment_methods li {
@@ -2609,7 +2613,7 @@ login .button,
 }
 .woocommerce .woocommerce-terms-and-conditions,
 .woocommerce-page .woocommerce-terms-and-conditions {
-  margin-bottom: 15px;
+  margin-bottom: 15px 0;
   background: #fff;
   padding: 20px;
   box-shadow: none;
@@ -3367,6 +3371,7 @@ legend {
 .woocommerce .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
 	padding: 0;
     display: block;
+    background: transparent!important;
     margin: 10px;
  	border: none;
 }
