@@ -2014,6 +2014,7 @@ li {
   #logo {
     top: 43px;
     margin: 0px 15px 0px 5px;
+    width: 130px;
   }
   #logo img {
     width: 130px;
@@ -2340,7 +2341,6 @@ li {
     color: rgba(15, 15, 15, 1);
     border-left: 0px solid;
     border-color: rgba(15, 15, 15, 1);
-    font-weight: 600;
   }
   .sidebar-nav .dropdown.open:before,
   .sidebar-nav .dropdown:before {
@@ -2431,7 +2431,11 @@ li {
   .sidebar-nav li:hover:before {
     -webkit-transition: width 0.2s ease-in;
     transition: width 0.2s ease-in;
+    color: #fff;
+    z-index: 9;
   }
+  .megamenu-column ul li.strong a {
+    font-weight: 400;}
   .menu-item.sidebar-nav li.current-menu-parent a {
     border: none;
   }
@@ -2439,13 +2443,14 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     max-width: none;
     width: 100%;
     display: block;
-    padding: 10px 0;
+    padding: 0;
 }
 .sidebar-nav li .megamenu-column{
 	border-bottom: none;
 }
 .megamenu-column ul li a{
-	padding: 7px 20px;
+	padding: 8px 34px;
+	width: 100%;
 }
 .sidebar-nav li.featured-image{
 	display: none;
@@ -2467,6 +2472,18 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: block;
     border-bottom: 1px solid #ddd;
   }
+.navbar-nav ul.dropdown-menu li.menu-item.menu-item-type-custom.menu-item-object-custom:active,
+.navbar-nav ul.dropdown-menu li.menu-item.menu-item-type-custom.menu-item-object-custom:focus,
+.navbar-nav ul.dropdown-menu li.menu-item.menu-item-type-custom.menu-item-object-custom:hover{
+	background: rgba(15, 15, 15, 0.8);
+	color: #fff;
+	outline: none;
+	}
+.navbar-nav ul.dropdown-menu li.menu-item.menu-item-type-custom.menu-item-object-custom:active ,
+.navbar-nav ul.dropdown-menu li.menu-item.menu-item-type-custom.menu-item-object-custom:focus a,
+.navbar-nav ul.dropdown-menu li.menu-item.menu-item-type-custom.menu-item-object-custom:hover a{
+	color: #fff;
+}
   .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -2857,6 +2874,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     margin-left: auto;
     right: 0;
     left: 0;
+    width: 130px;
   }
   #logo img {
     width: 130px;
@@ -3306,10 +3324,12 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     margin-right: auto;
     margin-left: auto;
     right: 0;
+    width: 125px;
     left: 0;
   }
   #logo img {
-    width: 110px;
+    width: 125px;
+    padding-top: 2px;
     display: inline-block;
     position: relative;
   }

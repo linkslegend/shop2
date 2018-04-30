@@ -473,6 +473,67 @@
         });
 
 
+        function enable_update_cart() {
+            $('[name="update_cart"]').removeAttr('disabled');
+        }
+
+        function quantity_step_btn() {
+            var timeoutPlus;
+            $('.quantity .step-btn.plus').one().on('click', function() {
+                $input = $(this).prev('input.qty');
+                var val = parseInt($input.val());
+                var step = $input.attr('step');
+                step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
+                $input.val( val + step ).change();
+
+                if( timeoutPlus !== undefined ) {
+                    clearTimeout(timeoutPlus);
+                }
+                timeoutPlus = setTimeout(function(){
+                    $('[name="update_cart"]').trigger('click');
+                }, 1000);
+            });
+
+            var timeoutMinus;
+            $('.quantity .step-btn.minus').one().on('click', function() {
+                $input = $(this).next('input.qty');
+                var val = parseInt($input.val());
+                var step = $input.attr('step');
+                step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
+                if (val > 1) {
+                    $input.val( val - step ).change();
+                }
+
+                if( timeoutMinus !== undefined ) {
+                    clearTimeout(timeoutMinus);
+                }
+                timeoutMinus = setTimeout(function(){
+                    $('[name="update_cart"]').trigger('click');
+                }, 1000);
+            });
+
+            var timeoutInput;
+            $('div.woocommerce').on('change', '.qty', function(){
+                if( timeoutInput !== undefined ) {
+                    clearTimeout(timeoutInput);
+                }
+                timeoutInput = setTimeout(function(){
+                    $('[name="update_cart"]').trigger('click');
+                }, 1000);
+            });
+        }
+
+        $(document).ready(function() {
+            enable_update_cart();
+            quantity_step_btn();
+        });
+
+        $( document ).on( 'updated_cart_totals', function() {
+            enable_update_cart();
+            quantity_step_btn();
+        });
+
+
 
         $(".keyword-list a").click(function(e) {
           e.preventDefault();

@@ -74,9 +74,11 @@ use Roots\Sage\Wrapper;
         </div>
 </div> <!--end featured -->
 
+<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['socialbox'].''); ?>
+
+
 <?php } ?>
 
-<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['socialbox'].''); ?>
 
 <?php
   do_action('get_footer');

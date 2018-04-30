@@ -66,29 +66,6 @@ add_action( 'wp_print_scripts', 'crunchify_print_scripts_styles' );
 */
 
 
-
-// Before a query is run, modify the sort order
-function jh_popularity_sort_query($query) {
-if ( ! $query->is_main_query() )
-           $sort = $_GET['sort'];
-       if ($sort == "title") {
-                $query->query_vars['orderby'] = 'title';
-                $query->query_vars['order'] = 'ASC';
-} else if ($sort == "date") {
-                $query->query_vars['orderby'] = 'date';
-} else if ($sort == "views") {
-                $query->query_vars['meta_key'] = 'jh_page_views';
-                $query->query_vars['orderby'] = 'meta_value';
-                $query->query_vars['order'] = 'DESC';
-} else if ($sort == "likes") {
-                $query->query_vars['meta_key'] = 'jh_page_likes';
-                $query->query_vars['orderby'] = 'meta_value';
-                $query->query_vars['order'] = 'DESC';
-}
-  return $query;
-} add_action('pre_get_posts', 'jh_popularity_sort_query');
-
-
 /*
  Function to defer all scripts which are not excluded
 
@@ -355,9 +332,9 @@ function wooc_extra_register_fields() {?>
 // Remove WooCommerce core style one by one
  add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
  function jk_dequeue_styles( $enqueue_styles ) {
- 	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
- 	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
- 	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+ 	//unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+ 	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+ 	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
  	return $enqueue_styles;
  }
 
@@ -1430,3 +1407,24 @@ function before_bodyclose() {
      $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['modalbox'].'');
 }
 add_action('wp_footer', 'before_bodyclose');
+
+
+
+add_action( 'woocommerce_register_form', function() {
+    wc_get_template( 'checkout/terms.php' );
+} );
+
+add_action( 'woocommerce_process_registration_errors', function( $errors, $username, $password, $email ){
+    if ( empty( $_POST['terms'] ) ) {
+        throw new Exception( __( 'By creating an account, you agree to the <a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy">Privacy Policy</a>.', 'text-domain' ) );
+    }
+    return $errors;
+}, 10, 4 );
+
+function woo_checkout_texts( $changed_text, $text, $domain ) {
+ if ( $changed_text == 'I&rsquo;ve read and accept the <a href="%s" target="_blank">terms &amp; conditions</a>' ){
+ $changed_text = 'I accept2 the <a href="%s" target="_blank">terms &amp; conditions</a>';
+ }
+ return $changed_text;
+}
+add_filter( 'gettext', 'woo_checkout_texts', 20, 3 );

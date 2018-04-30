@@ -4,6 +4,14 @@
   <?php dynamic_sidebar('sidebar-footer'); ?>
 </div>
   <?php dynamic_sidebar('after-footer'); ?>
+  <div id="EUcookieContent" class="alert hidden" data-alert="alert" >
+      <a class="close in" id="eu-cookie-message-close" data-dismiss="alert" href="#">&times;</a>
+      <div class="alert-content">
+        Mithilfe von Cookies stellen wir sicher, dass Sie unsere Webseite optimal nutzen können.
+        Wenn Sie ohne Änderung Ihrer Browser-Einstellungen fortfahren, gehen wir davon aus, dass Sie der Nutzung von Cookies zustimmen.
+        Natürlich können Sie Ihre Browser-Einstellungen bezüglich Cookies jederzeit ändern.
+      </div>
+  </div>
         <script>
               window.fbMessengerPlugins = window.fbMessengerPlugins || {
                 init: function () {
