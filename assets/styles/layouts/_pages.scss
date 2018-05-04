@@ -1832,7 +1832,7 @@ table tr th {
   padding: 15px 10px;
   text-align: center;
   letter-spacing: 0;
-  font-size: 15px;
+  font-size: 1.2em;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1.4;
@@ -2400,13 +2400,14 @@ login .button,
   margin-bottom: 10px;
 }
 .woocommerce-checkout .checkout .col-2 h3#ship-to-different-address {
-  float: left;
-  background: transparent;
-  padding: 8px 10px;
-  width: 100%;
-  margin: 5px 0;
-  font-size: 1.05em;
-  clear: none;
+    float: left;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    margin: -5px 0 0 0;
+    border: none;
+    font-size: 1em;
+    clear: none;
 }
 .woocommerce-checkout .checkout .col-2 h3#ship-to-different-address .checkbox {
   margin: 0;
@@ -2421,7 +2422,6 @@ login .button,
 .woocommerce-shipping-fields input#ship-to-different-address-checkbox {
   float: none;
   margin-left: 0;
-  top: -1px;
   margin-right: 5px;
   position: relative;
 }
@@ -3367,13 +3367,16 @@ legend {
 	position: relative;
 }
 
-.woocommerce form .form-row.create-account label[for="mailchimp_woocommerce_newsletter"],
-.woocommerce .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
+form .form-row.create-account label[for="mailchimp_woocommerce_newsletter"],
+.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
 	padding: 0;
     display: block;
     background: transparent!important;
     margin: 10px;
  	border: none;
+}
+.woocommerce-account-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox{
+	margin: 0;
 }
 
 .form-row.wc-terms-and-conditions{
@@ -6710,7 +6713,7 @@ legend {
 #hover .wishlist-button {
     font-size: 1.1em;
     display: block;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.25s;
     text-decoration: none;
     width: 100%;
@@ -7795,9 +7798,13 @@ body
   td.festi-cart-product-img
   a.festi-cart-img
   img {
-  height: auto !important;
-  width: 100% !important;
-  max-width: 100px !important;
+    height: auto;
+    width: 100%;
+    max-width: 100px;
+    padding: 10px;
+}
+div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete {
+    vertical-align: middle;
 }
 body div.festi-cart-pop-up-products-content table.festi-cart-list tr:last-child,
 body
@@ -7945,13 +7952,11 @@ body
     float: none!important;
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product{
-	float: left;
-    vertical-align: top;
     position: absolute;
-    margin-top: -13px;
-    margin-left: -5px;
+    color: rgba(15, 15, 15, 0.7);
+    margin-top: -2px;
+    margin-left: 2px;
     font-size: 1.7em;
-    text-decoration: none;
     transition: all 0.25s;
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product:hover{
@@ -10807,7 +10812,6 @@ a.tabcontent-button.active{
 	margin-bottom: 10px;
     padding-bottom: 10px;
     border: 1px solid #ebe9eb;
-    display: block;
     padding: 10px;}
   .woocommerce-cart table.shop_table td.product-name{
 	border-top: none;}

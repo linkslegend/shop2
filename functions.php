@@ -18,6 +18,9 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php' // Theme customizer
 ];
+
+
+
 /* turns off widget/plugin css from being registered and printed in the head of the header.php */
 function remove_assets() {
   wp_dequeue_style( 'festi-cart-cart-customize-style' );
@@ -33,6 +36,24 @@ function remove_assets() {
   wp_deregister_style( 'festi-cart-styles' );
   wp_deregister_style( 'festi-jquery-ui-spinner' );
 
+  wp_dequeue_script( 'wc_price_slider' );
+  //wp_dequeue_script( 'wc-single-product' );
+  //wp_dequeue_script( 'wc-add-to-cart' );
+  //wp_dequeue_script( 'wc-cart-fragments' ); //Top right mini cart needs this!
+  //wp_dequeue_script( 'wc-checkout' );
+  wp_dequeue_script( 'wc-add-to-cart-variation' );
+  //wp_dequeue_script( 'wc-single-product' );
+  //wp_dequeue_script( 'wc-cart' );
+  wp_dequeue_script( 'wc-chosen' );
+  wp_dequeue_script( 'woocommerce' );
+  //wp_dequeue_script( 'prettyPhoto' );
+  //wp_dequeue_script( 'prettyPhoto-init' );
+  wp_dequeue_script( 'jquery-blockui' );
+  wp_dequeue_script( 'jquery-placeholder' );
+  wp_dequeue_script( 'fancybox' );
+  wp_dequeue_script( 'jqueryui' );
+
+  remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
 /*  wp_dequeue_style( 'yith-quick-view' );
   wp_deregister_style( 'yith-quick-view' );
 */
@@ -93,7 +114,6 @@ foreach ($sage_includes as $file) {
   if (!$filepath = locate_template($file)) {
     trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
   }
-
   require_once $filepath;
 }
 unset($file, $filepath);
@@ -121,11 +141,8 @@ function tgm_io_strict_transport_security() {
  */
 
 add_filter( 'woocommerce_variable_sale_price_html', 'bbloomer_variation_price_format', 10, 2 );
-
 add_filter( 'woocommerce_variable_price_html', 'bbloomer_variation_price_format', 10, 2 );
-
 function bbloomer_variation_price_format( $price, $product ) {
-
 // Main Price
 $prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
 $price = $prices[0] !== $prices[1] ? sprintf( __( '<div class="pricefrom"><span class="from">From:</span> %1$s</div>', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
@@ -145,7 +162,6 @@ return $price;
 /* ---------> ***************** <-------- */
 
 /** https://businessbloomer.com/woocommerce-display-total-discount-savings-cart/
-/**
 * @snippet Display Total Discount / Savings @ WooCommerce Cart/Checkout
 * @how-to Watch tutorial @ https://businessbloomer.com/?p=19055
 * @sourcecode https://businessbloomer.com/?p=20362
@@ -332,9 +348,13 @@ function wooc_extra_register_fields() {?>
 // Remove WooCommerce core style one by one
  add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
  function jk_dequeue_styles( $enqueue_styles ) {
- 	//unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
- 	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
- 	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+ 	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+ 	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+  unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+  unset( $enqueue_styles['woocommerce_frontend_styles'] );	// Remove the smallscreen optimisation
+  unset( $enqueue_styles['woocommerce-fancybox_styles'] );	// Remove the smallscreen optimisation
+  unset( $enqueue_styles['woocommerce-chosen_styles'] );	// Remove the smallscreen optimisation
+  unset( $enqueue_styles['woocommerce-prettyPhoto_css'] );	// Remove the smallscreen optimisation
  	return $enqueue_styles;
  }
 
@@ -1428,3 +1448,137 @@ function woo_checkout_texts( $changed_text, $text, $domain ) {
  return $changed_text;
 }
 add_filter( 'gettext', 'woo_checkout_texts', 20, 3 );
+
+
+// Register Custom Post Type
+function roomstyle_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Room Styles', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Room Style', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Room Styles', 'text_domain' ),
+		'name_admin_bar'        => __( 'Room Style', 'text_domain' ),
+		'archives'              => __( 'Item Archives', 'text_domain' ),
+		'attributes'            => __( 'Item Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'All Items', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Item', 'text_domain' ),
+		'add_new'               => __( 'Add New', 'text_domain' ),
+		'new_item'              => __( 'New Item', 'text_domain' ),
+		'edit_item'             => __( 'Edit Item', 'text_domain' ),
+		'update_item'           => __( 'Update Item', 'text_domain' ),
+		'view_item'             => __( 'View Item', 'text_domain' ),
+		'view_items'            => __( 'View Items', 'text_domain' ),
+		'search_items'          => __( 'Search Item', 'text_domain' ),
+		'not_found'             => __( 'Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+		'items_list'            => __( 'Items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+	);
+	$args = array(
+		'label'                 => __( 'Room Style', 'text_domain' ),
+		'description'           => __( 'Room Styles.', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'post-formats' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+    'taxonomies'            => array('topics', 'category', 'post_tag' ),
+
+	);
+	register_post_type( 'Room Style', $args );
+
+}
+add_action( 'init', 'roomstyle_post_type', 0 );
+
+
+// Inspiration page filter
+function misha_filter_function(){
+	$args = array(
+		'orderby' => 'date', // we will sort posts by date
+		'order'	=> $_POST['date'] // ASC или DESC
+	);
+
+	// for taxonomies / categories
+	if( isset( $_POST['categoryfilter'] ) )
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'id',
+				'terms' => $_POST['categoryfilter']
+			)
+		);
+
+	// create $args['meta_query'] array if one of the following fields is filled
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
+		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
+
+	// if both minimum price and maximum price are specified we will use BETWEEN comparison
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] && isset( $_POST['price_max'] ) && $_POST['price_max'] ) {
+		$args['meta_query'][] = array(
+			'key' => '_price',
+			'value' => array( $_POST['price_min'], $_POST['price_max'] ),
+			'type' => 'numeric',
+			'compare' => 'between'
+		);
+	} else {
+		// if only min price is set
+		if( isset( $_POST['price_min'] ) && $_POST['price_min'] )
+			$args['meta_query'][] = array(
+				'key' => '_price',
+				'value' => $_POST['price_min'],
+				'type' => 'numeric',
+				'compare' => '>'
+			);
+
+		// if only max price is set
+		if( isset( $_POST['price_max'] ) && $_POST['price_max'] )
+			$args['meta_query'][] = array(
+				'key' => '_price',
+				'value' => $_POST['price_max'],
+				'type' => 'numeric',
+				'compare' => '<'
+			);
+	}
+
+
+	// if post thumbnail is set
+	if( isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
+		$args['meta_query'][] = array(
+			'key' => '_thumbnail_id',
+			'compare' => 'EXISTS'
+		);
+
+	$query = new WP_Query( $args );
+
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post();
+			echo '<h2>' . $query->post->post_title . '</h2>';
+		endwhile;
+		wp_reset_postdata();
+	else :
+		echo 'No posts found';
+	endif;
+
+	die();
+}
+
+
+add_action('wp_ajax_myfilter', 'misha_filter_function');
+add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
