@@ -3794,19 +3794,19 @@ ul.inspirationNav li a.active {
   .woocommerce div.product div.images .flex-control-thumbs li {
 	width: auto;
     padding: 0;
-    margin: 5px 0;
+    margin: 5px 3px 0px 3px;
     float: left;
     list-style: none;
+  }
+  .woocommerce div.product div.images .flex-control-thumbs li:first-child {
+    padding: 0px;
+    margin: 6px 2px 0px 0px;
   }
   .woocommerce div.product div.images .flex-control-thumbs li img{
 	max-height: 50px;
 	width: auto;
 	height: 100%;
 	}
-  .woocommerce div.product div.images .flex-control-thumbs li:first-child {
-    padding: 0px;
-    margin: 5px 0;
-  }
   .woocommerce div.product form.cart div.quantity {
     display: none !important;
   }

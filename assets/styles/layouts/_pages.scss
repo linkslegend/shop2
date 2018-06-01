@@ -4253,6 +4253,12 @@ ul.insta li {
   max-height: 280px;
   padding: 0;
 }
+.insta-image {
+    display: block;
+    width: 100%;
+    background-size: cover;
+    height: 300px;
+}
 /* @end */
 
 /* @group instafeed hover effect */
@@ -4261,18 +4267,16 @@ ul.insta li {
 /***** Zoe *****/
 /*---------------*/
 #instafeed figure {
-  position: relative;
-  float: left;
-  overflow: hidden;
-  margin: 10px 1%;
-  padding: 10px;
-  min-width: auto;
-  max-height: 3000px;
-  width: 100%;
-  background: rgb(255, 255, 255);
-  text-align: center;
-  cursor: pointer;
-}
+	position: relative;
+    float: none;
+    overflow: hidden;
+    margin: 10px 1%;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;}
 #instafeed figure img {
   position: relative;
   display: block;
@@ -5302,6 +5306,7 @@ label[for=ct-ultimate-gdpr-consent]{
     color: #0f0f0f;
     position: relative;
     width: auto;
+    max-width: 85px;
     height: auto;
     letter-spacing: 0;
     display: block;
@@ -5315,7 +5320,9 @@ label[for=ct-ultimate-gdpr-consent]{
 		 color: #0f0f0f;
 		 text-decoration: underline;}
 }
-
+body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
+	right: 0!important;
+}
 
 
 @media (min-width: 480px){
@@ -5346,7 +5353,10 @@ label[for=ct-ultimate-gdpr-consent]{
 /*large mobile device*/
 @media (max-width: 767px) {
 #ct-ultimate-gdpr-cookie-popup {
-    padding: 15px;}
+    padding: 15px;    
+    left: 0!important;
+    bottom: 0!important;
+    right: 0!important;}
 #ct-ultimate-gdpr-cookie-content {
     float: none;
     width: 100%;
@@ -5355,6 +5365,8 @@ label[for=ct-ultimate-gdpr-consent]{
     margin-bottom: 5px;}
 #ct-ultimate-gdpr-cookie-accept {}
 #ct-ultimate-gdpr-cookie-read-more {}
+.ct-ultimate-gdpr-cookie-popup-modern .ct-ultimate-gdpr-cookie-buttons {float: none;}
+
 }
 
 /*mobile device*/
@@ -5362,12 +5374,12 @@ label[for=ct-ultimate-gdpr-consent]{
 #ct-ultimate-gdpr-cookie-content{
 	margin-bottom: 15px;}
 #ct-ultimate-gdpr-cookie-accept {
-	    float: none;
-	    width: 95%;
+	    float: left;
+	    width: 60%;
 	    margin: 0px auto 10px auto;}	
 #ct-ultimate-gdpr-cookie-change-settings, 
 #ct-ultimate-gdpr-cookie-read-more{
-	width: 46%;
+	width: 35%;
     margin-left: 0;	
     max-width: none;}
 #ct-ultimate-gdpr-cookie-modal-body {

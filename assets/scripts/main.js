@@ -607,7 +607,7 @@
             accessToken: '5929691076.1677ed0.a6fb14ad48984650b2ec7b43e21f25bd',
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
-            template: '<li><a target="_blank" href="{{link}}"><figure class="effect-zoe"><img src="{{image}}" /><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
+            template: '<li><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="insta-image" style="background-image: url({{image}})"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
               $('.insta-slide').slick({
                 lazyLoad: 'ondemand',
@@ -615,7 +615,7 @@
                 autoplay: true,
                 autoplaySpeed: 4000,
                 infinite: true,
-                slidesToShow: 5,
+                slidesToShow: 4,
                 swipeToSlide: true,
                 arrows: false,
                 slide: 'div',
@@ -623,7 +623,7 @@
                 responsive: [{
                     breakpoint: 1250,
                     settings: {
-                      slidesToShow: 5,
+                      slidesToShow: 4,
                       infinite: true
                     }
                   },
