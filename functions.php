@@ -1311,7 +1311,7 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
 
              $oldsrc = $node->getAttribute('src');
              $node->setAttribute('data-src', $oldsrc );
-             $newsrc = 'https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif';
+             $newsrc = 'https://www.juniqe.de/app/assets/images/blank.gif';
              $node->setAttribute('src', $newsrc);
 
              $oldsrcset = $node->getAttribute('srcset');
@@ -1443,11 +1443,38 @@ add_action( 'woocommerce_process_registration_errors', function( $errors, $usern
 
 function woo_checkout_texts( $changed_text, $text, $domain ) {
  if ( $changed_text == 'I&rsquo;ve read and accept the <a href="%s" target="_blank">terms &amp; conditions</a>' ){
- $changed_text = 'I accept2 the <a href="%s" target="_blank">terms &amp; conditions</a>';
+ $changed_text = 'I accept the <a href="%s" target="_blank">terms &amp; conditions</a>';
  }
  return $changed_text;
 }
 add_filter( 'gettext', 'woo_checkout_texts', 20, 3 );
+
+/**
+ * my_terms_clauses
+ *
+ * filter the terms clauses
+ *
+ * @param $clauses array
+ * @param $taxonomy string
+ * @param $args array
+ * @return array
+ * @link http://wordpress.stackexchange.com/a/183200/45728
+ **/
+function my_terms_clauses( $clauses, $taxonomy, $args ) {
+  global $wpdb;
+  if ( $args['post_types'] ) {
+    $post_types = $args['post_types'];
+    // allow for arrays
+    if ( is_array($args['post_types']) ) {
+      $post_types = implode("','", $args['post_types']);
+    }
+    $clauses['join'] .= " INNER JOIN $wpdb->term_relationships AS r ON r.term_taxonomy_id = tt.term_taxonomy_id INNER JOIN $wpdb->posts AS p ON p.ID = r.object_id";
+    $clauses['where'] .= " AND p.post_type IN ('". esc_sql( $post_types ). "') GROUP BY t.term_id";
+  }
+  return $clauses;
+}
+add_filter('terms_clauses', 'my_terms_clauses', 99999, 3);
+
 
 
 // Register Custom Post Type
@@ -1506,79 +1533,3 @@ function roomstyle_post_type() {
 
 }
 add_action( 'init', 'roomstyle_post_type', 0 );
-
-
-// Inspiration page filter
-function misha_filter_function(){
-	$args = array(
-		'orderby' => 'date', // we will sort posts by date
-		'order'	=> $_POST['date'] // ASC или DESC
-	);
-
-	// for taxonomies / categories
-	if( isset( $_POST['categoryfilter'] ) )
-		$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'id',
-				'terms' => $_POST['categoryfilter']
-			)
-		);
-
-	// create $args['meta_query'] array if one of the following fields is filled
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
-		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
-
-	// if both minimum price and maximum price are specified we will use BETWEEN comparison
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] && isset( $_POST['price_max'] ) && $_POST['price_max'] ) {
-		$args['meta_query'][] = array(
-			'key' => '_price',
-			'value' => array( $_POST['price_min'], $_POST['price_max'] ),
-			'type' => 'numeric',
-			'compare' => 'between'
-		);
-	} else {
-		// if only min price is set
-		if( isset( $_POST['price_min'] ) && $_POST['price_min'] )
-			$args['meta_query'][] = array(
-				'key' => '_price',
-				'value' => $_POST['price_min'],
-				'type' => 'numeric',
-				'compare' => '>'
-			);
-
-		// if only max price is set
-		if( isset( $_POST['price_max'] ) && $_POST['price_max'] )
-			$args['meta_query'][] = array(
-				'key' => '_price',
-				'value' => $_POST['price_max'],
-				'type' => 'numeric',
-				'compare' => '<'
-			);
-	}
-
-
-	// if post thumbnail is set
-	if( isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
-		$args['meta_query'][] = array(
-			'key' => '_thumbnail_id',
-			'compare' => 'EXISTS'
-		);
-
-	$query = new WP_Query( $args );
-
-	if( $query->have_posts() ) :
-		while( $query->have_posts() ): $query->the_post();
-			echo '<h2>' . $query->post->post_title . '</h2>';
-		endwhile;
-		wp_reset_postdata();
-	else :
-		echo 'No posts found';
-	endif;
-
-	die();
-}
-
-
-add_action('wp_ajax_myfilter', 'misha_filter_function');
-add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');

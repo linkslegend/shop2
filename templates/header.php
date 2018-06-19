@@ -29,8 +29,8 @@
             <?php if (is_user_logged_in()) : ?>
               <a class="myaccount" href="/my-account">My Account</a> <a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>">logout</a>
             <?php else : ?>
-              <a class="login" href="/login" title="Login">Login</a>
-              <a class="myaccount register" href="/register" title="Login">Register</a>
+              <a class="login" data-toggle="modal" data-target="#loginmodal" href="#" title="Login">Login</a>
+              <a class="myaccount register" href="/my-account" title="My account">Register</a>
             <?php endif;?>
           </li>
       </ul>
@@ -85,9 +85,9 @@
                       <hr class='hr-light'></hr>
                       <a class='poplink' href='<?php echo wp_logout_url( home_url() ); ?>'>logout</a>
                     <?php else : ?>
-                    <a class='button' href='/my-account'>Register</a>
-                    <span class='light'>Already have a account?</span>
-                    <a class='poplink' data-toggle='modal' data-target='#loginmodal' href='#'>Login</a>
+                    <a class='button' data-toggle='modal' data-target='#loginmodal' href='#' title='register'>Login</a>
+                    <span class='light'>Don't have a account?</span>
+                    <a class='poplink' href='/my-account' title='Register'>Register</a>
                     <hr class='hr-light'></hr>
                     <a class='poplink' href='/faq'>FAQ</a>
                     <a class='poplink' href='/help'>Help</a><?php endif;?>">
@@ -116,75 +116,75 @@
 
 </header>
 
-  <div id="menu-mobile" class="container">
+<div id="menu-mobile" class="container">
 
-    <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
-        <div class="mobile-menu-header">
-          <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse">
-            <span class="hamb-top"></span>
-            <span class="hamb-middle"></span>
-            <span class="hamb-bottom"></span>
-            <span class="menu-text">Menu</span>
-          </button>
+  <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
+      <div class="mobile-menu-header">
+        <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse">
+          <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+          <span class="hamb-bottom"></span>
+          <span class="menu-text">Menu</span>
+        </button>
 
-          <div class="mobile-top-menu">
-            <h2>Welcome! <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
-                <?php if (is_user_logged_in()) : ?>
-                  <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <span>Home</span>
-                  </a>
-                  <a class="mobile-myaccount" title="My Account" href="/my-account">
-                    <i class="fa fa-smile-o" aria-hidden="true"></i>
-                    <span>My Account</span>
-                  </a>
-                  <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    <span>Logout</span>
-                  </a>
-                <?php else : ?>
-                  <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <span>Home</span>
-                  </a>
-                  <a data-toggle="modal" data-target="#loginmodal" href="#" class="mobile-login" title="Login">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    <span>Login</span>
-                  </a>
-                  <a class="mobile-register" title="Register" href="/register">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    <span>Register</span>
-                  </a>
-                <?php endif;?>
-        </div>
-            <div class="mobile-search">
-              <?php echo do_shortcode('[wcas-search-form]');?>
-            </div>
-        </div>
-        <?php
-        if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu([
-            'theme_location' => 'primary_navigation',
-            'walker'         => new wp_bootstrap_navwalker(),
-            'menu_class'     => 'nav sidebar-nav navbar-nav'
-          ]);
-        endif;
-        ?>
-        <ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
-          <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a title="Shop" href="/newsletter">Newsletter</a></li>-->
-          <?php if (is_user_logged_in()) : ?>
-            <li class="menu-item support-kontakt"><a class="myaccount" href="/my-account">My Account</a></li>
-            <li class="menu-item support-kontakt"><a class="tracking" href="/order-tracking">Order Tracking</a></li>
-            <li class="menu-item support-kontakt"><a class="orders" href="/my-account/orders/">Orders</a></li>
-            <li class="menu-item support-kontakt"><a class="address" href="/my-account/edit-address/">Edit Address</a></li>
-            <li class="menu-item support-kontakt"><a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a></li>
-            <?php else : ?>
-              <li class="menu-item support-kontakt"><a data-toggle="modal" data-target="#loginmodal" href="#" class="login" title="Login">Login</a></li>
-              <li class="menu-item support-kontakt"><a class="register" href="/my-account">Register</a></li>
-            <?php endif;?>
-        </ul>
-      </nav>
+        <div class="mobile-top-menu">
+          <h2>Welcome! <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
+              <?php if (is_user_logged_in()) : ?>
+                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+                <a class="mobile-myaccount" title="My Account" href="/my-account">
+                  <i class="fa fa-smile-o" aria-hidden="true"></i>
+                  <span>My Account</span>
+                </a>
+                <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  <span>Logout</span>
+                </a>
+              <?php else : ?>
+                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+                <a data-toggle="modal" data-target="#loginmodal" href="#" class="mobile-login" title="Login">
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                  <span>Login</span>
+                </a>
+                <a class="mobile-register" title="Register" href="/register">
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+                  <span>Register</span>
+                </a>
+              <?php endif;?>
+      </div>
+          <div class="mobile-search">
+            <?php echo do_shortcode('[wcas-search-form]');?>
+          </div>
+      </div>
+      <?php
+      if (has_nav_menu('primary_navigation')) :
+        wp_nav_menu([
+          'theme_location' => 'primary_navigation',
+          'walker'         => new wp_bootstrap_navwalker(),
+          'menu_class'     => 'nav sidebar-nav navbar-nav'
+        ]);
+      endif;
+      ?>
+      <ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
+        <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a title="Shop" href="/newsletter">Newsletter</a></li>-->
+        <?php if (is_user_logged_in()) : ?>
+          <li class="menu-item support-kontakt"><a class="myaccount" href="/my-account">My Account</a></li>
+          <li class="menu-item support-kontakt"><a class="tracking" href="/order-tracking">Order Tracking</a></li>
+          <li class="menu-item support-kontakt"><a class="orders" href="/my-account/orders/">Orders</a></li>
+          <li class="menu-item support-kontakt"><a class="address" href="/my-account/edit-address/">Edit Address</a></li>
+          <li class="menu-item support-kontakt"><a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a></li>
+          <?php else : ?>
+            <li class="menu-item support-kontakt"><a data-toggle="modal" data-target="#loginmodal" href="#" class="login" title="Login">Login</a></li>
+            <li class="menu-item support-kontakt"><a class="register" href="/my-account">Register</a></li>
+          <?php endif;?>
+      </ul>
     </nav>
+  </nav>
 </div><!-- end id menu -->
 
 

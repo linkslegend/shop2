@@ -40,6 +40,19 @@
 
 /* @group Lozad.js Lazyload styles */
 
+.lozad{
+	background-color: #d4d4d4;
+    background-image: none;
+    -webkit-animation: lazyloading 2s infinite;
+    animation: lazyloading 2s infinite;	
+}
+@-webkit-keyframes lazyloading{0%{opacity:1}50%{opacity:.4}to{opacity:1}}
+@keyframes lazyloading{0%{opacity:1}50%{opacity:.4}to{opacity:1}}
+
+.lozad.loaded{
+	animation: none;
+	background-color: transparent;}
+
 #slider-header-front img.lozad {
   filter: blur(50px);
   /* this is needed so Safari keeps sharp edges */
@@ -3000,22 +3013,22 @@ ul.payment-block {
 }
 
 .p-amex {
-  background-position: -55px;
+  background-position: -56px;
 }
 .p-amex:hover {
   background-position: 0px;
 }
 .p-diners {
-  background-position: -113px;
+  background-position: -111px;
 }
 .p-diners:hover {
   background-position: -167px;
 }
 .p-master {
-  background-position: -222px;
+  background-position: -333px;
 }
 .p-master:hover {
-  background-position: -255px;
+  background-position: -389px;
 }
 .p-maestro {
   background-position: -223px;
@@ -3033,7 +3046,7 @@ ul.payment-block {
   background-position: -555px;
 }
 .p-visa:hover {
-  background-position: -610px;
+  background-position: -611px;
 }
 .p-stripe {
   background-position: -999px;
@@ -6446,19 +6459,27 @@ h2.recently-Viewed-inner.getkunst-title {
   margin-top: 0;
   text-decoration: inherit;
   border-radius: 100%;
-  color: rgba(15, 15, 15, 1);
+  color: rgba(15, 15, 15, .8);
   background: rgba(255, 255, 255, 1);
   padding: 8px;
   height: 30px;
   width: 30px;
   transition: all 0.25s ease-in-out;
 }
+
+.woocommerce ul.products li.product .yith-wcqv-button:hover:before,
+.slider-products-inner .yith-wcqv-button:hover:before{
+	background: #0f0f0f;
+	color: #fff;
+}
+
 .woocommerce ul.products li.product:hover .yith-wcqv-button:before,
 .slider-products-inner:hover .yith-wcqv-button:before {
   opacity: 0.8;
 }
 .yith-wcqv-button:hover:before {
   opacity: 1;
+  color: rgba(15, 15, 15, 1);
 }
 .yith-quick-view-content.woocommerce div.summary div.quantity {
   display: none !important;
@@ -7032,6 +7053,7 @@ legend {
 #content_popup .woocommerce ul.products .yith-wcqv-button {
   display: inline-block;
   border: none;
+  background: none;
   outline: none;
   height: 35px !important;
   width: 35px !important;
@@ -7107,35 +7129,26 @@ legend {
   background: none;
 }
 #content_popup .woocommerce ul.products a.button {
-  font-size: 1em;
-  box-shadow: none;
-  color: rgba(15, 15, 15, 1);
-  border-radius: 0;
-  font-weight: 500;
-  border: 2px solid rgba(15, 15, 15, 1);
-  background: transparent;
-  padding: 12px 0;
-  margin: 5px auto 0;
-  text-align: center;
-  width: 100%;
+    font-size: 1em;
+    box-shadow: none;
+    color: #fff;
+    display: block;
+    border-radius: 0;
+    border: 2px solid #0f0f0f;
+    background: #0f0f0f;
+    padding: 5px 0;
+    font-weight: 600;
+    margin: 5px auto 0;
+    text-align: center;
+    width: 100%;
+    transition:all 0.25s;
+	    &:hover{
+			background: rgba(0,170,91,1);
+			border: 2px solid rgba(0,170,91,1);
+		}
 }
-#content_popup .woocommerce ul.products a.add_to_cart_button:before{
-	display: none;
-}
-#content_popup .woocommerce ul.products li.product a.button:hover {
-  background: rgba(15, 15, 15, 1);
-  border: 2px solid rgba(15, 15, 15, 1);
-  color: rgba(255, 255, 255, 1);
-}
-#content_popup .woocommerce ul.products li.product a:hover {
-  background: none;
-  border: none;
-}
+#content_popup .woocommerce ul.products a.add_to_cart_button:before{display: none;}
 
-#hover {
-}
-#hover:hover {
-}
 #popup {
   opacity: 0;
   -webkit-transform: translateX(-65%);
@@ -7632,7 +7645,7 @@ button.button.tm-woowishlist-button.added.in_wishlist {
   clear: both;
   width: 75%;
   float: right;
-  margin: 0 0 65px;
+  margin: 55px 0;
   display: block;
   text-align: center;
 }
@@ -8485,6 +8498,44 @@ div.festi-cart-pop-up-products-content
   background-size: 50px;
 }
 /* @end */
+
+/* @group Legal Template */
+
+body.page-template-template-legal .main{
+	font-size: 1.1em;
+}
+body.page-template-template-legal .main a{
+	font-size: 1.1em;
+	border-bottom: 1px dashed #0f0f0f;
+	transition:all 0.25s;
+		&:hover{
+		    background: #f2f2f2;
+		    color: #0f0f0f;
+		    border-bottom: 1px solid #0f0f0f;
+		    text-decoration: none;
+		    margin: 0;
+		}
+}
+
+body.page-template-template-legal .main ul{
+	padding: 0 0 15px 0;
+    margin: 0;
+}
+body.page-template-template-legal .main ul li{
+	padding: 3px 0px 3px 20px;
+}
+body.page-template-template-legal .main ul li:before{
+    font-family: FontAwesome !important;
+    content: "\f0da";
+    position: absolute;
+    font-size: 1em;
+    left: 20px;
+	
+}
+/* @end */
+
+
+
 
 .cld-like-dislike-wrap .cld-common-wrap {
   margin-right: 5px;
@@ -9471,7 +9522,7 @@ div.festi-cart-pop-up-products-content
   }
   .woocommerce nav.prdctfltr-pagination.prdctfltr-pagination-load-more {
     width: 100%;
-    margin: 0 0 45px;
+    margin: 45px 0;
   }
   .wrap.checkout .woo-slg-login-wrapper {
     width: 50%;

@@ -28,9 +28,10 @@ add_filter('body_class', __NAMESPACE__ . '\\body_class');
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+  return ' &hellip; <a class="excerpt_more" href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
 
 foreach ( array( 'pre_term_description' ) as $filter ) {
     remove_filter( $filter, 'wp_filter_kses' );
@@ -45,7 +46,7 @@ foreach ( array( 'term_description' ) as $filter ) {
 add_image_size( 'shop_catalog', 400, 250, true );
 
 // Display 24 products per page. Goes in functions.php
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 36;' ), 20 );
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 69;' ), 69 );
 
 class Widget_Shortcode {
 
@@ -326,4 +327,20 @@ function my_login_redirect( $url, $request, $user ){
         }
     }
     return $url;
+}
+
+
+add_action('check_admin_referer', 'logout_without_confirm', 10, 2);
+   function logout_without_confirm($action, $result)
+      {
+      /**
+      * Allow logout without confirmation
+      */
+      if ($action == "log-out" && !isset($_GET['_wpnonce'])) {
+      $redirect_to = isset($_REQUEST['redirect_to']) ?
+      $_REQUEST['redirect_to'] : '';
+      $location = str_replace('&amp;', '&', wp_logout_url($redirect_to));;
+      header("Location: $location");
+      die();
+    }
 }

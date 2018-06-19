@@ -2,12 +2,11 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="p:domain_verify" content="47b1edda9ed44affacbab179a6bc727d"/>
   <meta name="p:domain_verify" content="cdd4df5c46624930a9742b539f31fb41"/>
+  <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['fontawesome'].''); ?>
 
   <?php wp_head(); ?>
-  <script src="https://use.fontawesome.com/b20ad1bea8.js"></script>
-
   <link rel="apple-touch-icon" sizes="57x57" href="/wp-content/uploads/fav/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/wp-content/uploads/fav/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/wp-content/uploads/fav/apple-icon-72x72.png">
@@ -25,5 +24,4 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/wp-content/uploads/fav/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-
 </head>

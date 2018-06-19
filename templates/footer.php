@@ -6,14 +6,14 @@
   <?php dynamic_sidebar('after-footer'); ?>
 </footer>
 <div class="copyright">
-  &copy; Copyright <?php echo date('Y'); ?> – All Rights Reserved – <?php bloginfo('name'); ?>
   <ul>
+   <li>&copy; Copyright <?php echo date('Y'); ?> – All Rights Reserved – <?php bloginfo('name'); ?></li>
    <li><a href="/imprint" title="Impressum">Legal Notice</a></li>
    <li><a href="/cancellation-policy" title="Cancellation Policy">Cancellation Policy</a></li>
    <li><a href="/terms-conditions" title="Terms & Conditions">Terms & Conditions</a></li>
    <li><a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
-   <li><a href="/cookies" title="Use of cookies">Use of cookies</a></li>
+   <li><a href="/cookie-policy" title="Use of cookies">Use of cookies</a></li>
    <li><a href="/my-data" title="My Data">My Data</a></li>
-   <li><a id="ct-ultimate-gdpr-cookie-open" title="Cookie settings">Cookie Settings</a></li>
+   <!--<li><a id="ct-ultimate-gdpr-cookie-open" title="Cookie settings">Cookie Settings</a></li>-->
   </ul>
 </div>

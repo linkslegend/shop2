@@ -2392,6 +2392,30 @@ ul.inspirationNav li.in3 {
 ul.inspirationNav li a.active {
   font-weight: bold;
 }
+
+.searchandfilter ul li{
+  max-width: 25%;
+}
+
+.sf-field-post-meta-room,
+.sf-field-post-meta-styles,
+.sf-field-post-meta-arrangement {
+    border: 1px solid #979797;
+    background: #fff;
+    border-top: 0;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+}
+
+.sf-field-post-meta-room ul li{
+	float: none;
+}
+
+
+
 /* @end */
 
 /* @group Share buttons plugin */
