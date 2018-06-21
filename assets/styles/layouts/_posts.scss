@@ -2236,34 +2236,52 @@ woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to
 
 /* @group masonry / inspiration Site */
 
-/* ---- grid ---- */
-.grid {
-  display: block;
-  margin-top: 135px;
-}
 
-/* ---- .grid-item ---- */
-.grid-sizer,
-.grid__item {
-  width: 20%;
+.grid-inspiration{
+    display: inline-block;
+    width: 100%;
+    margin-top: 50px;}
+.grid-sizer-inspiration,
+.grid-item-inspiration {
+  width: 25%;
 }
-.grid-item--width2 {
-  width: 40%;
-}
-
-.grid__item {
+.grid-item-inspiration {
   float: left;
-  padding: 5px;
+}
+.grid-item-inspiration img {
+  display: block;
+  max-width: 100%;
+}
+.card-content{
+	overflow: hidden;
+	padding: 10px;
+	transition: box-shadow .4s cubic-bezier(.455,.03,.515,.955);
+		&:hover{
+				box-shadow: 0 1px 6px rgba(0,0,0,.35);
+				}
+}
+ul.room-styles-arrangement{
+    display: block;
+    margin: 0;
+    padding: 0;}
+ul.room-styles-arrangement li{
+    float: left;
+    border: 1px solid #d2d2d2;
+    padding: 2px 4px;
+    border-radius: 6px;
+    margin: 0px 5px 5px 0px;
 }
 
-.grid__item img {
-  display: block;
-  width: 100%;
-}
+
+.card-content h3{
+	font-size: 1.1em;
+    padding: 9px 2px;
+    margin: 0;}
+
+.grid .item img{max-height: 450px;}
 .laodmore {
   top: 0px;
-  position: absolute;
-}
+  position: absolute;}
 .inspiration .yith-wcqv-button {
   display: inline-block !important;
   position: absolute !important;
@@ -2403,8 +2421,10 @@ ul.inspirationNav li a.active {
     border: 1px solid #979797;
     background: #fff;
     border-top: 0;
-    position: absolute;
-    top: 38px;
+    float: left;
+    position: relative;
+    z-index: 3;
+    top: 10px;
     left: 0;
     width: 100%;
     margin-top: 0;
@@ -2414,7 +2434,43 @@ ul.inspirationNav li a.active {
 	float: none;
 }
 
+.filters-select{
+	border: none;
+	margin: 0px 15px;
+}
+.filter-wrapper{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+.filter-section{
+    flex: 1;
+    max-width: 25%;
+    margin-right: 12px;
+    padding: 0;
+    height: 39px;
+    overflow: visible;
+    border: 0;
+    position: relative;	
+}
+.filter-wrapper .btn-info {
+    color: #0f0f0f;
+    background-color: transparent;
+    border: 1px solid #0f0f0f;
+    padding: 7px 10px;
+    border-radius: 0px;
+}
 
+.filter-wrapper .btn-info.active, 
+.filter-wrapper .btn-info:active, 
+.filter-wrapper .btn-info:hover, 
+.filter-wrapper .open > .btn-info.dropdown-toggle {
+    color: #0f0f0f;
+    background-color: #f2f2f2;
+    border: 1px solid #0f0f0f;
+    padding: 7px 10px;
+    border-radius: 0px;
+}
 
 /* @end */
 

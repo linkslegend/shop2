@@ -37,6 +37,60 @@
 
         }());
 
+
+        // init Masonry
+        // set up variables
+        var categoryFilters = [];
+        var categoryFilter;
+        var qsRegex;
+        var $grid = $('.grid-inspiration').isotope({
+          itemSelector: '.grid-item-inspiration',
+          percentPosition: true,
+          horizontalOrder: true,
+          columnWidth: '.grid-sizer-inspiration',
+          filter: function() {
+            var $this = $(this);
+              // search
+              var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+              // category
+              if (categoryFilters.length === 0) return true;
+
+              for (var i = 0; i < categoryFilters.length; i++) {
+                if ($this.is('[data-category*=' + categoryFilters[i] + ']')) {
+                  return searchResult;
+                }
+              }
+              return false;
+          }
+        });
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress( function() {
+          $grid.isotope();
+        });
+
+
+        // bind filter on select change
+        $('.filters-select').on( 'change', function() {
+          // get filter value from option value
+          var filterValue = this.value;
+          // use filterFn if matches value
+          $grid.isotope({ filter: filterValue });
+        });
+
+        // bind filter button click
+        $('.room-styles-arrangement').on('click', 'div', function() {
+          var filterValue = $(this).attr('data-category');
+          $grid.isotope({ filter: filterValue });
+        });
+
+
+        $('.selectpicker').selectpicker({
+          style: 'btn-info',
+          size: 4
+        });
+
+
+
         $(document).ready(function() {
           // Initialize library to lazy load images
           const observer = lozad('.lozad', {
@@ -626,7 +680,7 @@
                   {
                     breakpoint: 600,
                     settings: {
-                      slidesToShow: 2,
+                      slidesToShow: 1,
                       infinite: true
                     }
                   }
@@ -692,7 +746,7 @@
                   {
                     breakpoint: 600,
                     settings: {
-                      slidesToShow: 2,
+                      slidesToShow: 1,
                       infinite: true
                     }
                   }

@@ -32,7 +32,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg 1200w"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg"
-              src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-lqip-blur.jpg"
+              src="https://www.juniqe.de/app/assets/images/blank.gif"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -51,7 +51,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-medium.jpg 660w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg 1200w"
-             src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-lqip-blur.jpg"
+             src="https://www.juniqe.de/app/assets/images/blank.gif"
         data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -70,7 +70,7 @@ use Roots\Sage\Wrapper;
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 660w,
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-large.jpg 1200w"
-                   src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-lqip-blur.jpg"
+                   src="https://www.juniqe.de/app/assets/images/blank.gif"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -89,7 +89,7 @@ use Roots\Sage\Wrapper;
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 660w,
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-large.jpg 1200w"
-                   src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-lqip-blur.jpg"
+                   src="https://www.juniqe.de/app/assets/images/blank.gif"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -110,7 +110,7 @@ use Roots\Sage\Wrapper;
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 660w,
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 800w,
             <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-large.jpg 1200w"
-                 src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-lqip-blur.jpg"
+                 src="https://www.juniqe.de/app/assets/images/blank.gif"
             data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>.jpg"
     >
       <div class="tile-content">
@@ -129,7 +129,7 @@ use Roots\Sage\Wrapper;
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 660w,
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 800w,
             <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-large.jpg 1200w"
-                 src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-lqip-blur.jpg"
+                 src="https://www.juniqe.de/app/assets/images/blank.gif"
             data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>.jpg"
     >
       <div class="tile-content">

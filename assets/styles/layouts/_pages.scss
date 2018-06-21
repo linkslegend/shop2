@@ -54,14 +54,14 @@
 	background-color: transparent;}
 
 #slider-header-front img.lozad {
-  filter: blur(50px);
+  filter: blur(100px);
   /* this is needed so Safari keeps sharp edges */
-  transition: all 0.15s linear;
+  transition: all 0.2s linear;
 }
 #slider-header-front img.lozad.loaded {
   opacity: 1;
   filter: blur(0px);
-  transition: all 0.15s linear;
+  transition: all 0.2s linear;
 }
 
 /* @end */
@@ -4987,19 +4987,24 @@ form.lost_reset_password .form-row label {
 /* @end */
 
 /* @group GDPR Styles */
-
+.ct-ultimate-gdpr-cookie-popup-modern .ct-ultimate-gdpr-cookie-buttons{
+	float: none!important;
+}
 #ct-ultimate-gdpr-cookie-popup{
 	padding: 15px!important;	
     background-color: #313131!important;
     color: rgb(255, 255, 255)!important;}
 #ct-ultimate-gdpr-cookie-accept{
-    background-color: #00aa5b!important;
-    padding: 10px!important;
-    width: 150px!important;
-    margin: 10px 0!important;
-    text-align: center!important;
-    transition: all 0.25s;
-	border: 2px solid #00aa5b!important;
+	background-color: #00aa5b !important;
+	padding: 10px !important;
+	width: 160px !important;
+	margin: 10px 0 !important;
+	text-align: center !important;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+	border: 2px solid #00aa5b !important;
+	color: #fff !important;
+	font-weight: 600;
 	    &:hover{
 			background-color: transparent!important;
 			color: #fff!important;
@@ -5007,13 +5012,14 @@ form.lost_reset_password .form-row label {
 	}
 }
 #ct-ultimate-gdpr-cookie-read-more{
-	background: transparent!important;
-	color: #fff;
-	font-weight: bold!important;
-    text-align: center!important;
-    width: 120px!important;
-    margin: 10px 0!important;
-    padding: 10px!important;
+	background: transparent !important;
+	color: #fff !important;
+	font-weight: 500 !important;
+	text-align: center !important;
+	width: 100px !important;
+	margin: 10px 0 !important;
+	padding: 10px !important;
+	border: none !important;
 }
 #ct-ultimate-gdpr-cookie-change-settings{
 	display: none;
@@ -5366,7 +5372,9 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
 /*large mobile device*/
 @media (max-width: 767px) {
 #ct-ultimate-gdpr-cookie-popup {
-    padding: 15px;    
+    padding: 15px 15px 5px 15px !important;
+    width: 100%!important;
+    border-radius: 0px!important;
     left: 0!important;
     bottom: 0!important;
     right: 0!important;}
@@ -5376,8 +5384,8 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
     display: block;
     min-height: auto;
     margin-bottom: 5px;}
-#ct-ultimate-gdpr-cookie-accept {}
-#ct-ultimate-gdpr-cookie-read-more {}
+#ct-ultimate-gdpr-cookie-accept {width: 65%!important;}
+#ct-ultimate-gdpr-cookie-read-more {width: 30%!important;}
 .ct-ultimate-gdpr-cookie-popup-modern .ct-ultimate-gdpr-cookie-buttons {float: none;}
 
 }
@@ -12423,5 +12431,6 @@ a.tabcontent-button.active{
 	margin-bottom: 5px;}
 	.copyright ul{
 	margin-left: -5px;}
-	
+	.home .instagramm{
+	margin: 0;}
 }

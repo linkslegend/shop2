@@ -42,33 +42,31 @@ if ( $query->have_posts() )
 			}
 		?>
 	</div>
-
+	<div class="grid-inspiration">
+  <div class="grid-sizer-inspiration"></div>
 	<?php
 	while ($query->have_posts())
 	{
 		$query->the_post();
 		?>
-		<div class="card col-xs-6 col-sm-4 col-md-3">
+		<div class="grid-item-inspiration">
 				<div class="card-content">
-					<img src="<?php if ( has_post_thumbnail() ) {the_post_thumbnail_url();} ?>" class="image"/>
-					<h2><?php the_title(); ?></a></h2>
-					<ul>
-						<li><?php the_field('room'); ?></li>
-						<li><?php the_field('styles'); ?></li>
-					  <li><?php the_field('arrangement'); ?></li>
+
+					<a href="<?php the_field('product-link'); ?>"><img src="<?php if ( has_post_thumbnail() ) {the_post_thumbnail_url( array(350, 500) );} ?>" class="image"/></a>
+					<!--<?php the_field('shoppable_button'); ?>-->
+					<h3><?php the_title(); ?></h3>
+					<!--<h3><?php the_field('product-price'); ?></h3>-->
+					<ul class="room-styles-arrangement">
+							<li><?php the_field('room'); ?></li>
+							<li><?php the_field('styles'); ?></li>
+						  <li><?php the_field('arrangement'); ?></li>
 					</ul>
-				<!--
-					<p><br /><?php the_excerpt(); ?></p>
-					<p><?php the_category(); ?></p>
-					<p><?php the_tags(); ?></p>
-					<p><small><?php the_date(); ?></small></p>
-				-->
 			</div>
 		</div>
 		<?php
 	}
 	?>
-	Page <?php echo $query->query['paged']; ?> of <?php echo $query->max_num_pages; ?><br />
+</div>
 
 	<div class="pagination">
 

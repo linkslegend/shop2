@@ -8,6 +8,17 @@ use Roots\Sage\Wrapper;
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+
   <body <?php body_class(); ?>>
     <!--[if IE]>
       <div class="alert alert-warning">
@@ -27,15 +38,69 @@ use Roots\Sage\Wrapper;
     <li class="in1"><a class="active" href="#">Shop Instagram</a></li>
     <li class="in3"><a href="#">How to hang guide</a></li>
   </ul>
-  <?php echo do_shortcode('[searchandfilter id="33656"]'); ?>
+<div class="filter-wrapper">
+  <select class="filters-select selectpicker">
+    <option value="*">show all</option>
+    <option value=".kitchen">Kitchen</option>
+    <option value=".dining-room">Dining Room</option>
+    <option value=".living-room">Living Room</option>
+    <option value=".office">Office</option>
+    <option value=".bathroom">Bathroom</option>
+    <option value=".bedroom">Bedroom</option>
+  </select>
+  <select class="filters-select selectpicker">
+    <option value="*">show all</option>
+    <option value=".kitchen">Kitchen</option>
+    <option value=".dining-room">Dining Room</option>
+    <option value=".living-room">Living Room</option>
+    <option value=".office">Office</option>
+    <option value=".bathroom">Bathroom</option>
+    <option value=".bedroom">Bedroom</option>
+  </select>
+  <select class="filters-select selectpicker">
+    <option value="*">show all</option>
+    <option value=".kitchen">Kitchen</option>
+    <option value=".dining-room">Dining Room</option>
+    <option value=".living-room">Living Room</option>
+    <option value=".office">Office</option>
+    <option value=".bathroom">Bathroom</option>
+    <option value=".bedroom">Bedroom</option>
+  </select>
 </div>
 
-<div class="content">
+</div>
+
   <div class="container-fluid">
-    <?php echo do_shortcode('[searchandfilter id="33656" show="results"]'); ?>
+    <div class="grid-inspiration">
+    <div class="grid-sizer-inspiration"></div>
+  	<?php
+        $args = array('post_type'=>array('posts', 'roomstyle'));
+        query_posts($args);
+        if ( have_posts() ) {
+        	while ( have_posts() ) {
+        		the_post();
+  		?>
+  		<div class="grid-item-inspiration <?php the_field('room'); ?>" data-category="<?php the_field('room'); ?>">
+  				<div class="card-content">
+  					<a href="<?php the_field('product-link'); ?>"><img src="<?php if ( has_post_thumbnail() ) {the_post_thumbnail_url( array(350, 500) );} ?>" class="image"/></a>
+  					<!--<?php the_field('shoppable_button'); ?>-->
+  					<h3><?php the_title(); ?></h3>
+  					<!--<h3><?php the_field('product-price'); ?></h3>-->
+  					<ul class="room-styles-arrangement">
+              <li><div class="button <?php the_field('room'); ?>" data-category=".<?php the_field('room'); ?>"><?php the_field('room'); ?></div></li>
+              <li><div class="button <?php the_field('styles'); ?>" data-category=".<?php the_field('styles'); ?>"><?php the_field('styles'); ?></div></li>
+              <li><div class="button <?php the_field('arrangement'); ?>" data-category=".<?php the_field('arrangement'); ?>"><?php the_field('arrangement'); ?></div></li>
+  					</ul>
+  			</div>
+  		</div>
+  		<?php
+  	} }
+  	?>
+  </div>
+
+
         <?php include Wrapper\template_path(); ?>
     </div><!-- /.main -->
-  </div>
   </div>
     <?php if (Setup\display_sidebar()) : ?>
       <aside class="sidebar">
