@@ -2565,8 +2565,87 @@ ul.inspirationNav li a.active {
 #wc-stripe-payment-request-wrapper {
   padding-top: 0px;
 }
+/* @end */
+
+/* @group Selectpicker */
+
+.bootstrap-select > select {
+    position: absolute!important;
+    bottom: 0;
+    left: 50%;
+    display: block!important;
+    width: .5px!important;
+    height: 100%!important;
+    padding: 0!important;
+    opacity: 0!important;
+    border: none;}
+select.bs-select-hidden, 
+select.selectpicker {
+    display: none!important;}
+.bootstrap-select.btn-group .dropdown-menu.inner {
+    position: static;
+    float: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;}
+.bootstrap-select.btn-group:not(.input-group-btn), 
+.bootstrap-select.btn-group[class*=col-] {
+    float: none;
+    display: inline-block;
+    margin-left: 0;
+    width: 100%!important;}
+.bootstrap-select>.dropdown-toggle.bs-placeholder, 
+.bootstrap-select>.dropdown-toggle.bs-placeholder:active, 
+.bootstrap-select>.dropdown-toggle.bs-placeholder:focus, 
+.bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+    color: #0f0f0f;}
+.open > .dropdown-menu {
+    display: block;
+    max-height: fit-content!important;
+    border: 1px solid #0f0f0f;
+    border-top: 0px;
+    border-radius: 0px;}
+.bootstrap-select .btn-info {
+    color: #0f0f0f;
+    background-color: transparent;
+    border-color: #0f0f0f;
+    border-radius: 0px;
+    transition: all 0.2ss;
+		&:hover{
+			background: #f2f2f2;
+		}    
+}
+
+.open>.btn-info.dropdown-toggle {
+    color: #0f0f0f;
+    background-color: #f2f2f2;
+    border-color: #0f0f0f;
+    border-bottom: 1px solid #d2d2d2;
+    &:hover{
+		background: #f2f2f2;
+		color: #0f0f0f;
+	    border-color: #0f0f0f;}
+}
+.bootstrap-select .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+.bootstrap-select.btn-group .dropdown-menu li {
+    position: relative;
+    border-bottom: 1px solid #d2d2d2;
+    &:last-child{
+		border-bottom: 0px;
+	}
+}
+.bootstrap-select .dropdown-menu{
+	margin: 0px;
+	padding: 0px;
+}
 
 /* @end */
+
 
 .woocommerce p.stars a:before {
   font-size: 20px;
@@ -4045,6 +4124,21 @@ ul.inspirationNav li a.active {
   .woocommerce div.product div.images .woocommerce-product-gallery__trigger{
 	top: 10px;
 	left: 10px;}
+	table.variations {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+    background: #f2f2f2;
+    display: block;
+	}   
+	.woocommerce div.product form.cart .variations tr{
+	float: left;
+	}
+	.woocommerce div.product form.cart .variations td{
+	
+	}
 }
 
 /*iPhone 6*/
