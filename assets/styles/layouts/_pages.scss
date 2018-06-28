@@ -43,8 +43,8 @@
 .lozad{
 	background-color: #d4d4d4;
     background-image: none;
-    -webkit-animation: lazyloading 2s infinite;
-    animation: lazyloading 2s infinite;	
+    -webkit-animation: lazyloading 1.5s infinite;
+    animation: lazyloading 1.5s infinite;	
 }
 @-webkit-keyframes lazyloading{0%{opacity:1}50%{opacity:.4}to{opacity:1}}
 @keyframes lazyloading{0%{opacity:1}50%{opacity:.4}to{opacity:1}}
@@ -52,17 +52,6 @@
 .lozad.loaded{
 	animation: none;
 	background-color: transparent;}
-
-#slider-header-front img.lozad {
-  filter: blur(100px);
-  /* this is needed so Safari keeps sharp edges */
-  transition: all 0.2s linear;
-}
-#slider-header-front img.lozad.loaded {
-  opacity: 1;
-  filter: blur(0px);
-  transition: all 0.2s linear;
-}
 
 /* @end */
 
@@ -7458,7 +7447,7 @@ button.button.tm-woowishlist-button:focus {
   top: 0 !important;
   color: rgba(15, 15, 15, 1);
   border: 1px solid rgba(208, 208, 208, 1) !important;
-  background: rgba(242, 242, 242, 1) !important;
+  background: transparent !important;
   width: 49% !important;
   display: block !important;
   text-align: center !important;
@@ -7755,7 +7744,7 @@ button.button.tm-woowishlist-button.added.in_wishlist {
 }
 
 .woocommerce button.button.compare-size {
-  background: rgba(242, 242, 242, 1);
+  background: transparent;
   width: 48%;
   font-size: 1em;
   float: right;

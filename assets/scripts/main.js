@@ -84,10 +84,10 @@
         });
 
 
-        $('.selectpicker').selectpicker({
-          style: 'btn-info',
-          size: 4
-        });
+        $('.selectpicker').select2({
+          width: '100%', // need to override the changed default
+          minimumResultsForSearch: Infinity
+          });
 
 
 
@@ -182,14 +182,6 @@
           $(".prdctfltr_filter_title").toggleClass("open");
         });
 
-
-        $('.grid').masonry({
-          // set itemSelector so .grid-sizer is not used in layout
-          itemSelector: '.grid__item',
-          // use element for option
-          columnWidth: '.grid-sizer',
-          percentPosition: true
-        });
 
 
         jQuery('body').popover({

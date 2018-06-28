@@ -1283,6 +1283,16 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
      ";
  }
 
+
+/* Change Variation text (Choose an option) */
+ add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'am_change_option_none_text' );
+ function am_change_option_none_text( $args ) {
+ 	$args['show_option_none'] = 'Choose ' . wc_attribute_label( $args[ 'attribute' ] );
+
+ 	return $args;
+ }
+
+
  /* Checkoutpage Paypal image*/
  function paypal_checkout_icon() {
  return 'https://d1zczzapudl1mr.cloudfront.net/icono-paypal-tarjetas.png'; // write your own image URL here
