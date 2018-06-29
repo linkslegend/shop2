@@ -54,7 +54,7 @@ function remove_assets() {
   wp_dequeue_script( 'jqueryui' );
 
   remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
-/*  wp_dequeue_style( 'yith-quick-view' );
+/*wp_dequeue_style( 'yith-quick-view' );
   wp_deregister_style( 'yith-quick-view' );
 */
   wp_dequeue_style( 'tm-woowishlist' );
@@ -71,6 +71,10 @@ function remove_assets() {
 
   wp_dequeue_style( 'dgwt-wcas-style ' );
   wp_deregister_style( 'dgwt-wcas-style ' );
+
+  wp_dequeue_style( 'dgwt-wcas-style ' );
+  wp_deregister_style( 'dgwt-wcas-style ' );
+
 }
 add_action( 'wp_enqueue_scripts', 'remove_assets', 9999 );
 

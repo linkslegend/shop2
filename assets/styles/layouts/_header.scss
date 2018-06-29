@@ -2442,7 +2442,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
 	border-bottom: none;
 }
 .megamenu-column ul li a{
-	padding: 8px 34px;
+	padding: 6px 34px 9px 34px;
 	width: 100%;
 }
 .sidebar-nav li.featured-image{
@@ -2535,7 +2535,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   .sidebar-nav li a:active,
   .sidebar-nav li.open a:active {
     background-color: transparent;
-    color: rgba(15, 15, 15, 1);
+    color: rgb(255, 255, 255);
     text-decoration: none;
   }
   .sidebar-nav > .sidebar-brand {
