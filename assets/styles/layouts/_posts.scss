@@ -4138,7 +4138,7 @@ ul.inspirationNav li a.active {
   }
   .woocommerce div.product form.cart,
   .woocommerce div.product p.cart {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .woocommerce #respond input#submit.added:after,
   .woocommerce a.button.added:after,
@@ -4679,8 +4679,8 @@ table.variations tbody {
     border: none;}
 .woocommerce button.single_add_to_cart_button.button.disabled, 
 .woocommerce button.single_add_to_cart_button.button.disabled:hover {
-    background: rgba(19, 148, 88, 0.9);
-    border-color: rgba(0,170,91,.9);
+    background: rgba(19, 148, 88, 0.8);
+    border-color: transparent;
     cursor: not-allowed;
     color: #fff;
     position: fixed;
@@ -4692,6 +4692,14 @@ table.variations tbody {
     z-index: 99;
     border-top: 1px solid rgb(184, 184, 184);
     height: 51px;}	
+.woocommerce button.single_add_to_cart_button.button:hover {
+    background: rgba(19, 148, 88, 1);
+    font-weight: 500;
+    border: 0px solid #00aa5b;
+    color: #fff;}
+.woocommerce button.single_add_to_cart_button.button:hover:before,
+.woocommerce .single_add_to_cart_button.loading:before {
+    color: #fff;}  
 .onp-sl {
     margin: 20px auto 0 auto!important;}    
 .woocommerce-tabs{
@@ -4718,6 +4726,10 @@ table.variations tbody {
     color: #fff;
     z-index: 99;}
 .woocommerce .variations .ajaxerrors p{margin: 0;}
+.single .summary .woocommerce-Price-amount{
+	text-align: center;}
+.woocommerce-variation.single_variation{
+	display: block;}
 
 }
 

@@ -2101,7 +2101,7 @@ a.wc-gateway-ppec-cancel:hover {
 	text-decoration: underline;
 }
 .woocommerce-error a {
-  color: #f14883;
+  color: #ff4343;
   padding: 4px 6px;
   border-radius: 4px;
   text-decoration: none;
@@ -12422,4 +12422,11 @@ a.tabcontent-button.active{
 	margin-left: -5px;}
 	.home .instagramm{
 	margin: 0;}
+body.page-template-template-legal .main ul li:before{
+    left: 5px;}
+.wishlist .page-header{
+    padding-bottom: 5px;
+    margin: 15px 0 0 0;	}    
+    
 }
+/* */
