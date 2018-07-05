@@ -12,6 +12,9 @@ body {
   letter-spacing: 0.03rem;
   color: rgba(15, 15, 15, 1);
 }
+.lock-scroll {
+    overflow: hidden;
+}
 #header-placeholder {
   position: relative;
   height: 110px;
@@ -165,7 +168,7 @@ h1 {
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(15, 15, 15, 1);
+  background-color: rgba(15, 15, 15, 0.95);
   border-bottom: 0px solid rgba(15, 15, 15, 1);
 }
 .navbar-default .navbar-nav > .active > a,
@@ -2341,7 +2344,7 @@ li {
     font-size: 1.1em;
     content: "\f105";
     left: 16px;
-    top: 13px;
+    top: 10px;
     font-style: normal;
     float: left;
     position: relative;
@@ -2508,7 +2511,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: block;
     letter-spacing: 0.03em;
     font-size: 1.05em;
-    padding: 13px 10px 13px 35px;
+    padding: 10px 10px 10px 35px;
     text-decoration: none;
   }
   .sidebar-nav ul.dropdown-menu li.active a {
@@ -3311,7 +3314,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     text-align: center;
     display: block;
     top: 0;
-    margin-top: 5px;
+    margin-top: 10px;
     float: none;
     margin-right: auto;
     margin-left: auto;

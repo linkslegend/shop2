@@ -120,7 +120,7 @@
 
   <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
       <div class="mobile-menu-header">
-        <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse">
+        <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
           <span class="hamb-top"></span>
           <span class="hamb-middle"></span>
           <span class="hamb-bottom"></span>

@@ -39,56 +39,55 @@
 
 
         // init Masonry
-        // set up variables
-        var categoryFilters = [];
-        var categoryFilter;
-        var qsRegex;
-        var $grid = $('.grid-inspiration').isotope({
-          itemSelector: '.grid-item-inspiration',
-          percentPosition: true,
-          horizontalOrder: true,
-          columnWidth: '.grid-sizer-inspiration',
-          filter: function() {
+        var $container = $('#grid-inspiration'),
+            $select = $('div#filter-wrapper select');
+        filters = {};
+
+        $container.isotope({
+            itemSelector: '.grid-item-inspiration',
+            percentPosition: true,
+            horizontalOrder: true,
+            columnWidth: '.grid-sizer-inspiration'
+        });
+            $select.change(function() {
             var $this = $(this);
-              // search
-              var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
-              // category
-              if (categoryFilters.length === 0) return true;
 
-              for (var i = 0; i < categoryFilters.length; i++) {
-                if ($this.is('[data-category*=' + categoryFilters[i] + ']')) {
-                  return searchResult;
-                }
-              }
-              return false;
-          }
+            var $optionSet = $this;
+            var group = $optionSet.attr('data-filter-group');
+        filters[group] = $this.find('option:selected').attr('data-filter-value');
+
+            var isoFilters = [];
+            for (var prop in filters) {
+                isoFilters.push(filters[prop]);
+            }
+            var selector = isoFilters.join('');
+
+            $container.isotope({
+                filter: selector
+            });
+
+            return false;
         });
+
+
         // layout Masonry after each image loads
-        $grid.imagesLoaded().progress( function() {
-          $grid.isotope();
+        $container.imagesLoaded().progress( function() {
+          $container.isotope();
         });
 
 
-        // bind filter on select change
-        $('.filters-select').on( 'change', function() {
-          // get filter value from option value
-          var filterValue = this.value;
-          // use filterFn if matches value
-          $grid.isotope({ filter: filterValue });
+
+        $(document).on('click', ".hamburger", function() {
+          $("body").toggleClass("lock-scroll");
         });
 
-        // bind filter button click
-        $('.room-styles-arrangement').on('click', 'div', function() {
-          var filterValue = $(this).attr('data-category');
-          $grid.isotope({ filter: filterValue });
-        });
+
 
 
         $('.selectpicker').select2({
           width: '100%', // need to override the changed default
           minimumResultsForSearch: Infinity
           });
-
 
 
         $(document).ready(function() {
