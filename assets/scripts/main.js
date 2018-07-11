@@ -82,12 +82,15 @@
         });
 
 
-
-
         $('.selectpicker').select2({
           width: '100%', // need to override the changed default
           minimumResultsForSearch: Infinity
-          });
+        });
+
+        $.fn.modal.Constructor.prototype.enforceFocus = function() {};
+
+
+
 
 
         $(document).ready(function() {
