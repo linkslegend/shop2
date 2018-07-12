@@ -6485,11 +6485,12 @@ h2.recently-Viewed-inner.getkunst-title {
 .yith-quick-view-content.woocommerce button.single_add_to_cart_button.button.disabled, 
 .yith-quick-view-content.woocommerce button.single_add_to_cart_button.button.disabled:hover {
     background: rgba(0,170,91,.5)!important;
-    border-color: rgba(0,170,91,.5)!important;
+    border-color: transparent!important;
     cursor: not-allowed!important;
     color: #fff!important;}
 .yith-quick-view-content.woocommerce button.single_add_to_cart_button.button {
     background: rgba(0,170,91,1)!important;
+    font-size: 1.3em;
     border: 2px solid rgba(0,170,91,1)!important;
     color: #fff;
 		&:hover{
@@ -6506,16 +6507,19 @@ h2.recently-Viewed-inner.getkunst-title {
 .yith-quick-view-content.woocommerce .woocommerce-variation-price {
     display: block;
     bottom: 0;
-    font-size: 1.23em;
     padding-left: 0;
     top: 10px;
     margin-bottom: 7px;
     text-align: center;
     position: relative;}
 .yith-quick-view-content.woocommerce div.summary .price {
-  font-size: 1.3em;
-  font-weight: 700;
-  margin-bottom: 7px;}
+    font-size: 1.5em!important;
+    font-weight: 700;
+    position: initial!important;
+    text-align: center!important;
+    margin-bottom: 7px!important;}
+.single .yith-quick-view-content.woocommerce div.summary .price .woocommerce-Price-amount{
+	font-size: inherit!important;}
 .yith-quick-view-content.woocommerce div.summary table.variations td {
   line-height: 10px;
   margin: 15px 0px 0px 0px!important;
@@ -6540,7 +6544,7 @@ h2.recently-Viewed-inner.getkunst-title {
     text-align: center;
     display: block;
     border: 2px solid rgba(15, 15, 15, 0);
-    font-size: 1.3em;
+    font-size: 1.2em;
     border-radius: 0;
     background: rgba(15, 15, 15, 0.7);
     -webkit-transition: all .35s ease 0s;
@@ -6592,7 +6596,7 @@ h2.recently-Viewed-inner.getkunst-title {
   right: 7px;
   top: 7px;
   border-radius: 100%;
-  border: 2px solid rgba(15, 15, 15, 1);
+  border: 1px solid rgba(15, 15, 15, 1);
   opacity: 0.7;
   height: 30px;
   width: 30px;
@@ -6605,7 +6609,7 @@ h2.recently-Viewed-inner.getkunst-title {
   right: 0px;
   font-family: fontAwesome;
   content: "\f00d";
-  top: 1px;
+  top: 2px;
   width: 100%;
   height: 100%;
   text-align: center;

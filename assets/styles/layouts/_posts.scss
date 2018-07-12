@@ -799,7 +799,8 @@ div.ywar_show_more a {
   margin: 15px 0 0;
   width: 100%;
   float: left;
-  padding: 10px;
+  padding: 12px;
+  height: 40px;
   display: block;
   border: 1px solid #e2e2e2;
   font-size: 0.9em;
@@ -1074,7 +1075,7 @@ button.step-btn.plus:hover i{color: #00aa5b;}
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-height: 35px;
+  min-height: 38px;
   letter-spacing: 0.1em;
 }
 .variations label {
@@ -1166,8 +1167,8 @@ button.step-btn.plus:hover i{color: #00aa5b;}
   font-size: 14px;
   content: "+ Free Shipping";
 }
-.single.woocommerce div.product .summary p.price,
-.single.woocommerce div.product .summary span.price {
+.single .summary.entry-summary p.price,
+.single .summary.entry-summary span.price {
   display: block;
   bottom: 12px;
   font-size: 1.45em;
