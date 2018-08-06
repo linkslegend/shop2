@@ -11,6 +11,137 @@
   </button>
 </div>
 
+<div id="menu-mobile" class="container">
+  <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
+      <div class="mobile-menu-header">
+        <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
+          <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+          <span class="hamb-bottom"></span>
+          <span class="menu-text">Menu</span>
+        </button>
+
+        <div class="mobile-top-menu">
+          <h2>Welcome! <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
+              <?php if (is_user_logged_in()) : ?>
+                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+                <a class="mobile-myaccount" title="My Account" href="/my-account">
+                  <i class="fa fa-smile-o" aria-hidden="true"></i>
+                  <span>My Account</span>
+                </a>
+                <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  <span>Logout</span>
+                </a>
+              <?php else : ?>
+                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+                <a data-toggle="modal" data-target="#loginmodal" href="#" class="mobile-login" title="Login">
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                  <span>Login</span>
+                </a>
+                <a class="mobile-register" title="Register" href="/register">
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+                  <span>Register</span>
+                </a>
+              <?php endif;?>
+      </div>
+          <div class="mobile-search">
+            <?php echo do_shortcode('[wcas-search-form]');?>
+          </div>
+      </div>
+      <?php
+      if (has_nav_menu('primary_navigation')) :
+        wp_nav_menu([
+          'theme_location' => 'primary_navigation',
+          'walker'         => new wp_bootstrap_navwalker(),
+          'menu_class'     => 'nav sidebar-nav navbar-nav'
+        ]);
+      endif;
+      ?>
+      <ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
+        <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a title="Shop" href="/newsletter">Newsletter</a></li>-->
+        <?php if (is_user_logged_in()) : ?>
+          <li class="menu-item support-kontakt"><a class="myaccount" href="/my-account">My Account</a></li>
+          <li class="menu-item support-kontakt"><a class="tracking" href="/order-tracking">Order Tracking</a></li>
+          <li class="menu-item support-kontakt"><a class="orders" href="/my-account/orders/">Orders</a></li>
+          <li class="menu-item support-kontakt"><a class="address" href="/my-account/edit-address/">Edit Address</a></li>
+          <li class="menu-item support-kontakt"><a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a></li>
+          <?php else : ?>
+            <li class="menu-item support-kontakt"><a data-toggle="modal" data-target="#loginmodal" href="#" class="login" title="Login">Login</a></li>
+            <li class="menu-item support-kontakt"><a class="register" href="/my-account">Register</a></li>
+          <?php endif;?>
+      </ul>
+
+<footer class="mobile">
+  <div class="social-menu">
+    <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['socialbox'].''); ?>
+  </div>
+
+
+<ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
+<li class="megamenu menu-item menu-item-has-children dropdown">
+  <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">Help & Information<b class="caret"></b></a>
+  <ul class="dropdown-menu">
+  <li class="megamenu-column">
+    <ul>
+    	<li class="menu-item "><a href="/help/">Help</a></li>
+    	<li class="menu-item "><a href="">Track Order</a></li>
+    	<li class="menu-item "><a href="">Delivery & Returns</a></li>
+    	<li class="menu-item "><a href="/contact/">Contact</a></li>
+    </ul>
+ </li>
+</ul>
+</li>
+<li class="megamenu menu-item menu-item-has-children dropdown">
+  <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">About Getkunst.com<b class="caret"></b></a>
+  <ul class="dropdown-menu">
+  <li class="megamenu-column">
+    <ul>
+    	<li class="menu-item "><a href="/help/">About Us</a></li>
+    	<li class="menu-item "><a href="">Artists</a></li>
+    </ul>
+ </li>
+</ul>
+</li>
+<li class="megamenu menu-item menu-item-has-children dropdown">
+  <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">More<b class="caret"></b></a>
+  <ul class="dropdown-menu">
+  <li class="megamenu-column">
+    <ul>
+    	<li class="menu-item "><a href="/help/">Help</a></li>
+    	<li class="menu-item "><a href="">Track Order</a></li>
+    	<li class="menu-item "><a href="">Delivery & Returns</a></li>
+    	<li class="menu-item "><a href="/contact/">Contact</a></li>
+    </ul>
+ </li>
+</ul>
+</li>
+</ul>
+
+<div class="legalbar">
+  <div class="legalbar-inner">
+  <p class="copy">© <?php echo date('Y'); ?> – All Rights Reserved – <?php bloginfo('name'); ?></p>
+    <ul>
+      <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="/terms-conditions/">Ts&amp;Cs</a></li>
+      <li><a href="/cookie-policy/">Use of cookies</a></li>
+    </ul>
+  </div>
+</div>
+
+</footer>
+
+    </nav>
+  </nav>
+</div>
+<!-- end id menu -->
+
 <div id="wrapper">
 
 <div id="header-placeholder"></div>
@@ -116,76 +247,7 @@
 
 </header>
 
-<div id="menu-mobile" class="container">
 
-  <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
-      <div class="mobile-menu-header">
-        <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
-          <span class="hamb-top"></span>
-          <span class="hamb-middle"></span>
-          <span class="hamb-bottom"></span>
-          <span class="menu-text">Menu</span>
-        </button>
-
-        <div class="mobile-top-menu">
-          <h2>Welcome! <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
-              <?php if (is_user_logged_in()) : ?>
-                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
-                  <i class="fa fa-home" aria-hidden="true"></i>
-                  <span>Home</span>
-                </a>
-                <a class="mobile-myaccount" title="My Account" href="/my-account">
-                  <i class="fa fa-smile-o" aria-hidden="true"></i>
-                  <span>My Account</span>
-                </a>
-                <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
-                  <i class="fa fa-sign-out" aria-hidden="true"></i>
-                  <span>Logout</span>
-                </a>
-              <?php else : ?>
-                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
-                  <i class="fa fa-home" aria-hidden="true"></i>
-                  <span>Home</span>
-                </a>
-                <a data-toggle="modal" data-target="#loginmodal" href="#" class="mobile-login" title="Login">
-                  <i class="fa fa-sign-in" aria-hidden="true"></i>
-                  <span>Login</span>
-                </a>
-                <a class="mobile-register" title="Register" href="/register">
-                  <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  <span>Register</span>
-                </a>
-              <?php endif;?>
-      </div>
-          <div class="mobile-search">
-            <?php echo do_shortcode('[wcas-search-form]');?>
-          </div>
-      </div>
-      <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu([
-          'theme_location' => 'primary_navigation',
-          'walker'         => new wp_bootstrap_navwalker(),
-          'menu_class'     => 'nav sidebar-nav navbar-nav'
-        ]);
-      endif;
-      ?>
-      <ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
-        <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a title="Shop" href="/newsletter">Newsletter</a></li>-->
-        <?php if (is_user_logged_in()) : ?>
-          <li class="menu-item support-kontakt"><a class="myaccount" href="/my-account">My Account</a></li>
-          <li class="menu-item support-kontakt"><a class="tracking" href="/order-tracking">Order Tracking</a></li>
-          <li class="menu-item support-kontakt"><a class="orders" href="/my-account/orders/">Orders</a></li>
-          <li class="menu-item support-kontakt"><a class="address" href="/my-account/edit-address/">Edit Address</a></li>
-          <li class="menu-item support-kontakt"><a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a></li>
-          <?php else : ?>
-            <li class="menu-item support-kontakt"><a data-toggle="modal" data-target="#loginmodal" href="#" class="login" title="Login">Login</a></li>
-            <li class="menu-item support-kontakt"><a class="register" href="/my-account">Register</a></li>
-          <?php endif;?>
-      </ul>
-    </nav>
-  </nav>
-</div><!-- end id menu -->
 
 
 
@@ -193,7 +255,7 @@
 <div class="modal fade loginmodal" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <!--<div class="profile-image"><?php echo get_avatar( $id_or_email, $size, $default, $alt, $args ); ?></div>-->
-    <div class="modal-content">
+    <div class="modal-content lozad" data-background-image="https://d1zczzapudl1mr.cloudfront.net/geometric-abstraction2.png" >
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h2>Welcome</h2>

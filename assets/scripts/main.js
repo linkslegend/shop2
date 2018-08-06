@@ -79,6 +79,7 @@
 
         $(document).on('click', ".hamburger", function() {
           $("body").toggleClass("lock-scroll");
+          $("#wrapper").toggleClass("pushbar_blur");
         });
 
 
@@ -286,239 +287,84 @@
         });
 
 
-        $(".single-featured").slick().slick('slickFilter', '.product-slide');
+        $(window).on('load resize orientationchange', function() {
+              $('.single-featured4').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 3,
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 1,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
+              $('.single-featured3').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 5,
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 2,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
+              $('.featured3').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 5,
+                              slide: 'div',
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 2,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
 
 
-        $('.sub-menu').slick({
-          dots: true,
-          infinite: true,
-          autoplay: false,
-          speed: 300,
-          autoplaySpeed: 12000,
-          lazyLoad: 'ondemand',
-          variableWidth: true
-        });
-
-        $(".featured2").slick({
-          // normal options...
-          lazyLoad: 'ondemand',
-          lazyLoadBuffer: 0,
-          infinite: true,
-          dots: false,
-          slide: 'li',
-          autoplay: true,
-          autoplaySpeed: 9000,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 880,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                infinite: true
-              }
-            }
-          ]
-        });
-
-        $(".flex-control-nav2").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          arrows: true,
-          autoplay: true,
-          autoplaySpeed: 17000,
-          slidesToShow: 4,
-          slidesToScroll: 2,
-          slide: 'li',
-          dots: false
-        });
-
-        $(".single-featured2").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          arrows: false,
-          slidesToScroll: 1,
-          slide: 'li',
-          dots: false
-        });
-        $(".single-featured3").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          slidesToShow: 5,
-          arrows: true,
-          slidesToScroll: 2,
-          slide: 'div',
-          dots: false,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 5,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 4,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            }
-          ]
-        });
-
-        $(".single-featured4").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          slidesToShow: 3,
-          arrows: false,
-          slidesToScroll: 1,
-          slide: 'div',
-          dots: false,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                infinite: true
-              }
-            }
-          ]
-        });
 
 
-        $(".featured3").slick({
-          // normal options...
-          lazyLoad: 'ondemand',
-          infinite: true,
-          dots: false,
-          slide: 'div',
-          autoplay: false,
-          autoplaySpeed: 17000,
-          slidesToShow: 5,
-          slidesToScroll: 2,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 5,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 4,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            }
-          ]
-        });
+          });
 
-        $(".product_list_widget").slick({
-          // normal options...
-          lazyLoad: 'ondemand',
-          infinite: true,
-          dots: false,
-          slide: 'div',
-          autoplay: false,
-          autoplaySpeed: 17000,
-          slidesToShow: 5,
-          slidesToScroll: 2,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 5,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 4,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            }
-          ]
-        });
+          $('.sub-menu').slick({
+            dots: true,
+            infinite: true,
+            autoplay: false,
+            speed: 300,
+            autoplaySpeed: 12000,
+            lazyLoad: 'ondemand',
+            variableWidth: true
+          });
+
 
 
         function enable_update_cart() {
@@ -571,10 +417,6 @@
             });
         }
 
-        $(document).ready(function() {
-            enable_update_cart();
-            quantity_step_btn();
-        });
 
         $( document ).on( 'updated_cart_totals', function() {
             enable_update_cart();
@@ -589,7 +431,11 @@
           $('.single-featured2').slick('slickGoTo', parseInt(slideIndex));
         });
 
-        $(document).ready(function() {
+      $(document).ready(function() {
+
+          enable_update_cart();
+          quantity_step_btn();
+
           var trigger = $('.hamburger'),
             overlay = $('.overlay'),
             isClosed = false;
@@ -615,7 +461,7 @@
 
 
           $('[data-toggle="offcanvas"]').click(function() {
-            $('#wrapper').toggleClass('toggled');
+            $('#sidebar-wrapper').toggleClass('toggled');
           });
 
 
@@ -637,49 +483,47 @@
             accessToken: '5929691076.1677ed0.a6fb14ad48984650b2ec7b43e21f25bd',
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
-            template: '<li><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="insta-image" style="background-image: url({{image}})"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
+            template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
-              $('.insta-slide').slick({
-                lazyLoad: 'ondemand',
-                lazyLoadBuffer: 0,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                infinite: true,
-                slidesToShow: 4,
-                swipeToSlide: true,
-                arrows: false,
-                slide: 'div',
-                dots: false,
-                responsive: [{
-                    breakpoint: 1250,
-                    settings: {
-                      slidesToShow: 4,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 991,
-                    settings: {
-                      slidesToShow: 4,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 769,
-                    settings: {
-                      slidesToShow: 3,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 600,
-                    settings: {
-                      slidesToShow: 1,
-                      infinite: true
-                    }
-                  }
-                ]
+              //Initializes SlickSlider
+              $(window).on('load resize orientationchange', function() {
+                  $('.insta-slide').each(function(){
+                      var $carousel = $(this);
+                      /* Initializes a slick carousel only on mobile screens */
+                      // slick on mobile
+                      if ($(window).width() < 1025) {
+                          if ($carousel.hasClass('slick-initialized')) {
+                              $carousel.slick('unslick');
+                          }
+                      }
+                      else{
+                          if (!$carousel.hasClass('slick-initialized')) {
+                              $carousel.slick({
+                                  slidesToShow: 5,
+                                  slidesToScroll: 1,
+                                  autoplay: true,
+                                  autoplaySpeed: 4000,
+                                  infinite: true,
+                                  swipeToSlide: true,
+                                  arrows: false,
+                                  slide: 'div',
+                                  dots: false
+                              });
+                          }
+                      }
+                  });
               });
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
             }
           });
           feed.run();
@@ -703,49 +547,47 @@
             accessToken: '5929691076.1677ed0.a6fb14ad48984650b2ec7b43e21f25bd',
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
-            template: '<li><a href="{{link}}"><figure class="effect-zoe"><img src="{{image}}" /><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
+            template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
-              $('.insta-slide').slick({
-                lazyLoad: 'ondemand',
-                lazyLoadBuffer: 0,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                infinite: true,
-                slidesToShow: 5,
-                swipeToSlide: true,
-                arrows: false,
-                slide: 'div',
-                dots: false,
-                responsive: [{
-                    breakpoint: 1250,
-                    settings: {
-                      slidesToShow: 5,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 991,
-                    settings: {
-                      slidesToShow: 4,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 769,
-                    settings: {
-                      slidesToShow: 3,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 600,
-                    settings: {
-                      slidesToShow: 1,
-                      infinite: true
-                    }
-                  }
-                ]
+              //Initializes SlickSlider
+              $(window).on('load resize orientationchange', function() {
+                  $('.insta-slide').each(function(){
+                      var $carousel = $(this);
+                      /* Initializes a slick carousel only on mobile screens */
+                      // slick on mobile
+                      if ($(window).width() < 1025) {
+                          if ($carousel.hasClass('slick-initialized')) {
+                              $carousel.slick('unslick');
+                          }
+                      }
+                      else{
+                          if (!$carousel.hasClass('slick-initialized')) {
+                              $carousel.slick({
+                                  slidesToShow: 5,
+                                  slidesToScroll: 1,
+                                  autoplay: true,
+                                  autoplaySpeed: 4000,
+                                  infinite: true,
+                                  swipeToSlide: true,
+                                  arrows: false,
+                                  slide: 'div',
+                                  dots: false
+                              });
+                          }
+                      }
+                  });
               });
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
             }
           });
           feed.run();

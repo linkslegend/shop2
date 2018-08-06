@@ -4159,7 +4159,7 @@ body.inspiration .select2-container{}
   }
   .related.products ul.products li.product,
   .upsells.products ul.products li.product {
-    width: 44%;
+    width: 43%;
   }
   #reviews {
     margin: 0;
@@ -4606,13 +4606,14 @@ table.variations {
 	background: #fff;
 	display: table;} 
 table.variations tbody {
-	width: 50%;} 
+	width: 70%;
+	display: table;} 
 .woocommerce div.product form.cart .variations tr:nth-last-child(odd) {
-	float: left;
-	width: 70%;}
+	float: left;}
 .woocommerce div.product form.cart .variations tr {
-	float: left;
-	width: 35%;}
+    float: left;
+    width: min-content;
+    min-width: 50%;}
 .woocommerce div.product form.cart .variations tr td{
 	border-right: 1px solid rgb(184, 184, 184);
 	border-top: 1px solid rgb(184, 184, 184);}
