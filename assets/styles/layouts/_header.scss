@@ -174,7 +174,7 @@ h1 {
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(15, 15, 15, 0.95);
+  background-color: #919191;
   border-bottom: 0px solid rgba(15, 15, 15, 1);
 }
 .navbar-default .navbar-nav > .active > a,
@@ -1325,11 +1325,11 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
 }
 .dgwt-wcas-sf-wrapp input[type="search"].dgwt-wcas-search-input {
   width: 100%;
-  height: 32px !important;
+  height: 35px !important;
   padding: 7px 15px 8px 30px !important;
   border: 0;
   background: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(15, 15, 15, 0.5) !important;
+  border: 1px solid rgba(60, 60, 60, 0.5)!important;
   border-radius: 0px !important;
   -webkit-border-radius: 0px !important;
   -webkit-appearance: none;
@@ -2218,40 +2218,101 @@ li {
   #menu-mobile {
     display: block;
   }
-    #menu-mobile footer.mobile{
+  .account-container{
+	background-repeat: no-repeat;
+    display: block;
+    background-image: url(https://d1zczzapudl1mr.cloudfront.net/gk-sprite.png);
+    background-size: 200px;
+    width: 33px;
+    height: 30px;
+    float: none;
+    background-position: 0 0;
+    position: absolute;
+    margin-top: 5px;
+    margin-right: 0;
+    left: 16px;
+    top: 3px;
+    box-shadow: none;}
+.mobile-top-menu .account-container span {
+    display: block;
+    font-size: .7em;
+    padding-top: 31px;}
+#menu-mobile .mobile-box{
+	width: 50%;
+	float: left;}
+#menu-mobile .mobile-box.left{
+	padding: 10px 5px 0px 10px;}
+#menu-mobile .mobile-box.right{
+	padding: 10px 10px 0px 5px;}
+#menu-mobile .mobile .image-menu{
+	
+	}
+#menu-mobile .more h2{
+	font-size: 1.3em;
+	background: #eee;
+    font-family: futura-pt,sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 15px 10px;
+    margin: 15px 0 0 0;}
+#menu-mobile footer.mobile{
 	float: left;
 	width: 100%;
 	background: none;
 	font-size: inherit;
 	line-height: inherit;
-	}
-	#menu-mobile footer.mobile .social-menu .bb-social li a em,
-	#menu-mobile footer.mobile .social-menu .bb-social h5,
-	#menu-mobile footer.mobile .social-menu .bb-social li.yt,
-	#menu-mobile footer.mobile .social-menu .bb-social li.tw{
+	margin: 0;}
+#menu-mobile .mobile-box .thumbnail{
+	padding: 0;
+	margin: 0;}
+#menu-mobile .mobile-box .thumbnail .img{
+	height: 135px;
+    background-position: center;
+    width: auto;
+    background-size: cover;}	
+#menu-mobile .mobile-box .thumbnail h3{
+	font-size: 1.1em;
+    font-family: futura-pt,sans-serif;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    font-weight: 900;
+    width: 100%;
+    margin: 0;
+    height: auto;
+    color: #2d2d2d;
+    z-index: 99999;
+    text-align: center;
+    display: block;}
+#menu-mobile footer.mobile .social-menu .bb-social li a em,
+#menu-mobile footer.mobile .social-menu .bb-social h5,
+#menu-mobile footer.mobile .social-menu .bb-social li.yt,
+#menu-mobile footer.mobile .social-menu .bb-social li.tw{
 	display: none;}
-	#menu-mobile footer.mobile .social-menu .bb-social {
+#menu-mobile footer.mobile .social-menu .bb-social {
     padding: 0;
     margin: 0;
-    border: none;}
-	#menu-mobile footer.mobile .social-menu .bb-social li a strong {
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: none;
+    float: left;}
+#menu-mobile footer.mobile .social-menu .bb-social li a strong {
     margin: 3px auto 0;
     font-weight: 400;
     font-size: 0.7em;
     display: block;}	
-	#menu-mobile footer.mobile .social-menu .bb-social li a {
+#menu-mobile footer.mobile .social-menu .bb-social li a {
     width: 70px;
     color: #222;}
-
-	#menu-mobile footer.mobile .social-menu .bb-social .fa-instagram,
-	#menu-mobile footer.mobile .social-menu .bb-social .fa-youtube,
-	#menu-mobile footer.mobile .social-menu .bb-social .fa-pinterest,
-	#menu-mobile footer.mobile .social-menu .bb-social .fa-twitter,
-	#menu-mobile footer.mobile .social-menu .bb-social .fa-facebook{
-	    width: 35px;
-	    height: 35px;
-	    font-size: 1.2em;}
-	
+#menu-mobile footer.mobile .social-menu .bb-social .fa-instagram,
+#menu-mobile footer.mobile .social-menu .bb-social .fa-youtube,
+#menu-mobile footer.mobile .social-menu .bb-social .fa-pinterest,
+#menu-mobile footer.mobile .social-menu .bb-social .fa-twitter,
+#menu-mobile footer.mobile .social-menu .bb-social .fa-facebook{
+	width: 35px;
+	height: 35px;
+    font-size: 1.2em;}
 #menu-mobile .panel{
     font-size: .875rem;
     font-family: futura-pt,sans-serif;
@@ -2301,7 +2362,7 @@ li {
     padding: 7px 0;
     margin: 0;
     display: block;
-    text-align: left;}
+    text-align: center;}
  #menu-mobile .legalbar .copy {
     color: #2d2d2d;
     width: 100%;
@@ -2309,6 +2370,7 @@ li {
     padding: 0px 0 7px;
     border-bottom: 1px solid #a2a2a2;
     margin-bottom: 0;
+    text-align: center;
     float: none;
     margin: 0;}   
 	
@@ -2358,7 +2420,7 @@ li {
     left: 0;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
-    transform: translateZ(0) translateX(-100%);
+    transform: translateZ(0) translateX(-400px);
     z-index: 1000;
   }
   .sidebar-wrapper-bg{
@@ -2429,7 +2491,7 @@ li {
   }
   .sidebar-nav li {
     display: inline-block;
-    background: transparent;
+    background: #f8f8f8;
     border-bottom: 1px solid #bdbdbd;
     line-height: 20px;
     position: relative;
@@ -2629,7 +2691,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
   }
-  .sidebar-nav .dropdown-menu .megamenu-column:last-child ul li:last-child {
+  .sidebar-nav .dropdown-menu li:last-child {
     border-bottom: 0px solid #bdbdbd;
   }
 
@@ -2719,9 +2781,9 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     position: absolute;
     border: none;
     z-index: 999 !important;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-right: 0px;
-    left: 0px;
+    right: 0px;
     box-shadow: none;
   }
   .navbar-header .hamburger.is-open,
@@ -2729,36 +2791,11 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: none !important;
   }
   .hamburger.is-closed {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: transparent;
     border: none;
     left: 0;
     z-index: 9999999;
     overflow: visible;
-  }
-  .hamburger.is-closed:before {
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transition: all 0.35s ease-in-out;
-    color: rgba(255, 255, 255, 1) fff;
-    content: "";
-    z-index: 9999999;
-    display: block;
-    font-size: 14px;
-    line-height: 32px;
-    opacity: 0;
-    text-align: center;
-    width: 100px;
-  }
-  .hamburger.is-closed:hover before {
-    -webkit-transform: translate3d(-100px, 0, 0);
-    -webkit-transition: all 0.35s ease-in-out;
-    display: block;
-    opacity: 1;
-  }
-  .hamburger.is-closed:hover .hamb-top {
-    -webkit-transition: all 0.35s ease-in-out;
-  }
-  .hamburger.is-closed:hover .hamb-bottom {
-    -webkit-transition: all 0.35s ease-in-out;
   }
   .hamburger.is-closed .hamb-top,
   .hamburger.is-closed .hamb-middle,
@@ -2788,7 +2825,6 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     top: 50%;
   }
   .hamburger.is-closed .hamb-bottom {
-    -webkit-transition: all 0.35s ease-in-out;
     background-color: #4a4a4a;
     margin-top: -2px;
     bottom: 9px;
@@ -2796,7 +2832,6 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
 
   .hamburger.is-open .hamb-top {
     -webkit-transform: rotate(45deg);
-    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
     background-color: rgba(15, 15, 15, 1);
     margin-top: -2px;
     top: 50%;
@@ -2808,28 +2843,9 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   }
   .hamburger.is-open .hamb-bottom {
     -webkit-transform: rotate(-45deg);
-    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
     background-color: rgba(15, 15, 15, 1);
     margin-top: -2px;
     top: 50%;
-  }
-  .hamburger.is-open:before {
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transition: all 0.35s ease-in-out;
-    color: rgba(255, 255, 255, 1) fff;
-    content: "";
-    display: block;
-    font-size: 14px;
-    line-height: 32px;
-    opacity: 0;
-    text-align: center;
-    width: 100px;
-  }
-  .hamburger.is-open:hover before {
-    -webkit-transform: translate3d(-100px, 0, 0);
-    -webkit-transition: all 0.35s ease-in-out;
-    display: block;
-    opacity: 1;
   }
   /*-------------------------------*/
   /*          Dark Overlay         */
@@ -2902,7 +2918,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: inline-block;
     width: 100%;
     border: 0 solid #000;
-    padding: 20px 15px 20px;
+    padding: 15px;
     margin-bottom: 0;
   }
   .mobile-top-menu {
@@ -2930,14 +2946,14 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     padding: 0 15px 0 0;
   }
   .mobile-top-menu i {
-    font-size: 1.4em;
+    font-size: 1.2em;
     position: relative;
-    color: rgba(255, 255, 255, 1);
-    padding: 14px;
-    width: 45px;
-    height: 45px;
+    color: #fff;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
-    background: rgba(15, 15, 15, 0.8);
+    background: rgba(100, 100, 100, 0.8);
   }
 
   .mobile-top-menu i:hover,
@@ -2948,17 +2964,22 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
 
   .mobile-top-menu span {
     display: block;
-    font-size: 0.85em;
+    font-size: .7em;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 3px;
   }
 
   #menu-mobile {
     display: block;
   }
+  #menu-mobile #logo{
+	margin-top: 7px;}
+  #menu-mobile h2{
+	display: block;
+	font-size: 1.3em;}
   div.festi-cart-pop-up-body
-    div.festi-cart-pop-up-header
-    span.festi-cart-added-to-cart-msg {
+  div.festi-cart-pop-up-header
+  span.festi-cart-added-to-cart-msg {
     color: #383838 !important;
     font-weight: 400;
     font-size: 17px !important;
@@ -3066,7 +3087,6 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     top: 50%;
   }
   .hamburger.is-closed .hamb-bottom {
-    -webkit-transition: all 0.35s ease-in-out;
     background-color: #4a4a4a;
     margin-top: 0px;
     bottom: 10px;
@@ -3359,7 +3379,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: block;
     position: relative;
     float: left;
-    margin: 15px 0px 0px 0px;
+    margin: 0px;
     padding: 0px;
     width: 100%;
   }
@@ -3466,7 +3486,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   }
   #logo img {
     width: 113px;
-    padding-top: 4px;
+    padding-top: 0px;
     display: inline-block;
     position: relative;
   }
@@ -3488,19 +3508,24 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     height: 2px;
     left: 6px;
     position: absolute;
-    width: 33px;
+    width: 25px;
   }
+  .hamburger.is-closed .hamb-top,
+  .hamburger.is-closed .hamb-middle,
+  .hamburger.is-closed .hamb-bottom{
+	left: 8px;
+	width: 30px;
+}  
+  
   .hamburger {
-    background: transparent;
     border-radius: 0;
     right: 0;
-    height: 40px;
-    padding: 8px;
+    height: 38px;
+    padding: 0;
     margin-top: 5px;
     margin-right: 10px;
     margin-left: 10px;
-    width: 45px;
-  }
+    width: 45px;}
   .home .col-xs-12 {
     padding: 0;
   }
@@ -3517,7 +3542,6 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     top: 50%;
   }
   .hamburger.is-closed .hamb-bottom {
-    -webkit-transition: all 0.35s ease-in-out;
     background-color: #4a4a4a;
     margin-top: 0px;
     bottom: 10px;
@@ -3724,7 +3748,10 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     margin-top: 16px;
   }
   .is-open span.menu-text {
-    display: none;
+    display: block;
+    margin-top: 14px;
+    font-size: 0.75em;
+    padding-right: 8px;
   }
 
   .icon-menu-gk .account,
@@ -3810,7 +3837,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: block;
     position: relative;
     float: left;
-    margin: 15px 0px 0px 0px;
+    margin: 50px 0 0 0;
     padding: 0px;
     width: 100%;
   }
@@ -3840,7 +3867,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   }
   .dgwt-wcas-suggestions-wrapp {
     min-width: auto !important;
-    margin-top: 20px !important;
+    margin-top: 16px !important;
   }
   .dgwt-wcas-suggestions-wrapp:before {
     width: 18px;

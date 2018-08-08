@@ -14,46 +14,35 @@
 <div id="menu-mobile" class="container">
   <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
       <div class="mobile-menu-header">
-        <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
+        <button type="button" class="hamburger navbar-toggle collapsed is-open" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
           <span class="hamb-top"></span>
           <span class="hamb-middle"></span>
           <span class="hamb-bottom"></span>
-          <span class="menu-text">Menu</span>
+          <span class="menu-text">Close</span>
         </button>
 
         <div class="mobile-top-menu">
-          <h2>Welcome! <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
+          <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard">
+            <img src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
+          </a>
               <?php if (is_user_logged_in()) : ?>
-                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
-                  <i class="fa fa-home" aria-hidden="true"></i>
-                  <span>Home</span>
-                </a>
-                <a class="mobile-myaccount" title="My Account" href="/my-account">
-                  <i class="fa fa-smile-o" aria-hidden="true"></i>
-                  <span>My Account</span>
-                </a>
                 <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
                   <i class="fa fa-sign-out" aria-hidden="true"></i>
                   <span>Logout</span>
                 </a>
               <?php else : ?>
-                <a class="mobile-home" title="Home" href="<?php echo wp_logout_url( home_url() ); ?>">
-                  <i class="fa fa-home" aria-hidden="true"></i>
-                  <span>Home</span>
-                </a>
-                <a data-toggle="modal" data-target="#loginmodal" href="#" class="mobile-login" title="Login">
-                  <i class="fa fa-sign-in" aria-hidden="true"></i>
-                  <span>Login</span>
-                </a>
-                <a class="mobile-register" title="Register" href="/register">
-                  <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  <span>Register</span>
-                </a>
+                <div class="account-container" data-toggle="modal" data-target="#loginmodal">
+                  <span>Account</span>
+              </div>
               <?php endif;?>
       </div>
           <div class="mobile-search">
             <?php echo do_shortcode('[wcas-search-form]');?>
           </div>
+          <?php if (is_user_logged_in()) : ?>
+          <h2>Welcome <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
+          <?php else : ?>
+          <?php endif;?>
       </div>
       <?php
       if (has_nav_menu('primary_navigation')) :
@@ -79,50 +68,90 @@
       </ul>
 
 <footer class="mobile">
-  <div class="social-menu">
-    <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['socialbox'].''); ?>
+  <div class="more">
+    <h2>more getkunst</h2>
+        <div class="image-menu" data-example-id="thumbnails-with-custom-content">
+             <div class="mobile-box left">
+              <div class="thumbnail">
+                <div class="img lozad" data-background-image="https://scontent-frx5-1.cdninstagram.com/vp/ac51e44969be027cfefe32aba9e25f68/5C0F99C2/t51.2885-15/e15/37651526_243722309584020_6964576056451792896_n.jpg"></div>
+                <div class="caption">
+                  <h3>new in</h3>
+                </div>
+                </div>
+              </div>
+
+              <div class="mobile-box right">
+               <div class="thumbnail">
+                  <div class="img lozad" data-background-image="https://scontent-frx5-1.cdninstagram.com/vp/fa14278012951a30ea755ebffc9913ac/5BFC2BFD/t51.2885-15/e15/36861560_681018172248254_8068377759556042752_n.jpg"></div>
+                  <div class="caption">
+                    <h3>outlet</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mobile-box left">
+               <div class="thumbnail">
+                 <div class="img lozad" data-background-image="https://scontent-frx5-1.cdninstagram.com/vp/61806fa5c3fbd8e35b4485ea9fc5f152/5BF79CCD/t51.2885-15/fr/e15/p1080x1080/32425378_362546590903630_5872258765184565248_n.jpg"></div>
+                 <div class="caption">
+                   <h3>bestsellers</h3>
+                 </div>
+                 </div>
+               </div>
+
+               <div class="mobile-box right">
+                <div class="thumbnail">
+                   <div class="img lozad" data-background-image="https://getkunst.com/wp-content/uploads/getkunst-magazine.jpg"></div>
+                   <div class="caption">
+                     <h3>outlet</h3>
+                   </div>
+                 </div>
+               </div>
+      </div>
   </div>
 
+  <div class="social-menu">
+      <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['socialbox'].''); ?>
+  </div>
 
-<ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
-<li class="megamenu menu-item menu-item-has-children dropdown">
-  <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">Help & Information<b class="caret"></b></a>
-  <ul class="dropdown-menu">
-  <li class="megamenu-column">
-    <ul>
-    	<li class="menu-item "><a href="/help/">Help</a></li>
-    	<li class="menu-item "><a href="">Track Order</a></li>
-    	<li class="menu-item "><a href="">Delivery & Returns</a></li>
-    	<li class="menu-item "><a href="/contact/">Contact</a></li>
-    </ul>
- </li>
-</ul>
-</li>
-<li class="megamenu menu-item menu-item-has-children dropdown">
-  <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">About Getkunst.com<b class="caret"></b></a>
-  <ul class="dropdown-menu">
-  <li class="megamenu-column">
-    <ul>
-    	<li class="menu-item "><a href="/help/">About Us</a></li>
-    	<li class="menu-item "><a href="">Artists</a></li>
-    </ul>
- </li>
-</ul>
-</li>
-<li class="megamenu menu-item menu-item-has-children dropdown">
-  <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">More<b class="caret"></b></a>
-  <ul class="dropdown-menu">
-  <li class="megamenu-column">
-    <ul>
-    	<li class="menu-item "><a href="/help/">Help</a></li>
-    	<li class="menu-item "><a href="">Track Order</a></li>
-    	<li class="menu-item "><a href="">Delivery & Returns</a></li>
-    	<li class="menu-item "><a href="/contact/">Contact</a></li>
-    </ul>
- </li>
-</ul>
-</li>
-</ul>
+  <ul id="menu-menu-3" class="nav sidebar-nav navbar-nav">
+      <li class="megamenu menu-item menu-item-has-children dropdown">
+        <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">Help & Information<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+        <li class="megamenu-column">
+          <ul>
+          	<li class="menu-item "><a href="/help/">Help</a></li>
+          	<li class="menu-item "><a href="">Track Order</a></li>
+          	<li class="menu-item "><a href="">Delivery & Returns</a></li>
+          	<li class="menu-item "><a href="/contact/">Contact</a></li>
+          </ul>
+       </li>
+      </ul>
+      </li>
+      <li class="megamenu menu-item menu-item-has-children dropdown">
+        <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">About Getkunst.com<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+        <li class="megamenu-column">
+          <ul>
+          	<li class="menu-item "><a href="/help/">About Us</a></li>
+          	<li class="menu-item "><a href="">Artists</a></li>
+          </ul>
+       </li>
+      </ul>
+      </li>
+      <li class="megamenu menu-item menu-item-has-children dropdown">
+        <a href="" class="dropdown-toggle current" data-toggle="dropdown" aria-expanded="false">More<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+        <li class="megamenu-column">
+          <ul>
+          	<li class="menu-item "><a href="/help/">Help</a></li>
+          	<li class="menu-item "><a href="">Track Order</a></li>
+          	<li class="menu-item "><a href="">Delivery & Returns</a></li>
+          	<li class="menu-item "><a href="/contact/">Contact</a></li>
+          </ul>
+       </li>
+      </ul>
+      </li>
+  </ul>
 
 <div class="legalbar">
   <div class="legalbar-inner">
@@ -141,6 +170,44 @@
   </nav>
 </div>
 <!-- end id menu -->
+
+<!-- login modal -->
+<div class="modal fade loginmodal" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <!--<div class="profile-image"><?php echo get_avatar( $id_or_email, $size, $default, $alt, $args ); ?></div>-->
+    <div class="modal-content lozad" data-background-image="https://d1zczzapudl1mr.cloudfront.net/geometric-abstraction2.png" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Welcome</h2>
+      </div>
+      <div class="modal-body">
+        <form id="login" action="login" method="post">
+            <p class="status"></p>
+            <div class="input-1">
+              <label class="username" for="username"><i class="fa fa-lock" aria-hidden="true"></i></label>
+              <input id="username" type="text" name="username" placeholder="Username or Email">
+            </div>
+            <div class="input-2">
+              <label class="password" for="password"><i class="fa fa-user" aria-hidden="true"></i></label>
+              <input id="password" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="input-3">
+              <div class="lost-reg">
+                <a class="lost" href="/my-account/lost-password">Lost your password?</a><br />
+                <span>Are you a new customer?</span> <a class="lost" href="<?php echo home_url(); ?>/register">Register Now</a>
+              </div>
+              <input class="submit_button" type="submit" value="Login" name="submit">
+              <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+              <div class="seperate"><span class="hr-social">or</span></div>
+              <div class="social-login-container"><?php echo do_shortcode('[woo_social_login]'); ?></div>
+              <!--<div class="secure-connection">Secure connection</div>-->
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div id="wrapper">
 
@@ -246,44 +313,3 @@
 </div><!--.container-->
 
 </header>
-
-
-
-
-
-<!-- login modal -->
-<div class="modal fade loginmodal" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <!--<div class="profile-image"><?php echo get_avatar( $id_or_email, $size, $default, $alt, $args ); ?></div>-->
-    <div class="modal-content lozad" data-background-image="https://d1zczzapudl1mr.cloudfront.net/geometric-abstraction2.png" >
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2>Welcome</h2>
-      </div>
-      <div class="modal-body">
-        <form id="login" action="login" method="post">
-            <p class="status"></p>
-            <div class="input-1">
-              <label class="username" for="username"><i class="fa fa-lock" aria-hidden="true"></i></label>
-              <input id="username" type="text" name="username" placeholder="Username or Email">
-            </div>
-            <div class="input-2">
-              <label class="password" for="password"><i class="fa fa-user" aria-hidden="true"></i></label>
-              <input id="password" type="password" name="password" placeholder="Password">
-            </div>
-            <div class="input-3">
-              <div class="lost-reg">
-                <a class="lost" href="/my-account/lost-password">Lost your password?</a><br />
-                <span>Are you a new customer?</span> <a class="lost" href="<?php echo home_url(); ?>/register">Register Now</a>
-              </div>
-              <input class="submit_button" type="submit" value="Login" name="submit">
-              <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
-              <div class="seperate"><span class="hr-social">or</span></div>
-              <div class="social-login-container"><?php echo do_shortcode('[woo_social_login]'); ?></div>
-              <!--<div class="secure-connection">Secure connection</div>-->
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
