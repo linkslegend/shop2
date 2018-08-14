@@ -14,7 +14,7 @@
 <div id="menu-mobile" class="container">
   <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
       <div class="mobile-menu-header">
-        <button type="button" class="hamburger navbar-toggle collapsed is-open" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
+        <button type="button" class="hamburger navbar-toggle collapsed is-open" data-toggle="offcanvas" data-target=".navbar-collapse">
           <span class="hamb-top"></span>
           <span class="hamb-middle"></span>
           <span class="hamb-bottom"></span>
@@ -84,7 +84,7 @@
                <div class="thumbnail">
                   <div class="img lozad" data-background-image="https://scontent-frx5-1.cdninstagram.com/vp/fa14278012951a30ea755ebffc9913ac/5BFC2BFD/t51.2885-15/e15/36861560_681018172248254_8068377759556042752_n.jpg"></div>
                   <div class="caption">
-                    <h3>outlet</h3>
+                    <h3>inspiration</h3>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@
                 <div class="thumbnail">
                    <div class="img lozad" data-background-image="https://getkunst.com/wp-content/uploads/getkunst-magazine.jpg"></div>
                    <div class="caption">
-                     <h3>outlet</h3>
+                     <h3>magazine</h3>
                    </div>
                  </div>
                </div>

@@ -69,12 +69,10 @@
             return false;
         });
 
-
         // layout Masonry after each image loads
         $container.imagesLoaded().progress( function() {
           $container.isotope();
         });
-
 
 
         $(document).on('click', ".hamburger", function() {
@@ -82,17 +80,16 @@
           $("#wrapper").toggleClass("pushbar_blur");
         });
 
+        var canHover = !(matchMedia('(hover: none)').matches);
+        if (canHover) {
+          document.body.classList.add('can-hover');
+        }
 
         $('.selectpicker').select2({
           width: '100%', // need to override the changed default
           minimumResultsForSearch: Infinity
         });
-
         $.fn.modal.Constructor.prototype.enforceFocus = function() {};
-
-
-
-
 
         $(document).ready(function() {
           // Initialize library to lazy load images
@@ -158,12 +155,6 @@
             e.stopPropagation();
           }
         });
-
-
-        const canHover = !(matchMedia('(hover: none)').matches);
-        if (canHover) {
-          document.body.classList.add('can-hover');
-        }
 
         $('.mega-menu .dropdown').hover(function() {
           $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
@@ -287,6 +278,7 @@
         });
 
 
+
         $(window).on('load resize orientationchange', function() {
               $('.single-featured4').each(function(){
                   var $carousel = $(this);
@@ -349,10 +341,6 @@
                       }
                   }
               });
-
-
-
-
           });
 
           $('.sub-menu').slick({
@@ -364,8 +352,6 @@
             lazyLoad: 'ondemand',
             variableWidth: true
           });
-
-
 
         function enable_update_cart() {
             $('[name="update_cart"]').removeAttr('disabled');
@@ -446,7 +432,10 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        jQuery(window).on('load', function() {
+      },
+      finalize: function() {
+        // JavaScript to be fired on the home page, after the init JS
+
           var feed = new Instafeed({
             get: 'user',
             userId: '5929691076',
@@ -457,8 +446,20 @@
             sortBy: 'most-recent',
             template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
               //Initializes SlickSlider
               $(window).on('load resize orientationchange', function() {
+                $(document).ready(function() {
                   $('.insta-slide').each(function(){
                       var $carousel = $(this);
                       /* Initializes a slick carousel only on mobile screens */
@@ -483,27 +484,13 @@
                               });
                           }
                       }
-                  });
+                    });
+                 });
               });
-              //Initializes lozad
-              const observer = lozad('.lozad', {
-                rootMargin: '0px', // syntax similar to that of CSS Margin
-                threshold: 0.1, // ratio of element convergence
-                loaded: function(el) {
-                  // Custom implementation on a loaded element
-                  el.classList.add('loaded');
-                }
-              });
-              observer.observe();
-
             }
           });
           feed.run();
-        }); //end document ready
 
-      },
-      finalize: function() {
-        // JavaScript to be fired on the home page, after the init JS
       }
     },
     // About us page, note the change from about-us to about_us.
