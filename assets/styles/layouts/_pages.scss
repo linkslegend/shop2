@@ -6677,6 +6677,9 @@ h2.recently-Viewed-inner.getkunst-title {
   margin: 0 0 10px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  background-color: #d4d4d4;
+  -webkit-animation: lazyloading 1.5s infinite;
+  animation: lazyloading 1.5s infinite;
 }
 .woocommerce.can-hover ul.products li.product a img:hover {
   box-shadow: -2px 3px 7px 0 rgba(0, 0, 0, 0.2);
@@ -8352,7 +8355,7 @@ span.festi-cart-added-to-cart-msg:before {
     color: #00aa5b;
     font-size: 1.1em;
     margin-left: -25px;
-    margin-top: 0px;
+    margin-top: 11px;
 }
 div#festi-cart-pop-up-content
   span.festi-cart-closed.b-close
@@ -8452,16 +8455,16 @@ body
   tr.festi-cart-item
   td.festi-cart-product-delete
   a.festi-cart-remove-product {
-    font-size: 1.5em!important;
-    line-height: inherit!important;
-    position: relative;
-    margin-top: 13px;
-    border: 1px solid rgba(15, 15, 15, 0.5);
-    padding: 0px 4px;
-    vertical-align: top;
+	font-size: 1.5em!important;
+    padding-left: 11px!important;
+    display: block;
+    border: 1px solid hsla(0,0%,6%,.5);
+    height: 25px;
+    vertical-align: baseline;
+    text-align: center;
+    width: 25px;
     border-radius: 100%;
-    margin-left: 0;
-    color: rgba(15, 15, 15, 0.85)!important;
+    color: hsla(0,0%,6%,.85)!important;
     float: none!important;
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product{
@@ -10769,7 +10772,7 @@ body.page-template-template-legal .main ul li:before{
     tr.festi-cart-item
     td.festi-cart-product-delete
     a.festi-cart-remove-product {
-    padding-left: 5px !important;
+    padding-left: 0px !important;
   }
 
   .gk-banner h2.gk-title {
@@ -12088,7 +12091,7 @@ a.tabcontent-button.active{
     tr.festi-cart-item
     td.festi-cart-product-delete
     a.festi-cart-remove-product {
-    padding-left: 5px !important;
+    padding-left: 0px !important;
   }
 
   .gk-banner h2.gk-title {
@@ -12112,6 +12115,8 @@ h1.my-account {
   }
   .woocommerce button.button.tm-woowishlist-button:before {
     padding: 15px 0 0 1px;
+    top: 10px;
+    right: -5px;
     background: rgba(255, 255, 255, 1);
   }
   .woocommerce button.button.tm-woowishlist-button {
@@ -12335,7 +12340,7 @@ h1.my-account {
   }
   div#festi-cart-pop-up-content span.festi-cart-closed.b-close {
     right: 10px !important;
-    top: -5px !important;
+    top: -2px !important;
   }
   .page-category-description {
     display: none;
@@ -12461,7 +12466,8 @@ body.page-template-template-legal .main ul li:before{
   }
   .prdctfltr-shop ul.products {
     width: 100%;
-  }
+    display: flex;
+    flex-wrap: wrap;  }
   .prdctfltr_wc .prdctfltr_filter_title .prdctfltr_woocommerce_filter i {
     position: absolute;
     width: 200px;
@@ -12552,9 +12558,19 @@ body.page-template-template-legal .main ul li:before{
     display: block;
     transition: all 0.25s ease-in-out;
   }
-  .prdctfltr_wc .prdctfltr_filter_title .prdctfltr_woocommerce_filter {
-    display: none;
-  }
+.prdctfltr_wc .prdctfltr_filter_title .prdctfltr_woocommerce_filter {display: none;}
+.prdctfltr_wc .prdctfltr_filter_title .prdctfltr_woocommerce_filter.pf_ajax_css-spinner-full{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    margin-left: 0px;
+    z-index: 999999;
+    flex-wrap: wrap;}
+.prdctfltr_wc[data-loader^="css"] .prdctfltr_woocommerce_filter.pf_ajax_loading i {
+    width: 24px;
+    top: 50%;}	
   .prdctfltr_wc .prdctfltr_filter_title:before {
     font-family: FontAwesome !important;
     content: "\f107";
@@ -12617,7 +12633,7 @@ body.page-template-template-legal .main ul li:before{
     width: auto;}
 .prdctfltr_topbar span.prdctfltr_title_selected .prdctfltr_title_remove{
 	font-size: 1.8em;
-    margin: -8px 0 0 -5px;
+    margin: -7px 0 0 -5px;
     font-weight: 300;
     display: inline-block;
     width: 80px;
