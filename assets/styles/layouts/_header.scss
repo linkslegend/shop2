@@ -2186,6 +2186,12 @@ li {
   body a#festi-cart.festi-cart.festi-cart-customize {
     height: 61px !important;
   }
+  .woocommerce-page #slider-header .slick-next{
+  	right: -15px;
+  }
+  .woocommerce-page #slider-header .slick-prev{
+	left: -34px;
+  }
 }
 
 @media (max-width: 767px) {

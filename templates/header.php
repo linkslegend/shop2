@@ -199,7 +199,7 @@
               <input class="submit_button" type="submit" value="Login" name="submit">
               <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
               <div class="seperate"><span class="hr-social">or</span></div>
-              <div class="social-login-container"><?php echo do_shortcode('[woo_social_login]'); ?></div>
+              <div class="social-login-container"><?php echo do_shortcode('[TheChamp-Login style="background-color:#000;"]') ?></div>
               <!--<div class="secure-connection">Secure connection</div>-->
             </div>
         </form>

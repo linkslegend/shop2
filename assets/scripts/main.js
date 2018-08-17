@@ -496,8 +496,11 @@
     // About us page, note the change from about-us to about_us.
     'about_us': {
       init: function() {
-        // JavaScript to be fired on the about us page
-        jQuery(window).on('load', function() {
+        // JavaScript to be fired on the home page
+      },
+      finalize: function() {
+        // JavaScript to be fired on the home page, after the init JS
+
           var feed = new Instafeed({
             get: 'user',
             userId: '5929691076',
@@ -508,8 +511,20 @@
             sortBy: 'most-recent',
             template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
               //Initializes SlickSlider
               $(window).on('load resize orientationchange', function() {
+                $(document).ready(function() {
                   $('.insta-slide').each(function(){
                       var $carousel = $(this);
                       /* Initializes a slick carousel only on mobile screens */
@@ -534,23 +549,12 @@
                               });
                           }
                       }
-                  });
+                    });
+                 });
               });
-              //Initializes lozad
-              const observer = lozad('.lozad', {
-                rootMargin: '0px', // syntax similar to that of CSS Margin
-                threshold: 0.1, // ratio of element convergence
-                loaded: function(el) {
-                  // Custom implementation on a loaded element
-                  el.classList.add('loaded');
-                }
-              });
-              observer.observe();
-
             }
           });
           feed.run();
-        }); //end document ready
       }
     }
   };
