@@ -14,7 +14,7 @@
 <div id="menu-mobile" class="container">
   <nav class="navbar navbar-default" id="sidebar-wrapper" role="navigation">
       <div class="mobile-menu-header">
-        <button type="button" class="hamburger navbar-toggle collapsed is-open" data-toggle="offcanvas" data-target=".navbar-collapse">
+        <button type="button" class="hamburger navbar-toggle collapsed is-open" data-toggle="offcanvas" data-target=".navbar-collapse" onclick="lockScroll();">
           <span class="hamb-top"></span>
           <span class="hamb-middle"></span>
           <span class="hamb-bottom"></span>
@@ -23,7 +23,7 @@
 
         <div class="mobile-top-menu">
           <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard">
-            <img src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
+            <img class="lozad" src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif" data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
           </a>
               <?php if (is_user_logged_in()) : ?>
                 <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
@@ -199,7 +199,7 @@
               <input class="submit_button" type="submit" value="Login" name="submit">
               <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
               <div class="seperate"><span class="hr-social">or</span></div>
-              <div class="social-login-container"><?php echo do_shortcode('[TheChamp-Login style="background-color:#000;"]') ?></div>
+              <div class="social-login-container"><?php echo do_shortcode('[TheChamp-Login]') ?></div>
               <!--<div class="secure-connection">Secure connection</div>-->
             </div>
         </form>
@@ -254,7 +254,7 @@
 <div class="top-menu">
       <div class="container-fluid" id="menu">
         <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard">
-          <img src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
+          <img class="lozad" src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif" data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
         </a>
         <nav class="collapse navbar-collapse mega-menu" role="navigation">
           <?php

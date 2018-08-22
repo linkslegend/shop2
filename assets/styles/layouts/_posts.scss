@@ -800,7 +800,8 @@ div.ywar_show_more a {
   width: 100%;
   float: left;
   padding: 12px;
-  height: 40px;
+  min-height: 40px;
+  height: auto;
   display: block;
   border: 1px solid #e2e2e2;
   font-size: 0.9em;

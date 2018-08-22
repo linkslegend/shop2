@@ -32,7 +32,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg 1200w"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg"
-              src="https://www.juniqe.de/app/assets/images/blank.gif"
+              src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -52,7 +52,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-medium.jpg 660w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg 1200w"
-             src="https://www.juniqe.de/app/assets/images/blank.gif"
+             src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
         data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -72,7 +72,7 @@ use Roots\Sage\Wrapper;
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 660w,
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-large.jpg 1200w"
-                   src="https://www.juniqe.de/app/assets/images/blank.gif"
+                   src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -91,7 +91,7 @@ use Roots\Sage\Wrapper;
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 660w,
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-large.jpg 1200w"
-                   src="https://www.juniqe.de/app/assets/images/blank.gif"
+                   src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -112,7 +112,7 @@ use Roots\Sage\Wrapper;
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 660w,
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 800w,
             <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-large.jpg 1200w"
-                 src="https://www.juniqe.de/app/assets/images/blank.gif"
+                 src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
             data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>.jpg"
     >
       <div class="tile-content">
@@ -131,7 +131,7 @@ use Roots\Sage\Wrapper;
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 660w,
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 800w,
             <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-large.jpg 1200w"
-                 src="https://www.juniqe.de/app/assets/images/blank.gif"
+                 src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
             data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>.jpg"
     >
       <div class="tile-content">
@@ -147,7 +147,7 @@ use Roots\Sage\Wrapper;
 </div>
 </section>
 
-<div style="background: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-bgcolor-1'].''); ?>"  class="gk-banner lozad">
+<div data-background-image="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-url-1'].''); ?>" style="background-color: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-bgcolor-1'].''); ?>" class="gk-banner lozad">
 <div class="container-fluid">
     <div class="gk-banner-inner">
 
@@ -202,7 +202,7 @@ use Roots\Sage\Wrapper;
                     <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $favorites->post->ID ).'" type="icon" label=""]'); ?></div>
                     <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
                       <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                      src="https://www.juniqe.de/app/assets/images/blank.gif"
+                      src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
                       data-src="<?php if (has_post_thumbnail( $favorites->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
                       >
                     </a>
@@ -245,7 +245,7 @@ use Roots\Sage\Wrapper;
                       <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?></div>
                       <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                         <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                        src="https://www.juniqe.de/app/assets/images/blank.gif"
+                        src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
                         data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
                         >
                       </a>
@@ -313,7 +313,7 @@ use Roots\Sage\Wrapper;
                       <a href="<?php the_permalink() ?>">
                       <!--  Display the Post Featured Image -->
                       <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                      src="https://www.juniqe.de/app/assets/images/blank.gif"
+                      src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
                       data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
                       <figcaption><p><strong>read more</strong></p></figcaption>
                       </a>

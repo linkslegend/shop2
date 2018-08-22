@@ -132,7 +132,7 @@ use Roots\Sage\Wrapper;
 </div>
 </section>
 
-<div style="background: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-bgcolor-1'].''); ?> url(<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-url-1'].''); ?>);" class="gk-banner">
+<div data-background-image="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-url-1'].''); ?>" style="background: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-bgcolor-1'].''); ?>" class="gk-banner">
 <div class="container-fluid">
     <div class="gk-banner-inner">
 

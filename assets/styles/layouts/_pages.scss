@@ -43,6 +43,7 @@
 .lozad{
 	background-color: rgba(212, 212, 212, 1);
     background-image: none;
+        transition: all 0.25s ease;
     -webkit-animation: lazyloading 1.5s infinite;
     animation: lazyloading 1.5s infinite;	
 }
@@ -178,6 +179,9 @@
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
+
+div.col-lg-6:hover > div > a.anchor > span.btn.btn-tile,
+div.flex-order:hover > div > a.anchor > span.btn.btn-tile,
 .btn-tile:hover {
   color: rgba(255, 255, 255, 1) !important;
   background-color: rgba(15, 15, 15, 1) !important;
@@ -7250,6 +7254,7 @@ div.popover-content > a.button {
   color: rgba(15, 15, 15, 1);
   font-size: 1em;
   display: block;
+  font-weight: 500;
   width: 100%;
   border: 2px solid rgba(15, 15, 15, 1);
   text-align: center;
@@ -7259,6 +7264,7 @@ div.popover-content > a.button:hover {
   background: rgba(15, 15, 15, 1);
   text-decoration: none;
   border: 2px solid rgba(15, 15, 15, 1);
+  font-weight: 500;
   color: rgba(255, 255, 255, 1);
   font-size: 1em;
   display: block;
@@ -8355,7 +8361,7 @@ span.festi-cart-added-to-cart-msg:before {
     color: #00aa5b;
     font-size: 1.1em;
     margin-left: -25px;
-    margin-top: 11px;
+    margin-top: 0px;
 }
 div#festi-cart-pop-up-content
   span.festi-cart-closed.b-close
@@ -8449,14 +8455,10 @@ body
   td.festi-cart-product-delete {
   width: 25px;
 }
-body
-  div.festi-cart-pop-up-products-content
-  table.festi-cart-list
-  tr.festi-cart-item
-  td.festi-cart-product-delete
-  a.festi-cart-remove-product {
-	font-size: 1.5em!important;
-    padding-left: 11px!important;
+body div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product {
+    font-size: 1.5em !important;
+    padding-left: 1px !important;
+    padding-top: 2px;
     display: block;
     border: 1px solid hsla(0,0%,6%,.5);
     height: 25px;
@@ -8464,8 +8466,13 @@ body
     text-align: center;
     width: 25px;
     border-radius: 100%;
-    color: hsla(0,0%,6%,.85)!important;
-    float: none!important;
+    color: hsla(0,0%,6%,.85) !important;
+    float: none !important;
+        	&:hover{
+			background: #0f0f0f;
+			color: #fff!important;
+    		border: 1px solid rgba(15, 15, 15, 1);
+		}
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product{
     position: absolute;
@@ -8475,14 +8482,12 @@ div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.fest
     font-size: 1.7em;
     transition: all 0.25s;
 }
-div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product:hover{
-	color: rgba(239, 67, 67, 1);
-}
+
 
 body div.festi-cart-product-count-and-price {
   display: flex !important;
   text-align: left !important;
-  font-size: 1.1em !important;
+  font-size: 1em !important;
   justify-content: flex-start !important;
   font-weight: 600 !important;
   padding: 0 !important;

@@ -320,7 +320,7 @@ h1 {
 }
 #logo {
   position: absolute;
-  top: 44px;
+  top: 50px;
   float: none;
   margin: 0px;
   display: block;
@@ -330,9 +330,15 @@ h1 {
 #logo img {
   width: 140px;
   height: auto;
+  max-height: 40px;
   position: absolute;
   display: block;
 }
+#logo img.lozad.loaded{
+	animation: none;
+	background: transparent;
+}
+
 
 a.myaccount::before,
 a.tracking::before,
@@ -626,7 +632,7 @@ p.para {
   padding: 17px 15.4px;
   font-size: 1.25em;
   line-height: 14px;
-  border-radius: 2px;
+  border-radius: 0px;
 }
 #slider-header-front .btn {
   display: inline-block;
@@ -1093,14 +1099,15 @@ div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.fest
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-delete a.festi-cart-remove-product {
     font-size: 18px;
     line-height: normal;
-    padding: 2px 4px;
-    left: 0px;
-    height: 22px;
-    width: 22px;
-    position: relative;
-    border: 1px solid rgba(15, 15, 15, 0.5);
+    padding: 2px 7px;
+    display: block;
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    right: 15px;
+    border: 1px solid hsla(0,0%,6%,.5);
     border-radius: 100%;
-    color: #000000;
+    color: #000;
     float: none;
     	&:hover{
 			background: #0f0f0f;
@@ -1110,13 +1117,13 @@ body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > 
 }
 
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-img a.festi-cart-img img {
-    max-width: 100px!important;
-    width: 100%!important;
-    padding: 10px;
-    height: auto!important;}
+    max-width: 100px !important;
+    width: 100% !important;
+    padding: 0 7px 0px 3px;
+    height: auto !important;}
     
 body div.festi-cart-products-content {
-    padding: 20px!important;
+    padding: 15px!important;
     min-width: 370px;
     max-width: 370px;
     overflow: visible!important;
@@ -1161,7 +1168,7 @@ div.festi-cart-products-content p.festi-cart-buttons a.festi-cart-view-cart {
     border-radius: 0!important;
     font-weight: 600;
     font-size: 1.1em!important;
-    width: 47%!important;
+    width: 46%!important;
     margin: 10px 0 0 0;
     background-color: rgb(0, 170, 91)!important;
     color: rgb(255, 255, 255)!important;
@@ -1185,11 +1192,12 @@ div.festi-cart-products-content p.festi-cart-buttons a.festi-cart-view-cart:hove
 }
 
 .festi-cart-inner-wrap {
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 2px;
+    font-size: 1.05em!important;
     float: left;
     color: #0f0f0f;
-    margin-bottom: 2px!important;
+    margin-bottom: 2px !important;
 }
 
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-title span.festi-cart-product-count, 
@@ -1201,10 +1209,16 @@ div.festi-cart-widget-products-content table.festi-cart-list tr.festi-cart-item 
 div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-title span.festi-cart-product-price, 
 div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-title span.festi-cart-product-price span.amount{
     color: #0f0f0f!important;
-    font-weight: 500;
     line-height: normal!important;
-    margin: 0!important;
-    font-size: 1em;}
+    margin: 0!important;}
+.festi-cart-product-count+p, .itemQuantity+p {
+    align-self: center;
+    font-weight: 400;
+}
+div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-title span.festi-cart-product-count{
+	font-weight: 400;
+}
+
 .festi-cart-inner-wrap > div,
 .festi-cart-inner-wrap > span,
 .festi-cart-inner-wrap > p {
@@ -1302,7 +1316,7 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
   box-sizing: border-box;
   overflow-y: visible !important;
   min-width: 300px !important;
-  margin-top: 23px !important;
+  margin-top: 20px !important;
 }
 .dgwt-wcas-no-submit .dgwt-wcas-ico-loupe {
   height: 45% !important;
