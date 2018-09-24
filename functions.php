@@ -689,19 +689,14 @@ add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_
             }
           }
 
-/* Inser coupon code into single product */
+/* Inser coupon code into single product
 add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_unlock' );
-/*
+
 * Content below "Add to cart" Button.
-*/
+
           function add_content_after_addtocart_button_unlock() {
-          $options = get_option('futurewave_theme_options'); echo do_shortcode('
-          [sociallocker]
-          <div class="outer-couponcode"><div class="inner-couponcode">
-          <h4>Thank you! Here is your Couponcode!</h4>
-          <div class="couponcode">'.$options['couponcode'].'</div></div></div>
-          [/sociallocker]');
-}
+          $options = get_option('futurewave_theme_options'); echo do_shortcode('');
+}*/
 
 
 

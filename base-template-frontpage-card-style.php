@@ -32,7 +32,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg 1200w"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg"
-              src="https://www.juniqe.de/app/assets/images/blank.gif"
+              src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
       >
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -41,7 +41,8 @@ use Roots\Sage\Wrapper;
           </a>
         </div>
   </a>
-  <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['shoppable-button'].''); ?>
+  <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['shoppable-button-image-1-button-1'].''); ?>
+  <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['shoppable-button-image-1-button-2'].''); ?>
   </div>
   <div class="flex-order tile-2">
       <a class="tile tile-large" href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -51,7 +52,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-medium.jpg 660w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg 1200w"
-             src="https://www.juniqe.de/app/assets/images/blank.gif"
+             src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
         data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image2'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -61,6 +62,7 @@ use Roots\Sage\Wrapper;
           </a>
         </div>
       </a>
+      <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['shoppable-button-image-2-button-1'].''); ?>
   </div>
   <div class="flex-order tile-3">
       <a class="tile tile-med top" href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
@@ -70,7 +72,7 @@ use Roots\Sage\Wrapper;
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 660w,
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-medium.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>-large.jpg 1200w"
-                   src="https://www.juniqe.de/app/assets/images/blank.gif"
+                   src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image3'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -89,7 +91,7 @@ use Roots\Sage\Wrapper;
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 660w,
       <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-medium.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>-large.jpg 1200w"
-                   src="https://www.juniqe.de/app/assets/images/blank.gif"
+                   src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image4'].''); ?>.jpg"
       >
         <div class="tile-content">
@@ -110,7 +112,7 @@ use Roots\Sage\Wrapper;
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 660w,
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-medium.jpg 800w,
             <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>-large.jpg 1200w"
-                 src="https://www.juniqe.de/app/assets/images/blank.gif"
+                 src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
             data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5'].''); ?>.jpg"
     >
       <div class="tile-content">
@@ -129,7 +131,7 @@ use Roots\Sage\Wrapper;
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 660w,
     <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-medium.jpg 800w,
             <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>-large.jpg 1200w"
-                 src="https://www.juniqe.de/app/assets/images/blank.gif"
+                 src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
             data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image6'].''); ?>.jpg"
     >
       <div class="tile-content">
@@ -145,7 +147,7 @@ use Roots\Sage\Wrapper;
 </div>
 </section>
 
-<div style="background: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-bgcolor-1'].''); ?> url(<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-url-1'].''); ?>);" class="gk-banner">
+<div data-background-image="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-url-1'].''); ?>" style="background-color: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['pattern-bgcolor-1'].''); ?>" class="gk-banner lozad">
 <div class="container-fluid">
     <div class="gk-banner-inner">
 
@@ -174,32 +176,45 @@ use Roots\Sage\Wrapper;
   <div class="container-fluid">
     <h2 class="getkunst-title">Our Favorites</h2>
     <ul class="front-products-slider2">
-
-        <section class="multiple-items single-featured3">
+      <section class="multiple-items single-featured3">
           <?php
-          $args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'product_cat' => 'art-prints', 'meta_value' => 'yes', 'orderby' => 'rand' );
-          $loop = new WP_Query( $args );
-          while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-                <li class="slider-products">
-                  <a id="id-<?php the_id( $loop->post->ID ); ?>" href="<?php the_permalink( $loop->post->ID ); ?>" title="<?php the_title( $loop->post->ID ); ?>">
-                    <div class="slider-products-inner">
-                      <?php tm_woowishlist_add_button_single( $loop->post->ID ); ?>
-                      <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?></div>
-                      <a id="id-<?php the_id( $loop->post->ID ); ?>" href="<?php the_permalink( $loop->post->ID ); ?>" title="<?php the_title( $loop->post->ID ); ?>">
-                        <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                        src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
-                        data-src="<?php if (has_post_thumbnail( $loop->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
-                        >
-                      </a>
-                          <a id="id-<?php the_id( $loop->post->ID ); ?>" href="<?php the_permalink( $loop->post->ID ); ?>" title="<?php the_title( $loop->post->ID ); ?>">
-                            <h2 class="product__title"><?php the_title( $loop->post->ID ); ?></h2>
-                          </a>
-                          <span class="price"><?php echo $product->get_price_html( $loop->post->ID ); ?></span>
-                          <!-- <?php woocommerce_template_loop_add_to_cart( $featured_query->post, $product ); ?> -->
-                </div></a></li>
-                <?php endwhile; ?>
-                <?php wp_reset_query(); ?>
-          </section>
+              $tax_query[] = array(
+                'taxonomy' => 'product_visibility',
+                'field'    => 'name',
+                'terms'    => 'featured',
+                'operator' => 'IN',
+              );
+              $args = array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'ignore_sticky_posts' => 1,
+                'posts_per_page' => '10',
+                'fields' => 'ids',
+                'orderby' => 'meta_value_num',
+                'tax_query' => $tax_query,
+                'meta_query' => WC()->query->get_meta_query() );
+              $favorites = new WP_Query( $args );
+              while ( $favorites->have_posts() ) : $favorites->the_post(); global $product; ?>
+              <li class="slider-products">
+                <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
+                  <div class="slider-products-inner">
+                    <?php tm_woowishlist_add_button_single( $favorites->post->ID ); ?>
+                    <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $favorites->post->ID ).'" type="icon" label=""]'); ?></div>
+                    <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
+                      <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                      src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
+                      data-src="<?php if (has_post_thumbnail( $favorites->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
+                      >
+                    </a>
+                        <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
+                          <h2 class="product__title"><?php the_title( $favorites->post->ID ); ?></h2>
+                        </a>
+                        <span class="price"><?php echo $product->get_price_html(); ?></span>
+                        <!-- <?php woocommerce_template_loop_add_to_cart( $favorites->post, $product ); ?> -->
+              </div></a></li>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+        </section>
 
    </ul>
   </div>
@@ -212,7 +227,15 @@ use Roots\Sage\Wrapper;
     <ul class="front-products-slider2">
         <section class="multiple-items single-featured3">
             <?php
-                $args = array('post_type' => 'product', 'post_status' => 'publish', 'ignore_sticky_posts' => 1, 'posts_per_page' => '10', 'fields' => 'ids', 'meta_key' => 'total_sales', 'orderby' => 'meta_value_num','meta_query' => WC()->query->get_meta_query() );
+                $args = array(
+                  'post_type' => 'product',
+                  'post_status' => 'publish',
+                  'ignore_sticky_posts' => 1,
+                  'posts_per_page' => '10',
+                  'fields' => 'ids',
+                  'meta_key' => 'total_sales',
+                  'orderby' => 'meta_value_num',
+                  'meta_query' => WC()->query->get_meta_query() );
                 $featured_query = new WP_Query( $args );
                 while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
                 <li class="slider-products">
@@ -222,7 +245,7 @@ use Roots\Sage\Wrapper;
                       <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?></div>
                       <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                         <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                        src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
+                        src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
                         data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
                         >
                       </a>
@@ -285,12 +308,12 @@ use Roots\Sage\Wrapper;
                 <!--  Start our WP Query -->
                 <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
                     <!-- Display the Post Title with Hyperlink -->
-                    <li>
+                    <li class="magazine-slider-products">
                     <figure class="effect-layla">
                       <a href="<?php the_permalink() ?>">
                       <!--  Display the Post Featured Image -->
                       <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                      src="https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif"
+                      src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
                       data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
                       <figcaption><p><strong>read more</strong></p></figcaption>
                       </a>
