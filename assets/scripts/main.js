@@ -69,29 +69,27 @@
             return false;
         });
 
-
         // layout Masonry after each image loads
         $container.imagesLoaded().progress( function() {
           $container.isotope();
         });
 
 
-
         $(document).on('click', ".hamburger", function() {
           $("body").toggleClass("lock-scroll");
+          $("#wrapper").toggleClass("pushbar_blur");
         });
 
+        var canHover = !(matchMedia('(hover: none)').matches);
+        if (canHover) {
+          document.body.classList.add('can-hover');
+        }
 
         $('.selectpicker').select2({
           width: '100%', // need to override the changed default
           minimumResultsForSearch: Infinity
         });
-
         $.fn.modal.Constructor.prototype.enforceFocus = function() {};
-
-
-
-
 
         $(document).ready(function() {
           // Initialize library to lazy load images
@@ -157,12 +155,6 @@
             e.stopPropagation();
           }
         });
-
-
-        const canHover = !(matchMedia('(hover: none)').matches);
-        if (canHover) {
-          document.body.classList.add('can-hover');
-        }
 
         $('.mega-menu .dropdown').hover(function() {
           $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
@@ -286,240 +278,80 @@
         });
 
 
-        $(".single-featured").slick().slick('slickFilter', '.product-slide');
 
+        $(window).on('load resize orientationchange', function() {
+              $('.single-featured4').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 3,
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 1,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
+              $('.single-featured3').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 5,
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 2,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
+              $('.featured3').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 5,
+                              slide: 'div',
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 2,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
+          });
 
-        $('.sub-menu').slick({
-          dots: true,
-          infinite: true,
-          autoplay: false,
-          speed: 300,
-          autoplaySpeed: 12000,
-          lazyLoad: 'ondemand',
-          variableWidth: true
-        });
-
-        $(".featured2").slick({
-          // normal options...
-          lazyLoad: 'ondemand',
-          lazyLoadBuffer: 0,
-          infinite: true,
-          dots: false,
-          slide: 'li',
-          autoplay: true,
-          autoplaySpeed: 9000,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 880,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                infinite: true
-              }
-            }
-          ]
-        });
-
-        $(".flex-control-nav2").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          arrows: true,
-          autoplay: true,
-          autoplaySpeed: 17000,
-          slidesToShow: 4,
-          slidesToScroll: 2,
-          slide: 'li',
-          dots: false
-        });
-
-        $(".single-featured2").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          arrows: false,
-          slidesToScroll: 1,
-          slide: 'li',
-          dots: false
-        });
-        $(".single-featured3").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          slidesToShow: 5,
-          arrows: true,
-          slidesToScroll: 2,
-          slide: 'div',
-          dots: false,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 5,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 4,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            }
-          ]
-        });
-
-        $(".single-featured4").slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          slidesToShow: 3,
-          arrows: false,
-          slidesToScroll: 1,
-          slide: 'div',
-          dots: false,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                infinite: true
-              }
-            }
-          ]
-        });
-
-
-        $(".featured3").slick({
-          // normal options...
-          lazyLoad: 'ondemand',
-          infinite: true,
-          dots: false,
-          slide: 'div',
-          autoplay: false,
-          autoplaySpeed: 17000,
-          slidesToShow: 5,
-          slidesToScroll: 2,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 5,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 4,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            }
-          ]
-        });
-
-        $(".product_list_widget").slick({
-          // normal options...
-          lazyLoad: 'ondemand',
-          infinite: true,
-          dots: false,
-          slide: 'div',
-          autoplay: false,
-          autoplaySpeed: 17000,
-          slidesToShow: 5,
-          slidesToScroll: 2,
-          // the magic
-          responsive: [{
-              breakpoint: 1250,
-              settings: {
-                slidesToShow: 5,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 4,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 769,
-              settings: {
-                slidesToShow: 3,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                infinite: true
-              }
-            }
-          ]
-        });
-
+          $('.sub-menu').slick({
+            dots: true,
+            infinite: true,
+            autoplay: false,
+            speed: 300,
+            autoplaySpeed: 12000,
+            lazyLoad: 'ondemand',
+            variableWidth: true
+          });
 
         function enable_update_cart() {
             $('[name="update_cart"]').removeAttr('disabled');
@@ -571,10 +403,6 @@
             });
         }
 
-        $(document).ready(function() {
-            enable_update_cart();
-            quantity_step_btn();
-        });
 
         $( document ).on( 'updated_cart_totals', function() {
             enable_update_cart();
@@ -589,36 +417,12 @@
           $('.single-featured2').slick('slickGoTo', parseInt(slideIndex));
         });
 
-        $(document).ready(function() {
-          var trigger = $('.hamburger'),
-            overlay = $('.overlay'),
-            isClosed = false;
-
-          function hamburger_cross() {
-
-            if (isClosed === true) {
-              overlay.hide();
-              trigger.removeClass('is-open');
-              trigger.addClass('is-closed');
-              isClosed = false;
-            } else {
-              overlay.show();
-              trigger.removeClass('is-closed');
-              trigger.addClass('is-open');
-              isClosed = true;
-            }
-          }
-
-          trigger.click(function() {
-            hamburger_cross();
-          });
-
-
+      $(document).ready(function() {
+          enable_update_cart();
+          quantity_step_btn();
           $('[data-toggle="offcanvas"]').click(function() {
-            $('#wrapper').toggleClass('toggled');
+            $('#sidebar-wrapper').toggleClass('toggled');
           });
-
-
         });
 
 
@@ -628,7 +432,10 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        jQuery(window).on('load', function() {
+      },
+      finalize: function() {
+        // JavaScript to be fired on the home page, after the init JS
+
           var feed = new Instafeed({
             get: 'user',
             userId: '5929691076',
@@ -637,64 +444,63 @@
             accessToken: '5929691076.1677ed0.a6fb14ad48984650b2ec7b43e21f25bd',
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
-            template: '<li><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="insta-image" style="background-image: url({{image}})"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
+            template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
-              $('.insta-slide').slick({
-                lazyLoad: 'ondemand',
-                lazyLoadBuffer: 0,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                infinite: true,
-                slidesToShow: 4,
-                swipeToSlide: true,
-                arrows: false,
-                slide: 'div',
-                dots: false,
-                responsive: [{
-                    breakpoint: 1250,
-                    settings: {
-                      slidesToShow: 4,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 991,
-                    settings: {
-                      slidesToShow: 4,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 769,
-                    settings: {
-                      slidesToShow: 3,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 600,
-                    settings: {
-                      slidesToShow: 1,
-                      infinite: true
-                    }
-                  }
-                ]
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
+              //Initializes SlickSlider
+              $(window).on('load resize orientationchange', function() {
+                $(document).ready(function() {
+                  $('.insta-slide').each(function(){
+                      var $carousel = $(this);
+                      /* Initializes a slick carousel only on mobile screens */
+                      // slick on mobile
+                      if ($(window).width() < 1025) {
+                          if ($carousel.hasClass('slick-initialized')) {
+                              $carousel.slick('unslick');
+                          }
+                      }
+                      else{
+                          if (!$carousel.hasClass('slick-initialized')) {
+                              $carousel.slick({
+                                  slidesToShow: 5,
+                                  slidesToScroll: 1,
+                                  autoplay: true,
+                                  autoplaySpeed: 4000,
+                                  infinite: true,
+                                  swipeToSlide: true,
+                                  arrows: false,
+                                  slide: 'div',
+                                  dots: false
+                              });
+                          }
+                      }
+                    });
+                 });
               });
             }
           });
           feed.run();
-        }); //end document ready
 
-      },
-      finalize: function() {
-        // JavaScript to be fired on the home page, after the init JS
       }
     },
     // About us page, note the change from about-us to about_us.
     'about_us': {
       init: function() {
-        // JavaScript to be fired on the about us page
-        jQuery(window).on('load', function() {
+        // JavaScript to be fired on the home page
+      },
+      finalize: function() {
+        // JavaScript to be fired on the home page, after the init JS
+
           var feed = new Instafeed({
             get: 'user',
             userId: '5929691076',
@@ -703,53 +509,52 @@
             accessToken: '5929691076.1677ed0.a6fb14ad48984650b2ec7b43e21f25bd',
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
-            template: '<li><a href="{{link}}"><figure class="effect-zoe"><img src="{{image}}" /><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
+            template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
             after: function() {
-              $('.insta-slide').slick({
-                lazyLoad: 'ondemand',
-                lazyLoadBuffer: 0,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                infinite: true,
-                slidesToShow: 5,
-                swipeToSlide: true,
-                arrows: false,
-                slide: 'div',
-                dots: false,
-                responsive: [{
-                    breakpoint: 1250,
-                    settings: {
-                      slidesToShow: 5,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 991,
-                    settings: {
-                      slidesToShow: 4,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 769,
-                    settings: {
-                      slidesToShow: 3,
-                      infinite: true
-                    }
-                  },
-                  {
-                    breakpoint: 600,
-                    settings: {
-                      slidesToShow: 1,
-                      infinite: true
-                    }
-                  }
-                ]
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
+              //Initializes SlickSlider
+              $(window).on('load resize orientationchange', function() {
+                $(document).ready(function() {
+                  $('.insta-slide').each(function(){
+                      var $carousel = $(this);
+                      /* Initializes a slick carousel only on mobile screens */
+                      // slick on mobile
+                      if ($(window).width() < 1025) {
+                          if ($carousel.hasClass('slick-initialized')) {
+                              $carousel.slick('unslick');
+                          }
+                      }
+                      else{
+                          if (!$carousel.hasClass('slick-initialized')) {
+                              $carousel.slick({
+                                  slidesToShow: 5,
+                                  slidesToScroll: 1,
+                                  autoplay: true,
+                                  autoplaySpeed: 4000,
+                                  infinite: true,
+                                  swipeToSlide: true,
+                                  arrows: false,
+                                  slide: 'div',
+                                  dots: false
+                              });
+                          }
+                      }
+                    });
+                 });
               });
             }
           });
           feed.run();
-        }); //end document ready
       }
     }
   };

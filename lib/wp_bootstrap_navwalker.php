@@ -96,7 +96,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$has_featured_image = array_search('featured-image', $classes);
 			if ($has_featured_image !== false && $this->megaMenuID != 0) {
 					$postID = url_to_postid( $item->url );
-					$item_output .= "<div id=\"menu-image\"> <img class=\"lozad\" alt=\"" . esc_attr($item->attr_title) . "\" src=\"" . get_the_post_thumbnail_url( $postID, array(215, 320)) . "\"/></div>";
+					$item_output .= "<div id=\"menu-image\"> <img class=\"lozad\" alt=\"" . esc_attr($item->attr_title) . "\" data-src=\"" . get_the_post_thumbnail_url( $postID, array(215, 320)) . "\" ></div>";
 			}
 
 			$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).$args->link_after;
