@@ -271,30 +271,39 @@
             <?php echo do_shortcode('[wcas-search-form]');?>
           </div>
           <div class="icon-menu-gk">
-                <a id="pop" class="account" tabindex="-1" data-popover="true"
-                    data-content="<?php if (is_user_logged_in()) : ?>
-                      <span class='username'>Hello, <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></span>
-                      <a class='button' href='/my-account'>My Account</a>
-                      <hr class='hr-light'></hr>
-                      <a class='poplink' href='/order-tracking'>Order Tracking</a>
-                      <a class='poplink' href='/my-account/orders/'>Orders</a>
-                      <a class='poplink' href='/faq'>FAQ</a>
-                      <a class='poplink' href='/help'>Help</a>
-                      <hr class='hr-light'></hr>
-                      <a class='poplink' href='<?php echo wp_logout_url( home_url() ); ?>'>logout</a>
-                    <?php else : ?>
-                    <a class='button' data-toggle='modal' data-target='#loginmodal' href='#' title='register'>Login</a>
-                    <span class='light'>Don't have a account?</span>
-                    <a class='poplink' href='/my-account' title='Register'>Register</a>
-                    <hr class='hr-light'></hr>
-                    <a class='poplink' href='/faq'>FAQ</a>
-                    <a class='poplink' href='/help'>Help</a><?php endif;?>">
-                    <span class="text">Account</span>
-                    </a>
+
+
+            <div id="hover" class="account"  href="#">
+              <span class="text">Account</span>
+              <div id="popup" class="account-popup popover-content fade bottom in"><div class="arrow"></div>
+            <?php if (is_user_logged_in()) : ?>
+              <span class='username'>Hello, <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></span>
+              <a class='button' href='/my-account'>My Account</a>
+              <hr class='hr-light'></hr>
+              <a class='poplink' href='/order-tracking'>Order Tracking</a>
+              <a class='poplink' href='/my-account/orders/'>Orders</a>
+              <a class='poplink' href='/faq'>FAQ</a>
+              <a class='poplink' href='/help'>Help</a>
+              <hr class='hr-light'></hr>
+              <a class='poplink' href='<?php echo wp_logout_url( home_url() ); ?>'>logout</a>
+            <?php else : ?>
+            <a class='button' data-toggle='modal' data-target='#loginmodal' href='#' title='register'>Login</a>
+            <span class='light'>Don't have a account?</span>
+            <a class='poplink' href='/my-account' title='Register'>Register</a>
+            <hr class='hr-light'></hr>
+            <a class='poplink' href='/faq'>FAQ</a>
+            <a class='poplink' href='/help'>Help</a><?php endif;?>
+          </div>
+        </div>
+
+
                     <div id="hover" class="wishlist"  href="#">
                       <span class="text">Wishlist</span>
-                      <div id="popup" class="fade bottom in"><div class="arrow"></div><?php echo do_shortcode('[tm_woo_wishlist_table]'); ?><a href="/wishlist"><button class="wishlist-button">Go to wishlist</button></a></div>
+                      <div id="popup" class="wishlist-popup fade bottom in"><div class="arrow"></div>
+                      <?php echo do_shortcode('[tm_woo_wishlist_table]'); ?>
+                      <a href="/wishlist"><button class="wishlist-button">Go to wishlist</button></a></div>
                     </div>
+
                     <div class="Cart-right">
                       <?php echo do_shortcode('[WooCommerceWooCartPro]'); ?><span class="text">Cart</span>
                     </div>
@@ -313,3 +322,26 @@
 </div><!--.container-->
 
 </header>
+
+
+<!-- <a id="pop" class="account" tabindex="-1" data-popover="true"
+    data-content="<?php if (is_user_logged_in()) : ?>
+      <span class='username'>Hello, <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></span>
+      <a class='button' href='/my-account'>My Account</a>
+      <hr class='hr-light'></hr>
+      <a class='poplink' href='/order-tracking'>Order Tracking</a>
+      <a class='poplink' href='/my-account/orders/'>Orders</a>
+      <a class='poplink' href='/faq'>FAQ</a>
+      <a class='poplink' href='/help'>Help</a>
+      <hr class='hr-light'></hr>
+      <a class='poplink' href='<?php echo wp_logout_url( home_url() ); ?>'>logout</a>
+    <?php else : ?>
+    <a class='button' data-toggle='modal' data-target='#loginmodal' href='#' title='register'>Login</a>
+    <span class='light'>Don't have a account?</span>
+    <a class='poplink' href='/my-account' title='Register'>Register</a>
+    <hr class='hr-light'></hr>
+    <a class='poplink' href='/faq'>FAQ</a>
+    <a class='poplink' href='/help'>Help</a><?php endif;?>">
+    <span class="text">Account</span>
+    </a>
+    -->

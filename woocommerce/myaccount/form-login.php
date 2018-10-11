@@ -29,11 +29,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="u-columns col2-set" id="customer_login">
 
-	<div class="u-column1 col-1">
+	<a href="#" class="visible-xs-block	tabcontent-button active" data-tab="1">Customer Login</a>
+	<a href="#" class="visible-xs-block	tabcontent-button" data-tab="2">Create Account</a>
+
+
+	<div class="u-column1 col-1 loginform tabcontent active" data-content="1" id="loginform">
 
 <?php endif; ?>
 
-		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
+		<h2 class="hidden-xs"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
@@ -69,9 +73,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
-	<div class="u-column2 col-2">
+	<div class="u-column2 col-2 tabcontent registerform" data-content="2" id="registerform">
 
-		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
+		<h2 class="hidden-xs"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
 		<form method="post" class="woocommerce-form woocommerce-form-register register">
 

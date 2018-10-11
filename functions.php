@@ -36,6 +36,10 @@ function remove_assets() {
   wp_deregister_style( 'festi-cart-styles' );
   wp_deregister_style( 'festi-jquery-ui-spinner' );
 
+  wp_deregister_style( 'font-awesome' );
+  wp_deregister_style( 'font-awesome' );
+  wp_dequeue_script( 'font-awesome' );
+
   wp_dequeue_script( 'wc_price_slider' );
   //wp_dequeue_script( 'wc-single-product' );
   //wp_dequeue_script( 'wc-add-to-cart' );
@@ -54,7 +58,7 @@ function remove_assets() {
   wp_dequeue_script( 'jqueryui' );
 
   remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
-/*wp_dequeue_style( 'yith-quick-view' );
+/*  wp_dequeue_style( 'yith-quick-view' );
   wp_deregister_style( 'yith-quick-view' );
 */
   wp_dequeue_style( 'tm-woowishlist' );
@@ -71,13 +75,18 @@ function remove_assets() {
 
   wp_dequeue_style( 'dgwt-wcas-style ' );
   wp_deregister_style( 'dgwt-wcas-style ' );
-
-  wp_dequeue_style( 'dgwt-wcas-style ' );
-  wp_deregister_style( 'dgwt-wcas-style ' );
-
 }
 add_action( 'wp_enqueue_scripts', 'remove_assets', 9999 );
 
+
+// remove dashicons in frontend to non-admin
+    function wpdocs_dequeue_dashicon() {
+        if (current_user_can( 'update_core' )) {
+            return;
+        }
+        wp_deregister_style('dashicons');
+    }
+    add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 
 /*
 function crunchify_print_scripts_styles() {
@@ -646,6 +655,19 @@ add_filter( 'comment_form_defaults', function( $fields ) {
     return $fields;
 });
 
+
+function wc_bypass_logout_confirmation() {
+    global $wp;
+
+    if ( isset( $wp->query_vars['customer-logout'] ) ) {
+        wp_redirect( str_replace( '&amp;', '&', wp_logout_url( wc_get_page_permalink( 'myaccount' ) ) ) );
+        exit;
+    }
+}
+
+add_action( 'template_redirect', 'wc_bypass_logout_confirmation' );
+
+
 /*cm to inch calculater*/
 add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_func' );
   /*
@@ -691,11 +713,16 @@ add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_
 
 /* Inser coupon code into single product
 add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_unlock' );
-
+/*
 * Content below "Add to cart" Button.
 
           function add_content_after_addtocart_button_unlock() {
-          $options = get_option('futurewave_theme_options'); echo do_shortcode('');
+          $options = get_option('futurewave_theme_options'); echo do_shortcode('
+          [sociallocker]
+          <div class="outer-couponcode"><div class="inner-couponcode">
+          <h4>Thank you! Here is your Couponcode!</h4>
+          <div class="couponcode">'.$options['couponcode'].'</div></div></div>
+          [/sociallocker]');
 }*/
 
 
@@ -1320,7 +1347,7 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
 
              $oldsrc = $node->getAttribute('src');
              $node->setAttribute('data-src', $oldsrc );
-             $newsrc = 'https://www.juniqe.de/app/assets/images/blank.gif';
+             $newsrc = 'https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif';
              $node->setAttribute('src', $newsrc);
 
              $oldsrcset = $node->getAttribute('srcset');

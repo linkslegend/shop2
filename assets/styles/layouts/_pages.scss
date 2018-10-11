@@ -618,6 +618,7 @@ span.wpcf7-list-item {
   border: 1px solid rgba(15, 15, 15, 0.4);
   display: inline-block;
   padding: 0 15px;
+  border-radius: 3px;
   width: 100%;
 }
 input[type="checkbox"], input[type="radio"]{
@@ -640,19 +641,30 @@ input[type="radio"] {
   padding: 11px 40px;
   border: none;
   font-size: 1.3em;
-  border-radius: 0;
+  border-radius: 3px;
   background: rgb(0, 170, 91);
 }
 .woocommerce .blockUI.blockOverlay {
-  z-index: 9999 !important;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 auto !important;
-  top: 0px !important;
-  left: 0px !important;
-  background: rgba(25, 25, 25, 0.4) !important;
-  opacity: 0.3 !important;
-  position: fixed !important;
+    z-index: 9999!important;
+    width: 100%!important;
+    height: 100%!important;
+    padding: 15px!important;
+    border-radius: 5px;
+    margin: 0 auto!important;
+    top: 0!important;
+    left: 0!important;
+    background: rgba(15, 15, 15, 0.3)!important;
+    opacity: .3!important;
+}
+
+.woocommerce .summary .blockUI.blockOverlay {
+  position: fixed !important;}
+
+.woocommerce .festi-cart-products-content .blockUI.blockOverlay{
+    position: absolute!important;
+    cursor: auto!important;
+    border-radius: 3px;
+  	background: rgba(255, 255, 255, 0.5)!important;
 }
 
 .woocommerce .blockUI.blockOverlay,
@@ -1027,7 +1039,7 @@ p.cart-empty:before {
 .woocommerce-cart .cart-collaterals .cart_totals tr th:first-child {}
 .woocommerce-cart .coupon > input.button {
   background: #313131 none repeat scroll 0 0;
-  border-radius: 0;
+  border-radius: 3px;
   color: rgba(255, 255, 255, 1);
   font-size: 1.1em;
   height: 40px;
@@ -1038,7 +1050,7 @@ p.cart-empty:before {
 .woocommerce-checkout a.button[name="apply_coupon"],
 .woocommerce-checkout input.button[name="apply_coupon"] {
   background: #313131 none repeat scroll 0 0;
-  border-radius: 0;
+  border-radius: 3px;
   color: rgba(255, 255, 255, 1);
   float: none;
   height: 40px;
@@ -1075,7 +1087,7 @@ p.cart-empty:before {
 .woocommerce input.button[name="update_cart"] {
   background: rgba(15, 15, 15, 1);
   color: rgba(255, 255, 255, 1);
-  border-radius: 0;
+  border-radius: 3px;
   box-shadow: none;
   font-size: 1.1em;
   font-weight: 500;
@@ -1097,7 +1109,7 @@ p.cart-empty:before {
   background: rgba(15, 15, 15, 1);
   color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(15, 15, 15, 1);
-  border-radius: 0;
+  border-radius: 3px;
   box-shadow: none;
   font-size: 1.1em;
   font-weight: 500;
@@ -1767,7 +1779,7 @@ input#password.woocommerce-Input.woocommerce-Input--text.input-text{
 }
 .woocommerce-account .select2-container .select2-choice,
 .woocommerce-checkout .select2-container .select2-choice {
-  border-radius: 0;
+  border-radius: 3px;
   border: 1px solid rgba(129, 129, 129, 0.25);
   font-size: 14px;
   line-height: 18px;
@@ -1932,7 +1944,7 @@ table tr th {
 .woocommerce-cart #payment,
 .woocommerce-checkout #payment {
   background: transparent;
-  border-radius: 0;
+  border-radius: 3px;
   padding-left: 10px;
   margin-top: 0px;
   padding-right: 10px;
@@ -1986,7 +1998,7 @@ a.wc-gateway-ppec-cancel {
   box-shadow: none;
   color: rgba(255, 255, 255, 1);
   padding: 13px 40px;
-  border-radius: 0px;
+  border-radius: 3px;
   margin-top: 0;
   margin-bottom: 15px;
   margin-right: 0;
@@ -2028,7 +2040,7 @@ a.wc-gateway-ppec-cancel:hover {
   height: 40px;
   float: left;
   display: block;
-  border-radius: 0px;
+  border-radius: 3px;
   border: none;
   list-style: none !important;
   width: 100%;
@@ -2088,7 +2100,7 @@ a.wc-gateway-ppec-cancel:hover {
   position: relative;
   background-color: rgba(242, 242, 242, 1);
   font-weight: 500;
-  border-radius: 0px;
+  border-radius: 3px;
   color: rgba(15, 15, 15, 1);
   border-top: 2px solid #ff4343;
   list-style: none !important;
@@ -2117,7 +2129,7 @@ a.wc-gateway-ppec-cancel:hover {
 .woocommerce-error a {
   color: #ff4343;
   padding: 4px 6px;
-  border-radius: 4px;
+  border-radius: 3px;
   text-decoration: none;
   background: rgba(255, 255, 255, 1);
   margin: 0 5px;
@@ -2286,6 +2298,9 @@ login .button,
   background-color: transparent;
   color: #000;
 }
+.register .button{
+	margin-top: 0;
+}
 .woocommerce-checkout .login label[for="rememberme"] {
   margin-bottom: 0;
 }
@@ -2294,7 +2309,7 @@ login .button,
 .woocommerce form.register {
   border: 0 solid #d3ced2;
   background: rgba(242, 242, 242, 1);
-  border-radius: 0px;
+  border-radius: 3px;
   margin: 0px 0px 15px 0px;
   padding: 15px;
   text-align: left;
@@ -2482,7 +2497,7 @@ login .button,
   width: 100%;
   border: 2px solid rgb(0, 170, 91);
   background: rgb(0, 170, 91);
-  border-radius: 0px;
+  border-radius: 3px;
   font-weight: 700;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -2519,11 +2534,11 @@ login .button,
     margin: 0;
     float: none;
     text-align: center;
-    padding: 7px;
+    padding: 9px;
     display: block;
     font-weight: 700;
     font-size: 1.3em;
-    height: 40px;
+    height: 45px;
     border-radius: 3px;
     border: 2px solid #00aa5b;
     width: 100%;
@@ -2672,7 +2687,7 @@ login .button,
   font-size: 1.1em;
   font-weight: 500;
   background: transparent;
-  border-radius: 0;
+  border-radius: 3px;
   transition: all 0.25s ease 0s;
   -webkit-transition: all 0.25s ease 0s;
 }
@@ -2908,6 +2923,7 @@ footer .bgimage {
 .newsletter-footer input[type="email"] {
   border: none;
   padding: 11px;
+  border-radius: 3px;
   color: rgba(15, 15, 15, 1);
 }
 .newsletter-footer span {
@@ -3249,9 +3265,9 @@ legend {
 
 .woo-slg-login-error{
 	clear: both;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	background-color: #F1ACAC;
 	border: 1px solid #EE4B4B;
 	margin-bottom: 1.650em;
@@ -3700,7 +3716,7 @@ label.prdctfltr_active .prdctfltr_customize_block {
 .prdctfltr_collector_flat > span {
 	border: 1px solid #f0f0f0;
 	margin: 0 7px 7px 0;
-	border-radius: 2px;
+	border-radius: 3px;
 	font-size: 1.1em;
 	padding: 5px 10px 5px 5px;
 	color: #252525;
@@ -3967,7 +3983,7 @@ label.prdctfltr_active .prdctfltr_customize_block {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 15px;
+  margin: 0 0 20px;
   /*box-shadow: -2px 3px 7px 0 rgba(0,0,0,.22);*/
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -4007,7 +4023,7 @@ label.prdctfltr_active .prdctfltr_customize_block {
   font-size: 100%;
   display: block;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 3px;
   font-weight: 400;
   border: none;
   color: rgba(15, 15, 15, 1);
@@ -4028,7 +4044,7 @@ label.prdctfltr_active .prdctfltr_customize_block {
   color: rgba(255, 255, 255, 1);
   border: none;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 3px;
   text-align: center;
   font-weight: 400;
   border-bottom: 0px solid rgba(15, 15, 15, 1);
@@ -4538,7 +4554,7 @@ form.lost_reset_password .form-row label {
   border: solid;
   color: rgba(255, 255, 255, 1);
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 3px;
   font-weight: 500;
   margin-top: 5px;
   border: 2px solid rgba(15, 15, 15, 1);
@@ -4553,7 +4569,7 @@ form.lost_reset_password .form-row label {
   border: solid;
   color: rgba(15, 15, 15, 1);
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 3px;
   font-weight: 500;
   border: 2px solid rgba(15, 15, 15, 1);
   background: transparent;
@@ -4701,7 +4717,7 @@ form.lost_reset_password .form-row label {
 }
 .faqs .nav-tabs > li > a {
   color: rgba(15, 15, 15, 1);
-  border-radius: 0px;
+  border-radius: 3pxpx;
   font-size: 1.06em;
   padding-left: 25px;
   box-shadow: none;
@@ -4715,7 +4731,7 @@ form.lost_reset_password .form-row label {
 .faqs .nav-tabs > li.active > a:hover {
   color: rgba(15, 15, 15, 1);
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 3px;
   padding-left: 25px;
   box-shadow: none;
   border-right: none;
@@ -5055,6 +5071,7 @@ form.lost_reset_password .form-row label {
 	-webkit-transition: all .25s;
 	transition: all .25s;
 	border: 2px solid #00aa5b !important;
+	border-radius: 3px;
 	color: #fff !important;
 	font-weight: 600;
 	    &:hover{
@@ -6361,6 +6378,7 @@ h2.recently-Viewed-inner.getkunst-title {
 
 .yith-wcqv-wrapper {
   width: 400px;
+  border-radiu: 3px;
   height: auto !important;
   overflow: hidden;
 }
@@ -6605,7 +6623,7 @@ h2.recently-Viewed-inner.getkunst-title {
     display: block;
     border: 2px solid rgba(15, 15, 15, 0);
     font-size: 1.2em;
-    border-radius: 0;
+    border-radius: 3px;
     background: rgba(15, 15, 15, 0.7);
     -webkit-transition: all .35s ease 0s;
     transition: all .35s ease 0s;
@@ -6711,18 +6729,18 @@ h2.recently-Viewed-inner.getkunst-title {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 10px;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+  margin: 0 0 20px;
+    transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
   background-color: #d4d4d4;
   -webkit-animation: lazyloading 1.5s infinite;
   animation: lazyloading 1.5s infinite;
 }
-.woocommerce.can-hover ul.products li.product a img:hover {
+.woocommerce.can-hover ul.products li.product a:hover img {
   box-shadow: -2px 3px 7px 0 rgba(0, 0, 0, 0.2);
   outline: 0 !important;
   transform: scale(1.02);
-  -webkit-transform: scale(1.02);
+  -webkit-transform: scale(1.035);
 }
 
 /* @group modal */
@@ -6736,48 +6754,8 @@ h2.recently-Viewed-inner.getkunst-title {
   border-bottom: 0px;
 }
 
-.modal.loginmodal
-  .auth0-lock.auth0-lock
-  .auth0-lock-input-wrap
-  .auth0-lock-input {
+.modal.loginmodal{
   float: none;
-}
-.modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-cred-pane {
-  background: transparent;
-}
-.modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-header {
-  display: none;
-}
-.modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-form p {
-  font-size: 14px;
-  line-height: 1.8;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: rgba(15, 15, 15, 0.84);
-}
-.modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-tabs {
-  background: transparent;
-}
-.modal.loginmodal
-  .auth0-lock.auth0-lock
-  .auth0-lock-tabs
-  li.auth0-lock-tabs-current
-  a {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(10, 10, 10, 0.7);
-}
-.modal.loginmodal #a0-lock.a0-theme-default .a0-panel button.a0-primary {
-  background: rgb(0, 170, 91) !important;
-  border-radius: 3px !important;
-}
-.modal.loginmodal .auth0-lock.auth0-lock .auth0-lock-submit {
-  padding: 0px;
-  height: 50px;
-  font-weight: 600;
-  border-radius: 0;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.1s ease-in-out;
 }
 .modal-body {
   position: relative;
@@ -6913,7 +6891,7 @@ legend {
   padding: 12px 30px;
 }
 .modal-content input[type="submit"]:hover {
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 6px 0 rgba(0,0,0,.2);
 }
 .modal-content .input-1,
 .modal-content .input-2 {
@@ -6992,90 +6970,11 @@ legend {
   background: rgb(0, 170, 91);
 }
 
-/* @group API Version 9(older version) */
-
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-mode form .a0-body-content {
-  padding: 0px 0px 30px 0px !important;
-  background: none;
-  border-radius: 0;
-}
-.modal-body #a0-lock.a0-theme-default .a0-switch .a0-active {
-  background-color: rgba(15, 15, 15, 1);
-  color: rgba(255, 255, 255, 1);
-  cursor: default;
-}
-.modal-body #a0-lock.a0-theme-default .a0-switch {
-  border: 1px solid rgba(15, 15, 15, 1);
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-mode {
-  margin: auto;
-  background-color: transparent;
-  border-radius: 0 0 3px 3px;
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-top-header {
-  margin-bottom: 15px;
-  min-height: auto !important;
-  background: transparent;
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-success {
-  background: rgb(0, 170, 91) !important;
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-icon-container {
-  min-height: 124px;
-  display: none;
-  position: relative;
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel {
-  text-align: center;
-  border-radius: 0px;
-  font-size: 13px;
-  box-shadow: none;
-  margin-bottom: 25px !important;
-  -webkit-box-shadow: none;
-  position: relative;
-  color: #4d4d4d;
-  zoom: 1;
-  margin: 0 auto;
-  width: 80%;
-  background: transparent;
-}
-.modal-body #a0-lock.a0-theme-default .a0-zocial.a0-guest {
-  background-color: rgb(0, 170, 91);
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-action button {
-  height: 50px !important;
-  background: rgb(0, 170, 91) !important;
-  border-radius: 3px !important;
-}
-.modal-body #a0-lock.a0-theme-default .a0-panel .a0-action button:after {
-  width: 35px !important;
-  height: 35px !important;
-  background-size: contain !important;
-}
-.modal-body #attributionBadge {
-  margin: 20px 0 0px !important;
-}
-.modal-body #attributionBadge a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2em;
-  line-height: 20px;
-}
-.modal-body #attributionBadge .logo {
-  background-size: 100%;
-  display: inline-block;
-  color: transparent;
-  width: 50px;
-  height: 22px;
-  margin-left: 3px;
-}
-/* @end */
-
 /* @end */
 
 /* @group css popover */
 .popover {
-  border-radius: 0px !important;
+  border-radius: 3px !important;
 }
 #hover {}
 #hover:hover {}
@@ -7234,20 +7133,36 @@ legend {
 
 #popup {
   opacity: 0;
-  -webkit-transform: translateX(-65%);
-  transform: translateX(-65%);
-  width: 350px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 1);
   position: absolute;
-  height: 0;
-  top: 65px;
-  border-radius: 0px;
+  border-radius: 3px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  padding: 0 15px;
   overflow: hidden;
+  visibility: hidden;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
-#hover:hover #popup {
+
+
+#popup.account-popup{
+	-webkit-transform: translateX(-45%);
+    transform: translateX(-45%);
+    width: 250px;
+    height: auto;
+    padding: 15px;
+    top: 57px;
+}
+#popup.wishlist-popup{
+  -webkit-transform: translateX(-65%);
+  transform: translateX(-65%);
+    width: 350px;
+    height: auto;
+  padding: 15px;
+  top: 57px;
+}
+
+#hover:hover #popup.account-popup {
   opacity: 1;
   padding: 15px;
   overflow: visible;
@@ -7256,7 +7171,25 @@ legend {
   height: auto;
   border-radius: 0px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  visibility: visible;
+  top: 63px;
 }
+
+#hover:hover #popup.wishlist-popup {
+  opacity: 1;
+  padding: 15px;
+  overflow: visible;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  height: auto;
+  border-radius: 0px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  visibility: visible;
+  top: 63px;
+}
+
+
+
 #popup .stock {
   display: none;
 }
@@ -7285,26 +7218,21 @@ legend {
 div.popover-content > a.button {
   background: transparent;
   color: rgba(15, 15, 15, 1);
-  font-size: 1em;
+  font-size: 1.2em;
   display: block;
   font-weight: 500;
   width: 100%;
   border: 2px solid rgba(15, 15, 15, 1);
   text-align: center;
-  padding: 7px 75px;
+  padding: 11px;
+  	&:hover{
+	  background: rgba(15, 15, 15, 1);
+      text-decoration: none;
+  	  color: rgba(255, 255, 255, 1);
+	  border: 2px solid rgba(15, 15, 15, 1);
+	}
 }
-div.popover-content > a.button:hover {
-  background: rgba(15, 15, 15, 1);
-  text-decoration: none;
-  border: 2px solid rgba(15, 15, 15, 1);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 1);
-  font-size: 1em;
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 7px 75px;
-}
+
 div.popover-content > span.light {
   display: block;
   color: #929292;
@@ -7324,12 +7252,15 @@ div.popover-content > hr.hr-light {
 }
 
 div.popover-content > a.poplink {
-  text-decoration: none;
-  padding: 3px 0;
-  padding-left: 10px;
-  color: rgba(15, 15, 15, 1);
-  display: block;
-  font-size: 0.92em;
+    text-decoration: none;
+    padding: 5px 0;
+    padding-left: 10px;
+    color: #0f0f0f;
+    display: inline-block;
+    float: none;
+    text-align: left;
+    width: 100%;
+    font-size: 1em;
 }
 div.popover-content > a.poplink.margin-top {
   margin-top: 15px;
@@ -7381,7 +7312,7 @@ div.popover-content > a.poplink:before {
   margin: 0 0 15px;
 }
 #popup .button {
-  position: absolute;
+  position: relative;
   bottom: 0px;
   right: 0;
   margin-bottom: 0;
@@ -7431,8 +7362,100 @@ div.woocommerce.tm-woowishlist
 .tm-woowishlist-item a.button.add_to_cart_button{
 	display: none;
 }
-
 /* @end */
+
+/* @group Social Login button */
+
+ul.the_champ_login_ul{
+	margin: 3px 0!important;
+    display: block;
+    float: left;
+}
+ul.the_champ_login_ul li {
+	background: none;
+    float: left;
+    padding: 0!important;
+    margin: 7px 0!important;
+    border: 0!important;
+    width: 100%!important;
+    clear: none!important;
+    list-style-type: none!important;}
+.the_champ_login_container {
+    margin:0;
+    float: left;
+    display: block;
+}
+.theChampLogin {
+    height: 45px;
+    float: none;
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+    margin: 0;
+    transition: all .25s ease-in-out; 
+    padding: 10px;}
+
+.theChampLogin:focus,
+.theChampLogin:hover{
+	box-shadow: 2px 3px 6px 0 rgba(0,0,0,.2);
+}
+
+.theChampGoogleBackground:before,
+.theChampInstagramBackground:before,
+.theChampTwitterBackground:before,
+.theChampFacebookBackground:before{
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    position: absolute;
+    width: 45px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 3px 0px 0px 3px;
+    background-color: rgba(0, 0, 0, 0.4);
+    float: left;
+    color: #fff;
+    padding: 10px 15px;}
+    
+.theChampTwitterBackground:after,
+.theChampFacebookBackground:after,
+.theChampInstagramBackground:after,
+.theChampGoogleBackground:after{
+	padding: 11px;
+    height: 45px;
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: inherit;
+    color: #fff;
+    font-weight: 600;
+    font-style: normal;
+    display: block;   
+}
+    
+.theChampGoogleBackground:before  {content:"\f0d5";}
+.theChampGoogleBackground:after  {content:"Login in with Google+";}
+.theChampTwitterBackground:before {padding-left: 12px;content:"\f099";}
+.theChampTwitterBackground:after {content:"Login in with Twitter";}
+.theChampFacebookBackground:before{content:"\f09a";}
+.theChampFacebookBackground:after{content: "Login in with Facebook";}
+.theChampInstagramBackground:before{content:"\f16d";}
+.theChampInstagramBackground:after{content:"\Login in with Instagram";}
+
+.theChampTwitterBackground ss,
+.theChampInstagramBackground ss,
+.theChampGoogleBackground ss,
+.theChampFacebookBackground ss{
+	display: none!important;}
+
+body.woocommerce-account.my-account .the_champ_outer_login_container,
+body.woocommerce-account.register .the_champ_outer_login_container{
+	display: none;}
+body.woocommerce-account.my-account #customer_login .the_champ_outer_login_container,
+body.woocommerce-account.register #customer_login .the_champ_outer_login_container{
+	display: block;}
+	
+/* @end */
+
 
 /*wish list */
 .entry-summary .woocommerce a.tm-woowishlist-page-button {
@@ -7700,19 +7723,19 @@ button.button.tm-woowishlist-button.added.in_wishlist {
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button {
-  font-size: 1.1em;
-  border: solid;
-  color: rgba(255, 255, 255, 1);
-  box-shadow: none;
-  border-radius: 0;
-  font-weight: 700;
-  border: 2px solid rgba(15, 15, 15, 1);
-  background: #020202;
-  padding: 0;
-  height: 40px;
-  transition: all 0.25s ease 0s;
-  -webkit-transition: all 0.25s ease 0s;
-  width: 50%;
+    font-size: 1.2em;
+    border: solid;
+    color: #fff;
+    box-shadow: none;
+    border-radius: 3px;
+    font-weight: 700;
+    border: 2px solid #0f0f0f;
+    background: #020202;
+    padding: 0;
+    height: 45px;
+    transition: all .25s ease 0s;
+    -webkit-transition: all .25s ease 0s;
+    width: 50%;
 }
 
 .woocommerce.woocommerce-checkout button.button[name="login"]{
@@ -7768,13 +7791,13 @@ button.button.tm-woowishlist-button.added.in_wishlist {
   background: rgba(15, 15, 15, 1);
   border: 2px solid rgba(15, 15, 15, 1);
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 3px;
 }
 .woocommerce .products a.button {
   width: 100%;
 }
 .lost_password {
-	padding: 10px 0 5px 0;
+	padding: 0px 0 5px 0;
 	margin-bottom: 0;
 	display: block;
 	float: none;
@@ -8318,9 +8341,17 @@ video {
 
 /* @group WooCart Pro */
 
-body .festi-cart-pop-up-content {
-  width: 99%;
+div.festi-cart-products-content table, div.festi-cart-widget-products-content table, div.festi-cart-pop-up-products-content table, div.festi-cart-products-content table.festi-cart-list td.festi-cart-empty, div.festi-cart-widget-products-content table.festi-cart-list td.festi-cart-empty, div.festi-cart-pop-up-products-content table.festi-cart-list td.festi-cart-empty{
+	width: 100%;
 }
+
+body .festi-cart-pop-up-content {
+    position: fixed!important;
+    display: inline-block!important;
+    max-width: 600px;
+    left: 0!important;
+    right: 0;
+    margin: 0 auto;}
 body
   div.festi-cart-pop-up-products-content
   div#festi-cart-pop-up-products-list-body {
@@ -8372,10 +8403,12 @@ body
   tr.festi-cart-item
   td.festi-cart-product-title
   a.festi-cart-title {
-  color: rgba(15, 15, 15, 1) !important;
-  margin-bottom: 5px !important;
-  font-size: 1.24em !important;
-  font-weight: 500 !important;
+	color: #0f0f0f;
+    margin-bottom: 10px;
+    font-size: 1.24em;
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
 }
 div.festi-cart-pop-up-body
   div.festi-cart-pop-up-header
@@ -8421,18 +8454,20 @@ body
   tr.festi-cart-item
   td.festi-cart-product-title
   span.festi-cart-product-variation-attribut {
-  font-size: 0.9em !important;
-  margin-top: 5px !important;
-  display: block;
-  font-weight: 400 !important;
+    font-size: 1.1em;
+    margin-top: 0px;
+    display: block;
+    font-weight: 400;
 }
 body
   div.festi-cart-pop-up-content
   div.festi-cart-pop-up-products-content
   div#popup-nav-wrapper {
-  text-align: center;
-  display: block;
-  width: 100%;
+    text-align: center;
+    display: block;
+    justify-content: space-around;
+    padding: 0 0 20px 0;
+    width: 100%;
 }
 body
 div.festi-cart-pop-up-products-content
@@ -8442,11 +8477,16 @@ body
 div.festi-cart-pop-up-products-content
 p.festi-cart-buttons
 a.festi-cart-checkout {
-	height: 40px;
+	height: 45px;
     border-radius: 0;
     font-weight: 500;
-    font-size: 1.1em;
-    width: 45%;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 1.3em;
+    text-decoration: none;
+    width: 40%;
+    margin: 0 10px;
     background-color: #00aa5b;
     color: #fff;
 }
@@ -8460,17 +8500,18 @@ body
   div.festi-cart-pop-up-products-content
   p.festi-cart-buttons
   a.festi-cart-view-cart {
-  background-color: rgb(108, 175, 247) !important;
-  border: 2px solid rgb(108, 175, 247) !important;
-  float: none !important;
+	background-color: rgb(119, 119, 119);
+    color: #fff;
+    border: 2px solid rgb(119, 119, 119);
+    float: none!important;
 }
 body
   div.festi-cart-pop-up-products-content
   p.festi-cart-buttons
   a.festi-cart-view-cart:hover {
-  background-color: #fff !important;
-  color: rgb(108, 175, 247) !important;
-  border: 2px solid rgb(108, 175, 247) !important;
+	background-color: #fff;
+    color: #777;
+    border: 2px solid #777;
 }
 body
   div.festi-cart-pop-up-products-content
@@ -8488,22 +8529,25 @@ body
   width: 25px;
 }
 body div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product {
-    font-size: 1.5em !important;
-    padding-left: 1px !important;
-    padding-top: 2px;
-    display: block;
-    border: 1px solid hsla(0,0%,6%,.5);
-    height: 25px;
-    vertical-align: baseline;
+    border: 1px solid rgb(177, 177, 177);
     text-align: center;
-    width: 25px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    line-height: normal;
+    padding-top: 1px;
+    padding-left: 2px;
+    background: transparent;
+    font-size: 1.5em;
     border-radius: 100%;
-    color: hsla(0,0%,6%,.85) !important;
-    float: none !important;
+    font-weight: 500;
+    color: rgba(15, 15, 15, 0.85)!important;
         	&:hover{
 			background: #0f0f0f;
 			color: #fff!important;
     		border: 1px solid rgba(15, 15, 15, 1);
+    		text-decoration: none;
 		}
 }
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-delete a.festi-cart-remove-product{
@@ -8583,10 +8627,12 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
     background-size: 60px;
 }
 div.festi-cart-pop-up-products-content table.festi-cart-list td.festi-cart-empty{
-    text-align: center;
+	text-align: center;
     font-weight: 500;
+    color: rgba(15, 15, 15, 0.8);
+    font-size: 1.5em;
     position: absolute;
-    bottom: 15px;	
+    bottom: 10px;
 }
 /* @end */
 
@@ -8701,6 +8747,17 @@ body.page-template-template-legal .main ul li:before{
 .woocommerce ul.products li.product a:hover{
 	text-decoration: none;
 }
+.woocommerce ul.products li.product a:hover 
+
+
+.rec-item:hover .rec-item__image {
+    -webkit-transform: scale(1.0712);
+    transform: scale(1.0712);}
+.rec-item__image {
+    height: 310px;
+    transition: -webkit-transform .25s ease-in-out;
+    transition: transform .25s ease-in-out;
+    transition: transform .25s ease-in-out,-webkit-transform .25s ease-in-out;}
 
 .slider-products-inner:hover .yith-wcqv-button,
 .singlefeatured li.slider-products:hover .yith-wcqv-button,
@@ -13174,7 +13231,12 @@ body.page-template-template-legal .main ul li:before{
 .woocommerce-page .upsells ul.products li.product img,
 .woocommerce .upsells ul.products li.product img,
 .slider-products-inner img{
-	margin: 0 0 10px;
-}        
-        
+	margin: 0 0 10px;}        
+.lost_password{
+    padding: 10px 0 5px;
+    margin-top: 15px;	}  
+.woocommerce form .form-row label.inline {
+    margin-top: 15px;} 
+  
+      
 }
