@@ -27,9 +27,13 @@
 
 .hide {
   display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 .show {
   display: block;
+  visibility: visible!important;
+  opacity: 1!important;
 }
 
 .required {
@@ -660,6 +664,7 @@ input[type="radio"] {
 .woocommerce .summary .blockUI.blockOverlay {
   position: fixed !important;}
 
+.woocommerce .festi-cart-pop-up-content .blockUI.blockOverlay,
 .woocommerce .festi-cart-products-content .blockUI.blockOverlay{
     position: absolute!important;
     cursor: auto!important;
@@ -1730,7 +1735,7 @@ textarea {
   transition: all 0.25s;
  		 &:hover, &:focus, &:active {     
  		 	-webkit-box-shadow: inset 0 0 0 2px #404040;
-    		box-shadow: inset 0 0 0 2px #404040; }
+    		box-shadow: 1px 1px 10px 0px rgba(64, 64, 64, 0.25); }
 }
 
 
@@ -2386,6 +2391,7 @@ login .button,
   padding: 5px 10px;
   position: absolute;
   top: 0;
+  border-radius: 3px;
   font-size: 1.8em;
 }
 #breadcrumb ul li.cart.active:before,
@@ -2749,6 +2755,7 @@ login .button,
 #mc_embed_signup {
   background: transparent;
   clear: left;
+  border-radius: 3px;
 }
 #mc_embed_signup .success-message {
   background: rgb(0, 170, 91);
@@ -2809,7 +2816,7 @@ footer h3 {
 }
 footer .main-footer .classic-text-widget,
 footer .main-footer .textwidget {
-  font-size: 1.18em;
+  font-size: 1.2em;
   font-weight: 400;
   line-height: 1.813em;
 }
@@ -5060,6 +5067,7 @@ form.lost_reset_password .form-row label {
 }
 #ct-ultimate-gdpr-cookie-popup{
 	padding: 15px!important;	
+	border-radius: 5px!important;
     background-color: #313131!important;
     color: rgb(255, 255, 255)!important;}
 #ct-ultimate-gdpr-cookie-accept{
@@ -6378,7 +6386,7 @@ h2.recently-Viewed-inner.getkunst-title {
 
 .yith-wcqv-wrapper {
   width: 400px;
-  border-radiu: 3px;
+  border-radius: 3px;
   height: auto !important;
   overflow: hidden;
 }
@@ -6616,8 +6624,8 @@ h2.recently-Viewed-inner.getkunst-title {
     box-shadow: none;
     line-height: normal;
     color: #ffff!important;
-    height: 40px;
-    padding: 9px;
+    height: 45px;
+    padding: 10px;
     font-weight: 500;
     text-align: center;
     display: block;
@@ -7169,7 +7177,7 @@ legend {
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
   height: auto;
-  border-radius: 0px;
+  border-radius: 3px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   visibility: visible;
   top: 63px;
@@ -7182,7 +7190,7 @@ legend {
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
   height: auto;
-  border-radius: 0px;
+  border-radius: 3px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   visibility: visible;
   top: 63px;
@@ -7559,7 +7567,7 @@ button.button.tm-woowishlist-button:focus {
   top: 0 !important;
   color: rgba(15, 15, 15, 1);
   border: 1px solid rgba(208, 208, 208, 1) !important;
-  background: transparent !important;
+  background: #f4f4f4 !important;
   width: 49% !important;
   display: block !important;
   text-align: center !important;
@@ -7854,7 +7862,7 @@ button.button.tm-woowishlist-button.added.in_wishlist {
 }
 
 .woocommerce button.button.compare-size {
-  background: transparent;
+  background: #f4f4f4;
   width: 48%;
   font-size: 1em;
   float: right;
@@ -8829,23 +8837,32 @@ body.page-template-template-legal .main ul li:before{
 }
 .woocommerce-cart table.shop_table td a.remove {
     left: 0;
-    font-weight: 500;
+    font-weight: 400;
     border-radius: 100%;
-    text-align: center;
     font-size: 2em;
-    margin-top: 0px;
+    margin-top: -23px;
+    vertical-align: top;
     margin-left: 24px;
-    border: 0 solid #d7d7d7;
-    padding: 0px;
-    line-height: 0;
+    border: 1px solid hsla(0,0%,6%,.5);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    padding: 0;
+    line-height: 1em;
+    vertical-align: top;
+    display: block;
     position: absolute;
     opacity: .9;
     background: #fff;
     color: #0f0f0f;
     text-decoration: none;
     	&:hover{
-	color: #ef4343;
-	}
+			    color: #fff;
+			    border: 1px solid #ef4343;
+			    background: #ef4343;
+    	}
 }
 
 .prdctfltr_woocommerce.pf_default .prdctfltr_woocommerce_ordering {

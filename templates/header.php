@@ -275,7 +275,7 @@
 
             <div id="hover" class="account"  href="#">
               <span class="text">Account</span>
-              <div id="popup" class="account-popup popover-content fade bottom in"><div class="arrow"></div>
+              <div id="popup" class="account-popup popover-content"><div class="arrow"></div>
             <?php if (is_user_logged_in()) : ?>
               <span class='username'>Hello, <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></span>
               <a class='button' href='/my-account'>My Account</a>
@@ -299,9 +299,10 @@
 
                     <div id="hover" class="wishlist"  href="#">
                       <span class="text">Wishlist</span>
-                      <div id="popup" class="wishlist-popup fade bottom in"><div class="arrow"></div>
+                    <div id="popup" class="wishlist-popup popover-content"><div class="arrow"></div>
                       <?php echo do_shortcode('[tm_woo_wishlist_table]'); ?>
-                      <a href="/wishlist"><button class="wishlist-button">Go to wishlist</button></a></div>
+                      <a class="button" href="/wishlist">Go to wishlist</a>
+                    </div>
                     </div>
 
                     <div class="Cart-right">
