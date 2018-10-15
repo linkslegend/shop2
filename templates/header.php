@@ -31,9 +31,11 @@
                   <span>Logout</span>
                 </a>
               <?php else : ?>
-                <div class="account-container" data-toggle="modal" data-target="#loginmodal">
+                <div class="icon-menu-gk"><a class="account" data-toggle="modal" data-target="#loginmodal"><span>Account</span></a></div>
+
+              <!--<div class="account-container" data-toggle="modal" data-target="#loginmodal">
                   <span>Account</span>
-              </div>
+              </div>-->
               <?php endif;?>
       </div>
           <div class="mobile-search">
@@ -242,7 +244,7 @@
       <span class="hamb-bottom"></span>
       <span class="menu-text">Menu</span>
     </button>
-    <div class="icon-menu-gk left hidden-md hidden-sm hidden-lg">
+    <div class="icon-menu-gk left hidden-md hidden-lg">
           <?php if (is_user_logged_in()) : ?>
             <a class="account" href="/my-account"><span>Account</span></a>
           <?php else : ?>
@@ -313,7 +315,7 @@
         </nav>
           </nav>
 
-          <div class="icon-menu-gk hidden-md hidden-sm hidden-lg">
+          <div class="icon-menu-gk hidden-md hidden-lg">
                 <a class="wishlist" href="/wishlist"><span>Wishlist</span></a>
                 <a class="Cart-right" href="/cart"><span>Cart</span></a>
           </div>
@@ -323,26 +325,3 @@
 </div><!--.container-->
 
 </header>
-
-
-<!-- <a id="pop" class="account" tabindex="-1" data-popover="true"
-    data-content="<?php if (is_user_logged_in()) : ?>
-      <span class='username'>Hello, <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></span>
-      <a class='button' href='/my-account'>My Account</a>
-      <hr class='hr-light'></hr>
-      <a class='poplink' href='/order-tracking'>Order Tracking</a>
-      <a class='poplink' href='/my-account/orders/'>Orders</a>
-      <a class='poplink' href='/faq'>FAQ</a>
-      <a class='poplink' href='/help'>Help</a>
-      <hr class='hr-light'></hr>
-      <a class='poplink' href='<?php echo wp_logout_url( home_url() ); ?>'>logout</a>
-    <?php else : ?>
-    <a class='button' data-toggle='modal' data-target='#loginmodal' href='#' title='register'>Login</a>
-    <span class='light'>Don't have a account?</span>
-    <a class='poplink' href='/my-account' title='Register'>Register</a>
-    <hr class='hr-light'></hr>
-    <a class='poplink' href='/faq'>FAQ</a>
-    <a class='poplink' href='/help'>Help</a><?php endif;?>">
-    <span class="text">Account</span>
-    </a>
-    -->

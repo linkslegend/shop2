@@ -2063,197 +2063,47 @@ li {
 
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  #header-placeholder,
-  .top-menu,
-  .navbar-default {
-    height: 100px;
-  }
-  #menu {
-    display: block;
-  }
-  #menu-mobile {
-    display: none;
-  }
-  #logo {
-    top: 43px;
-    margin: 0px 15px 0px 5px;
-    width: 130px;
-  }
-  #logo img {
-    width: 130px;
-  }
-  .topRow ul {
-    padding-left: 0;
-  }
-  #menu-menu-1 li.current-menu-parent.current-menu-parent > a {
-    padding-bottom: 5px;
-  }
-  .navbar-nav > li > a {
-    padding: 7px 8px;
-    margin: 9px 1px;
-  }
-  .navbar-nav {
-    font-size: 1.22em;
-    top: 40px;
-  }
-  .Cart-right {
-    position: absolute;
-    right: 20px;
-    top: 40px;
-    width: 30px;
-    height: 45px;
-    background: none;
-    margin-left: 0px;
-  }
-  body a#festi-cart.festi-cart.festi-cart-customize {
-    width: 35px !important;
-    top: 0px !important;
-    right: 0px;
-  }
-  a.festi-cart div.festi-cart-content span {
-    padding-top: 13px;
-  }
-  .menu-item.current-menu-parent:before,
-  .menu-item.current-menu-item:before {
-    bottom: -20px;
-  }
-  .icon-menu-gk {
-    width: 180px;
-    margin-top: -4px;
-  }
-  .icon-menu-gk .wishlist {
-    top: 40px;
-    height: 58px;
-    margin-left: 85px;
-  }
-  .icon-menu-gk .account span,
-  .icon-menu-gk .wishlist span.text,
-  .Cart-right span.text {
-    font-size: 0.7em;
-  }
-  .icon-menu-gk .account span {
-    margin-top: 1px;
-    margin-left: 2px;
-  }
-  .icon-menu-gk .wishlist span.text {
-    margin-top: -1px;
-  }
-  .Cart-right span.text {
-    margin-top: -1px;
-  }
+@media (max-width: 991px) {
 
-  .icon-menu-gk .account {
-    top: 40px;
-    margin-left: 20px;
-  }
-  .popover.bottom {
-    margin-top: -4px;
-  }
-  .icon-menu-gk .wishlist span.text {
-    margin-left: -2px;
-  }
-  li.megamenu.dropdown:hover > ul.dropdown-menu{
-	padding: 25px 25px 15px 0px;}
-	#menu-image {
-    width: 150px;
-    height: 226px;
-	}	
-  .keyword-list a {
-    display: block;
-    font-size: 1.2em;
-    float: left;
-    margin: 10px;
-    width: 30%;
-    color: #4e4e4e;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border: 1px solid #4e4e4e;
-  }
-  .indutry-info h3 {
-    height: auto;
-    padding-top: 15px;
-    margin-top: 0;
-    border-bottom: 0 solid #eee;
-    font-size: 17px;
-  }
-  .front-products-slider2 {
-    margin: 0;
-    padding: 0;
-  }
-  .keyword-list a.current:before {
-    color: rgba(255, 255, 255, 1);
-    content: "\f105";
-    font-size: 25px;
-    float: right;
-    right: 90%;
-    top: 0px;
-    position: relative;
-  }
-  .hero-content {
-    top: 27%;
-    padding: 15px;
-    left: 8%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 58%;
-    max-width: 519px;
-  }
-  .gk-hero h2 {
-    font-size: 2.5em;
-  }
-  .hero-content p {
-    font-size: 1.4em;
-  }
-  .bg-gray3 {
-    margin-top: -30px;
-  }
-  .yith-ajaxsearchform-container {
-    right: -6px;
-    top: 34px;
-    position: absolute;
-    float: left;
-    display: block;
-  }
-  .yith-ajaxsearchform-container input[type="search"] {
-    height: 35px;
-  }
-  .yith-ajaxsearchform-container input[type="submit"] {
-    position: absolute;
-    margin-left: 0;
-    color: rgba(255, 255, 255, 1);
-    right: 0;
-    top: 6px;
-    z-index: 10;
-    height: 35px;
-    text-indent: 999px;
-    width: 44px;
-    border: none;
-    background: transparent;
-  }
-  #desktop-search {
-    display: none;
-  }
-  .yamm .dropdown-menu {
-    top: 46px;
-  }
-  body div.festi-cart-products-content {
-    min-width: 330px !important;
-    margin-left: -283px !important;
-    overflow: visible;
-  }
-  body a#festi-cart.festi-cart.festi-cart-customize {
-    height: 61px !important;
-  }
-  .woocommerce-page #slider-header .slick-next{
-  	right: -15px;
-  }
-  .woocommerce-page #slider-header .slick-prev{
-	left: -34px;
-  }
-}
 
-@media (max-width: 767px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+
+
+
   div#festi-cart-pop-up-content div.festi-cart-pop-up-body {
     width: 310px !important;
   }
@@ -2284,21 +2134,7 @@ li {
   #menu-mobile {
     display: block;
   }
-  .account-container{
-	background-repeat: no-repeat;
-    display: block;
-    background-image: url(https://d1zczzapudl1mr.cloudfront.net/gk-sprite.png);
-    background-size: 200px;
-    width: 33px;
-    height: 30px;
-    float: none;
-    background-position: 0 0;
-    position: absolute;
-    margin-top: 5px;
-    margin-right: 0;
-    left: 16px;
-    top: 3px;
-    box-shadow: none;}
+
 .mobile-top-menu .account-container span {
     display: block;
     font-size: .7em;
@@ -2461,7 +2297,7 @@ li {
     transform: translateX(0px) translateY(0px);
     position: fixed;
     box-shadow: 5px 0 30px 0 hsla(0,0%,45%,.8);
-    max-width: 85%;
+    max-width: 450px;
   }
 
   #sidebar-wrapper.toggled #page-content-wrapper {
@@ -2469,7 +2305,8 @@ li {
     position: absolute;
   }
   #sidebar-wrapper {
-    width: 400px;
+    width: 450px;
+    max-width: 450px;
     position: fixed;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
@@ -2483,7 +2320,7 @@ li {
     left: 0;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
-    transform: translateZ(0) translateX(-400px);
+    transform: translateZ(0) translateX(-450px);
     z-index: 1000;
   }
   .sidebar-wrapper-bg{
@@ -3072,12 +2909,33 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     height: 240px;
     margin-top: 10px;
   }
+
+.icon-menu-gk .wishlist:active:before, 
+.icon-menu-gk .wishlist:focus:before, 
+.icon-menu-gk .wishlist:hover:before, 
+body.wishlist .icon-menu-gk .wishlist:before,
+.icon-menu-gk .Cart-right:active:before, 
+.icon-menu-gk .Cart-right:focus:before, 
+.icon-menu-gk .Cart-right:hover:before, 
+body.cart .icon-menu-gk .Cart-right:before,
+.icon-menu-gk .account:active:before, 
+.icon-menu-gk .account:focus:before, 
+.icon-menu-gk .account:hover:before, 
+body.my-account .icon-menu-gk .account:before,
+.icon-menu-gk .account:before,
+.icon-menu-gk .wishlist:before,
+.icon-menu-gk .Cart-right:before{
+	width: 30px;
+	height: 30px;
+}
+
+
   #logo {
     position: absolute;
     text-align: center;
     display: block;
     top: 0;
-    margin-top: 6px;
+    margin-top: 10px;
     float: none;
     margin-right: auto;
     margin-left: auto;
@@ -3262,68 +3120,20 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     text-align: center;
   }
 
-  /*icon menu*/
-  .icon-menu-gk .account:before,
-  .icon-menu-gk .Cart-right:before,
-  .icon-menu-gk .wishlist:before {
-    background-repeat: no-repeat;
-    display: inline-block;
-    background-image: url(https://d1zczzapudl1mr.cloudfront.net/gk-sprite.png);
-    background-size: 200px;
-  }
-
-  .icon-menu-gk .Cart-right:before {
-    width: 30px;
-    height: 30px;
-    background-position: -69px 0;
-  }
-  .icon-menu-gk .account:before {
-    width: 33px;
-    height: 30px;
-    background-position: 0 0;
-  }
-  .icon-menu-gk .wishlist:before {
-    width: 30px;
-    height: 30px;
-    background-position: -134px 0;
-  }
-
-  .icon-menu-gk .account:hover:before {
-    background-position: -33px 0;
-    height: 30px;
-    width: 30px;
-    content: "";
-  }
-  body.wishlist .icon-menu-gk .wishlist:before,
-  .icon-menu-gk .wishlist:hover:before {
-    background-position: -167px 0;
-    height: 30px;
-    width: 30px;
-    content: "";
-  }
-  body.cart .icon-menu-gk .Cart-right:before,
-  .icon-menu-gk .Cart-right:hover:before {
-    background-position: -102px 0;
-    height: 30px;
-    width: 30px;
-    content: "";
-  }
-  .icon-menu-gk .account:active:before,
-  .icon-menu-gk .account:focus:before,
-  .icon-menu-gk .account:hover:before,
-  .logged-in .icon-menu-gk .account:before {
-    background-position: -34px 0;
-  }
   .icon-menu-gk {
     display: block;
     float: right;
     position: absolute;
     right: 10px;
     top: 0px;
-    margin-top: 7px;
+    margin-top: 8px;
+    margin-right: 15px;
     height: 40px;
     width: auto;
   }
+   #menu-mobile .icon-menu-gk{
+	left: 15px;}
+
   .icon-menu-gk.left {
     display: block;
     float: left;
@@ -3334,7 +3144,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     width: initial;
   }
   span.menu-text {
-    font-size: 0.8em;
+    font-size: 0.75em;
     font-weight: inherit;
     position: absolute;
     width: 100%;
@@ -3361,7 +3171,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     width: 36px;
   }
   .icon-menu-gk .wishlist {
-    margin: 0 12px 0px 0px;
+    margin: 0 20px 0px 0px;
   }
   .icon-menu-gk .account span,
   .icon-menu-gk .wishlist span,
@@ -3421,7 +3231,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     display: block;
     position: relative;
     float: left;
-    margin: 0px;
+    margin: 50px 0 0 0;
     padding: 0px;
     width: 100%;
   }
@@ -3462,12 +3272,24 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   a:focus {
     outline: none;
   }
+.topRow,
+.collapse {
+    display: none;
 }
+
+
+}
+
+@media (min-width: 768px){}
 
 @media (max-width: 480px) {
   #menu-mobile {
     display: block;
   }
+
+#sidebar-wrapper.toggled {
+    width: 85%;
+    max-width: 85%;}
   div.festi-cart-pop-up-body
     div.festi-cart-pop-up-header
     span.festi-cart-added-to-cart-msg {
@@ -3518,7 +3340,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     text-align: center;
     display: block;
     top: 0;
-    margin-top: 15px;
+    margin-top: 10px;
     float: none;
     margin-right: auto;
     margin-left: auto;
@@ -3560,11 +3382,11 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
 }  
   
   .hamburger {
-    border-radius: 0;
+	border-radius: 0;
     right: 0;
-    height: 38px;
+    height: 40px;
     padding: 0;
-    margin-top: 5px;
+    margin-top: 2px;
     margin-right: 10px;
     margin-left: 10px;
     width: 45px;}
@@ -3710,72 +3532,16 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   }
 
   /*icon menu*/
-  .icon-menu-gk .account:before,
-  .icon-menu-gk .Cart-right:before,
-  .icon-menu-gk .wishlist:before {
-    background-repeat: no-repeat;
-    display: inline-block;
-    background-image: url(https://d1zczzapudl1mr.cloudfront.net/gk-sprite.png);
-    background-size: 200px;
-  }
-
-  .icon-menu-gk .Cart-right:before {
-    width: 30px;
-    height: 30px;
-    background-position: -69px 0;
-  }
-  .icon-menu-gk .account:before {
-    width: 33px;
-    height: 30px;
-    background-position: 0 0;
-  }
-  .icon-menu-gk .wishlist:before {
-    width: 30px;
-    height: 30px;
-    background-position: -134px 0;
-  }
-
-  .icon-menu-gk .account:hover:before {
-    background-position: -33px 0;
-    height: 30px;
-    width: 30px;
-    content: "";
-  }
-  body.wishlist .icon-menu-gk .wishlist:before,
-  .icon-menu-gk .wishlist:hover:before {
-    background-position: -167px 0;
-    height: 30px;
-    width: 30px;
-    content: "";
-  }
-  body.cart .icon-menu-gk .Cart-right:before,
-  .icon-menu-gk .Cart-right:hover:before {
-    background-position: -102px 0;
-    height: 30px;
-    width: 30px;
-    content: "";
-  }
-  .icon-menu-gk .account:active:before,
-  .icon-menu-gk .account:focus:before,
-  .icon-menu-gk .account:hover:before,
-  .logged-in .icon-menu-gk .account:before {
-    background-position: -34px 0;
-  }
   .icon-menu-gk {
-    display: block;
-    float: right;
-    position: absolute;
-    right: 10px;
-    top: 0px;
-    margin-top: 7px;
-    height: 40px;
-    width: auto;
-  }
+    right: 0;}
+    #menu-mobile .icon-menu-gk{
+	left: 15px;}
+
   .icon-menu-gk.left {
     display: block;
     float: left;
     position: absolute;
-    left: 65px;
+    left: 60px;
     height: 31px;
     margin-top: 7px;
     width: initial;
@@ -3787,12 +3553,12 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     width: 100%;
     left: 0;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 17px;
   }
   .is-open span.menu-text {
     display: block;
     margin-top: 14px;
-    font-size: 0.75em;
+    font-size: 0.7em;
     padding-right: 8px;
   }
 
@@ -3816,7 +3582,7 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
   .icon-menu-gk .account span,
   .icon-menu-gk .wishlist span,
   .icon-menu-gk .Cart-right span {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 400;
     padding: 0;
     float: left;
@@ -3888,6 +3654,9 @@ li.megamenu.dropdown:hover>ul.dropdown-menu {
     margin-top: 2px;
     height: 35px;
   }
+  .icon-menu-gk .wishlist:before{
+	height: 30px;
+	width: 30px;}
   #slider-header-front .btn {
     padding: 10px 15px;
     letter-spacing: 0.09em;

@@ -7416,6 +7416,7 @@ ul.the_champ_login_ul li {
     font-size: 1.5em;
     position: absolute;
     width: 45px;
+    height: 45px;
     font-style: normal;
     font-weight: 400;
     border-radius: 3px 0px 0px 3px;
@@ -11358,9 +11359,8 @@ body.page-template-template-legal .main ul li:before{
   .summary.entry-summary .woocommerce-product-details__short-description p {
     display: none;
   }
-  .calculate-cm .col-sm-6:first-of-type {
-    margin-bottom: 10px;
-  }
+  .calculate-cm .col-sm-6 {
+	width: 50%;float: left;  }
   div.festi-cart-pop-up-products-content p.festi-cart-buttons {
     margin: 0px 0px 10px 0px;
   }
@@ -12902,9 +12902,11 @@ h1.my-account {
   .summary.entry-summary .woocommerce-product-details__short-description p {
     display: none;
   }
-  .calculate-cm .col-sm-6:first-of-type {
-    margin-bottom: 10px;
-  }
+  .calculate-cm .col-sm-6{
+	width: 50%;
+	float: left;
+	}
+  
   div.festi-cart-pop-up-products-content p.festi-cart-buttons {
     margin: 0px 0px 10px 0px;
   }
