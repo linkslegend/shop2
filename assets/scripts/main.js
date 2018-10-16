@@ -90,6 +90,10 @@
           $("#wrapper").toggleClass("pushbar_blur");
         });
 
+      $(document).on('click', function() {
+        $(".comment-reply-title").toggleClass("open");
+      });
+
         var canHover = !(matchMedia('(hover: none)').matches);
         if (canHover) {
           document.body.classList.add('can-hover');
