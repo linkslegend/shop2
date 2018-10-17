@@ -22,8 +22,7 @@
         </button>
 
         <div class="mobile-top-menu">
-          <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard">
-            <img class="lozad" src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif" data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
+          <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard" style="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>">
           </a>
               <?php if (is_user_logged_in()) : ?>
                 <a class="mobile-logout" title="logout" href="<?php echo wp_logout_url( home_url() ); ?>">
@@ -255,8 +254,7 @@
 
 <div class="top-menu">
       <div class="container-fluid" id="menu">
-        <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard">
-          <img class="lozad" src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif" data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>">
+        <a id="logo" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" class="logo standard" style="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>">
         </a>
         <nav class="collapse navbar-collapse mega-menu" role="navigation">
           <?php

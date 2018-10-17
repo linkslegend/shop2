@@ -5506,26 +5506,50 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
 
 /* @group Button */
 
-.collapsible{
-	
-}
+.collapsible{}
 .btn-grey{
-    background: #f4f4f4;
+    background: #919191;
     font-size: 1em;
     float: right;
     padding: 10px;
     border-radius: 3px;
     font-weight: 500!important;
-    width: 100%;
+    width: 40%;
     text-align: center;
-    color: #0f0f0f;
+    text-decoration: none!important;
+    color: #fff!important;
     border: 1px solid #d0d0d0;
     height: 40px;
     -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
-		&:hover{
-			background: #d1d1d1;
-		    text-decoration: none!important;}    
+    	&.collapsed{
+				background: #f4f4f4;
+				text-decoration: none!important;
+				color: #0f0f0f!important;
+		}
+    }
+
+
+.btn-grey:before{
+  	content: "\f0d7";
+    font-family: FontAwesome;
+    font-size: 1.3em;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    left: 5px;
+    float: left;
+    top: -1px;
+    text-decoration: inherit;
+    padding-right: 0;
+    margin-top: 0;
+}
+
+.btn-grey.collapsed:before{
+    content: "\f0da";
+	color: rgba(15, 15, 15, 0.75);
 }
 
 
@@ -7984,24 +8008,16 @@ video {
   padding: 0;
   margin: 0;
 }
-.woocommerce
-  div.product
-  .woocommerce-tabs
-  .woocommerce-Tabs-panel--description.panel {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel {
   font-size: 1.1em;
   float: left;
   width: 100%;
   line-height: 160%;
-  padding: 20px 0;
   color: #020202;
   z-index: 1;
   font-weight: 400;
 }
-.woocommerce
-  div.product
-  .woocommerce-tabs
-  .woocommerce-Tabs-panel--description.panel
-  h3 {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel h3 {
   font-size: 1.6em;
   margin: 0;
   text-align: center;
@@ -8055,28 +8071,14 @@ video {
   padding-left: 40px;
 }
 
-.woocommerce
-  div.product
-  .woocommerce-tabs
-  .woocommerce-Tabs-panel--description.panel
-  ul {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel ul {
   padding: 0px 0px 0px 25px;
 }
-.woocommerce
-  div.product
-  .woocommerce-tabs
-  .woocommerce-Tabs-panel--description.panel
-  ul
-  li {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel ul li {
   list-style: none;
   padding-bottom: 2px;
 }
-.woocommerce
-  div.product
-  .woocommerce-tabs
-  .woocommerce-Tabs-panel--description.panel
-  ul
-  li:before {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel ul li:before {
   font-family: FontAwesome;
   color: #313131;
   content: "\f138";
@@ -8269,13 +8271,21 @@ video {
 }
 
 #slider-header a {
-  color: #000;
-  display: inline-block;
-  padding: 0;
-  font-size: 1.06em;
-  text-decoration: none;
-  border-right: 0 solid rgba(255, 255, 255, 1);
-  border-left: 0 solid rgba(255, 255, 255, 1);
+    color: #000;
+    display: inline-block;
+    padding: 0;
+    font-size: 1.06em;
+    text-decoration: none;
+    padding: 10px;
+    background: #e4e4e4;
+    border-radius: 3px;
+    border-right: 0 solid #fff;
+    border-left: 0 solid #fff;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+	    &:hover{
+			background: #d1d1d1;
+}
 }
 
 #slider-header a .box1-image {
@@ -9935,6 +9945,7 @@ body.page-template-template-legal .main ul li:before{
 .prdctfltr_wc .prdctfltr_terms_customized.prdctfltr_terms_customized_image-text .prdctfltr_checkboxes label:first-child{
 	margin-top: 0px;
 }
+.btn-grey{width: 100%;}
 
 }
 
@@ -10192,6 +10203,7 @@ body.page-template-template-legal .main ul li:before{
 .prdctfltr_wc .prdctfltr_terms_customized.prdctfltr_terms_customized_image-text .prdctfltr_checkboxes label:first-child{
 	margin-top: 0px;
 }
+.btn-grey{width: 100%;}
 
 }
 
@@ -11341,11 +11353,7 @@ body.page-template-template-legal .main ul li:before{
     width: 100%;
     padding: 0;
   }
-  .woocommerce
-    div.product
-    .woocommerce-tabs
-    .woocommerce-Tabs-panel--description.panel
-    h3 {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel h3 {
     padding: 5px 0 15px;
     font-size: 1.3em;
   }
@@ -12480,10 +12488,7 @@ a.tabcontent-button.active{
   .login .col-sm-6 {
     padding: 0px;
   }
-  .woocommerce
-    div.product
-    .woocommerce-tabs
-    .woocommerce-Tabs-panel--description.panel {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel {
 	padding: 15px;}
     
 .woocommerce div.product .woocommerce-tabs ul.tabs:before{
@@ -12898,11 +12903,7 @@ h1.my-account {
     width: 100%;
     padding: 0;
   }
-  .woocommerce
-    div.product
-    .woocommerce-tabs
-    .woocommerce-Tabs-panel--description.panel
-    h3 {
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description.panel h3 {
     padding: 5px 0 15px;
     font-size: 1.3em;
   }
@@ -13290,6 +13291,7 @@ body.page-template-template-legal .main ul li:before{
     margin-top: 15px;	}  
 .woocommerce form .form-row label.inline {
     margin-top: 15px;} 
+.btn-grey{width: 100%;}
   
       
 }

@@ -62,7 +62,7 @@ if ( ! comments_open() ) {
 
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 
-		<a class="btn-grey collapsible" role="button" data-toggle="collapse" href="#review_form_wrapper" aria-expanded="false" aria-controls="review_form_wrapper">
+		<a class="btn-grey collapsible collapsed" role="button" data-toggle="collapse" href="#review_form_wrapper" aria-expanded="false" aria-controls="review_form_wrapper">
 			Write Review
 		</a>
 

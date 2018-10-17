@@ -951,16 +951,17 @@ function theme_options_do_page() {
 </td>
 </tr>
 
-<tr><th scope="row"><?php _e( 'Logo 1', 'futurewavetheme' ); ?></th>
+<tr><th scope="row"><?php _e( 'Logo (image url)', 'futurewavetheme' ); ?></th>
 <td>
   <input id="futurewave_theme_options[logo1]" class="regular-text" type="text" name="futurewave_theme_options[logo1]" value="<?php esc_attr_e( $options['logo1'] ); ?>" />
   <label class="description" for="futurewave_theme_options[logo1]"><?php _e( 'Logo 1 (Dark Logo)', 'futurewavetheme' ); ?></label>
 </td>
 </tr>
-<tr><th scope="row"><?php _e( 'Logo 2', 'futurewavetheme' ); ?></th>
+<tr><th scope="row"><?php _e( 'Logo (data image)', 'futurewavetheme' ); ?></th>
 <td>
-  <input id="futurewave_theme_options[logo2]" class="regular-text" type="text" name="futurewave_theme_options[logo2]" value="<?php esc_attr_e( $options['logo2'] ); ?>" />
-  <label class="description" for="futurewave_theme_options[logo2]"><?php _e( 'Logo 2 (Light Logo)', 'futurewavetheme' ); ?></label>
+    <textarea id="futurewave_theme_options[logo2]" class="large-text" cols="50" rows="10" name="futurewave_theme_options[logo2]">
+    <?php echo esc_html( $options['logo2'] ); ?></textarea>
+    <label class="description" for="futurewave_theme_options[logo2]"><?php _e( 'Code box', 'futurewavetheme' ); ?></label>
 </td>
 </tr>
 
