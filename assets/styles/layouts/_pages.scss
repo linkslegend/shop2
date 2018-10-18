@@ -3568,6 +3568,9 @@ input #mailchimp_woocommerce_newsletter {
   vertical-align: middle;
   position: relative;
 }
+.prdctfltr_topbar{
+	display: none;
+}
 .prdctfltr_always_visible .prdctfltr_woocommerce_filter {
   color: rgba(15, 15, 15, 1);
 }
@@ -3723,13 +3726,23 @@ label.prdctfltr_active .prdctfltr_customize_block {
   margin: 0px 0 0 !important;
 }
 .prdctfltr_collector_flat > span {
-	border: 1px solid #f0f0f0;
-	margin: 0 7px 7px 0;
-	border-radius: 3px;
-	font-size: 1.1em;
-	padding: 5px 10px 5px 5px;
-	color: #252525;
-  	background-color: #e4e4e4;
+    border: 1px solid rgb(208, 208, 208);
+    margin: 0 7px 7px 0;
+    border-radius: 3px;
+    text-align: center;
+    width: 100%;
+    line-height: 35px;
+    font-size: 1.1em;
+    font-weight: 500;
+    height: 40px;
+    padding: 0;
+    color: rgb(37, 37, 37);
+    background-color: rgb(244, 244, 244);
+    -webkit-transition: all .15s ease;
+    transition: all .15s ease;
+    	&:hover{
+			background: #d1d1d1;
+		}
 }
 .prdctfltr_selected_title > span{
 	font-size: 1.1em;
@@ -3738,13 +3751,18 @@ label.prdctfltr_active .prdctfltr_customize_block {
 }
 .prdctfltr_aftertitle > span a.prdctfltr_title_remove, 
 .prdctfltr_collector > span a.prdctfltr_title_remove{
-    margin-left: 0px;
     float: left;
-    line-height: 16px;
-    font-size: 1.7em;
+    width: 100%;
+    font-size: 1.6em;
     text-decoration: none;
-    color: #636363;
-    transition: all 0.25s;
+    padding: 7px 5px;
+    left: 0;
+    text-align: left;
+    height: 40px;
+    position: absolute;
+    color: rgb(99, 99, 99);
+    -webkit-transition: all .25s;
+    transition: all .25s;
 }
 .prdctfltr_aftertitle > span a.prdctfltr_title_remove:hover, 
 .prdctfltr_collector > span a.prdctfltr_title_remove:hover{
@@ -9888,17 +9906,20 @@ body.page-template-template-legal .main ul li:before{
     z-index: 100;
     padding: 0;}
 .prdctfltr_topbar span.prdctfltr_title_selected{
-	background: #f0f0f0;
+    background: rgb(244, 244, 244);
     display: inline-block;
-    margin: 8px 4px 8px 4px;
+    margin: 8px;
+    position: relative;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 3px;
     padding: 10px;
     width: auto;}
 .prdctfltr_topbar span.prdctfltr_title_selected .prdctfltr_title_remove{
-	font-size: 1.8em;
-    margin: -7px 0 0 -5px;
+    font-size: 1.8em;
+    margin: -9px 0 0 -4px;
     font-weight: 300;
-    display: inline-block;
-    width: 80px;
+    display: block;
+    width: 100%;
     position: absolute;
     z-index: 9;}
 .prdctfltr_topbar span.prdctfltr_title_selected .prdctfltr_title_remove i{
