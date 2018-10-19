@@ -81,7 +81,8 @@ h1 {
   position: absolute;
   font-size: 1.25em;
   top: 50px;
-  padding-left: 160px;
+  left: 0;
+  padding-left: 175px;
   font-weight: 600;
 }
 /**
@@ -90,6 +91,7 @@ h1 {
  */
 #menu {
   display: block;
+  padding: 0 30px;
 }
 
 .headroom {
@@ -956,7 +958,7 @@ li.megamenu.dropdown:hover > ul.dropdown-menu{
 	max-width: 1400px;
 	width: 100vw;
     display: flex;
-	padding: 25px 35px 15px 0;
+	padding: 25px 25px 15px 25px;
 	box-shadow: none;
 	border: none;
 }
@@ -978,7 +980,7 @@ body div.festi-cart-products-content:before {
     border: 14px solid!important;
     border-color: transparent transparent rgba(0,0,0,.2)!important;
     top: -28px!important;
-    margin-left: 310px!important;
+    margin-left: 296px!important;
     z-index: 9;
 }
 body
@@ -993,7 +995,7 @@ body div.festi-cart-products-content:after {
     border: 13px solid!important;
     border-color: transparent transparent #fff!important;
     top: -25px!important;
-    margin-left: 311px!important;
+    margin-left: 297px!important;
     z-index: 9;
 }
 #popup:before {
@@ -1018,7 +1020,7 @@ body div.festi-cart-products-content:after {
   border: 14px solid !important;
   border-color: transparent transparent rgba(0, 0, 0, 0.2) !important;
   top: -29px !important;
-  margin-left: 3px!important;
+  margin-left: -14px!important;
 }
 #popup.account-popup:after {
   position: absolute !important;
@@ -1026,7 +1028,7 @@ body div.festi-cart-products-content:after {
   border: 13px solid !important;
   border-color: transparent transparent rgba(255, 255, 255, 1) !important;
   top: -26px !important;
-  margin-left: 4px!important;
+  margin-left: -122px!important;
 }
 
 body.logged-in .popover:before {
@@ -1150,6 +1152,7 @@ body div.festi-cart-products-content {
     font-family: Poppins,sans-serif!important;}
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-title {
   text-align: left;
+  padding-left: 10px!important;
   float: none;}
   
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-title a.festi-cart-title {
@@ -2513,7 +2516,7 @@ li {
   .menu-item.sidebar-nav li.current-menu-parent a {
     border: none;
   }
-li.megamenu.dropdown:hover>ul.dropdown-menu {
+li.megamenu.dropdown:hover > ul.dropdown-menu {
     max-width: none;
     width: 100%;
     display: block;
