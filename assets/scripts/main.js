@@ -44,8 +44,33 @@
             }
           }).init();
 
-
         }());
+
+$(document).ready(function() {
+              $mainNav = $(".navbar-nav");
+          		// Create a new div and append it to menu
+              $mainNav.append("<div class='slidingLine'></div>");
+          // cool nav menu
+
+          $('.megamenu > a').hover(function(){
+
+            var liWidth = $(this).width();
+            var ulLeft = $('ul').offset().left;
+            var liLeft = $(this).offset().left;
+            var target = liLeft - ulLeft;
+
+            $('.slidingLine').css({
+              width: liWidth + 0 + 'px',
+              left: target + 'px'
+            });
+
+          }, function(){
+
+            var liWidth = 0;
+            $('.slidingLine').css('width', liWidth);
+
+          });
+});
 
 
         // init Masonry
@@ -108,8 +133,7 @@
         $(document).ready(function() {
           // Initialize library to lazy load images
           const observer = lozad('.lozad', {
-            rootMargin: '0px', // syntax similar to that of CSS Margin
-            threshold: 0.1, // ratio of element convergence
+            rootMargin: '300px 0px', // syntax similar to that of CSS Margin
             loaded: function(el) {
               // Custom implementation on a loaded element
               el.classList.add('loaded');
@@ -175,6 +199,14 @@
         }, function() {
           $(this).find('.dropdown-menu').first().stop(true, true).slideUp(105);
         });
+
+        $(".megamenu").mouseenter(function() {
+          $(".dropdown-menu").delay(100).addClass("mouseenter"); //stop "animation" and clear queue
+        }).mouseleave(function() {
+          $(".dropdown-menu").delay(100).removeClass("mouseenter");
+        });
+
+
 
         $(document).on('click', ".tm-woowishlist-button", function() {
           var liId = $("#hover").addClass("active");
@@ -355,6 +387,29 @@
                       }
                   }
               });
+
+              $('.product_list_widget').each(function(){
+                  var $carousel = $(this);
+                  /* Initializes a slick carousel only on mobile screens */
+                  // slick on mobile
+                  if ($(window).width() < 1025) {
+                      if ($carousel.hasClass('slick-initialized')) {
+                          $carousel.slick('unslick');
+                      }
+                  }
+                  else{
+                      if (!$carousel.hasClass('slick-initialized')) {
+                          $carousel.slick({
+                              slidesToShow: 5,
+                              lazyLoad: 'ondemand',
+                              slidesToScroll: 2,
+                              mobileFirst: true,
+                          });
+                      }
+                  }
+              });
+
+
           });
 
           $('.sub-menu').slick({
@@ -458,11 +513,11 @@
             accessToken: '5929691076.1677ed0.a6fb14ad48984650b2ec7b43e21f25bd',
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
-            template: '<li class="insta-slider-products"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></li>',
+            template: '<li class="insta-slider-products"><div class="slider-products-inner"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></div></li>',
             after: function() {
               //Initializes lozad
               const observer = lozad('.lozad', {
-                rootMargin: '0px', // syntax similar to that of CSS Margin
+                rootMargin: '300px 0px', // syntax similar to that of CSS Margin
                 threshold: 0.1, // ratio of element convergence
                 loaded: function(el) {
                   // Custom implementation on a loaded element

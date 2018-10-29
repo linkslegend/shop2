@@ -77,14 +77,22 @@ h1 {
   margin-top: 0;
 }
 .navbar-nav {
-  float: left;
-  position: absolute;
-  font-size: 1.25em;
-  top: 50px;
-  left: 0;
-  padding-left: 175px;
-  font-weight: 600;
+    position: fixed;
+    font-size: 1.25em;
+    top: 50px;
+    font-weight: 600;
+    padding-left: 140px;
 }
+
+.slidingLine{
+    height: 2px;
+    background-color: #0f0f0f;
+    position: absolute;
+    -webkit-transition: .65s;
+    transition: .65s;
+    margin-left: -30px;
+    bottom: 10px;}
+
 /**
  * Note: I have omitted any vendor-prefixes for clarity.
  * Adding them is left as an exercise for the reader.
@@ -166,10 +174,20 @@ h1 {
 .login .navbar-default {
   padding-bottom: 15px;
 }
-.navbar-default .navbar-nav > li > a {
+
+
+.navbar-static-top .navbar-nav > li > a {
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
   color: rgba(15, 15, 15, 1);
+  background-color: transparent;
   font-weight: 500;
-  padding-top: 10px;
+  z-index: 9;
+  padding: 0px;
+  margin: 10px 15px;
+  transition: all .25s;
+		  &:hover{
+		  border-bottom: 2px solid rgba(0, 0, 0, 0);
+		}
 }
 .navbar-default .navbar-nav > li > a .caret {
   display: none;
@@ -180,9 +198,9 @@ h1 {
   background-color: #919191;
   border-bottom: 0px solid rgba(15, 15, 15, 1);
 }
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
+.navbar-static-top .navbar-nav > .active > a,
+.navbar-static-top .navbar-nav > .active > a:focus,
+.navbar-static-top .navbar-nav > .active > a:hover {
   border-bottom: 2px solid #000;
   background-color: transparent;
   font-weight: 600;
@@ -252,19 +270,16 @@ h1 {
   border-right: 1px solid #eee;
 }
 
-.topRow ul .support-kontakt {
+.topRow i{
+    display: inline-block;
+    width: 11px;
+    padding-right: 15px;
+    background-repeat: no-repeat;
+    height: 10px;
+    background-color: transparent;	
 }
-.topRow ul .shipping-cost::before {
-  color: #666a72;
-  content: "\f0d1";
-  font-family: FontAwesome;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  float: left;
-  text-decoration: inherit;
-  padding-right: 8px;
-}
+
+
 .topRow ul a {
   color: #020202;
   display: block !important;
@@ -274,52 +289,7 @@ h1 {
 .topRow ul a:focus {
   color: rgba(15, 15, 15, 1);
 }
-.topRow ul .shipping-cost i {
-  color: #666a72;
-  content: "";
-  font-family: FontAwesome;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  margin-left: 3px;
-  position: relative;
-  text-decoration: none;
-  top: -5px;
-}
-.topRow ul .telephone::before {
-  color: #666a72;
-  content: "\f095";
-  font-family: FontAwesome;
-  font-size: 15px;
-  float: left;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: inherit;
-  padding-right: 8px;
-}
-.topRow ul .telephone i {
-  color: #666a72;
-  content: "";
-  font-family: FontAwesome;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  margin-left: 3px;
-  position: relative;
-  text-decoration: none;
-  top: -5px;
-}
-.topRow ul .support::before {
-  color: #666a72;
-  content: "\f059";
-  font-family: FontAwesome;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  float: left;
-  text-decoration: inherit;
-  padding-right: 8px;
-}
+
 #logo {
 	position: relative;
     top: 35px;
@@ -334,40 +304,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 
-a.myaccount::before,
-a.tracking::before,
-a.orders::before,
-a.address::before,
-a.login::before,
-a.logout::before {
-  color: #666a72;
-  font-family: FontAwesome;
-  font-size: 15px;
-  font-style: normal;
-  float: left;
-  font-weight: 400;
-  text-decoration: inherit;
-  padding-right: 8px;
-}
-
-a.myaccount::before {
-  content: "\f007";
-}
-a.tracking::before {
-  content: "\f0d1";
-}
-a.orders::before {
-  content: "\f291";
-}
-a.address::before {
-  content: "\f2bc";
-}
-a.login::before {
-  content: "\f090";
-}
-a.logout::before {
-  content: "\f08b";
-}
 
 #menu-mobile a.myaccount::before {
   color: rgba(15, 15, 15, 1);
@@ -388,6 +324,9 @@ a.logout::before {
   color: rgba(15, 15, 15, 1);
 }
 
+.dropdown-menu{
+	left: -25px;
+}
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:focus,
 .dropdown-menu > .active > a:hover {
@@ -483,35 +422,55 @@ a.logout::before {
 }
 
 
-.woocommerce-page #slider-header .slick-next::before, 
-.woocommerce-page #slider-header .slick-prev::before{
-	background: transparent;
-	display: block;
-	position: absolute;
-	z-index: 9999;
-	top: 0px;
-	color: #716f6f;
-	height: 40px;
-	overflow: visible;
-	padding: 0px;
-	margin: 0;
-	width: 30px;
-	transition: all 0.25s;}
-.woocommerce-page #slider-header .slick-next:hover::before, 
-.woocommerce-page #slider-header .slick-prev:hover::before{
+.woocommerce-page #slider-header .slick-next:before, 
+.woocommerce-page #slider-header .slick-prev:before{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: "";
+    position: relative;
+    z-index: 9999;
+    top: 0;
+    color: #716f6f;
+    height: 15px;
+    background-position: 50%;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    -webkit-transition: all .25s;
+    transition: all .25s;}
+
+.woocommerce-page #slider-header .slick-next:before{    
+	-webkit-transform: rotate(0deg);
+    transform: rotate(0deg);} 
+.woocommerce-page #slider-header .slick-prev:before{
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);}
+	
+.woocommerce-page #slider-header .slick-next:hover:before, 
+.woocommerce-page #slider-header .slick-prev:hover:before{
 	color: #383838;}
 .woocommerce-page #slider-header .slick-next{
-	background: transparent;
-	padding: 0;
-	margin-top: 0px;
-	right: -30px;
-	top: 12px;}
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0;
+    height: 35px;
+    width: 35px;
+    background-position: center;
+    right: -35px;
+    display: inline-block;
+    top: 16px;
+}
 .woocommerce-page #slider-header .slick-prev{
-	background: transparent;
-	padding: 0;
-	margin-top: 0px;
-    left: -28px;
-    top: 12px;
+    background: transparent;
+    background-position: 50%;
+    padding: 0;
+    margin-top: 0;
+    left: -35px;
+    top: 16px;
+    height: 35px;
+    width: 35px;
 }
 
 
@@ -928,7 +887,24 @@ p.para {
   padding: 0px 5px 5px 15px;
   font-size: 0.95em;
   display: inline-block;
-  font-weight: 400;}
+  text-decoration: none;
+  font-weight: 400;
+	&:after{
+			content: '';
+		    display: block;
+		    width: 0;
+		    height: 2px;
+		    background: #000;
+		    transition: width .3s;
+			}
+  	&:hover:after {
+    		width: 100%;
+			}
+
+}
+  
+  
+  
 .megamenu-column ul li.strong a{
 	font-weight: 700;
 }
@@ -953,15 +929,37 @@ p.para {
     height: 260px;
 }
 
-
-li.megamenu.dropdown:hover > ul.dropdown-menu{
+.top-menu li.megamenu.dropdown > ul.dropdown-menu,
+.top-menu li.megamenu.dropdown:hover > ul.dropdown-menu{
 	max-width: 1400px;
 	width: 100vw;
-    display: flex;
+    display: flex!important;
 	padding: 25px 25px 15px 25px;
 	box-shadow: none;
 	border: none;
 }
+.top-menu li.megamenu.dropdown > ul.dropdown-menu{
+	visibility: hidden;
+	transition: all 0.25s ease-in-out;
+	display: flex!important;
+	height: 0;
+	opacity: 0;
+	background: #fff;
+	overflow: hidden;
+}
+.top-menu li.megamenu.dropdown:hover > ul.dropdown-menu{
+	visibility: visible;
+	opacity: 1;
+	transition: all 0.25s;
+	height: 365px;
+	overflow: hidden;
+	background: #fff;
+}
+.top-menu li.megamenu.dropdown > ul.dropdown-menu.mouseenter{
+	height: 365px;
+	transition: all 0s;
+}
+
 .navbar-nav > li.megamenu{
 	display: inline-block;
 	float: left;
@@ -1003,16 +1001,12 @@ body div.festi-cart-products-content:after {
   content: "" !important;
   border: 14px solid !important;
   border-color: transparent transparent rgba(0, 0, 0, 0.2) !important;
-  top: -29px !important;
-  margin-left: 68px!important;
 }
 #popup:after {
   position: absolute !important;
   content: "" !important;
   border: 13px solid !important;
   border-color: transparent transparent rgba(255, 255, 255, 1) !important;
-  top: -26px !important;
-  margin-left: 69px!important;
 }
 #popup.account-popup:before {
   position: absolute !important;
@@ -1030,6 +1024,27 @@ body div.festi-cart-products-content:after {
   top: -26px !important;
   margin-left: -122px!important;
 }
+
+#popup.wishlist-popup:before {
+  position: absolute !important;
+  content: "" !important;
+  border: 14px solid !important;
+  border-color: transparent transparent rgba(0, 0, 0, 0.2) !important;
+  top: -29px !important;
+  margin-left: 68px!important;
+}
+#popup.wishlist-popup:after {
+  position: absolute !important;
+  content: "" !important;
+  border: 13px solid !important;
+  border-color: transparent transparent rgba(255, 255, 255, 1) !important;
+  top: -26px !important;
+  margin-left: 69px!important;
+}
+body.logged-in #popup.wishlist-popup:after{
+	margin-left: -90px!important;
+}
+
 
 body.logged-in .popover:before {
   margin-left: 124px !important;
@@ -1095,14 +1110,27 @@ body div.festi-cart-products {
     transition: all .3s;
     -webkit-transition: all .3s;}
 
-body .headroom--not-top div.festi-cart-products{
-    top: 78px!important;
-}
+body div.festi-cart-products.headroom--not-top{
+    top: 74px!important;}
+
+body div.festi-cart-products.headroom--not-top.festi-show{
+	top: 80px!important;}
+
+body div.festi-cart-products.festi-show{
+  display: block;
+  visibility: visible!important;
+  opacity: 1!important;	
+  top: 108px!important;
+	transition: all .3s;
+    -webkit-transition: all .3s;}
+
 
 div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item td.festi-cart-product-img{
 	vertical-align: middle!important;
 	float: none;
 }
+
+
 
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-delete a.festi-cart-remove-product {
     font-size: 18px;
@@ -1129,7 +1157,7 @@ body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > 
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-img a.festi-cart-img img {
 	max-width: 100px;
     width: 100%;
-    min-width: 50px;
+    min-width: 90px;
     display: block;
     padding: 0;
     height: auto;}
@@ -1162,6 +1190,7 @@ body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > 
     display: inline-block;
     margin-bottom: 10px;
     font-weight: 500;
+    padding-right: 35px;
 }
 body div.festi-cart-products-content table.festi-cart-list tr.festi-cart-item > td.festi-cart-product-title span.festi-cart-product-variation-attribut {
   font-size: 0.9em;
@@ -1288,15 +1317,6 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
   display: inline-block;
 	text-align: center;
     width: 100%;}
-
-
-.festi-show{
-  display: block;
-  visibility: visible!important;
-  opacity: 1!important;	
-  top: 108px!important;
-	transition: all .3s;
-    -webkit-transition: all .3s;}
 
 /* @end */
 
@@ -1610,27 +1630,7 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
   color: #a42424;
 }
 
-.woocommerce button.tm-woowishlist-button,
-button.tm-woowishlist-button {
-  display: -ms-inline-flexbox;
-  display: -webkit-inline-flex;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
+
 
 .tm-woowishlist-item {
   position: relative;
@@ -1815,7 +1815,8 @@ body
     display: inline-block;
     width: 32px;
     height: 32px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' version='1.1'%3E%3Cdefs%3E%3Cpath d='M4,12 L4,26.1380002 C4,27.1663543 4.83364569,28 5.86199977,28 L26.1380002,28 C27.1663543,28 28,27.1663543 28,26.1380002 L28,12 L4,12 Z M8,10 C8,5.581722 11.581722,2 16,2 C20.418278,2 24,5.581722 24,10 L30,10 L30,26.1380002 C30,28.2709238 28.2709238,30 26.1380002,30 L5.86199977,30 C3.72907619,30 2,28.2709238 2,26.1380002 L2,10 L8,10 Z M16,4 C12.6862915,4 10,6.6862915 10,10 L22,10 C22,6.6862915 19.3137085,4 16,4 Z' id='path-1'/%3E%3C/defs%3E%3Cg id='icon-/-actionable-/-cart-/-32x32' stroke='none' stroke-width='0.8' fill='none' fill-rule='evenodd'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'/%3E%3C/mask%3E%3Cuse id='icon' fill='%23777777' fill-rule='nonzero' xlink:href='%23path-1'/%3E%3C/g%3E%3C/svg%3E"); background-size: 100% auto;	
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath d='M4 12v14.138C4 27.1664 4.8336 28 5.862 28h20.276C27.1664 28 28 27.1664 28 26.138V12H4zm4-2c0-4.4183 3.5817-8 8-8s8 3.5817 8 8h6v16.138C30 28.271 28.271 30 26.138 30H5.862C3.729 30 2 28.271 2 26.138V10h6zm8-6c-3.3137 0-6 2.6863-6 6h12c0-3.3137-2.6863-6-6-6z' id='a'/%3E%3C/defs%3E%3Cuse fill='%23777' fill-rule='nonzero' xlink:href='%23a' stroke-width='.8'/%3E%3C/svg%3E%0A");
+background-size: 100% auto;	
     transition: all 0.3s ease-in-out;
     content: "";}
 
@@ -1826,11 +1827,11 @@ body.cart .icon-menu-gk .Cart-right:before{
     display: inline-block;
     width: 32px;
     height: 32px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' version='1.1'%3E%3Cdefs%3E%3Cpath d='M4,12 L4,26.1380002 C4,27.1663543 4.83364569,28 5.86199977,28 L26.1380002,28 C27.1663543,28 28,27.1663543 28,26.1380002 L28,12 L4,12 Z M8,10 C8,5.581722 11.581722,2 16,2 C20.418278,2 24,5.581722 24,10 L30,10 L30,26.1380002 C30,28.2709238 28.2709238,30 26.1380002,30 L5.86199977,30 C3.72907619,30 2,28.2709238 2,26.1380002 L2,10 L8,10 Z M16,4 C12.6862915,4 10,6.6862915 10,10 L22,10 C22,6.6862915 19.3137085,4 16,4 Z' id='path-1'/%3E%3C/defs%3E%3Cg id='icon-/-actionable-/-cart-/-32x32' stroke='none' stroke-width='0.8' fill='none' fill-rule='evenodd'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'/%3E%3C/mask%3E%3Cuse id='icon' fill='%230f0f0f' fill-rule='nonzero' xlink:href='%23path-1'/%3E%3C/g%3E%3C/svg%3E");
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath d='M4 12v14.138C4 27.1664 4.8336 28 5.862 28h20.276C27.1664 28 28 27.1664 28 26.138V12H4zm4-2c0-4.4183 3.5817-8 8-8s8 3.5817 8 8h6v16.138C30 28.271 28.271 30 26.138 30H5.862C3.729 30 2 28.271 2 26.138V10h6zm8-6c-3.3137 0-6 2.6863-6 6h12c0-3.3137-2.6863-6-6-6z' id='a'/%3E%3C/defs%3E%3Cuse fill='%230f0f0f' fill-rule='nonzero' xlink:href='%23a' stroke-width='.8'/%3E%3C/svg%3E%0A");
 background-size: 100% auto;
 content: "";}
 .logged-in .icon-menu-gk .Cart-right:before{
-	background: #f2f2f2;
+	background-color: transparent;
 }
 
 /*Wishlist*/
@@ -1838,7 +1839,7 @@ content: "";}
     display: inline-block;
     width: 32px;
     height: 32px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' version='1.1'%3E%3Cdefs%3E%3Cpath d='M28.4423087,15.9873047 C31.9288742,11.3660353 29.2532432,3.97985624 23.7205417,3.97985624 C21.114966,3.97985624 18.8362824,5.52389815 16.8417492,8.7454097 L15.9811232,10.1354675 L15.1349892,8.73668803 C13.189171,5.5199747 10.9381794,3.97985624 8.33601633,3.97985624 C2.79094752,3.97985624 0.0616694031,11.3772586 3.53976737,15.9873047 C5.37810541,18.4239304 9.53984392,22.2625989 15.991038,27.4546453 C22.4422321,22.2625989 26.6039706,18.4239304 28.4423087,15.9873047 Z M23.7205417,2 C31.0502447,2 34.4363421,11.3474479 30.0409228,17.1733578 C28.0136887,19.8603559 23.5517709,23.9509068 16.617858,29.498502 L15.991038,30 L15.364218,29.498502 C8.4303051,23.9509068 3.96838736,19.8603559 1.94115325,17.1733578 C-2.44916938,11.3542033 1.00207217,2 8.33601633,2 C11.3094501,2 13.874421,3.51011066 15.9996196,6.43743647 C18.1643671,3.50949181 20.7477288,2 23.7205417,2 Z' id='path-1'/%3E%3C/defs%3E%3Cg id='icon-/-actionable-/-heart-/-32x32' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'/%3E%3C/mask%3E%3Cuse id='icon' fill='%23777777' fill-rule='nonzero' xlink:href='%23path-1'/%3E%3C/g%3E%3C/svg%3E");
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath d='M28.4423 15.9873c3.4866-4.6213.811-12.0074-4.7218-12.0074-2.6055 0-4.8842 1.544-6.8788 4.7655l-.8606 1.39-.8461-1.3987C13.1892 5.52 10.9382 3.9799 8.336 3.9799c-5.545 0-8.2743 7.3974-4.7962 12.0074 1.8383 2.4366 6 6.2753 12.4512 11.4673 6.4512-5.192 10.613-9.0307 12.4513-11.4673zM23.7205 2c7.3297 0 10.7158 9.3474 6.3204 15.1734-2.0272 2.687-6.4891 6.7775-13.423 12.3251L15.991 30l-.6268-.5015c-6.9339-5.5476-11.3958-9.6381-13.423-12.3251C-2.4492 11.3542 1.002 2 8.336 2c2.9735 0 5.5384 1.5101 7.6636 4.4374C18.1644 3.5094 20.7477 2 23.7206 2z' id='a'/%3E%3C/defs%3E%3Cuse fill='%23777' fill-rule='nonzero' xlink:href='%23a'/%3E%3C/svg%3E%0A");
 background-size: 100% auto;	
     transition: all 0.3s ease-in-out;
 content: "";}
@@ -1850,11 +1851,11 @@ body.wishlist .icon-menu-gk .wishlist:before{
     display: inline-block;
     width: 32px;
     height: 32px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' version='1.1'%3E%3Cdefs%3E%3Cpath d='M28.4423087,15.9873047 C31.9288742,11.3660353 29.2532432,3.97985624 23.7205417,3.97985624 C21.114966,3.97985624 18.8362824,5.52389815 16.8417492,8.7454097 L15.9811232,10.1354675 L15.1349892,8.73668803 C13.189171,5.5199747 10.9381794,3.97985624 8.33601633,3.97985624 C2.79094752,3.97985624 0.0616694031,11.3772586 3.53976737,15.9873047 C5.37810541,18.4239304 9.53984392,22.2625989 15.991038,27.4546453 C22.4422321,22.2625989 26.6039706,18.4239304 28.4423087,15.9873047 Z M23.7205417,2 C31.0502447,2 34.4363421,11.3474479 30.0409228,17.1733578 C28.0136887,19.8603559 23.5517709,23.9509068 16.617858,29.498502 L15.991038,30 L15.364218,29.498502 C8.4303051,23.9509068 3.96838736,19.8603559 1.94115325,17.1733578 C-2.44916938,11.3542033 1.00207217,2 8.33601633,2 C11.3094501,2 13.874421,3.51011066 15.9996196,6.43743647 C18.1643671,3.50949181 20.7477288,2 23.7205417,2 Z' id='path-1'/%3E%3C/defs%3E%3Cg id='icon-/-actionable-/-heart-/-32x32' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'/%3E%3C/mask%3E%3Cuse id='icon' fill='%230F0F0F' fill-rule='nonzero' xlink:href='%23path-1'/%3E%3C/g%3E%3C/svg%3E");
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath d='M28.4423 15.9873c3.4866-4.6213.811-12.0074-4.7218-12.0074-2.6055 0-4.8842 1.544-6.8788 4.7655l-.8606 1.39-.8461-1.3987C13.1892 5.52 10.9382 3.9799 8.336 3.9799c-5.545 0-8.2743 7.3974-4.7962 12.0074 1.8383 2.4366 6 6.2753 12.4512 11.4673 6.4512-5.192 10.613-9.0307 12.4513-11.4673zM23.7205 2c7.3297 0 10.7158 9.3474 6.3204 15.1734-2.0272 2.687-6.4891 6.7775-13.423 12.3251L15.991 30l-.6268-.5015c-6.9339-5.5476-11.3958-9.6381-13.423-12.3251C-2.4492 11.3542 1.002 2 8.336 2c2.9735 0 5.5384 1.5101 7.6636 4.4374C18.1644 3.5094 20.7477 2 23.7206 2z' id='a'/%3E%3C/defs%3E%3Cuse fill='%230f0f0f' fill-rule='nonzero' xlink:href='%23a'/%3E%3C/svg%3E%0A");
 background-size: 100% auto;
 content: "";}
 .logged-in .icon-menu-gk .wishlist:before{
-	background: #f2f2f2;
+	background-color: transparent;
 }
 
 /*Account*/
@@ -1862,7 +1863,7 @@ content: "";}
     display: inline-block;
     width: 32px;
     height: 32px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' version='1.1'%3E%3Cdefs%3E%3Cpath d='M8.28778163,27.6860973 C10.4992934,29.1485219 13.15021,30 16,30 C18.8638022,30 21.5267706,29.140128 23.7448081,27.6644811 C20.5437045,26.6458279 18.9375,25.5955573 18.9375,24.1052632 L18.9375,21.2105263 C18.9375,20.9948641 19.0072199,20.7849806 19.1362599,20.6121834 C19.7270819,19.8210145 20.2424641,18.7601108 20.6736486,17.428734 C20.761082,17.1587644 20.9590981,16.9386549 21.2183503,16.8232579 C21.963997,16.4913597 22.3125,15.8935378 22.3125,14.8421053 C22.3125,14.2646963 22.2425815,13.8528486 22.1300349,13.6188032 C22.0774947,13.5095437 22.060126,13.4954879 22.0159665,13.4877991 C21.5370671,13.4044159 21.1875,12.9887251 21.1875,12.5026208 C21.1875028,12.4531985 21.1875028,12.4531985 21.187511,12.4037826 C21.187614,11.7858499 21.1858537,11.5090318 21.1770628,11.1683784 C21.0811481,7.4516127 20.0043306,6 16,6 C12.3613595,6 11.4078708,7.25764191 11.3600716,10.502361 C11.3553402,10.8235368 11.3574027,11.0918149 11.3662653,11.6659976 C11.372917,12.0969373 11.375,12.2735809 11.375,12.5026208 C11.375,12.9887251 11.0254329,13.4044159 10.5465335,13.4877991 C10.502374,13.4954879 10.4850053,13.5095437 10.4324651,13.6188032 C10.3199185,13.8528486 10.25,14.2646963 10.25,14.8421053 C10.25,15.8935378 10.598503,16.4913597 11.3441497,16.8232579 C11.6034019,16.9386549 11.801418,17.1587644 11.8888514,17.428734 C12.3200359,18.7601108 12.8354181,19.8210145 13.4262401,20.6121834 C13.5552801,20.7849806 13.625,20.9948641 13.625,21.2105263 L13.625,24.1052632 C13.625,25.6333986 11.866291,26.6673962 8.28778163,27.6860973 Z M6.40558861,26.1955085 C6.5053068,26.121781 6.62050336,26.0654936 6.74785598,26.0323103 C8.55785951,25.5606905 9.90100929,25.09697 10.761167,24.6543158 C11.3968214,24.3271954 11.625,24.0938294 11.625,24.1052632 L11.625,21.5316471 C11.0416351,20.684518 10.5411772,19.6538419 10.1187862,18.4400268 C8.88491663,17.7213857 8.25,16.4758214 8.25,14.8421053 C8.25,13.4224263 8.59657684,12.3679932 9.36875076,11.8446453 C9.36806972,11.7989715 9.3673223,11.7499087 9.36650355,11.6968645 C9.35733451,11.1028344 9.35516537,10.8206758 9.36028857,10.4729015 C9.42264371,6.24009044 11.1209816,4 16,4 C21.2541163,4 23.0554049,6.42824188 23.1763972,11.1167836 C23.1824508,11.3513657 23.1853629,11.5546407 23.1866392,11.8398495 C23.963796,12.3615349 24.3125,13.4180763 24.3125,14.8421053 C24.3125,16.4758214 23.6775834,17.7213857 22.4437138,18.4400268 C22.0213228,19.6538419 21.5208649,20.684518 20.9375,21.5316471 L20.9375,24.1052632 C20.9375,24.1277933 21.1356499,24.352965 21.6995069,24.6753784 C22.4621781,25.1114737 23.6601615,25.5710315 25.2780941,26.0394462 C25.3953719,26.0733998 25.5016559,26.1269499 25.5944158,26.1955044 C28.3066035,23.6422538 30,20.0188839 30,16 C30,8.2680135 23.7319865,2 16,2 C8.2680135,2 2,8.2680135 2,16 C2,20.018886 3.69339834,23.6422577 6.40558861,26.1955085 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z' id='path-1'/%3E%3C/defs%3E%3Cg id='icon-/-actionable-/-account-/-32x32' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'/%3E%3C/mask%3E%3Cuse id='icon' fill='%23777777' fill-rule='nonzero' xlink:href='%23path-1'/%3E%3C/g%3E%3C/svg%3E");
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath d='M8.288 27.686A13.935 13.935 0 0 0 16 30c2.864 0 5.527-.86 7.745-2.336-3.201-1.018-4.808-2.068-4.808-3.559v-2.894a1 1 0 0 1 .2-.599c.59-.791 1.105-1.852 1.537-3.183a1 1 0 0 1 .544-.606c.746-.332 1.095-.93 1.095-1.98 0-.578-.07-.99-.183-1.224-.053-.11-.07-.124-.114-.131a1 1 0 0 1-.828-.985v-.1c0-.617-.002-.894-.01-1.235C21.08 7.452 20.003 6 16 6c-3.639 0-4.592 1.258-4.64 4.502-.005.322-.003.59.006 1.164.007.43.009.608.009.837a1 1 0 0 1-.828.985c-.045.007-.062.022-.115.13-.112.235-.182.647-.182 1.224 0 1.052.349 1.65 1.094 1.981a1 1 0 0 1 .545.606c.431 1.331.946 2.392 1.537 3.183a1 1 0 0 1 .199.599v2.894c0 1.528-1.759 2.562-5.337 3.581zm-1.882-1.49c.1-.074.215-.13.342-.164 1.81-.471 3.153-.935 4.013-1.378.636-.327.864-.56.864-.549v-2.573c-.583-.847-1.084-1.878-1.506-3.092-1.234-.719-1.869-1.964-1.869-3.598 0-1.42.347-2.474 1.119-2.997l-.002-.148c-.01-.594-.012-.876-.007-1.224C9.423 6.24 11.121 4 16 4c5.254 0 7.055 2.428 7.176 7.117.006.234.01.438.01.723.778.522 1.127 1.578 1.127 3.002 0 1.634-.635 2.88-1.87 3.598-.422 1.214-.922 2.245-1.506 3.092v2.573c0 .023.199.248.763.57.762.436 1.96.896 3.578 1.364a.998.998 0 0 1 .316.157A13.961 13.961 0 0 0 30 16c0-7.732-6.268-14-14-14S2 8.268 2 16a13.96 13.96 0 0 0 4.406 10.196zM16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16z' id='a'/%3E%3C/defs%3E%3Cuse fill='%23777777' xlink:href='%23a'/%3E%3C/svg%3E%0A");
 background-size: 100% auto;	
     transition: all 0.3s ease-in-out;
 content: "";}
@@ -1874,11 +1875,11 @@ body.my-account .icon-menu-gk .account:before{
     display: inline-block;
     width: 32px;
     height: 32px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' version='1.1'%3E%3Cdefs%3E%3Cpath d='M8.28778163,27.6860973 C10.4992934,29.1485219 13.15021,30 16,30 C18.8638022,30 21.5267706,29.140128 23.7448081,27.6644811 C20.5437045,26.6458279 18.9375,25.5955573 18.9375,24.1052632 L18.9375,21.2105263 C18.9375,20.9948641 19.0072199,20.7849806 19.1362599,20.6121834 C19.7270819,19.8210145 20.2424641,18.7601108 20.6736486,17.428734 C20.761082,17.1587644 20.9590981,16.9386549 21.2183503,16.8232579 C21.963997,16.4913597 22.3125,15.8935378 22.3125,14.8421053 C22.3125,14.2646963 22.2425815,13.8528486 22.1300349,13.6188032 C22.0774947,13.5095437 22.060126,13.4954879 22.0159665,13.4877991 C21.5370671,13.4044159 21.1875,12.9887251 21.1875,12.5026208 C21.1875028,12.4531985 21.1875028,12.4531985 21.187511,12.4037826 C21.187614,11.7858499 21.1858537,11.5090318 21.1770628,11.1683784 C21.0811481,7.4516127 20.0043306,6 16,6 C12.3613595,6 11.4078708,7.25764191 11.3600716,10.502361 C11.3553402,10.8235368 11.3574027,11.0918149 11.3662653,11.6659976 C11.372917,12.0969373 11.375,12.2735809 11.375,12.5026208 C11.375,12.9887251 11.0254329,13.4044159 10.5465335,13.4877991 C10.502374,13.4954879 10.4850053,13.5095437 10.4324651,13.6188032 C10.3199185,13.8528486 10.25,14.2646963 10.25,14.8421053 C10.25,15.8935378 10.598503,16.4913597 11.3441497,16.8232579 C11.6034019,16.9386549 11.801418,17.1587644 11.8888514,17.428734 C12.3200359,18.7601108 12.8354181,19.8210145 13.4262401,20.6121834 C13.5552801,20.7849806 13.625,20.9948641 13.625,21.2105263 L13.625,24.1052632 C13.625,25.6333986 11.866291,26.6673962 8.28778163,27.6860973 Z M6.40558861,26.1955085 C6.5053068,26.121781 6.62050336,26.0654936 6.74785598,26.0323103 C8.55785951,25.5606905 9.90100929,25.09697 10.761167,24.6543158 C11.3968214,24.3271954 11.625,24.0938294 11.625,24.1052632 L11.625,21.5316471 C11.0416351,20.684518 10.5411772,19.6538419 10.1187862,18.4400268 C8.88491663,17.7213857 8.25,16.4758214 8.25,14.8421053 C8.25,13.4224263 8.59657684,12.3679932 9.36875076,11.8446453 C9.36806972,11.7989715 9.3673223,11.7499087 9.36650355,11.6968645 C9.35733451,11.1028344 9.35516537,10.8206758 9.36028857,10.4729015 C9.42264371,6.24009044 11.1209816,4 16,4 C21.2541163,4 23.0554049,6.42824188 23.1763972,11.1167836 C23.1824508,11.3513657 23.1853629,11.5546407 23.1866392,11.8398495 C23.963796,12.3615349 24.3125,13.4180763 24.3125,14.8421053 C24.3125,16.4758214 23.6775834,17.7213857 22.4437138,18.4400268 C22.0213228,19.6538419 21.5208649,20.684518 20.9375,21.5316471 L20.9375,24.1052632 C20.9375,24.1277933 21.1356499,24.352965 21.6995069,24.6753784 C22.4621781,25.1114737 23.6601615,25.5710315 25.2780941,26.0394462 C25.3953719,26.0733998 25.5016559,26.1269499 25.5944158,26.1955044 C28.3066035,23.6422538 30,20.0188839 30,16 C30,8.2680135 23.7319865,2 16,2 C8.2680135,2 2,8.2680135 2,16 C2,20.018886 3.69339834,23.6422577 6.40558861,26.1955085 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z' id='path-1'/%3E%3C/defs%3E%3Cg id='icon-/-actionable-/-account-/-32x32' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'/%3E%3C/mask%3E%3Cuse id='icon' fill='%230f0f0f' fill-rule='nonzero' xlink:href='%23path-1'/%3E%3C/g%3E%3C/svg%3E");    
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath d='M8.288 27.686A13.935 13.935 0 0 0 16 30c2.864 0 5.527-.86 7.745-2.336-3.201-1.018-4.808-2.068-4.808-3.559v-2.894a1 1 0 0 1 .2-.599c.59-.791 1.105-1.852 1.537-3.183a1 1 0 0 1 .544-.606c.746-.332 1.095-.93 1.095-1.98 0-.578-.07-.99-.183-1.224-.053-.11-.07-.124-.114-.131a1 1 0 0 1-.828-.985v-.1c0-.617-.002-.894-.01-1.235C21.08 7.452 20.003 6 16 6c-3.639 0-4.592 1.258-4.64 4.502-.005.322-.003.59.006 1.164.007.43.009.608.009.837a1 1 0 0 1-.828.985c-.045.007-.062.022-.115.13-.112.235-.182.647-.182 1.224 0 1.052.349 1.65 1.094 1.981a1 1 0 0 1 .545.606c.431 1.331.946 2.392 1.537 3.183a1 1 0 0 1 .199.599v2.894c0 1.528-1.759 2.562-5.337 3.581zm-1.882-1.49c.1-.074.215-.13.342-.164 1.81-.471 3.153-.935 4.013-1.378.636-.327.864-.56.864-.549v-2.573c-.583-.847-1.084-1.878-1.506-3.092-1.234-.719-1.869-1.964-1.869-3.598 0-1.42.347-2.474 1.119-2.997l-.002-.148c-.01-.594-.012-.876-.007-1.224C9.423 6.24 11.121 4 16 4c5.254 0 7.055 2.428 7.176 7.117.006.234.01.438.01.723.778.522 1.127 1.578 1.127 3.002 0 1.634-.635 2.88-1.87 3.598-.422 1.214-.922 2.245-1.506 3.092v2.573c0 .023.199.248.763.57.762.436 1.96.896 3.578 1.364a.998.998 0 0 1 .316.157A13.961 13.961 0 0 0 30 16c0-7.732-6.268-14-14-14S2 8.268 2 16a13.96 13.96 0 0 0 4.406 10.196zM16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16z' id='a'/%3E%3C/defs%3E%3Cuse fill='%230f0f0f' xlink:href='%23a'/%3E%3C/svg%3E%0A");
 background-size: 100% auto;
 content: "";}
 .logged-in .icon-menu-gk .account:before{
-	background: #f2f2f2;
+	background-color: transparent;
 }
 
 
@@ -2522,6 +2523,15 @@ li.megamenu.dropdown:hover > ul.dropdown-menu {
     display: block;
     padding: 0;
 }
+.navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}
 .sidebar-nav li .megamenu-column{
 	border-bottom: none;
 }
@@ -2857,7 +2867,7 @@ li.megamenu.dropdown:hover > ul.dropdown-menu {
     display: block;
   }
   #menu-mobile #logo{
-	margin-top: 10px;}
+	margin-top: 0px;}
 	
 .mobile-top-menu #logo {
     position: absolute;

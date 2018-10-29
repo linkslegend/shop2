@@ -309,16 +309,18 @@ use Roots\Sage\Wrapper;
                 <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
                     <!-- Display the Post Title with Hyperlink -->
                     <li class="magazine-slider-products">
-                    <figure class="effect-layla">
-                      <a href="<?php the_permalink() ?>">
-                      <!--  Display the Post Featured Image -->
-                      <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                      src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
-                      data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
-                      <figcaption><p><strong>read more</strong></p></figcaption>
-                      </a>
-                    </figure>
-                    <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                      <div class="slider-products-inner">
+                        <figure class="effect-layla">
+                        <a href="<?php the_permalink() ?>">
+                        <!--  Display the Post Featured Image -->
+                        <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                        src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
+                        data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
+                        <figcaption><p><strong>read more</strong></p></figcaption>
+                        </a>
+                        </figure>
+                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                      </div>
                     </li>
                     <!--  Repeat the process and reset once it hits the limit -->
                     <?php

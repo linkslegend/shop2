@@ -1328,9 +1328,27 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
 
 
 
+/*
+  * Use Lozad (lazy loading) for attachments/featured images */
+ add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment) {
+     // Bail on admin
+     if (is_admin()) {
+         return $attr;
+     }
+     $attr['data-srcset'] = $attr['srcset'];
+     $attr['data-src'] = $attr['src'];
+     $attr['class'] .= ' lozad';
+     unset($attr['src']);
+     unset($attr['srcset']);
+
+     return $attr;
+ }, 10, 2);
+
+
+
+/*
  add_action( 'woocommerce_before_shop_loop', 'addlayzload' );
  add_action( 'woocommerce_before_single_product', 'addlayzload' );
-
  function addlayzload() {
      // Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
      // Lazyload Converter
@@ -1390,74 +1408,8 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
      }
      add_filter('the_content', 'add_lazyload', 999);
      add_filter('post_thumbnail_html', 'add_lazyload', 999);
- }
+ }*/
 
-
-/*add_action( 'loop_start', 'addlayzload2' );
-   function addlayzload2() {
-     if ( is_singular() ) {
-       // Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
-       // Lazyload Converter
-       function add_lazyload2($content) {
-           $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-           $dom = new DOMDocument();
-           @$dom->loadHTML($content);
-           // Convert Images
-           $images = [];
-           foreach ($dom->getElementsByTagName('img') as $node) {
-               $images[] = $node;
-           }
-           foreach ($images as $node) {
-               $fallback = $node->cloneNode(true);
-
-               $oldsrc = $node->getAttribute('src');
-               $node->setAttribute('data-src', $oldsrc );
-               $newsrc = 'https://d1zczzapudl1mr.cloudfront.net/preloader/loader_150x150.gif';
-               $node->setAttribute('src', $newsrc);
-
-               $oldsrcset = $node->getAttribute('srcset');
-               $node->setAttribute('data-srcset', $oldsrcset );
-               $newsrcset = '';
-               $node->setAttribute('srcset', $newsrcset);
-
-               $classes = $node->getAttribute('class');
-               $newclasses = $classes . ' lozad';
-               $node->setAttribute('class', $newclasses);
-
-               $noscript = $dom->createElement('noscript', '');
-               $node->parentNode->insertBefore($noscript, $node);
-               $noscript->appendChild($fallback);
-           }
-           // Convert Videos
-           $videos = [];
-           foreach ($dom->getElementsByTagName('iframe') as $node) {
-               $videos[] = $node;
-           }
-
-           foreach ($videos as $node) {
-               $fallback = $node->cloneNode(true);
-               $oldsrc = $node->getAttribute('src');
-               $node->setAttribute('data-src', $oldsrc );
-               $newsrc = '';
-               $node->setAttribute('src', $newsrc);
-               $classes = $node->getAttribute('class');
-               $newclasses = $classes . ' lozad';
-               $node->setAttribute('class', $newclasses);
-               $noscript = $dom->createElement('noscript', '');
-               $node->parentNode->insertBefore($noscript, $node);
-               $noscript->appendChild($fallback);
-           }
-
-           $newHtml = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''),
-           $dom->saveHTML()));
-           return $newHtml;
-       }
-       add_filter('the_content', 'add_lazyload2' );
-       add_filter('post_thumbnail_html', 'add_lazyload2' );
-   }
-
-
-}*/
 
 function before_bodyclose() {
      $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['jsbox'].'');
