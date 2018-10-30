@@ -90,7 +90,7 @@ h1 {
     position: absolute;
     -webkit-transition: .65s;
     transition: .65s;
-    margin-left: -30px;
+    top: 80px;
     bottom: 10px;}
 
 /**
@@ -759,12 +759,7 @@ p.para {
 .minus-col-padding {
   padding: 0px;
 }
-.front-products-slider2 .slick-next {
-  right: -01px;
-}
-.front-products-slider2 .slick-prev {
-  left: 5px;
-}
+
 .front-products-slider2 .slick-next,
 .front-products-slider2 .slick-prev {
   top: 37%;

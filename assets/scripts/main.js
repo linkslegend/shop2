@@ -47,7 +47,7 @@
         }());
 
 $(document).ready(function() {
-              $mainNav = $(".navbar-nav");
+              $mainNav = $(".mega-menu");
           		// Create a new div and append it to menu
               $mainNav.append("<div class='slidingLine'></div>");
           // cool nav menu
