@@ -22,13 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $cross_sells ) : ?>
 
-	<div class="woocommerce cross-sells related products singlefeatured">
+	<div class="cross-sells">
 
-		<h2><?php _e( 'Recommended for You&hellip;', 'woocommerce' ) ?></h2>
+		<h2><?php _e( 'You may be interested in&hellip;', 'woocommerce' ) ?></h2>
 
 		<?php woocommerce_product_loop_start(); ?>
 
-		<div class="multiple-items featured3">
 			<?php foreach ( $cross_sells as $cross_sell ) : ?>
 
 				<?php
@@ -39,7 +38,7 @@ if ( $cross_sells ) : ?>
 					wc_get_template_part( 'content', 'product' ); ?>
 
 			<?php endforeach; ?>
-		</div>
+
 		<?php woocommerce_product_loop_end(); ?>
 
 	</div>

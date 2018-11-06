@@ -12,32 +12,24 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-?>
-
-<?php wc_print_notices(); ?>
-
-<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
+do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
 <div class="u-columns col2-set" id="customer_login">
 
-	<a href="#" class="visible-xs-block	tabcontent-button active" data-tab="1">Customer Login</a>
-	<a href="#" class="visible-xs-block	tabcontent-button" data-tab="2">Create Account</a>
-
-
-	<div class="u-column1 col-1 loginform tabcontent active" data-content="1" id="loginform">
+	<div class="u-column1 col-1">
 
 <?php endif; ?>
 
-		<h2 class="hidden-xs"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
+		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
@@ -73,11 +65,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
-	<div class="u-column2 col-2 tabcontent registerform" data-content="2" id="registerform">
+	<div class="u-column2 col-2">
 
-		<h2 class="hidden-xs"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
+		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
-		<form method="post" class="woocommerce-form woocommerce-form-register register">
+		<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 

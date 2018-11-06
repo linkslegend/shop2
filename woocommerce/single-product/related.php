@@ -28,7 +28,6 @@ if ( $related_products ) : ?>
 
 		<?php woocommerce_product_loop_start(); ?>
 
-		<div class="multiple-items featured3">
 			<?php foreach ( $related_products as $related_product ) : ?>
 
 				<?php
@@ -39,7 +38,7 @@ if ( $related_products ) : ?>
 					wc_get_template_part( 'content', 'product' ); ?>
 
 			<?php endforeach; ?>
-		</div>
+
 		<?php woocommerce_product_loop_end(); ?>
 
 	</section>
