@@ -35,12 +35,12 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
-				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-			</div>
+		<div class="col-sm-6" id="customer_details">
+				<div class="billing">
+					<?php do_action( 'woocommerce_checkout_billing' ); ?>
+				</div>
 
-			<div class="col-2">
+			<div class="checkout_shipping">
 				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			</div>
 		</div>
@@ -49,6 +49,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 	<?php endif; ?>
 
+<div id="order_review" class="col-sm-6 checkout-order-review woocommerce-checkout-review-order">
+
 	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
 
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
@@ -56,6 +58,10 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	<div id="order_review" class="woocommerce-checkout-review-order">
 		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 	</div>
+	<div class="ssl-secure grey">
+			<a target="_blank" href="https://www.mcafeesecure.com/verify?host=getkunst.com"><img class="comodo" src="/wp-content/uploads/checkout-secure.png"></a>
+	</div>
+</div>
 
 	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 

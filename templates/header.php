@@ -38,7 +38,7 @@
               <?php endif;?>
       </div>
           <div class="mobile-search">
-            <?php echo do_shortcode('[wcas-search-form]');?>
+            <input type="search" class="search-input" name="s" value="" placeholder="Search for products...">
           </div>
           <?php if (is_user_logged_in()) : ?>
           <h2>Welcome <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
@@ -185,11 +185,11 @@
         <form id="login" action="login" method="post">
             <p class="status"></p>
             <div class="input-1">
-              <label class="username" for="username"><i class="i-user" aria-hidden="true"></i></label>
+              <label class="username" for="username"><i class="fa fa-lock" aria-hidden="true"></i></label>
               <input id="username" type="text" name="username" placeholder="Username or Email">
             </div>
             <div class="input-2">
-              <label class="password" for="password"><i class="i-lock" aria-hidden="true"></i></label>
+              <label class="password" for="password"><i class="fa fa-user" aria-hidden="true"></i></label>
               <input id="password" type="password" name="password" placeholder="Password">
             </div>
             <div class="input-3">
@@ -216,24 +216,26 @@
 <header id="header" class="banner navbar navbar-default navbar-static-top" role="banner">
 
   <!-- shop 1.top menu -->
+  <!--
   <div class="topRow">
     <div class="container-fluid">
         <ul>
-          <li class="shipping-cost"><i class="i-shipping"></i>Free shipping on most orders</li>
-          <li class="telephone"><i class="i-phone"></i>Phone:&nbsp; <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['phone'].''); ?></li>
-          <li class="support"><i class="i-help"></i><a href="/contact">Help &amp; Service</a></li>
+          <li class="shipping-cost">Free shipping on most orders
+            <a href="#" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Abonnements und Onlinedokumente bleiben bei der Feststellung des relevanten Bestellwerts unberücksichtigt." style="display: none;">
+              <i class="fa fa-info-circle"></i></a></li>
+          <li class="telephone">Phone:&nbsp; <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['phone'].''); ?></li>
+          <li class="support"><a href="/contact">Help &amp; Service</a></li>
           <li class="support-kontakt">
             <?php if (is_user_logged_in()) : ?>
-              <a class="myaccount" href="/my-account"><i class="i-user"></i>My Account</a>
-              <a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><i class="i-logout"></i>logout</a>
+              <a class="myaccount" href="/my-account">My Account</a> <a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>">logout</a>
             <?php else : ?>
-              <a class="login" data-toggle="modal" data-target="#loginmodal" href="#" title="Login"><i class="i-user"></i>Login</a>
-              <a class="myaccount register" href="/my-account" title="My account"><i class="i-user"></i>Register</a>
+              <a class="login" data-toggle="modal" data-target="#loginmodal" href="#" title="Login">Login</a>
+              <a class="myaccount register" href="/my-account" title="My account">Register</a>
             <?php endif;?>
           </li>
       </ul>
-    </div><!--.container-->
-  </div><!--.topRow-->
+    </div> <!--.container-->
+    <!--</div>--><!--.topRow-->
 
 <div class="navbar-header">
     <button type="button" class="hamburger navbar-toggle collapsed is-closed" data-toggle="offcanvas" data-target=".navbar-collapse">
@@ -267,10 +269,9 @@
           endif;
           ?>
           <div id="desktop-search" class="desktop-search">
-            <?php echo do_shortcode('[wcas-search-form]');?>
+            <input type="search" class="search-input" name="s" value="" placeholder="Search for products...">
           </div>
           <div class="icon-menu-gk">
-
 
             <div id="hover" class="account"  href="#">
               <span class="text">Account</span>
@@ -297,6 +298,7 @@
 
 
                     <div id="hover" class="wishlist"  href="#">
+                      <a href="/wishlist/"></a>
                       <span class="text">Wishlist</span>
                     <div id="popup" class="wishlist-popup popover-content"><div class="arrow"></div>
                       <?php echo do_shortcode('[tm_woo_wishlist_table]'); ?>
