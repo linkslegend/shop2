@@ -556,7 +556,7 @@
 			var thousands_sep = algolia.woocommerce.thousands_separator;
 			var currency_symbol = algolia.woocommerce.currency_symbol;
 			var currency_position = algolia.woocommerce.currency_position;
-			
+
 			var n = !isFinite(+number) ? 0 : +number,
 				prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
 				sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,

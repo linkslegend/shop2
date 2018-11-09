@@ -3027,6 +3027,7 @@ footer .bgimage {
   border: 2px solid rgba(255, 255, 255, 1);
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  min-width: auto;
 }
 .newsletter-footer input#mc-embedded-subscribe-2:hover {
   background: rgba(255, 255, 255, 1);
@@ -5003,7 +5004,7 @@ form.lost_reset_password .form-row label {
   float: right;
   font-size: 1.17em;
   border-bottom: 1px solid #ccc;
-  padding: 0 15px 25px 15px;
+  padding: 0 0 25px 0;
   margin: 0 0 20px;
   line-height: 160%;
   width: 75%;
@@ -5690,6 +5691,151 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
     text-decoration: inherit;
 }
 
+
+/* @end */
+
+/* @group algolia */
+/* algolia */
+
+#ais-wrapper {
+    padding: 0;
+    width: 100%;
+    overflow: visible;
+    display: block;
+    float: unset;
+}
+.alg-container--xl #ais-facets,
+.alg-container--lg #ais-facets {
+	width: 25%;
+    float: left;
+    padding: 10px 20px 0 0;
+    min-height: 500px;
+}
+.ais-facets__wrapper{}
+.ais-facets {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 50px;
+}
+.ais-facets:empty{
+  content: "";
+  height: 100%;
+  display: block;
+  width: 100%;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;}
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.alg-container--xl #ais-main,
+.alg-container--lg #ais-main {
+    float: left;
+    width: 75%;
+    padding-top: 0;
+    padding-right: 0;
+}
+.alg-hit {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 3px;
+    border: none;
+}
+.alg-hit .alg-hit__details {
+    padding: 10px;
+}
+.alg-hit .alg-hit__details .alg-hit__title {
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0;
+}
+.alg-hit .alg-hit__details .alg-hit__title a {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #0f0f0f;
+    line-height: normal;
+    height: unset;
+    font-size: inherit;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.alg-hit .alg-hit__details .alg-hit__description {
+    color: #55606e;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 0;
+    line-height: 135%;
+    margin: 0 0 0.625em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.alg-hit .alg-hit__details .alg-hit__currentprice{
+	color: #0f0f0f;
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;}
+
+.alg-hit figure {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.alg-hit figure img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: 50% 50%;
+    transition: 800ms ease;
+}
+.ais-stats {
+    position: relative;
+    top: 0px;
+    font-size: 1em;
+}
+
+.ais-hierarchical-menu--list.ais-hierarchical-menu--list__lvl1{
+	display: block;
+}
+
+/* @end */
+
+/* @group Autocomplete dropdown */
+
+/* algolia */
+.aa-dropdown-menu {
+    color: #0f0f0f;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 450px;
+    border-radius: 5px;
+}
 
 /* @end */
 
@@ -6783,6 +6929,9 @@ h2.recently-Viewed-inner.getkunst-title {
 /* @end */
 
 /* @group Quick View */
+.yith-quick-view.yith-modal .yith-quick-view-overlay{
+	background: rgba( 0, 0, 0, 0.2);
+}
 
 .yith-wcqv-wrapper {
   width: 400px;
@@ -7761,6 +7910,7 @@ div.popover-content > a.poplink:before {
   margin-bottom: 0;
   float: left;
   width: 100%;
+  min-width: 100%;
 }
 .tm-woowishlist-item span.price {
     text-align: left;

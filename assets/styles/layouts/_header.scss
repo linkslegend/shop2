@@ -79,7 +79,7 @@ h1 {
 .navbar-nav {
     position: fixed;
     font-size: 1.25em;
-    top: 50px;
+    top: 23px;
     font-weight: 600;
     padding-left: 140px;
 }
@@ -90,7 +90,7 @@ h1 {
     position: absolute;
     -webkit-transition: .65s;
     transition: .65s;
-    top: 80px;
+    top: 53px;
     z-index: -1;
     bottom: 10px;}
 
@@ -292,7 +292,7 @@ h1 {
 
 #logo {
 	position: relative;
-    top: 35px;
+    top: 24px;
     float: left;
     margin: 0;
     left: 5px;
@@ -479,7 +479,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 #slider-header.product-page ul li.active a {
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
 
 #slider-header.product-page p {
@@ -1791,8 +1791,11 @@ li {
     width: 200px;
   }
   #desktop-search {
-    margin-left: 695px;
     float: left;
+    position: absolute;
+    display: block;
+    margin-left: 580px;
+    padding-top: 24px;
   }
   .dgwt-wcas-search-wrapp {
     min-width: 235px !important;

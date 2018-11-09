@@ -19,6 +19,27 @@ $sage_includes = [
   'lib/customizer.php' // Theme customizer
 ];
 
+// Inject instantsearch.js on every page regardless of backend config.
+add_filter( 'algolia_wc_should_display_instantsearch', '__return_true' );
+// This will make sure the search is displayed on load. Oterwise it waits for the query to change to be displayed.
+add_filter( 'algolia_config', function( array $config ) {
+  $config['woocommerce']['replace_page'] = true;
+
+  return $config;
+}, 6 );
+
+add_action( 'wp_enqueue_scripts', function () {
+        // Enqueue the instantsearch.js default styles.
+        wp_enqueue_style( 'algolia-instantsearch' );
+        // Ensure jQuery is loaded.
+        wp_enqueue_script( 'jquery' );
+        // Enqueue the instantsearch.js library.
+        wp_enqueue_script( 'algolia-instantsearch' );
+        // WordPress utility useful for using underscore templating.
+        wp_enqueue_script( 'wp-util' );
+        // Allow users to easily enqueue custom styles and scripts.
+        do_action( 'algolia_instantsearch_scripts' );
+} );
 
 
 /* turns off widget/plugin css from being registered and printed in the head of the header.php */
