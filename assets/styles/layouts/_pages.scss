@@ -5715,13 +5715,17 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
 .ais-facets {
     margin-bottom: 2rem;
     background: #fff;
-    padding: 15px;
+    padding: 10px;
+    float: left;
+    width: 100%;
     border-radius: 5px;
     min-height: 50px;
 }
+#algolia-hits:empty,
+#ais-main:empty,
 .ais-facets:empty{
   content: "";
-  height: 100%;
+  height: 100px;
   display: block;
   width: 100%;
   background: #f6f7f8;
@@ -5731,6 +5735,19 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
   animation-iteration-count: infinite;
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;}
+
+
+#ais-main:empty{
+	height: 300px;
+}
+
+.ais-hits--item:empty{
+	width: 20%;
+	float: left;
+	height: 350px;
+	padding: 10px;
+}
+
 @keyframes placeHolderShimmer {
   0% {
     background-position: -468px 0;
@@ -5828,11 +5845,62 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
     float: none;
     display: block;
 }
+#ais-wc-attributes{
+	display: block;
+	width: 100%;
+}
+
+.ais-current-refined-values--clear-all{
+	display: none;
+}
+
+.ais-current-value.art.prints,
+div.canvas,
+div.art.prints{
+	display: none;
+}
+
+.ais-refinement-list--item > span {
+    display: block;
+    width: 34px;
+    height: auto;
+    padding: 0;
+    border: 2px solid transparent;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+
+div.abstract{
+    display: block;
+    width: 100%;
+    float: left;}
+div.abstract:before{
+	content: "";
+	background: url(https://dmq7jw03o3lq8.cloudfront.net/wp-content/uploads/2017/04/Theme_Abstract.jpg);
+	width: 34px;
+    height: 34px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+div.abstract span {
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 5px 0px 5px 45px;
+}
 
 
 /*color*/
 .prdctfltr_ft_black span,
 span.black.white,
+span.black,
 span.white,
 span.colorful,
 span.cyan,
@@ -5913,6 +5981,9 @@ span.blue {
   background: #2f5ab1;
   text-indent: -999px;
 }
+
+
+/* Categories */
 
 
 

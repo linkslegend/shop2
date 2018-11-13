@@ -46,9 +46,7 @@ use Roots\Sage\Wrapper;
         <div class="taxonomy-cat-page">
         <div class="taxonomy-cat-content">
           <?php echo category_description(); ?>
-
           <div class="ais-outer-wrapper"></div>
-
         </div>
     </div>
   </div>

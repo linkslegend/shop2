@@ -57,6 +57,10 @@ function remove_assets() {
   wp_deregister_style( 'festi-cart-styles' );
   wp_deregister_style( 'festi-jquery-ui-spinner' );
 
+  wp_dequeue_style( 'algolia-woocommerce-instantsearch' );
+  wp_deregister_style( 'algolia-woocommerce-instantsearch' );
+
+
   wp_deregister_style( 'font-awesome' );
   wp_deregister_style( 'font-awesome' );
   wp_dequeue_script( 'font-awesome' );
