@@ -28,7 +28,7 @@ add_filter( 'algolia_config', function( array $config ) {
   return $config;
 }, 6 );
 
-add_action( 'wp_enqueue_scripts', function () {
+/*add_action( 'wp_enqueue_scripts', function () {
         // Enqueue the instantsearch.js default styles.
         wp_enqueue_style( 'algolia-instantsearch' );
         // Ensure jQuery is loaded.
@@ -39,7 +39,7 @@ add_action( 'wp_enqueue_scripts', function () {
         wp_enqueue_script( 'wp-util' );
         // Allow users to easily enqueue custom styles and scripts.
         do_action( 'algolia_instantsearch_scripts' );
-} );
+} );*/
 
 
 /* turns off widget/plugin css from being registered and printed in the head of the header.php */
