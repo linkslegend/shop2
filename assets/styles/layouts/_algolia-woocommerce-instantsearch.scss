@@ -335,7 +335,7 @@
   line-height: 25px; }
   @media (max-width: 768px) {
     .ais-refinement-list--item:not(:last-child) {
-      border-bottom: 1px solid #ededed; } }
+      border-bottom: 0px solid #ededed; } }
   .ais-refinement-list--item input[type="checkbox"] {
     cursor: pointer; }
   .ais-refinement-list--item.ais-refinement-list--item__active .ais-refinement-list--count {
