@@ -34,15 +34,6 @@
               unpinned: "slide--up"
             }
           }).init();
-          new Headroom(document.querySelector(".festi-cart-products"), {
-            tolerance: 0,
-            offset: 150,
-            classes: {
-              initial: "slide",
-              pinned: "slide--reset",
-              unpinned: "slide--up"
-            }
-          }).init();
 
         }());
 

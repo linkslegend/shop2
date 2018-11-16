@@ -5931,6 +5931,43 @@ body.cookie-modal-open #ct-ultimate-gdpr-cookie-open{
     border-radius: 3px;
     border: none;
 }
+.alg-hit .alg-stars {
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    color: #ffc168;
+    bottom: 50px;
+    right: 5px;
+}
+.alg-hit .alg-hit__details .alg-hit__priceholder {
+    margin: 15px 0 0;
+    padding: 0;
+}
+.alg-hit .alg-hit__overlay, .alg-hit .alg-hit__ribbon {
+    text-align: center;
+    top: 0;
+    position: absolute;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+.alg-hit .alg-hit__ribbon {
+    right: 0;
+    border-radius: 100%;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 10px 0px;
+    vertical-align: middle;
+    display: block;
+    text-align: center;
+    width: 35px;
+    margin: 5px;
+    height: 35px;
+    -webkit-transform-origin: 50% 50%;
+    background-color: #fff;
+    will-change: transform;
+    color: black;
+}
+
 .alg-hit .alg-hit__details {
     padding: 10px 5px;
 }
@@ -6310,6 +6347,27 @@ div.vector:before{
 }
 
 /* @end */
+
+/* @group wishlist https://wordpress.org/plugins/ti-woocommerce-wishlist/ */
+
+.tinv-wishlist.tinvwl-after-add-to-cart .tinvwl_add_to_wishlist_button {
+    margin-top: 0;
+    width: 100%;
+    color: #777;
+    padding: 5px 15px;
+    background: #f4f4f4;
+    text-align: center;
+    border-radius: 3px;
+}
+.tinv-wraper.tinv-wishlist {
+    font-size: 100%;
+    border-radius: 4px;
+}
+
+/* @end */
+
+
+
 
 /* @group Autocomplete dropdown */
 
@@ -8698,6 +8756,7 @@ button.button.tm-woowishlist-button:focus {
   border: 1px solid rgba(208, 208, 208, 1) !important;
   background: #f4f4f4 !important;
   width: 49% !important;
+  min-width: auto;
   display: block !important;
   text-align: center !important;
   height: 40px !important;
@@ -8963,6 +9022,7 @@ button.button.tm-woowishlist-button.added.in_wishlist {
 .woocommerce button.button.compare-size {
   background: #f4f4f4;
   width: 48%;
+  min-width: auto;
   font-size: 1em;
   float: right;
   color: rgba(15, 15, 15, 1);
@@ -9383,6 +9443,10 @@ video {
 /* @end */
 
 /* @group WooCart Pro */
+
+body .festi-cart-icon {
+	display: none;
+}
 
 div.festi-cart-products-content table, div.festi-cart-widget-products-content table, div.festi-cart-pop-up-products-content table, div.festi-cart-products-content table.festi-cart-list td.festi-cart-empty, div.festi-cart-widget-products-content table.festi-cart-list td.festi-cart-empty, div.festi-cart-pop-up-products-content table.festi-cart-list td.festi-cart-empty{
 	width: 100%;

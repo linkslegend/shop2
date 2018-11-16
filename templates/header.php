@@ -301,7 +301,7 @@
                       <a href="/wishlist/"></a>
                       <span class="text">Wishlist</span>
                     <div id="popup" class="wishlist-popup popover-content"><div class="arrow"></div>
-                      <?php echo do_shortcode('[tm_woo_wishlist_table]'); ?>
+                      <?php echo do_shortcode('[ti_wishlist_products_counter]'); ?>
                       <a class="button" href="/wishlist">Go to wishlist</a>
                     </div>
                     </div>

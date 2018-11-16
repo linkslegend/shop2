@@ -1097,7 +1097,7 @@ body div.festi-cart-products {
     visibility: hidden;
     	right: 0;
     	left: 0;
-    	top: 101px;
+    	top: 77px;
     	width: auto;
         max-width: 1400px;
         margin: 0 auto;
@@ -1105,17 +1105,11 @@ body div.festi-cart-products {
     transition: all .3s;
     -webkit-transition: all .3s;}
 
-body div.festi-cart-products.headroom--not-top{
-    top: 74px!important;}
-
-body div.festi-cart-products.headroom--not-top.festi-show{
-	top: 80px!important;}
-
 body div.festi-cart-products.festi-show{
   display: block;
   visibility: visible!important;
   opacity: 1!important;	
-  top: 108px!important;
+  top: 83px!important;
 	transition: all .3s;
     -webkit-transition: all .3s;}
 
