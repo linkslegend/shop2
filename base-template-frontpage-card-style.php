@@ -198,7 +198,6 @@ use Roots\Sage\Wrapper;
               <li class="slider-products">
                 <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
                   <div class="slider-products-inner">
-                    <?php tm_woowishlist_add_button_single( $favorites->post->ID ); ?>
                     <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $favorites->post->ID ).'" type="icon" label=""]'); ?></div>
                     <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
                       <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
@@ -241,8 +240,13 @@ use Roots\Sage\Wrapper;
                 <li class="slider-products">
                   <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                     <div class="slider-products-inner">
-                      <?php tm_woowishlist_add_button_single( $featured_query->post->ID ); ?>
-                      <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?></div>
+
+                      <div class="hidden-xs	hidden-sm alg-hit__overlay">
+                        <div class="alg-hit__actions">
+                          <a href="#" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $featured_query->post->ID ); ?>"></a>
+                        </div>
+                      </div>
+
                       <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                         <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
                         src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"

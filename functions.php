@@ -26,7 +26,7 @@ add_filter( 'algolia_config', function( array $config ) {
   $config['woocommerce']['replace_page'] = true;
 
   return $config;
-}, 6 );
+}, 20 );
 
 /*add_action( 'wp_enqueue_scripts', function () {
         // Enqueue the instantsearch.js default styles.
@@ -41,6 +41,14 @@ add_filter( 'algolia_config', function( array $config ) {
         do_action( 'algolia_instantsearch_scripts' );
 } );*/
 
+add_action( 'wp_ajax_nopriv_handle_shortcode', 'handle_shortcode' );
+add_action( 'wp_ajax_handle_shortcode', 'handle_shortcode' );
+
+function handle_shortcode( ) {
+    $shortcode = $_REQUEST['ti_wishlists_addtowishlist product_id=""'];
+    echo do_shortcode( $shortcode );
+    exit;
+}
 
 /* turns off widget/plugin css from being registered and printed in the head of the header.php */
 function remove_assets() {
@@ -60,8 +68,14 @@ function remove_assets() {
   wp_dequeue_style( 'algolia-woocommerce-instantsearch' );
   wp_deregister_style( 'algolia-woocommerce-instantsearch' );
 
+  wp_dequeue_style( 'yith-wcwl-font-awesome' );
+  wp_deregister_style( 'yith-wcwl-font-awesome' );
 
-  wp_deregister_style( 'font-awesome' );
+  /*wp_dequeue_style( 'tinvwl' );
+  wp_deregister_style( 'tinvwl' );*/
+
+
+  wp_dequeue_style( 'font-awesome' );
   wp_deregister_style( 'font-awesome' );
   wp_dequeue_script( 'font-awesome' );
 
@@ -1419,32 +1433,6 @@ function woo_checkout_texts( $changed_text, $text, $domain ) {
  return $changed_text;
 }
 add_filter( 'gettext', 'woo_checkout_texts', 20, 3 );
-
-/**
- * my_terms_clauses
- *
- * filter the terms clauses
- *
- * @param $clauses array
- * @param $taxonomy string
- * @param $args array
- * @return array
- * @link http://wordpress.stackexchange.com/a/183200/45728
- **/
-function my_terms_clauses( $clauses, $taxonomy, $args ) {
-  global $wpdb;
-  if ( $args['post_types'] ) {
-    $post_types = $args['post_types'];
-    // allow for arrays
-    if ( is_array($args['post_types']) ) {
-      $post_types = implode("','", $args['post_types']);
-    }
-    $clauses['join'] .= " INNER JOIN $wpdb->term_relationships AS r ON r.term_taxonomy_id = tt.term_taxonomy_id INNER JOIN $wpdb->posts AS p ON p.ID = r.object_id";
-    $clauses['where'] .= " AND p.post_type IN ('". esc_sql( $post_types ). "') GROUP BY t.term_id";
-  }
-  return $clauses;
-}
-add_filter('terms_clauses', 'my_terms_clauses', 99999, 3);
 
 
 

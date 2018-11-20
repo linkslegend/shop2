@@ -1034,7 +1034,7 @@ body div.festi-cart-products-content:after {
   border: 13px solid !important;
   border-color: transparent transparent rgba(255, 255, 255, 1) !important;
   top: -26px !important;
-  margin-left: 69px!important;
+  margin-left: 50px!important;
 }
 body.logged-in #popup.wishlist-popup:after{
 	margin-left: -90px!important;
@@ -1322,116 +1322,7 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
 
 /* @group Wishlist */
 
-.tm-woocomerce-wishlist-widget-wrapper.loading,
-.tm-woowishlist.loading {
-  position: relative;
-}
-
-.tm-woocomerce-wishlist-widget-wrapper.loading .tm-wc-compare-wishlist-loader,
-.tm-woowishlist.loading .tm-wc-compare-wishlist-loader {
-  display: block;
-}
-
-.tm-woocomerce-wishlist-widget-wrapper .tm-wc-compare-wishlist-loader,
-.tm-woowishlist .tm-wc-compare-wishlist-loader {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.5);
-  top: 0;
-  left: 0;
-}
-
-.tm-woocomerce-wishlist-widget-wrapper .tm-wc-compare-wishlist-loader > *,
-.tm-woowishlist .tm-wc-compare-wishlist-loader > * {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.tm-woowishlist-remove {
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-  color: #d42f2f;
-  text-align: center;
-  line-height: 17px;
-  font-size: 17px;
-}
-
-.tm-woowishlist-remove:hover {
-  color: #a42424;
-}
-
-
-
-.tm-woowishlist-item {
-  position: relative;
-  margin: 0 0 20px;
-}
-
-.tm-woowishlist-item:after {
-  content: '';
-  clear: both;
-  display: block;
-}
-
-.tm-woowishlist-item .tm-woocomerce-list__product-title {
-  margin: 0 0 10px;
-}
-
-.tm-woowishlist-item .tm-woocomerce-list__product-image {
-  float: left;
-  margin: 0 30px 10px 0;
-}
-
-.tm-woowishlist-item .price {
-  display: block;
-  margin: 0 0 10px;
-}
-
-.tm-woowishlist-item .stock {
-  color: #77a464;
-}
-
-.tm-woowishlist-item .stock.out-of-stock {
-  color: red;
-}
-
-.tm-woowishlist-widget-product {
-  position: relative;
-  margin: 0 0 20px;
-}
-
 /* @end */
-
-
-
-body #popup .tm-woowishlist-empty {
-  font-size: 1.1em;
-  text-align: center;
-  padding: 0;
-  font-weight: 400;
-  float: none;
-  margin: 0px 1px 15px;
-  display: block;
-}
-body #popup .tm-woowishlist-empty:before {
-  width: 50px;
-  height: 60px;
-  background-position: 0 0;
-  content: "";
-  background-repeat: no-repeat;
-  display: block;
-  margin: 0 auto;
-  background-image: url(https://d1zczzapudl1mr.cloudfront.net/empty-wishlist.png);
-  position: relative;
-  float: none;
-  background-size: 50px;
-}
 
 /* @group mini cart new */
 body
@@ -1788,7 +1679,7 @@ li {
     float: left;
     position: absolute;
     display: block;
-    margin-left: 580px;
+    margin-left: 680px;
     padding-top: 24px;
   }
   .dgwt-wcas-search-wrapp {
