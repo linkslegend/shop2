@@ -20,7 +20,6 @@ use Roots\Sage\Wrapper;
     ?>
     <div id="main" class="animation-enabled">
 
-<!-- style="background-image: url(<?php echo $image_gk ?>);" -->
 <section id="slider-header" class="pageimage-header pageimage product-page" >
       <div class="pageimage-overlay"></div>
       <div class="pageimage-content container-fluid" itemprop="name">
@@ -45,7 +44,6 @@ use Roots\Sage\Wrapper;
         <div class="main taxonomy-cat" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
         <div class="taxonomy-cat-page">
         <div class="taxonomy-cat-content">
-          <?php echo category_description(); ?>
           <div class="ais-outer-wrapper"></div>
         </div>
     </div>
