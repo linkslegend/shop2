@@ -1312,6 +1312,7 @@ div.festi-cart-pop-up-products-content table.festi-cart-list tr.festi-cart-empty
 
 /* @group mobile search */
 
+.archive #mobile-search,
 #mobile-search {
   display: none;
 }
@@ -1660,6 +1661,23 @@ li {
   border-radius: -1px;
   -moz-border-radius: 3px;
 }
+
+#desktop-search{
+	display: none;
+}
+input[type=search] {
+
+    -webkit-appearance: none;
+    width: 100%;
+    outline-color: #e2e2e2;
+    outline-offset: -1px;
+    border: 1px solid hsla(0,0%,47%,.5);
+    padding: 10px 15px 10px 40px;
+    border-radius: 3px;}
+.mobile-search{
+	display: none;
+}
+
 /* @end */
 
 @media (min-width: 1200px) {
@@ -1691,7 +1709,7 @@ li {
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
 
 
     .navbar-header {
@@ -2305,8 +2323,8 @@ li.megamenu.dropdown:hover > ul.dropdown-menu {
     position: absolute;
     border: none;
     z-index: 999 !important;
-    margin-top: 5px;
-    margin-right: 0px;
+    margin-top: 10px;
+    margin-right: 5px;
     right: 0px;
     box-shadow: none;
   }
@@ -2443,6 +2461,7 @@ li.megamenu.dropdown:hover > ul.dropdown-menu {
     width: 100%;
     border: 0 solid #000;
     padding: 15px;
+    height: 70px;
     margin-bottom: 0;
   }
   .mobile-top-menu {
@@ -2497,7 +2516,7 @@ li.megamenu.dropdown:hover > ul.dropdown-menu {
     display: block;
   }
   #menu-mobile #logo{
-	margin-top: 0px;}
+	margin-top: 5px;}
 	
 .mobile-top-menu #logo {
     position: absolute;
@@ -2621,9 +2640,6 @@ body.my-account .icon-menu-gk .account:before,
     margin-right: 10px;
     margin-left: 10px;
     width: 45px;
-  }
-  .home .col-xs-12 {
-    padding: 0;
   }
   body a#festi-cart.festi-cart.festi-cart-customize:before {
     color: #4a4a4a;
@@ -2830,69 +2846,30 @@ body.my-account .icon-menu-gk .account:before,
     position: relative;
     margin: 0;
   }
-  .mobile-search .autocomplete-suggestions {
-    padding: 10px !important;
-    font-size: 1em !important;
-    width: 100% !important;
-    background-color: rgba(255, 255, 255, 1) !important;
-    right: 0 !important;
-    border: 1px solid rgba(0, 0, 0, 0.2) !important;
-    border-radius: 3px !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: Poppins, sans-serif !important;
-  }
-  .mobile-search .yith-ajaxsearchform-container input[type="submit"] {
-    position: absolute;
-    margin-left: 0;
-    font-weight: 100;
-    text-indent: 0;
-    padding: 0;
-    right: 1px;
-    color: transparent;
-    top: 0px;
-    height: 40px;
-    width: 40px;
-    border: none;
-    background: transparent;
-  }
-  .mobile-search .yith-ajaxsearchform-container {
-    width: 100%;
-  }
-  .mobile-search #yith-ajaxsearchform .search-navigation {
-    display: block;
-    width: 100%;
-  }
-  .mobile-search .yith-ajaxsearchform-container input[type="search"] {
-    height: 40px;
-    width: 100%;
-    background: transparent;
-    margin: 0;
-    display: inline-block;
-  }
-  .mobile-search .dgwt-wcas-search-wrapp {
-    position: relative;
-  }
   .mobile-search {
     display: block;
-    position: relative;
     float: left;
-    margin: 50px 0 0 0;
-    padding: 0px;
+    padding: 0px 15px 10px 15px;
     width: 100%;
   }
-  .mobile-search i {
-    font-size: 1.6em;
-    color: rgba(15, 15, 15, 1);
-    right: 0;
-    background: transparent;
+.mobile-search input[type=search]{
+	font-size: 1.1em;
+    border: 1px solid rgba(120, 120, 120, 0.5);
+    padding: 10px 15px 10px 50px;
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+}
+.mobile-search i{
     position: absolute;
-    width: 40px;
     margin-right: 3px;
-    padding: 8px 12px;
-    float: none;
-    margin-top: 2px;
-    height: 35px;
-  }
+    margin: 9px 15px;
+    opacity: 0.5;
+    height: 20px;
+    width: 20px;}  
+body.archive .mobile-search{
+	display: none;
+}
   #slider-header-front .btn {
     padding: 10px 15px;
     letter-spacing: 0.09em;
@@ -2924,8 +2901,6 @@ body.my-account .icon-menu-gk .account:before,
 
 
 }
-
-@media (min-width: 768px){}
 
 @media (max-width: 480px) {
   #menu-mobile {
@@ -3277,27 +3252,6 @@ body.my-account .icon-menu-gk .account:before,
   }
   .mobile-search .dgwt-wcas-search-wrapp {
     position: relative;
-  }
-  .mobile-search {
-    display: block;
-    position: relative;
-    float: left;
-    margin: 50px 0 0 0;
-    padding: 0px;
-    width: 100%;
-  }
-  .mobile-search i {
-    font-size: 1.6em;
-    color: rgba(15, 15, 15, 1);
-    right: 0;
-    background: transparent;
-    position: absolute;
-    width: 40px;
-    margin-right: 3px;
-    padding: 8px 12px;
-    float: none;
-    margin-top: 2px;
-    height: 35px;
   }
   .icon-menu-gk .wishlist:before{
 	height: 30px;

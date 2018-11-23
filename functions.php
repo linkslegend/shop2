@@ -28,6 +28,19 @@ add_filter( 'algolia_config', function( array $config ) {
   return $config;
 }, 20 );
 
+function aa_algolia_enqueue_scripts() {
+	wp_deregister_script( 'algolia-instantsearch' );
+	wp_register_script( 'algolia-instantsearch', 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4', array( 'jquery', 'underscore', 'wp-util' ), '', true );
+}
+add_action( 'wp_enqueue_scripts', 'aa_algolia_enqueue_scripts' );
+
+function aa_algolia_enqueue_styles() {
+	wp_deregister_style( 'algolia-instantsearch' );
+	wp_register_style( 'algolia-instantsearch', 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css' );
+}
+add_action( 'wp_enqueue_styles', 'aa_algolia_enqueue_styles' );
+
+
 /*add_action( 'wp_enqueue_scripts', function () {
         // Enqueue the instantsearch.js default styles.
         wp_enqueue_style( 'algolia-instantsearch' );

@@ -37,9 +37,6 @@
               </div>-->
               <?php endif;?>
       </div>
-          <div class="mobile-search">
-            <input type="search" class="search-input" name="s" value="" placeholder="Search for products...">
-          </div>
           <?php if (is_user_logged_in()) : ?>
           <h2>Welcome <?php $current_user = wp_get_current_user(); echo $current_user->user_firstname; echo '&nbsp;' . $current_user->user_lastname; ?></h2>
           <?php else : ?>
@@ -244,7 +241,7 @@
       <span class="hamb-bottom"></span>
       <span class="menu-text">Menu</span>
     </button>
-    <div class="icon-menu-gk left hidden-md hidden-lg">
+    <div class="icon-menu-gk left hidden-lg">
           <?php if (is_user_logged_in()) : ?>
             <a class="account" href="/my-account"><span>Account</span></a>
           <?php else : ?>
@@ -314,7 +311,7 @@
         </nav>
           </nav>
 
-          <div class="icon-menu-gk hidden-md hidden-lg">
+          <div class="icon-menu-gk hidden-lg">
                 <a class="wishlist" href="/wishlist"><span>Wishlist</span></a>
                 <a class="Cart-right" href="/cart"><span>Cart</span></a>
           </div>
@@ -324,3 +321,8 @@
 </div><!--.container-->
 
 </header>
+
+<div class="mobile-search">
+  <i class="i-search"></i>
+  <input type="search" class="search-input" name="s" value="" placeholder="Search for products...">
+</div>

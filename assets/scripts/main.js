@@ -322,7 +322,7 @@ $(document).ready(function() {
                   var $carousel = $(this);
                   /* Initializes a slick carousel only on mobile screens */
                   // slick on mobile
-                  if ($(window).width() < 1005) {
+                  if ($(window).width() < 1205) {
                       if ($carousel.hasClass('slick-initialized')) {
                           $carousel.slick('unslick');
                       }
@@ -342,7 +342,7 @@ $(document).ready(function() {
                   var $carousel = $(this);
                   /* Initializes a slick carousel only on mobile screens */
                   // slick on mobile
-                  if ($(window).width() < 1005) {
+                  if ($(window).width() < 1205) {
                       if ($carousel.hasClass('slick-initialized')) {
                           $carousel.slick('unslick');
                       }
@@ -362,7 +362,7 @@ $(document).ready(function() {
                   var $carousel = $(this);
                   /* Initializes a slick carousel only on mobile screens */
                   // slick on mobile
-                  if ($(window).width() < 1005) {
+                  if ($(window).width() < 1205) {
                       if ($carousel.hasClass('slick-initialized')) {
                           $carousel.slick('unslick');
                       }
@@ -383,7 +383,7 @@ $(document).ready(function() {
                   var $carousel = $(this);
                   /* Initializes a slick carousel only on mobile screens */
                   // slick on mobile
-                  if ($(window).width() < 1005) {
+                  if ($(window).width() < 1205) {
                       if ($carousel.hasClass('slick-initialized')) {
                           $carousel.slick('unslick');
                       }
@@ -524,7 +524,7 @@ $(document).ready(function() {
                       var $carousel = $(this);
                       /* Initializes a slick carousel only on mobile screens */
                       // slick on mobile
-                      if ($(window).width() < 1005) {
+                      if ($(window).width() < 1205) {
                           if ($carousel.hasClass('slick-initialized')) {
                               $carousel.slick('unslick');
                           }
@@ -533,7 +533,7 @@ $(document).ready(function() {
                           if (!$carousel.hasClass('slick-initialized')) {
                               $carousel.slick({
                                   slidesToShow: 5,
-                                  slidesToScroll: 1,
+                                  slidesToScroll: 2,
                                   autoplay: true,
                                   autoplaySpeed: 4000,
                                   infinite: true,
@@ -589,7 +589,7 @@ $(document).ready(function() {
                       var $carousel = $(this);
                       /* Initializes a slick carousel only on mobile screens */
                       // slick on mobile
-                      if ($(window).width() < 1005) {
+                      if ($(window).width() < 1205) {
                           if ($carousel.hasClass('slick-initialized')) {
                               $carousel.slick('unslick');
                           }
@@ -598,7 +598,7 @@ $(document).ready(function() {
                           if (!$carousel.hasClass('slick-initialized')) {
                               $carousel.slick({
                                   slidesToShow: 5,
-                                  slidesToScroll: 1,
+                                  slidesToScroll: 2,
                                   autoplay: true,
                                   autoplaySpeed: 4000,
                                   infinite: true,

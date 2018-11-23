@@ -32,8 +32,7 @@ use Roots\Sage\Wrapper;
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>-large.jpg 800w,
               <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg 1200w"
               data-src="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1'].''); ?>.jpg"
-              src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
-      >
+              src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif">
         <div class="tile-content">
           <a href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
             <span class="tile-title" style="color: <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-text-color'].''); ?>;"> <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image1-text'].''); ?></span>
@@ -196,22 +195,29 @@ use Roots\Sage\Wrapper;
               $favorites = new WP_Query( $args );
               while ( $favorites->have_posts() ) : $favorites->the_post(); global $product; ?>
               <li class="slider-products">
-                <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
                   <div class="slider-products-inner">
-                    <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $favorites->post->ID ).'" type="icon" label=""]'); ?></div>
+                    <figure>
+                      <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
+                        <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                        src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
+                        data-src="<?php if (has_post_thumbnail( $favorites->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
+                      </a>
+                    <div class="hidden-xs	hidden-sm alg-hit__overlay">
+                      <div class="alg-hit__actions">
+                        <a href="#" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $favorites->post->ID ); ?>"></a>
+                      </div>
+                    </div>
+                    </figure>
+                    <div class="alg-hit__details">
                     <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
-                      <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                      src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
-                      data-src="<?php if (has_post_thumbnail( $favorites->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
-                      >
-                    </a>
-                        <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
                           <h2 class="product__title"><?php the_title( $favorites->post->ID ); ?></h2>
-                        </a>
-                        <span class="price"><?php echo $product->get_price_html(); ?></span>
-                        <!-- <?php woocommerce_template_loop_add_to_cart( $favorites->post, $product ); ?> -->
-              </div></a></li>
-              <?php endwhile; ?>
+                    </a>
+                    <span class="price"><?php echo $product->get_price_html(); ?></span>
+                        <?php echo do_shortcode('[ti_wishlists_addtowishlist product_id="'.get_the_ID().'"]'); ?>
+                    </div>
+                  </div>
+              </li>
+            <?php endwhile; ?>
               <?php wp_reset_query(); ?>
         </section>
 
@@ -238,27 +244,28 @@ use Roots\Sage\Wrapper;
                 $featured_query = new WP_Query( $args );
                 while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
                 <li class="slider-products">
-                  <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                     <div class="slider-products-inner">
-
+                      <figure>
+                        <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
+                          <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
+                          src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
+                          data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
+                        </a>
                       <div class="hidden-xs	hidden-sm alg-hit__overlay">
                         <div class="alg-hit__actions">
                           <a href="#" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $featured_query->post->ID ); ?>"></a>
                         </div>
                       </div>
-
+                      </figure>
+                      <div class="alg-hit__details">
                       <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
-                        <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                        src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
-                        data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"
-                        >
+                        <h2 class="product__title"><?php the_title( $featured_query->post->ID ); ?></h2>
                       </a>
-                          <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
-                            <h2 class="product__title"><?php the_title( $featured_query->post->ID ); ?></h2>
-                          </a>
-                          <span class="price"><?php echo $product->get_price_html(); ?></span>
-                          <!-- <?php woocommerce_template_loop_add_to_cart( $featured_query->post, $product ); ?> -->
-                </div></a></li>
+                      <span class="price"><?php echo $product->get_price_html(); ?></span>
+                          <?php echo do_shortcode('[ti_wishlists_addtowishlist product_id="'.get_the_ID().'"]'); ?>
+                      </div>
+                    </div>
+                </li>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
           </section>
