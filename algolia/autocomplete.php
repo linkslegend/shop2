@@ -6,6 +6,7 @@
 </script>
 
 <script type="text/html" id="tmpl-autocomplete-post-suggestion">
+
   <a class="suggestion-link" href="{{ data.permalink }}" title="{{ data.post_title }}">
 	<# if ( data.images.thumbnail ) { #>
 	  <img class="suggestion-post-thumbnail" src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}">
@@ -16,7 +17,11 @@
 			<span class="suggestion-post-content">{{{ data._snippetResult['content'].value }}}</span>
 			<# } #>
 		</div>
+
+
   </a>
+
+
 </script>
 
 <script type="text/html" id="tmpl-autocomplete-term-suggestion">
@@ -94,7 +99,7 @@
 		source: algoliaAutocomplete.sources.hits(client.initIndex(config['index_name']), {
 		  hitsPerPage: config['max_suggestions'],
 		  attributesToSnippet: [
-			'content:10'
+			'content:8'
 		  ],
 		  highlightPreTag: '__ais-highlight__',
 		  highlightPostTag: '__/ais-highlight__'
@@ -142,7 +147,7 @@
 	  var $searchInput = jQuery(this);
 
 	  var config = {
-		debug: algolia.debug,
+		debug: true, //algolia.debug
 		hint: false,
 		openOnFocus: true,
 		appendTo: 'body',
