@@ -26,7 +26,7 @@ add_filter( 'algolia_config', function( array $config ) {
   $config['woocommerce']['replace_page'] = true;
 
   return $config;
-}, 20 );
+}, 6 );
 
 function aa_algolia_enqueue_scripts() {
 	wp_deregister_script( 'algolia-instantsearch' );
