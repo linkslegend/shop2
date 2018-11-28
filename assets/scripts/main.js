@@ -165,7 +165,7 @@ $(document).ready(function() {
 
         jQuery(window).on('load', function() {
           $(".variations label:contains('Size (Inch)')").html("Size");
-          $(".preload").delay(120).fadeOut('100');
+          $(".preload").delay(120).fadeOut('25');
         });
         /*    $(function () {
                 $(".identifyingClass").click(function () {
