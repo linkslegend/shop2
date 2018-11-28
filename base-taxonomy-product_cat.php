@@ -45,6 +45,7 @@ use Roots\Sage\Wrapper;
         <div class="taxonomy-cat-page">
         <div class="taxonomy-cat-content">
           <div class="ais-outer-wrapper"></div>
+          <div class="preload"></div>
         </div>
     </div>
   </div>

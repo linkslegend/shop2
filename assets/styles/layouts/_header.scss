@@ -1693,6 +1693,9 @@ input[type=search] {
   .yith-ajaxsearchform-container input[type="search"] {
     width: 200px;
   }
+body.archive.woocommerce #desktop-search{
+	display: none;
+}
   #desktop-search {
     float: left;
     position: absolute;
