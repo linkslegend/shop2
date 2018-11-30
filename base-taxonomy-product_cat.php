@@ -7,6 +7,50 @@ use Roots\Sage\Wrapper;
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
+<style>
+.page-category-description:empty,
+#algolia-search-box:empty,
+#alg-current-refinements:empty,
+#ais-wc-attributes:empty,
+#algolia-hits:empty,
+#ais-main:empty,
+.ais-facets:empty{
+  content: "";
+  min-height: 50px;
+  height: 120px;
+    border-radius: 5px;
+  display: block;
+  width: 100%;
+  background-color: #f4f4f4;
+  background-image: linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% );
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;}
+  #algolia-hits:empty{
+  	height: 500px;
+  	overflow: visible;
+  }
+  #ais-wrapper,
+  #ais-wrapper #algolia-hits {
+      overflow: visible;}
+
+  .ais-hits--item:empty{
+  	width: 20%;
+  	float: left;
+  	height: 350px;
+  	padding: 10px;
+  }
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+</style>
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
     <!--[if IE]>
@@ -20,7 +64,7 @@ use Roots\Sage\Wrapper;
     ?>
     <div id="main" class="animation-enabled">
 
-<section id="slider-header" class="pageimage-header pageimage product-page" >
+<section id="slider-header" class="pageimage-header pageimage product-page">
       <div class="pageimage-overlay"></div>
       <div class="pageimage-content container-fluid" itemprop="name">
         <section class="category-banner" style="display:block">
@@ -34,22 +78,16 @@ use Roots\Sage\Wrapper;
       </div>
 </section>
 
-
 <!-- main content -->
  <div class="wrap container-fluid" role="document">
  <div class="content">
 
    <main class="main">
 
-        <div class="main taxonomy-cat" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
+  <div class="main taxonomy-cat" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
         <div class="taxonomy-cat-page">
         <div class="taxonomy-cat-content">
           <div class="ais-outer-wrapper"></div>
-          <div class="preload">
-            <div class="aside-preload"></div>
-            <div class="main-top-preload"></div>
-            <div class="main-preload"></div>
-          </div>
         </div>
     </div>
   </div>

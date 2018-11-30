@@ -28,6 +28,12 @@ add_filter( 'algolia_config', function( array $config ) {
   return $config;
 }, 6 );
 
+/*
+function lazyload_content(){
+  wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery'), false, true );
+  wp_enqueue_script('ajax-login-script');
+}*/
+
 function aa_algolia_enqueue_scripts() {
 	wp_deregister_script( 'algolia-instantsearch' );
 	wp_register_script( 'algolia-instantsearch', 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4', array( 'jquery', 'underscore', 'wp-util' ), '', true );
