@@ -9,7 +9,6 @@
 
   <?php wp_head(); ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-  <script src="http://localhost:8888/getkunst/wp-content/themes/shop/placeholder.js"></script>
 
   <link rel="apple-touch-icon" sizes="57x57" href="/wp-content/uploads/fav/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/wp-content/uploads/fav/apple-icon-60x60.png">

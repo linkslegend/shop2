@@ -23,51 +23,65 @@ use Roots\Sage\Wrapper;
             <section id="slider-header" class="pageimage-header pageimage product-page" >
             </section>
       <!-- main content -->
-             <div class="wrap container-fluid" role="document">
-                   <div class="content">
-                                   <main class="main">
-                                              <div class="single" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
-                                                    <div class="taxonomy-cat-page">
-                                                          <div class="taxonomy-cat-content">
-                                                            <?php woocommerce_content(); ?>
+<div class="wrap container-fluid" role="document">
+  <div class="content">
+    <main class="main">
+      <div class="single" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
+        <div class="taxonomy-cat-page">
+          <div class="taxonomy-cat-content">
 
-                                                            <div class="singlefeatured">
-                                                                <h2 class="getkunst-title">Our favorites</h2>
-                                                                <ul class="front-products-slider2">
+            <?php woocommerce_content(); ?>
 
-                                                                    <section class="multiple-items single-featured3">
-                                                                        <?php
-                                                                            $args = array('post_type' => 'product','stock' => 1,'posts_per_page' => 6,'meta_value' => 'yes','tax_query' => array(
-                                                                              array('taxonomy' => 'product_cat','terms' => 89,'operator' => 'IN')),);
-                                                                            $featured_query = new WP_Query( $args ); while ( $featured_query->have_posts() ) : $featured_query->the_post(); global $product; ?>
-                                                                            <li class="slider-products">
-                                                                              <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
-                                                                                <div class="slider-products-inner">
-                                                                                  <?php tm_woowishlist_add_button_single( $featured_query->post->ID ); ?>
-                                                                                  <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID( $loop->post->ID ).'" type="icon" label=""]'); ?></div>
-                                                                                  <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
-                                                                                    <img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>">
-                                                                                  </a>
-                                                                                      <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
-                                                                                        <h2 class="product__title"><?php the_title(); ?></h2>
-                                                                                      </a>
-                                                                                      <span class="price"><?php echo $product->get_price_html(); ?></span>
-                                                                                      <!-- <?php woocommerce_template_loop_add_to_cart( $featured_query->post, $product ); ?> -->
-                                                                            </div></a></li>
-                                                                            <?php endwhile; ?>
-                                                                            <?php wp_reset_query(); ?>
-                                                                      </section>
+              <div class="singlefeatured">
+              <h2 class="getkunst-title">Our favorites</h2>
+                <ul class="front-products-slider2">
+                    <section class="multiple-items single-featured3">
+                      <?php
+                        $args = array(
+                          'post_type' => 'product',
+                          'stock'     => 1,
+                          'posts_per_page' => 10,
+                          'meta_value' => 'yes',
+                          'tax_query' => array(
+                              array(
+                                'taxonomy' => 'product_cat',
+                                'terms' => 89,
+                                'operator' => 'IN')
+                                              ),
+                                      );
+                        $featured_query = new WP_Query( $args );
+                        while ( $featured_query->have_posts() ) : $featured_query->the_post();
+                        global $product;
+                        ?>
+                      <li class="slider-products">
+                        <a id="id-<?php get_the_ID(); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
+                          <div class="slider-products-inner">
+                          <?php echo do_shortcode('[ti_wishlists_addtowishlist product_id="'.get_the_ID().'"]'); ?>
+                          <div class="hidden-xs	hidden-sm"><?php echo do_shortcode('[yith_quick_view product_id="'.get_the_ID().'" type="icon" label=""]'); ?></div>
+                            <a id="id-<?php get_the_ID(); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
+                              <figure><img width="300" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image lozad" data-src="<?php if (has_post_thumbnail( $featured_query->post->ID )) echo the_post_thumbnail_url( '300x300' ); ?>"></figure>
+                            </a>
+                            <a id="id-<?php get_the_ID(); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
+                              <h2 class="woocommerce-loop-product__title"><?php the_title(); ?></h2>
+                            </a>
+                          <span class="price"><?php echo $product->get_price_html(); ?></span>
+                          <!-- <?php woocommerce_template_loop_add_to_cart( $featured_query->post, $product ); ?> -->
+                          </div>
+                        </a>
+                      </li>
+                      <?php endwhile; ?>
+                      <?php wp_reset_query(); ?>
+                    </section>
 
-                                                               </ul>
-                                                            </div> <!--end featured -->
+                </ul>
+              </div> <!--end featured -->
 
-
-                                                          </div>
-                                                    </div>
-                                              </div>
-                                      </main> <!-- /main  -->
-                      </div> <!-- /.content row -->
-              </div><!-- /.wrap -->
+            </div>
+          </div>
+        </div>
+      </main> <!-- /main  -->
+    </div> <!-- /.content row -->
+  </div><!-- /.wrap -->
 </div>
 
     <?php

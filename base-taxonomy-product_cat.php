@@ -78,13 +78,14 @@ use Roots\Sage\Wrapper;
       </div>
 </section>
 
+
 <!-- main content -->
  <div class="wrap container-fluid" role="document">
  <div class="content">
 
    <main class="main">
 
-  <div class="main taxonomy-cat" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
+        <div class="main taxonomy-cat" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
         <div class="taxonomy-cat-page">
         <div class="taxonomy-cat-content">
           <div class="ais-outer-wrapper"></div>

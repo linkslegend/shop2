@@ -26,13 +26,7 @@ add_filter( 'algolia_config', function( array $config ) {
   $config['woocommerce']['replace_page'] = true;
 
   return $config;
-}, 6 );
-
-/*
-function lazyload_content(){
-  wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery'), false, true );
-  wp_enqueue_script('ajax-login-script');
-}*/
+}, 20 );
 
 function aa_algolia_enqueue_scripts() {
 	wp_deregister_script( 'algolia-instantsearch' );
@@ -768,6 +762,16 @@ add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_
 
             }
           }
+        add_action( 'woocommerce_after_add_to_cart_form', 'add_wishlist_after_addtocart_button_func' );
+            /*
+             * Content below "Add to cart" Button.
+             */
+          function add_wishlist_after_addtocart_button_func() {
+            global $post;
+                // Echo content.
+                  echo do_shortcode('[ti_wishlists_addtowishlist product_id="'.get_the_ID().'"]');
+             }
+
 
 /* Inser coupon code into single product
 add_action( 'woocommerce_product_meta_end', 'add_content_after_addtocart_button_unlock' );
@@ -1422,8 +1426,20 @@ function add_lazyload($content) {
          $dom->saveHTML()));
          return $newHtml;
      }
-add_filter('the_content', 'add_lazyload', 10);
+add_filter('the_content', 'add_lazyload', 99);
 
+/**
+ * Shop/archives: wrap the product image/thumbnail in a div.
+ *
+ * The product image itself is hooked in at priority 10 using woocommerce_template_loop_product_thumbnail(),
+ * so priority 9 and 11 are used to open and close the div.
+ */
+add_action( 'woocommerce_before_shop_loop_item_title', function(){
+    echo '<figure>';
+}, 9 );
+add_action( 'woocommerce_before_shop_loop_item_title', function(){
+    echo '</figure>';
+}, 11 );
 
 
 function before_bodyclose() {

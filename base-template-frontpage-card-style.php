@@ -208,13 +208,11 @@ use Roots\Sage\Wrapper;
                       </div>
                     </div>
                     </figure>
-                    <div class="alg-hit__details">
                     <a id="id-<?php the_id( $favorites->post->ID ); ?>" href="<?php the_permalink( $favorites->post->ID ); ?>" title="<?php the_title( $favorites->post->ID ); ?>">
                           <h2 class="product__title"><?php the_title( $favorites->post->ID ); ?></h2>
                     </a>
                     <span class="price"><?php echo $product->get_price_html(); ?></span>
                         <?php echo do_shortcode('[ti_wishlists_addtowishlist product_id="'.get_the_ID().'"]'); ?>
-                    </div>
                   </div>
               </li>
             <?php endwhile; ?>
@@ -257,13 +255,11 @@ use Roots\Sage\Wrapper;
                         </div>
                       </div>
                       </figure>
-                      <div class="alg-hit__details">
                       <a id="id-<?php the_id( $featured_query->post->ID ); ?>" href="<?php the_permalink( $featured_query->post->ID ); ?>" title="<?php the_title( $featured_query->post->ID ); ?>">
                         <h2 class="product__title"><?php the_title( $featured_query->post->ID ); ?></h2>
                       </a>
                       <span class="price"><?php echo $product->get_price_html(); ?></span>
                           <?php echo do_shortcode('[ti_wishlists_addtowishlist product_id="'.get_the_ID().'"]'); ?>
-                      </div>
                     </div>
                 </li>
                 <?php endwhile; ?>
