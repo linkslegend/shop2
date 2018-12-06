@@ -484,7 +484,7 @@ stamped-summary-ratings {
   border: 1px solid #e4e1e3;
   border-radius: 3px;
   width: 40%;
-  margin-top: 20px;
+  margin-top: 0px;
   padding: 0px;
   float: left;
 }
@@ -547,26 +547,16 @@ stamped-summary-ratings {
   width: 40px;
   height: auto;
   background: rgba(235, 233, 235, 1);
-  border: 2px solid #e2e2e2;
+  border: 1px solid #e2e2e2;
   margin: 0;
   box-shadow: none;
   transition: all 0.15s ease 0s;
   -webkit-transition: all 0.15s ease 0s;
+   &:hover{
+  	border: 1px solid #dedede;
+	}
 }
-.woocommerce #reviews #comments ol.commentlist li:hover img.avatar {
-  float: left;
-  position: absolute;
-  top: -5px;
-  left: -6px;
-  padding: 0px;
-  border-radius: 100%;
-  width: 40px;
-  height: auto;
-  background: rgba(235, 233, 235, 1);
-  border: 0px solid #e2e2e2;
-  margin: 0;
-  box-shadow: none;
-}
+
 .woocommerce #reviews #comments ol.commentlist {
   margin: 0;
   background: 0 0;
@@ -654,7 +644,11 @@ span.ywar_review_helpful {
 
 #reviews .the_champ_outer_login_container{
 	display: block;
-	padding: 15px;
+	padding: 10px;
+}
+
+#reviews .the_champ_social_login_title{
+	padding: 0 0 0 10px;
 }
 
 div.reply {
@@ -685,7 +679,7 @@ div.reply {
 .woocommerce #reviews #comments ol.commentlist li .comment-text {
   margin: 0 0 0 0px;
   border: 1px solid #e4e1e3;
-  border-radius: 0px;
+  border-radius: 3px;
   padding: 1em;
 }
 h3#reply-title.comment-reply-title {
@@ -793,6 +787,7 @@ div.ywar_show_more a {
     background: #f4f4f4;
     padding: 10px 15px;
     display: inline-block;
+    border: 1px solid #d0d0d0;
     margin: 0px 5px 5px 0px;
     border-radius: 3px;
 	 &:hover{
@@ -3404,7 +3399,7 @@ body.inspiration .select2-container{}
 #review_form #respond p.must-log-in a{
     padding: 7px 11px;
     background: #e4e4e4;
-    font-weight: 500;
+    font-weight: 400;
     border-radius: 3px;
     margin: 0 5px;
 }
@@ -4069,7 +4064,7 @@ body.inspiration .select2-container{}
   }
   .related.products ul.products li.product,
   .upsells.products ul.products li.product {
-    width: 43%;
+    width: 45%;
   }
   #reviews {
     margin: 0;
@@ -4247,7 +4242,7 @@ body.inspiration .select2-container{}
     border: 1px solid #d0d0d0;
     font-size: 1.05em;
     border-radius: 3px;
-    margin: 0px 15px 10px 0;
+    margin: 0px 10px 15px 10px;
     width: auto;
     font-weight: 500;
     color: #515151;
@@ -4264,7 +4259,7 @@ body.inspiration .select2-container{}
 
 
   .woocommerce div.product .woocommerce-tabs ul.tabs li:nth-child(2n+1) a{
-    margin: 0px 10px 10px 15px;
+    margin: 0px 10px 15px 10px;
 }
   
   
@@ -4499,6 +4494,7 @@ body.inspiration .select2-container{}
     bottom: 0;
     right: 0;
     width: 30%;
+    min-width: auto;
     font-size: 1.1em;
     padding: 10px;
     z-index: 1200;
@@ -4709,6 +4705,7 @@ body.single.woocommerce .select2-container--open:after{
     border-radius: 0px;
     right: 0;
     width: 30%;
+    min-width: auto;
     font-size: 1.1em;
     padding: 10px;
     z-index: 1200;

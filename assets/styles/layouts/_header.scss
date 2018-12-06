@@ -1942,6 +1942,7 @@ body.archive.woocommerce #desktop-search{
   #sidebar-wrapper.toggled {
     width: 85%;
     margin-left: 0;
+    border-radius: 0px;
     left: 0;
     transform: translateX(0px) translateY(0px);
     position: fixed;
@@ -2077,11 +2078,9 @@ body.archive.woocommerce #desktop-search{
   
   .sidebar-nav .dropdown.open:before,
   .sidebar-nav .dropdown:before {
-    font-family: FontAwesome;
-    font-size: 1.1em;
-    content: "\f067";
+    content: "";
     left: -15px;
-    top: 10px;
+    top: 14px;
     color: #4a4a4a;
     font-style: normal;
     float: right;
@@ -2089,12 +2088,17 @@ body.archive.woocommerce #desktop-search{
     margin: 0;
     border: none;
     font-weight: 600;
+    display: inline-block;
+    opacity: 0.85;
+    width: 10px;
+    height: 10px;
     text-decoration: inherit;
     padding-right: 9px;
+    background-size: 100% auto;
     z-index: 999;
   }
   .sidebar-nav .dropdown.open:before {
-    content: "\f068";
+    content: "";
     z-index: 1;
     color: rgba(255, 255, 255, 1);
   }
@@ -2790,7 +2794,7 @@ body.my-account .icon-menu-gk .account:before,
     position: absolute;
     right: 10px;
     top: 0px;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-right: 15px;
     height: 40px;
     width: auto;
@@ -2816,9 +2820,7 @@ body.my-account .icon-menu-gk .account:before,
     text-align: center;
     margin-top: 17px;
   }
-  .is-open span.menu-text {
-    display: none;
-  }
+  .is-open span.menu-text {}
 
   .icon-menu-gk .account,
   .icon-menu-gk .wishlist,
@@ -2960,7 +2962,7 @@ body.archive .mobile-search{
   }
   #logo {
     display: block;
-    top: 11px;
+    top: 15px;
     margin-top: 0;
     float: none;
     margin-right: auto;
@@ -3010,7 +3012,7 @@ body.archive .mobile-search{
     right: 0;
     height: 40px;
     padding: 0;
-    margin-top: 2px;
+    margin-top: 7px;
     margin-right: 10px;
     margin-left: 10px;
     width: 45px;}
@@ -3166,11 +3168,11 @@ body.archive .mobile-search{
     position: absolute;
     left: 60px;
     height: 31px;
-    margin-top: 7px;
+    margin-top: 10px;
     width: initial;
   }
   span.menu-text {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: inherit;
     position: absolute;
     width: 100%;

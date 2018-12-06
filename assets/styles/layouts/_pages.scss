@@ -3978,7 +3978,7 @@ ul.product_list_widget li,
   width: 32%;
 }
 
-.singlefeatured .slider-products-inner {
+.slider-products-inner {
   width: 100%;
   padding: 15px;
 }
@@ -4004,8 +4004,8 @@ ul.product_list_widget li,
 .woocommerce-page .upsells ul.products li.product img,
 .woocommerce .upsells ul.products li.product img,
 .slider-products-inner img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   display: block;
   margin: 0 0 20px;
   /*box-shadow: -2px 3px 7px 0 rgba(0,0,0,.22);*/
@@ -6584,7 +6584,7 @@ div.Vector:before{
     position: absolute;
     color: #777;
     right: 0px;
-    padding: 10px;
+    padding: 9px;
     cursor: pointer;
     border-radius: 100%;
     bottom: 20px;
@@ -6685,7 +6685,7 @@ span.wishlist_products_counter.top_wishlist-heart:before{
     color: #0f0f0f;
     right: 0;
     bottom: 0;
-    padding: 7px;
+    padding: 11px;
     cursor: pointer;
     float: left;
     background: #f4f4f4;
@@ -6694,7 +6694,18 @@ span.wishlist_products_counter.top_wishlist-heart:before{
     text-align: center;
     -webkit-transition: all .3s;
     transition: all .3s;
+		&:hover{
+			background: #d1d1d1;
+			border: 1px solid #d0d0d0;
+		}
 }
+.product .entry-summary .tinvwl_add_to_wishlist_button:before{
+    width: 19px;
+    height: 19px;
+	position: absolute;
+	margin-top: -2px;
+}
+
 .product .entry-summary .tinv-wishlist .tinv-wishlist-clear {
     visibility: visible;
     width: auto;
@@ -6705,13 +6716,14 @@ span.wishlist_products_counter.top_wishlist-heart:before{
 .product .entry-summary .tinvwl_add_to_wishlist-text, 
 .product .entry-summary .tinvwl_remove_from_wishlist-text {
     visibility: visible;
-        display: inline-block;
+    display: inline-block;
     font-weight: 500;
     font-size: 1em;
     font-family: Poppins,sans-serif;
     float: none;
     position: relative;
     left: 0;
+    padding-left: 25px;
     letter-spacing: .03em;
     margin: 0 auto;
 }
@@ -7069,10 +7081,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .i-plus,
+.sidebar-nav .dropdown:before,
 .btn-grey.collapsed:before{
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 491.86 491.86'%3E%3Cpath d='M465.167 211.614H280.245V26.691c0-8.424-11.439-26.69-34.316-26.69s-34.316 18.267-34.316 26.69v184.924H26.69C18.267 211.614 0 223.053 0 245.929s18.267 34.316 26.69 34.316h184.924v184.924c0 8.422 11.438 26.69 34.316 26.69s34.316-18.268 34.316-26.69V280.245H465.17c8.422 0 26.69-11.438 26.69-34.316s-18.27-34.315-26.693-34.315z'/%3E%3C/svg%3E");
 }
 .i-minus,
+.sidebar-nav .dropdown.open:before,
 .btn-grey:before{
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 491.858 491.858'%3E%3Cpath d='M465.167 211.613H26.69c-8.424 0-26.69 11.439-26.69 34.316s18.267 34.316 26.69 34.316H465.169c8.421 0 26.689-11.439 26.689-34.316s-18.268-34.316-26.691-34.316z'/%3E%3C/svg%3E");	
 }
@@ -8854,8 +8868,9 @@ ul.the_champ_login_ul li {
     background-color: rgba(0,0,0,.4);
     float: left;
     color: #fff;
-    padding: 10px 15px;}
-    
+    padding: 10px 15px;
+}
+
 .theChampTwitterBackground:after,
 .theChampFacebookBackground:after,
 .theChampInstagramBackground:after,
@@ -8871,6 +8886,25 @@ ul.the_champ_login_ul li {
     font-style: normal;
     display: block;   
 }
+
+
+#review_form .theChampLogin {
+	height: 40px;
+}
+
+#review_form .theChampGoogleBackground,
+#review_form .theChampInstagramBackground,
+#review_form .theChampTwitterBackground,
+#review_form .theChampFacebookBackground{
+	height: 40px;
+	 
+	 &:before{
+		height: 40px;}
+	 &:after{
+		height: 40px;
+		font-size: 1em;}
+}
+
     
 .theChampGoogleBackground:before  {content:"";}
 .theChampGoogleBackground:after  {content:"Google";}
@@ -9178,12 +9212,12 @@ button.button.tm-woowishlist-button,
   height: 40px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+	   &:hover{
+		border: 1px solid #d0d0d0;
+	    background: #d1d1d1;
+	}
 }
-.woocommerce button.button.compare-size:hover {
-  background: rgba(255, 255, 255, 1);
-  border: 2px solid rgba(15, 15, 15, 0.55);
-  width: 48%;
-}
+
 
 .woocommerce button.button.compare-size span.text {
   display: inline-block;
@@ -9210,6 +9244,8 @@ button.button.tm-woowishlist-button,
 
 .woocommerce div.product .woocommerce-tabs .panel {
   padding: 20px 0;
+  width: 100%;
+  float: left;
 }
 
 /* @group description tab */
@@ -11508,7 +11544,7 @@ width: 100%;
 .btn-grey{width: 100%;}
 ul.the_champ_login_ul li {
     padding: 0!important;
-    width: 100%!important;}
+    width: 33.3333%!important}
 }
 
 
@@ -13664,7 +13700,7 @@ div.ais-refinement-list--item>div>div:before {
     border-bottom: 15px solid #e2e2e2;
     left: 0;
     right: 0;
-    margin: 110px auto;
+    margin: 120px auto;
     position: absolute;}
 .woocommerce div.product .woocommerce-tabs ul.tabs:after{
 	content: "";
@@ -13672,7 +13708,7 @@ div.ais-refinement-list--item>div>div:before {
     height: 0;
     left: 0;
     right: 0;
-    margin: 112px auto;
+    margin: 122px auto;
     position: absolute;
     border-left: 13px solid transparent;
     border-right: 13px solid transparent;
@@ -13820,7 +13856,7 @@ div.ais-refinement-list--item>div>div:before {
 .woocommerce .related ul.products li.product,
 .woocommerce-page .upsells ul.products li.product,
 .woocommerce .upsells ul.products li.product{
-	padding: 15px;
+	padding: 10px;
 }
 
 
@@ -14454,7 +14490,7 @@ body.page-template-template-legal .main ul li:before{
 .mobile-search {
     display: block;
     float: left;
-    padding: 0px 10px 10px;
+    padding: 10px;
     width: 100%;
 }
 .aa-dataset-1, .aa-dataset-5 {
@@ -14527,8 +14563,10 @@ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 377 815' xmlns='ht
 .alg-hit figure img {
    	height: 160px;
     min-height: 100%;}
-.alg-hit figure, .slider-products figure {
-    height: 160px;}
+    
+.alg-hit figure, .slider-products figure,
+.woocommerce .related ul.products li.product figure {
+    height: 150px;}
 .tinvwl_add_to_wishlist_button {
     width: 40px;
     height: 40px;
@@ -14537,11 +14575,11 @@ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 377 815' xmlns='ht
     bottom: 15px;}
 .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before, 
 .woocommerce-page ul.products li.product a.tinvwl-button.tinvwl-icon-heart.tinvwl_add_to_wishlist_button:before, 
-.woocommerce ul.products li.product a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before, 
-a.sidr-class-wishlist_products_counter.sidr-class-top_wishlist-heart:before, 
-a.wishlist_products_counter.top_wishlist-heart:before, span.wishlist_products_counter.top_wishlist-heart:before {
+.woocommerce ul.products li.product a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before{
     width: 25px;
     height: 25px;}
-    
+.product .entry-summary .tinvwl_add_to_wishlist_button:before {
+    width: 19px;
+    height: 19px;}    
     
 }
