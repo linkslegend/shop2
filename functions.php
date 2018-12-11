@@ -19,6 +19,9 @@ $sage_includes = [
   'lib/customizer.php' // Theme customizer
 ];
 
+/* Disable the Gutenberg editor. */
+add_filter('use_block_editor_for_post', '__return_false');
+
 // Inject instantsearch.js on every page regardless of backend config.
 add_filter( 'algolia_wc_should_display_instantsearch', '__return_true' );
 // This will make sure the search is displayed on load. Oterwise it waits for the query to change to be displayed.
@@ -1527,3 +1530,27 @@ function roomstyle_post_type() {
 
 }
 add_action( 'init', 'roomstyle_post_type', 0 );
+
+
+/**
+ * WooCommerce Sales Sorting Filter
+ * https://lakewood.media/woocommerce-add-sales-filter/
+ */
+add_filter( 'woocommerce_get_catalog_ordering_args', 'wcs_get_catalog_ordering_args' );
+function wcs_get_catalog_ordering_args( $args ) {
+    $orderby_value = isset( $_GET['orderby'] ) ? woocommerce_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
+
+    if ( 'on_sale' == $orderby_value ) {
+        $args['orderby'] = 'meta_value_num';
+        $args['order'] = 'DESC';
+        $args['meta_key'] = '_sale_price'; 
+    }
+    return $args;
+}
+
+add_filter( 'woocommerce_default_catalog_orderby_options', 'wcs_catalog_orderby' );
+add_filter( 'woocommerce_catalog_orderby', 'wcs_catalog_orderby' );
+function wcs_catalog_orderby( $sortby ) {
+    $sortby['on_sale'] = 'Sort by on sale';
+    return $sortby;
+}

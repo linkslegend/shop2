@@ -788,7 +788,7 @@ div.ywar_show_more a {
     padding: 10px 15px;
     display: inline-block;
     border: 1px solid #d0d0d0;
-    margin: 0px 5px 5px 0px;
+    margin: 0px 5px 7px 0px;
     border-radius: 3px;
 	 &:hover{
 		background: #d1d1d1;
@@ -1476,15 +1476,6 @@ woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to
 .related.products .woocommerce ul.products li.product .button,
 .upsells.products .woocommerce ul.products li.product .button {
   margin-top: 0.5em;
-}
-.singlefeatured h2.getkunst-title{
-  border-top: 0 solid #d5d5d5;
-  padding: 20px 20px;
-  border-bottom: 1px solid #d5d5d5;
-  font-size: 1.85em;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-align: center;
 }
 /* @end */
 
@@ -3182,13 +3173,6 @@ body.inspiration .select2-container{}
   .ob_wrapper.ob_product_detail h3 {
     font-size: 1.6em;
   }
-  .singlefeatured h2.getkunst-title,
-  .upsells.products h2 {
-    border-top: 0 solid #d5d5d5;
-    padding: 10px;
-    font-size: 1.3em;
-    margin: 5px 0;
-  }
 
   .woocommerce div.product .woocommerce-tabs .panel {
     margin: 20px 0;
@@ -3437,13 +3421,6 @@ body.inspiration .select2-container{}
   .upsells.products {
     width: 100%;
     padding: 0px;
-  }
-  .singlefeatured h2.getkunst-title{
-    border-top: 0 solid #d5d5d5;
-    padding: 20px 35px;
-    font-size: 1.3em;
-    border-bottom: 1px solid #d5d5d5;
-    margin: 10px 0;
   }
   .archive .ob_categories .counter-block,
   .cross-sells .ob_categories .counter-block {
@@ -3780,13 +3757,6 @@ body.inspiration .select2-container{}
   .related .slick-list,
   .upsells .slick-list {
     margin: 0px 10px 0px 10px;
-  }
-  .singlefeatured h2.getkunst-title{
-    border-top: 0 solid #d5d5d5;
-    padding: 10px 15px;
-    font-size: 1.25em;
-    border-bottom: 1px solid #d5d5d5;
-    margin: 0px 0;
   }
   .single .related .widget_product_detail .counter-block .counter .number,
   .single .upsells .widget_product_detail .counter-block .counter .number,
@@ -4190,13 +4160,6 @@ body.inspiration .select2-container{}
   .related .slick-list,
   .upsells .slick-list {
     margin: 0px 10px 0px 10px;
-  }
-  .singlefeatured h2.getkunst-title{
-    border-top: 0 solid #d5d5d5;
-    padding: 10px 15px;
-    font-size: 1.25em;
-    border-bottom: 1px solid #d5d5d5;
-    margin: 0px 0;
   }
   .single .related .widget_product_detail .counter-block .counter .number,
   .single .upsells .widget_product_detail .counter-block .counter .number,
