@@ -102,6 +102,37 @@ use Roots\Sage\Wrapper;
       </a>
   </div>
 </div>
+
+<!-- content row -->
+<div class="col-lg-12 col-md-12 col-sm-12 row-tile-content">
+    <div class="row-tile-content-inner">
+     <a class="tile-link col-lg-4 col-md-4 col-sm-4 row-tile-content-item" href="/magazine">
+       <i class="i-globe"></i>
+       <span class="tile-box-block-description">
+          <span class="tile-box-title">Designs by international artists</span>
+          <span class="tile-box-description">Handpicked by our curators</span>
+          <span class="tile-box-link">Meet our artists</span>
+        </span>
+     </a>
+     <a class="tile-link col-lg-4 col-md-4 col-sm-4 row-tile-content-item" href="artists">
+       <i class="i-artist"></i>
+       <span class="tile-box-block-description">
+          <span class="tile-box-title">Wall art from 9,99</span>
+          <span class="tile-box-description">Gallery-quality prints</span>
+          <span class="tile-box-link">Shop art prints</span>
+        </span>
+     </a>
+     <a class="tile-link col-lg-4 col-md-4 col-sm-4 row-tile-content-item" href="artists">
+       <i class="i-shipping"></i>
+       <span class="tile-box-block-description">
+          <span class="tile-box-title">Free shipping</span>
+          <span class="tile-box-description">from $29,99</span>
+          <span class="tile-box-link">Browse shop</span>
+        </span>
+     </a>
+    </div>
+</div>
+
 <!-- 2. row -->
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 tile-left">
     <a class="tile tile-med-long" href="<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['image5-link'].''); ?>" class="anchor" title="art prints" alt="art prints">
