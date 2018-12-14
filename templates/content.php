@@ -1,18 +1,25 @@
-<article <?php post_class('grid-item'); ?>>
-  <div class="article__inner">
-    <div class="inner__inner">
-        <div class="article__meta-data"> <?php get_template_part('templates/entry-meta'); ?> </div>
-        <figure class="effect-layla">
-        <a href="<?php the_permalink(); ?>">
-          <div class="article__image"> <?php echo get_the_post_thumbnail( $page->ID, '300x300' ); ?> </div>
-          <figcaption><p><strong>read more</strong></p></figcaption>
-        </a>
-    </div>
-  </div>
-  <header>
-    <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-  </header>
+<?php if( has_tag( 'hero-post' ) ) { ?>
+  <article <?php post_class('grid-item'); ?>>
+  <figure>
+  <img class="lozad hero" src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif" data-src="<?php echo get_the_post_thumbnail_url( $page->ID ); ?>" alt="<?php the_title(); ?>">
   <div class="entry-summary">
-    <?php the_excerpt(); ?>
+    <h2 class="entry-title"><?php the_title(); ?></h2>
+    <?php the_content(); ?>
   </div>
-</article>
+  </figure>
+  </article>
+<?php  }else{ ?>
+  <article <?php post_class('grid-item'); ?>>
+  <a href="<?php the_permalink(); ?>">
+  <figure>
+  <img class="lozad" src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif" data-src="<?php echo get_the_post_thumbnail_url( $page->ID, '300x300' ); ?>" alt="<?php the_title(); ?>">
+  </figure>
+  <!--<div class="article__meta-data"><//?php get_template_part('templates/entry-meta'); ?></div>-->
+  <h2 class="entry-title"><?php the_title(); ?></h2>
+  <div class="entry-summary">
+      <?php the_excerpt(); ?>
+  </div>
+  </a>
+  </article>
+
+<?php } ?>

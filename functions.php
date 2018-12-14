@@ -1392,44 +1392,6 @@ add_action( 'woocommerce_thankyou', 'order_received_empty_cart_action', 10, 1 );
  add_filter( 'woocommerce_paypal_icon', 'paypal_checkout_icon' );
 
 
-// Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
-// Lazyload Converter
-function add_lazyload($content) {
-         $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-         $dom = new DOMDocument();
-         @$dom->loadHTML($content);
-         // Convert Images
-         $images = [];
-         foreach ($dom->getElementsByTagName('img') as $node) {
-             $images[] = $node;
-         }
-         foreach ($images as $node) {
-             $fallback = $node->cloneNode(true);
-
-             $oldsrc = $node->getAttribute('src');
-             $node->setAttribute('data-src', $oldsrc );
-             $newsrc = 'https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif';
-             $node->setAttribute('src', $newsrc);
-
-             $oldsrcset = $node->getAttribute('srcset');
-             $node->setAttribute('data-srcset', $oldsrcset );
-             $newsrcset = '';
-             $node->setAttribute('srcset', $newsrcset);
-
-             $classes = $node->getAttribute('class');
-             $newclasses = $classes . ' lozad';
-             $node->setAttribute('class', $newclasses);
-
-             $noscript = $dom->createElement('noscript', '');
-             $node->parentNode->insertBefore($noscript, $node);
-             $noscript->appendChild($fallback);
-         }
-
-         $newHtml = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''),
-         $dom->saveHTML()));
-         return $newHtml;
-     }
-add_filter('the_content', 'add_lazyload', 99);
 
 /**
  * Shop/archives: wrap the product image/thumbnail in a div.
@@ -1543,7 +1505,7 @@ function wcs_get_catalog_ordering_args( $args ) {
     if ( 'on_sale' == $orderby_value ) {
         $args['orderby'] = 'meta_value_num';
         $args['order'] = 'DESC';
-        $args['meta_key'] = '_sale_price'; 
+        $args['meta_key'] = '_sale_price';
     }
     return $args;
 }

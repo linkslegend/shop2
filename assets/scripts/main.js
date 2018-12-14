@@ -20,6 +20,18 @@
     'common': {
       init: function() {
 
+        $(document).ready(function() {
+          // Initialize library to lazy load images
+          const observer = lozad('.lozad', {
+            loaded: function(el) {
+              // Custom implementation on a loaded element
+              el.classList.add('loaded');
+            }
+          });
+          observer.observe();
+
+        }); //end $(document).ready(function()
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages
@@ -122,18 +134,7 @@ $(document).ready(function() {
         });
         $.fn.modal.Constructor.prototype.enforceFocus = function() {};
 
-        $(document).ready(function() {
-          // Initialize library to lazy load images
-          const observer = lozad('.lozad', {
-            rootMargin: '300px 0px', // syntax similar to that of CSS Margin
-            loaded: function(el) {
-              // Custom implementation on a loaded element
-              el.classList.add('loaded');
-            }
-          });
-          observer.observe();
 
-        }); //end $(document).ready(function()
 
       $('[data-tab]').on('click', function (e) {
             $(this).addClass('active').siblings('[data-tab]').removeClass('active');
@@ -507,17 +508,6 @@ $(document).ready(function() {
             sortBy: 'most-recent',
             template: '<li class="insta-slider-products"><div class="slider-products-inner"><a target="_blank" href="{{link}}"><figure class="effect-zoe"><div class="lozad insta-image" data-background-image="{{image}}"></div><figcaption><div class="likes">{{likes}}</div><div class="description">{{caption}}</div></figcaption></figure></a></div></li>',
             after: function() {
-              //Initializes lozad
-              const observer = lozad('.lozad', {
-                rootMargin: '300px 0px', // syntax similar to that of CSS Margin
-                threshold: 0.1, // ratio of element convergence
-                loaded: function(el) {
-                  // Custom implementation on a loaded element
-                  el.classList.add('loaded');
-                }
-              });
-              observer.observe();
-
               //Initializes SlickSlider
               $(window).on('load resize orientationchange', function() {
                 $(document).ready(function() {
@@ -533,8 +523,8 @@ $(document).ready(function() {
                       else{
                           if (!$carousel.hasClass('slick-initialized')) {
                               $carousel.slick({
-                                  slidesToShow: 5,
-                                  slidesToScroll: 2,
+                                  slidesToShow: 4,
+                                  slidesToScroll: 1,
                                   autoplay: true,
                                   autoplaySpeed: 4000,
                                   infinite: true,
@@ -548,6 +538,17 @@ $(document).ready(function() {
                     });
                  });
               });
+              //Initializes lozad
+              const observer = lozad('.lozad', {
+                rootMargin: '300px 0px', // syntax similar to that of CSS Margin
+                threshold: 0.1, // ratio of element convergence
+                loaded: function(el) {
+                  // Custom implementation on a loaded element
+                  el.classList.add('loaded');
+                }
+              });
+              observer.observe();
+
             }
           });
           feed.run();
@@ -598,8 +599,8 @@ $(document).ready(function() {
                       else{
                           if (!$carousel.hasClass('slick-initialized')) {
                               $carousel.slick({
-                                  slidesToShow: 5,
-                                  slidesToScroll: 2,
+                                  slidesToShow: 4,
+                                  slidesToScroll: 1,
                                   autoplay: true,
                                   autoplaySpeed: 4000,
                                   infinite: true,

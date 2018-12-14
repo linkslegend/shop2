@@ -235,7 +235,7 @@ use Roots\Sage\Wrapper;
                       </a>
                     <div class="hidden-xs	hidden-sm alg-hit__overlay">
                       <div class="alg-hit__actions">
-                        <a href="#" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $favorites->post->ID ); ?>"></a>
+                        <a href="" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $favorites->post->ID ); ?>"></a>
                       </div>
                     </div>
                     </figure>
@@ -282,7 +282,7 @@ use Roots\Sage\Wrapper;
                         </a>
                       <div class="hidden-xs	hidden-sm alg-hit__overlay">
                         <div class="alg-hit__actions">
-                          <a href="#" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $featured_query->post->ID ); ?>"></a>
+                          <a href="" class="yith-wcqv-button qvicon" data-product_id="<?php the_id( $featured_query->post->ID ); ?>"></a>
                         </div>
                       </div>
                       </figure>
@@ -348,13 +348,12 @@ use Roots\Sage\Wrapper;
                     <!-- Display the Post Title with Hyperlink -->
                     <li class="magazine-slider-products">
                       <div class="slider-products-inner">
-                        <figure class="effect-layla">
+                        <figure>
                         <a href="<?php the_permalink() ?>">
                         <!--  Display the Post Featured Image -->
                         <img width="300" class="lozad" height="300" class="attachment-shop_catalog size-shop_catalog wp-post-image"
                         src="https://d1zczzapudl1mr.cloudfront.net/blank-kraken.gif"
                         data-src="<?php if (has_post_thumbnail()) echo the_post_thumbnail_url( '300x300' ); ?>">
-                        <figcaption><p><strong>read more</strong></p></figcaption>
                         </a>
                         </figure>
                         <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
